@@ -1,0 +1,26 @@
+---
+layout: allItems
+title: All Projects
+permalink: /projects/
+---
+
+<h1>{{ page.title}}</h1>
+
+    <div class="main-section-all project-grid-rows">
+        {% for project in site.categories.projects %}
+        <div class="project-description project-grid-item">
+            <a href="{{ project.url }}">
+                <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>
+            </a>
+            <p class="project-description-item project-description-text">{{ project.description }}</p>
+            <p class="metadata project-metadata">
+                <span class="project-course">{{ project.course }}</span>
+                <span class="semester_date">{{ project.semester_date }}</span>
+            </p>
+        </div>
+
+        <a class="project-grid-item" href="{{ project.url }}">
+            <img class="image" src="../assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
+        </a>
+        {% endfor %}
+    </div>

@@ -1,0 +1,15 @@
+- name: Enter Area
+  file: feedback-useCase-1.mp4
+  figcaption: As long as no hand is tracked in the volume, the device lowers its brightness to suggest inactivity.
+- name: Choose Values
+  file: feedback-useCase-2.mp4
+  figcaption: When a hand enters the volume it lights up and the user can select values, the LED tells them where they are in the selectable value range.
+- name: Minimum / Maximum
+  file: feedback-useCase-3.mp4
+  figcaption: Should they cross the upper or lower boundaries, the LED blinks twice to indicate that raising or lowering their hand will not change values anymore.
+- name: Set Value
+  file: feedback-useCase-4.mp4
+  figcaption: By doing the mentioned pinch-gesture, a chosen value can be saved. This prototype changes its fan speed accordingly. When no hand is tracked the device switches to standby and the LED lowers its brightness again.
+- name: Exit
+  file: feedback-useCase-5.mp4
+  figcaption: The user can exit the volume at any height and the value gets reset.

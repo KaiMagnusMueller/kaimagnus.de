@@ -1,0 +1,13 @@
+<div id="vita">
+    <div class="vita-picture-container">
+        <img class="vita-picture image" src="/assets/img/kaimagnus-portrait.jpg">
+    </div>
+    <div class="vita-timeline">
+        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
+        {{ my_include | markdownify }}
+    </div>
+    <div class="vita-motivation">
+        {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
+        {{ my_include | markdownify }}
+    </div>
+</div>

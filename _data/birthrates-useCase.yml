@@ -1,0 +1,15 @@
+- name: Select
+  file: birthrates-useCase-1.mp4
+  figcaption: The user is presented with a world map and can hover over any country to highlight it. A left swype with two fingers adds a country to the selection. A darker shadow stays on the world map to indicate which countries are selected. A swype right deselects the respective country. The selected countries are lined up on the left hand side.
+- name: Change Year
+  file: birthrates-useCase-2.mp4
+  figcaption: On any screen a hold and drag changes the current year. The inner and outer circles change in color to distinguish between each year. The inner and outer colors are interpolated from lavender to red.
+- name: Birth Rate Change
+  file: birthrates-useCase-3.mp4
+  figcaption: When hovering over a selection, the circles increases in size for a small amount to hint at further action. Swyping right displays all birth rates from 1950 to 2015. The color interpolation is clearly visible and the population is not displayed. The selected countries vertical position remains unchanged to keep the visualizations consistent.
+- name: Birth Rate Detail
+  file: birthrates-useCase-4.mp4
+  figcaption: A zoom-in gesture triggers a detailed view of birth rates distinguished by age groups. All other circles in this visualization display averaged birth rates. It is possible to scroll through time here and the change certain countries went through in a relative short amount of time becomes obvious.
+- name: Deselect
+  file: birthrates-useCase-5.mp4
+  figcaption: The user can deselect each country and add new ones to the selection fluidly.

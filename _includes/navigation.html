@@ -1,0 +1,22 @@
+<nav class="
+{% if include.slim == false %}
+navigation
+{% else %}
+navigation-slim
+{% endif %}">
+    <ul class="nav-left">
+        <li><a class="current" href="/">Kai Magnus Müller</a></li>
+    </ul>
+    <ul class="text-letter-spacing
+    {% if include.slim == false %}
+    nav-right right
+    {% else %}
+    nav-right-slim
+    {% endif %}">
+        {% for item in site.data.navigation %}
+        <li><a href="{{ item.link }}" {% if page.url == item.link %} class="current"{% endif %}>
+            {{ item.name }}
+        </a></li>
+        {% endfor %}
+    </ul>
+</nav>

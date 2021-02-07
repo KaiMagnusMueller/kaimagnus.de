@@ -1,0 +1,15 @@
+{% assign usecase = site.data[include.useCaseName] %}
+<div class="use-case-container">
+    <div class="use-case-selector-group">
+        {% for video in usecase %}
+        <span class="use-case-selector">{{ video.name }}</span>
+        {% endfor %}
+    </div>
+    {% for video in usecase %}
+    <figure class="figure-project use-case-figure">
+        <video class="project-media use-case-video" controls="controls" autoplay muted
+               src="../assets/video/{{ video.file }}"></video>
+        <figcaption class="figcaption-project use-case-figcaption">{{ video.figcaption }}</figcaption>
+    </figure>
+    {% endfor %}
+</div>

@@ -1,0 +1,38 @@
+---
+layout: posts
+---
+
+<div class="main-content-padding-article">
+    {% include navigation.html slim=true %}
+</div>
+<div class="main-content-padding-article article-container">
+
+    <article class="article">
+        <h2 class="article-title">{{ page.title }}</h2>
+        {{ content }}
+    </article>
+
+</div>
+
+<div class="main-content-padding-article footer-container">
+
+
+    <div class="main-section article-section">
+        <h3 class="article-heading-other">Recent Posts</h3>
+        {% for article in site.categories.articles %}
+
+        {% unless page.url == article.url %}
+        <div class="article-item">
+            <a href="{{ article.url }}">
+                <h2 class="article-heading">{{ article.title }}</h2>
+                <p class="article-date">{{ article.date | date: "%-d %B %Y"}}</p>
+            </a>
+        </div>
+        {% endunless %}
+
+        {% endfor %}
+    </div>
+
+    {% include footer.html %}
+
+</div>

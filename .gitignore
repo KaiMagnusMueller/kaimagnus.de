@@ -1,0 +1,12 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.idea
+assets/fonts/*
+assets/img/*
+.DS_Store
+*.mp4
+*.pdf
+*.key
+google*.html

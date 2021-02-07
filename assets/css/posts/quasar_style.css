@@ -1,0 +1,25 @@
+:root {
+    --color-main: #fbfbfb;
+    --color-background: #262626;
+    --color-text: #fbfbfb;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --color-main: #fbfbfb;
+        --color-background: #262626;
+        --color-text: #fbfbfb;
+    }
+}
+
+h3:nth-of-type(3n){
+    color: #ae35aa;
+}
+
+h3:nth-of-type(3n+1) {
+    color: #5cc5b0;
+}
+
+h3:nth-of-type(3n+2) {
+    color: #f4615a;
+}

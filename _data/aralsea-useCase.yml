@@ -1,0 +1,15 @@
+- name: Navigating Decades
+  file: aralsea-useCase-1.mp4
+  figcaption: The user can navigate through the decades and watch the Aral Sea shrink based on historical records. Each year has different hotspots placed on the map (some are missing in this video).
+- name: Hotspot
+  file: aralsea-useCase-2.mp4
+  figcaption: Hotspots slide in from the left when selected. They aim to educate the user about many different topics surrounding the Aral Sea. Our mature user group gets the information they want from in depth texts. For children and parents pictures and statistics draw attention and make information visible at a glance.
+- name: Overlays
+  file: aralsea-useCase-3.mp4
+  figcaption: Some hotspots display data directly on the map. Areas of influence of diseases and health statistics show who was and is still suffering in the region.
+- name: Expand Hotspot
+  file: aralsea-useCase-4.mp4
+  figcaption: Some hotspots have a white arrow that indicates they can be expanded to show additional information to users that wish to know more about a subject.
+- name: Statistics
+  file: aralsea-useCase-5.mp4
+  figcaption: A button to the right and shortcuts in some hotspots access a separate statistics screen. Here the user can view detailed statistics of health records, economy and hydrology. They can hide and show diseases to their liking to get a closer look at small patient numbers. Stats about the local economy are shown in the style of isotype to give a better impression of scale.

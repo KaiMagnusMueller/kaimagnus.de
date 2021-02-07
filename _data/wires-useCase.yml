@@ -1,0 +1,15 @@
+- name: Working with Patches
+  file: wires-useCase-1.mp4
+  figcaption: Patches can be placed by searching and clicking the '+' button that appears. Layer patches can also be created by clicking the 'add' button next to a layer in the sidebar. The search gives a preview of the patches' in- and outputs and a brief description. Patches can have many different elements from simple text fields to checkboxes.
+- name: Patch Grouping
+  file: wires-useCase-2.mp4
+  figcaption: Patches can be grouped together to simplify the prototype. Groups can be shared as prefabs with other community members to include in their prototypes. Inputs and outputs can be set just as easily as the connections between patches and named for clarification.
+- name: Arduino Panel
+  file: wires-useCase-3.mp4
+  figcaption: All patches with Arduino connections can have their pins set in a dedicated panel. (Alternatively, they can be set on each patch individually) A board preview makes it easy to recognize the correct pins on the Arduino side. Warnings indicate unset pins.
+- name: Debugging
+  file: wires-useCase-4.mp4
+  figcaption: Because the prototype is a live preview users can always see its output, whether it fails or runs as intended. Especially in large prototypes however, it is not obvious where it breaks. Running in debug mode, small pearls move along the connections to give a visual representation of the data flow. Patches can be marked as breakpoints to stop the prototype.
+- name: Export
+  file: wires-useCase-5.mp4
+  figcaption: The finished prototype can be exported as a standalone app. Users can decide if they want to include the necessary packages to run with hardware or set new pins for another Arduino. This can also be done in the standalone app itself.

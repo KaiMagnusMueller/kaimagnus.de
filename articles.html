@@ -1,0 +1,20 @@
+---
+layout: allItems
+title: All Articles
+permalink: /articles/
+---
+
+<h1 class="article-all-heading">{{ page.title}}</h1>
+
+<div class="main-section-all article-section">
+  {% for article in site.categories.articles %}
+
+  <div class="article-item">
+    <a href="{{ article.url }}">
+      <h2 class="article-heading">{{ article.title }}</h2>
+      <p class="article-date">{{ article.date | date: "%-d %B %Y"}}</p>
+    </a>
+  </div>
+
+  {% endfor %}
+</div>

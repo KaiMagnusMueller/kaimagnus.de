@@ -1,0 +1,640 @@
+:root {
+    --color-text: #333333;
+    --color-text-inactive: #a5a5a5;
+    /*--color-background: #FCFCFF;*/
+    --color-background: white;
+    --color-link: dodgerblue;
+    --color-link-hover: black;
+    --color-border: #d3d3d3;
+}
+
+/*Dark mode colors*/
+@media(prefers-color-scheme: dark) {
+    :root {
+        --color-background: #111111;
+        --color-text: #eaeaea;
+        --color-text-inactive: #707070;
+        --color-link: dodgerblue;
+        --color-link-hover: white;
+        --color-border: #707070;
+    }
+}
+
+/*general stuff*/
+
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 600 15px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-text-size-adjust: 100%;
+}
+
+.mainContentPadding {
+    padding: 0 10%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/*.main-content-min-height {*/
+/*    min-height: 100vh;*/
+/*}*/
+
+.text-letter-spacing {
+    letter-spacing: 0.05em;
+}
+
+.feature-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.right {
+    margin-left: auto;
+}
+
+video {
+
+}
+
+/*------------------*/
+/*navigation styling*/
+
+ul {
+    list-style: none;
+}
+
+.navigation {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: var(--color-text-inactive) !important;
+    display: flex;
+    align-content: space-between;
+}
+
+.nav-left {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-right {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.current {
+    color: var(--color-text);
+}
+
+.navigation-slim {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: var(--color-text-inactive) !important;
+    display: flex;
+    align-content: space-between;
+    opacity: 0.4;
+    transition: 400ms;
+}
+
+.navigation-slim:hover {
+    opacity: 1;
+}
+
+.nav-right-slim {
+    margin-left: auto;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: right;
+}
+
+.nav-right-slim li {
+    margin-left: 20px;
+}
+
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 400ms;
+}
+
+p a {
+    /*color: #ff770e;*/
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 400ms;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+sup {
+    line-height: 0;
+    width: 20px;
+}
+
+
+.dividerHeading p {
+    margin-bottom: 0;
+}
+
+main {
+    padding: 0 25% 0 25%;
+}
+
+/* Feature styling*/
+
+.feature {
+    height: 550px;
+    display: grid;
+    grid-template-rows: 6% 88% 6%;
+
+}
+
+.feature-image-position {
+    height: 100%;
+    max-width: 1200px;
+    grid-area: 2/2/3/2;
+    display: flex;
+    align-items: center;
+
+}
+
+.feature-description {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.feature-description-item {
+    margin-bottom: 20px;
+}
+
+.feature-description-heading {
+    font-size: 25px;
+    margin-bottom: 14px;
+}
+
+.feature-image-link {
+    max-width: 65%;
+    margin-right: 32px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+    transition: 400ms;
+}
+
+.image:hover {
+    transform: scale(1.01);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.16);
+}
+
+.feature-image-background {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    z-index: -99;
+    object-fit: cover;
+}
+
+.metadata {
+    font-size: 13px;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+}
+
+.course {
+    padding-right: 25px;
+}
+
+.semester_date {
+    color: var(--color-text-inactive);
+}
+
+.main-content-width {
+}
+
+.main-section {
+    margin: 140px 0 140px 0;
+}
+
+.main-section-all {
+    margin: 40px 0 100px 0;
+}
+
+.dividerHeading {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-text-inactive);
+    padding: 6px 0 6px 0;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-content: space-between;
+}
+
+.dividerHeading p {
+    font-size: inherit;
+    color: inherit;
+}
+
+
+
+/*------------*/
+/*Project List*/
+
+.project-grid-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 32px;
+    grid-row-gap: 56px;
+    grid-auto-flow: dense;
+}
+
+.project-grid-item {
+    width: auto;
+    height: 260px;
+}
+
+.project-grid-item:nth-child(2n-1) {
+    grid-column: 1 /span 1;
+}
+
+.project-grid-item:nth-child(2n) {
+    grid-column: 2 / span 2;
+}
+
+
+.project-grid-item-old:nth-child(3n-2) {
+    grid-column: 1 / span 1;
+}
+
+.project-grid-item-old:nth-child(3n-1) {
+    grid-column: 2 / span 1;
+}
+
+.project-grid-item-old:nth-child(3n) {
+    grid-column: 3 / span 1;
+}
+
+.project-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description-old {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 200px;
+}
+
+.project-description-item {
+    margin-bottom: 8px;
+}
+
+.project-metadata {
+    font-size: 12px;
+}
+
+.project-description-heading {
+    font-size: 25px;
+}
+
+.project-description-text {
+    /*font-size: 14px;*/
+}
+
+.project-course {
+    padding-right: 10px;
+}
+
+
+
+/*------------------------*/
+/*Show All Projects Button*/
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.button-text {
+    font-size: 12px;
+    color: var(--color-text-inactive);
+    text-transform: uppercase;
+}
+
+.button-projects-all {
+    padding: 14px 32px 10px 32px;
+    border-radius: 3px;
+    border: black solid 2px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+    font: 600 15px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: white;
+}
+
+
+
+/*--------*/
+/*Articles*/
+
+.article-all-heading {
+    font-family: "PT Serif", "Georgia", -apple-system, "Segoe UI", BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.article-section {
+    /*display: flex;*/
+    /*justify-content: left;*/
+}
+
+.articles-divider {
+    /*font-family: "Times New Roman", serif;*/
+}
+
+.article-item {
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.article-heading {
+    font: bold 25px "PT Serif", "Georgia", -apple-system, "Segoe UI", BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--color-text);
+}
+
+
+/*------------*/
+/*Vita Styling*/
+
+#vita {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+}
+
+.vita-picture-container {
+    grid-column: 1 / span 2;
+}
+
+.vita-picture {
+    width: 100%;
+    height: unset;
+    max-height: 100%;
+}
+
+.vita-timeline {
+    grid-column: 3 / span 1;
+}
+
+.vita-motivation {
+    grid-column: 4 / span 1;
+}
+
+#vita h2 {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+#vita p {
+    margin-bottom: 24px;
+}
+
+.contact-text {
+    font-size: 25px;
+    font-style: normal;
+    max-width: none;
+}
+
+footer {
+    margin-top: 150px;
+}
+
+.footer-link {
+    color: var(--color-text);
+}
+
+
+
+/*Responsive styling*/
+/*TODO: Responsive*/
+
+@media screen and (max-width: 1200px){
+    body {
+        font: 600 13px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: var(--color-text);
+        background-color: var(--color-background);
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .mainContentPadding {
+        padding: 0 3%;
+    }
+}
+
+@media screen and (max-width: 500px){
+
+    body {
+        font: 600 16px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: var(--color-text);
+        background-color: var(--color-background);
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .feature-container {
+        height: 100vh;
+    }
+
+    /*------------------*/
+    /*navigation styling*/
+
+    .navigation {
+        padding-top: 20px;
+        display: flex;
+        align-content: space-between;
+    }
+
+    .nav-left {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .nav-right {
+        font-size: 13px;
+    }
+
+    .navigation-slim {
+        padding-top: 20px;
+        display: flex;
+        align-content: space-between;
+    }
+
+    .nav-right-slim {
+        margin-left: auto;
+        font-size: 13px;
+        text-transform: uppercase;
+        display: block;
+        justify-content: right;    }
+
+    .nav-right-slim li {
+        margin-left: 20px;
+    }
+
+
+    /* Feature styling*/
+
+    .feature {
+        height: unset;
+        display: unset;
+        flex-direction: unset;
+    }
+
+    .feature-image-position {
+        height: unset;
+        display: block;
+        grid-area: unset;
+        align-items: unset;
+    }
+
+    br {
+        display: none;
+    }
+
+    .feature-description {
+        display: flex;
+        margin: 20px;
+    }
+
+    .feature-description-item {
+        margin-bottom: 10px;
+    }
+
+    .feature-description-heading {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .feature-image-link {
+        max-width: unset;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .course {
+        padding-right: 10px;
+    }
+
+    .metadata {
+        margin-bottom: 0;
+    }
+
+
+    /*------------*/
+    /*Project List*/
+
+    .project-grid-rows {
+        display: block;
+    }
+
+    .project-grid-item {
+        width: auto;
+        height: auto;
+    }
+
+    .project-grid-item img {
+        height: 120px;
+        margin-bottom: 40px;
+    }
+
+    .project-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 20px 10px 20px;
+    }
+
+    .project-metadata {
+        display: none;
+    }
+
+    .project-description-heading {
+        font-size: 25px;
+        margin: 0;
+    }
+
+    .project-description-text {
+        /*font-size: 14px;*/
+        display: none;
+    }
+
+    .project-course {
+        padding-right: 10px;
+    }
+
+    .button-container {
+        margin-top: 0;
+    }
+
+
+    .article-item {
+        margin: 0 20px 40px 20px;
+    }
+
+    .article-date {
+        margin-top: 2px;
+    }
+
+
+    /*------------------*/
+    /*vita styling*/
+
+    #vita {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+    }
+
+    .vita-picture-container {
+        grid-column: 1 / span 4;
+    }
+
+    .vita-picture {
+        width: 100%;
+    }
+
+    .vita-timeline, .vita-motivation {
+        grid-column: 1 / span 4;
+        margin: 0 20px;
+    }
+
+}

@@ -1,0 +1,275 @@
+body {
+    color: var(--color-background);
+}
+
+/*.mainContentPadding {*/
+/*padding-top: 25px;*/
+/*}*/
+
+.project-heading {
+    color: var(--color-main);
+    font-size: 45px;
+}
+
+.figure-project {
+    display: grid;
+    grid-template-columns: 75% 22%;
+    grid-column-gap: 3%;
+}
+
+.project-media-figure {
+    padding: 32px 0 10px 0;
+}
+
+
+
+.project-media {
+    max-width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+.figcaption-project {
+    display: flex;
+    align-self: end;
+    color: var(--color-text);
+}
+
+/*used for headings in project docs*/
+h3 {
+    color: var(--color-main);
+    font-size: 25px;
+    margin: 46px 0 16px 0;
+}
+
+p {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 450px;
+    padding-bottom: 15px;
+}
+
+.use-case-container + p {
+    margin-top: 46px;
+}
+
+.project-media-noborder {
+    max-width: 100%;
+}
+
+.use-case-selector-group {
+    color: var(--color-text);
+    display: flex;
+    align-items: baseline;
+    margin: 46px 0 15px 0;
+}
+
+.use-case-selector {
+    font-size: 18px;
+    margin-right: 32px;
+    cursor: pointer;
+}
+
+.active {
+    font-size: 25px;
+    color: var(--color-main);
+}
+
+.use-case-figure {
+}
+
+.use-case-video {
+
+}
+
+.use-case-figcaption {
+
+}
+
+.nextproject-container {
+
+}
+
+.nextproject {
+    max-width: 450px;
+    margin: 0 0 20px 0;
+}
+
+.nextproject p {
+    color: var(--color-main);
+    margin: 0;
+    padding: 0;
+}
+
+.nextproject-description {
+    margin: auto 0 5px 0;
+}
+
+.nextproject-right {
+    text-align: right;
+}
+
+.nextproject-heading {
+    font-size: 15px;
+}
+
+.nextproject-title {
+    font-size: 22px;
+}
+
+.nextproject-img {
+    height: 80px;
+    width: 450px;
+}
+
+.dividerHeading {
+    margin: 50px 0 30px 0;
+    max-width: 450px;
+}
+
+.footnotes {
+    margin: 30px 0 15px 0;
+    padding: 50px 0 0 0;
+    color: var(--color-text-inactive);
+    max-width: 450px;
+    border-top: 1px solid var(--color-border);
+    list-style-type: decimal;
+}
+
+.footnotes p {
+    margin-bottom: 15px;
+    padding-bottom: 0;
+}
+
+.footnote a {
+    padding: 4px 4px 4px 2px;
+}
+
+
+@media screen and (max-width: 1200px){
+    body {
+        font: 600 13px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: var(--color-text);
+        background-color: var(--color-background);
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .mainContentPadding {
+        padding: 0 3%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    body {
+        font: 600 16px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: var(--color-text);
+        background-color: var(--color-background);
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .project-heading {
+        color: var(--color-main);
+        font-size: 45px;
+        margin-left: 20px;
+    }
+
+    .metadata {
+        margin-left: 20px;
+    }
+
+    .figure-project {
+        display: block;
+    }
+
+    .figcaption-project {
+        display: block;
+        margin: 0 20px;
+    }
+
+    /*used for headings in project docs*/
+    h3, p {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .use-case-container + p {
+        margin-top: 46px;
+    }
+
+    .use-case-selector-group {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin: 46px 20px 15px 20px;
+    }
+
+    .use-case-selector {
+        font-size: 18px;
+        margin-right: 32px;
+        cursor: pointer;
+    }
+
+    .active {
+        font-size: 25px;
+        color: var(--color-main);
+    }
+
+    .nextproject {
+        max-width: 450px;
+        margin: 0 0 20px 0;
+    }
+
+    .nextproject p {
+        color: var(--color-main);
+        margin: 0;
+        padding: 0;
+    }
+
+    .nextproject-description {
+        margin: auto 0 5px 0;
+    }
+
+    .nextproject-right {
+        text-align: right;
+    }
+
+    .nextproject-heading {
+        font-size: 15px;
+    }
+
+    .nextproject-title {
+        font-size: 22px;
+    }
+
+    .nextproject-img {
+        height: 80px;
+        width: -webkit-fill-available;
+        width: -moz-available;
+        width: fill-available;
+    }
+
+    .dividerHeading {
+        margin: 50px 0 30px 0;
+        max-width: 450px;
+    }
+
+    .footnotes {
+        margin: 30px 0 15px 0;
+        padding: 50px 0 0 0;
+        color: var(--color-text-inactive);
+        max-width: 450px;
+        border-top: 1px solid var(--color-border);
+        list-style-type: decimal;
+    }
+
+    .footnotes p {
+        margin-bottom: 15px;
+        padding-bottom: 0;
+    }
+
+    .footnote a {
+        padding: 4px 4px 4px 2px;
+    }
+}

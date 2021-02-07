@@ -1,0 +1,467 @@
+:root {
+    --color-text: #333333;
+    --color-text-inactive: #B2B2B2;
+    --color-background: white;
+    --color-link: dodgerblue;
+    --color-link-hover: black;
+    --color-border: #dddddd;
+}
+
+/*Dark mode colors*/
+@media(prefers-color-scheme: dark) {
+    :root {
+        --color-background: #111111;
+        --color-text: #eaeaea;
+        --color-text-inactive: #707070;
+        --color-link: dodgerblue;
+        --color-link-hover: white;
+        --color-border: #707070;
+    }
+}
+
+/*general stuff*/
+
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.mainContentPadding {
+    padding: 0 10%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+/*------------------*/
+/*General Typography*/
+
+body {
+    font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 400ms;
+}
+
+p a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 400ms;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 21px;
+}
+
+sup {
+    line-height: 0;
+}
+
+.text-letter-spacing {
+    letter-spacing: 0.05em;
+}
+
+/*End General Typography*/
+/*--------------*/
+
+.right {
+    margin-left: auto;
+}
+
+video {
+
+}
+
+
+
+/*------------------*/
+/*navigation styling*/
+
+ul {
+    list-style: none;
+}
+
+.navigation {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: var(--color-text-inactive) !important;
+    display: flex;
+    align-content: space-between;
+    line-height: 18px;
+}
+
+.nav-left {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-right {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.current {
+    color: var(--color-text);
+}
+
+.navigation-slim {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: var(--color-text-inactive) !important;
+    display: flex;
+    align-content: space-between;
+    opacity: 0.4;
+}
+
+.nav-right-slim {
+    margin-left: auto;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: right;
+}
+
+.nav-right-slim li {
+    margin-left: 20px;
+}
+
+.dividerHeading p {
+    margin-bottom: 0;
+}
+
+main {
+    padding: 0 25% 0 25%;
+}
+
+
+
+/*----------------*/
+/* Feature styling*/
+
+.feature-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature {
+    height: 550px;
+    display: grid;
+    grid-template-rows: 6% 88% 6%;
+
+}
+
+.feature-image-position {
+    height: 100%;
+    max-width: 1200px;
+    grid-area: 2/2/3/2;
+    display: flex;
+    align-items: center;
+
+}
+
+.feature-description {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.feature-description-item {
+    margin-bottom: 12px;
+}
+
+.feature-description-heading {
+    font-size: 25px;
+    margin-bottom: 14px;
+}
+
+.feature-image-link {
+    max-width: 65%;
+    margin-right: 32px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+    transition: 400ms;
+}
+
+.image:hover {
+    transform: scale(1.01);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.16);
+}
+
+.feature-image-background {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    z-index: -99;
+    object-fit: cover;
+}
+
+.metadata {
+    font-size: 13px;
+    text-transform: uppercase;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+.course {
+    padding-right: 25px;
+}
+
+.semester_date {
+    color: var(--color-text-inactive);
+}
+
+.main-content-width {
+}
+
+.main-section {
+    margin: 80px 0 100px 0;
+}
+
+.main-section-all {
+    margin: 40px 0 100px 0;
+}
+
+.dividerHeading {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--color-text-inactive);
+    padding: 6px 0 6px 0;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-content: space-between;
+}
+
+.dividerHeading p {
+    font-size: inherit;
+    color: inherit;
+}
+
+
+
+/*------------*/
+/*Project List*/
+
+.project-grid-rows {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 32px;
+    grid-row-gap: 56px;
+    grid-auto-flow: dense;
+}
+
+.project-grid-item {
+    width: auto;
+    height: 260px;
+}
+
+.project-grid-item:nth-child(2n-1) {
+    grid-column: 1 /span 1;
+}
+
+.project-grid-item:nth-child(2n) {
+    grid-column: 2 / span 2;
+}
+
+.project-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-description-item {
+    margin-bottom: 8px;
+}
+
+.project-metadata {
+    font-size: 12px;
+}
+
+.project-description-heading {
+    font-size: 25px;
+}
+
+.project-description-text {
+    /*font-size: 14px;*/
+}
+
+.project-course {
+    padding-right: 10px;
+}
+
+
+
+/*------------------------*/
+/*Show All Projects Button*/
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.button-text {
+    font-size: 12px;
+    color: var(--color-text-inactive);
+    text-transform: uppercase;
+}
+
+.button-projects-all {
+    padding: 14px 32px 10px 32px;
+    border-radius: 3px;
+    border: black solid 2px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+    font: 600 15px SofiaPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: white;
+}
+
+
+
+/*--------*/
+/*Articles*/
+
+.article-all-heading {
+    font-family: "PT Serif", "Georgia", -apple-system, "Segoe UI", BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.article-section {
+}
+
+/*Joke*/
+.articles-divider {
+    /*font-family: "Times New Roman", serif;*/
+}
+
+.article-item {
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.article-heading {
+    font: bold 25px "PT Serif", "Georgia", -apple-system, "Segoe UI", BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--color-text);
+}
+
+
+
+/*------------*/
+/*Vita Styling*/
+
+#vita {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 32px;
+}
+
+.vita-picture-container {
+    grid-column: 1 / span 2;
+}
+
+.vita-picture {
+    width: 100%;
+    height: unset;
+    max-height: 100%;
+}
+
+.vita-timeline {
+    grid-column: 3 / span 1;
+}
+
+.vita-motivation {
+    grid-column: 4 / span 1;
+}
+
+#vita h2 {
+    margin-bottom: 6px;
+}
+
+#vita p {
+    margin-bottom: 20px;
+}
+
+.contact-text {
+    font-size: 25px;
+    font-style: normal;
+    max-width: none;
+}
+
+footer {
+
+    margin-top: 150px;
+}
+
+.footer-link {
+    color: var(--color-text);
+}
+
+
+
+/*Responsive styling*/
+/*TODO: Responsive*/
+
+@media screen and (max-width: 1200px){
+    body {
+        font-size: 13px;
+    }
+
+    .mainContentPadding {
+        padding: 0 3%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #vita {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+    }
+
+    .vita-picture-container {
+        grid-column: 1 / span 4;
+    }
+
+    .vita-picture {
+        width: 100%;
+    }
+
+    .vita-timeline {
+        grid-column: 1 / span 2;
+    }
+
+    .vita-motivation {
+        grid-column: 3 / span 2;
+    }
+}

@@ -1,0 +1,161 @@
+:root {
+    --color-background-article: #f2f2f2;
+    --color-background-article-lite: rgb(238, 238, 238);
+    --width-outer: 850px;
+    --width-article: 700px;
+}
+
+.article-background {
+    background-color: var(--color-background-article);
+}
+
+.navigation-slim {
+    /*opacity: 1;*/
+    max-width: var(--width-article);
+    margin: 0 auto 0 auto;
+}
+
+.main-content-padding-article {
+    margin: 0 auto;
+    max-width: var(--width-article);
+    background-color: var(--color-background-article);
+
+}
+
+.article-container {
+    max-width: var(--width-outer);
+    padding: 0;
+    box-shadow: 0 6px 18px #a4a4a4;
+    background-color: var(--color-background-article-lite);
+}
+
+.article-title {
+    font: 600 32px "PT Serif", "Georgia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 20px auto 40px auto;
+    max-width: var(--width-article);
+    color: var(--color-text);
+
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 20px auto 0.5em auto;
+    max-width: var(--width-article);
+}
+
+.article {
+    font: 500 18px "Iowan Old Style", "Georgia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5em;
+    padding: 40px 0;
+}
+
+.article p {
+    max-width: var(--width-article);
+    margin: 20px auto;
+}
+
+h1, h2, h3, h4, h5 + p {
+     margin: 0 auto;
+ }
+
+.figure-article {
+    margin-top: 40px;
+}
+
+.figcaption-article {
+    font: 500 15px "Sofia Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5em;
+    text-align: center;
+    margin: 10px auto 40px auto;
+    color: var(--color-text);
+}
+
+.article-image {
+    width: var(--width-outer);
+}
+
+.footer-container {
+}
+
+.article-item {
+    opacity: 0.4;
+    transition: 400ms;
+}
+
+.article-item:hover {
+    opacity: 1;
+}
+
+.article-heading-other {
+    font: 600 15px "PT Serif", "Georgia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: var(--color-text);
+    opacity: 0.4;
+    margin-bottom: 8px;
+}
+
+.footer {
+    opacity: 0.4;
+    transition: 400ms;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --color-background-article: #111111;
+        --color-background-article-lite: #1f1f1f;
+        --color-text: #bfbfbf;
+    }
+
+    .article-container {
+        box-shadow: 0 6px 18px #060606;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        --width-outer: auto;
+        --width-article: auto;
+        padding: 0 3%;
+        margin: 0 auto;
+    }
+
+    .navigation-slim {
+        margin: 0 0 0 0;
+    }
+
+    .article-title {
+        font: 600 25px "PT Serif", "Georgia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        margin: 0px auto 20px auto;
+        max-width: var(--width-article);
+        color: var(--color-text);
+
+    }
+
+    h1, h2, h3, h4, h5 {
+        margin: 20px auto 0.5em auto;
+        max-width: var(--width-article);
+    }
+
+    .article {
+        font: 500 18px "Iowan Old Style", "Georgia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 1.5em;
+        padding: 40px 20px;    }
+
+    .article p {
+        margin: 20px auto 0 auto;
+    }
+
+    .figure-article {
+        margin-top: 40px;
+    }
+
+    .figcaption-article {
+        font: 500 15px "Sofia Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        line-height: 1.5em;
+        text-align: center;
+        margin: 10px auto 40px auto;
+        color: var(--color-text);
+    }
+
+    .article-heading-other {
+        margin-left: 20px;
+    }
+}

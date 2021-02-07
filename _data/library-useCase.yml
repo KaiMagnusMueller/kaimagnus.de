@@ -1,0 +1,21 @@
+- name: Search
+  file: library-useCase-1.mp4
+  figcaption: Users can search the catalogue at any point. When a list of relevant results appears the most relevant matches are highlighted. By clicking on the magnifier icon or hitting the enter key the user can get the full list of results.
+- name: Results
+  file: library-useCase-2.mp4
+  figcaption: The list of results can be filtered. The user can select a branch of the library and see which elements are available there. When the card view is active, more results fit on the screen but a part of the information is hidden and appears on hover.
+- name: Filter
+  file: library-useCase-3.mp4
+  figcaption: The list of results can be filtered. The user can select a branch of the library and see which elements are available there. When the card view is active, more results fit on the screen but a part of the information is hidden and appears on hover.
+- name: Bookmarks
+  file: library-useCase-4.mp4
+  figcaption: When an element is bookmarked it is added to the bookmarked list. This list is available from anywhere on the catalogue. And the user can jump directly to the detail view of an element. Note how a grey dot appears in the top right corner when an element is added.
+- name: Detail Page
+  file: library-useCase-5.mp4
+  figcaption: The detail page lists more information about a book for example and displays its availability in any branch. To the right is a list of suggestions of the same or other relevant topics. The goal is to give users more ways to find information other than simply offering a search.
+- name: Reserve
+  file: library-useCase-6.mp4
+  figcaption: Because money is involved in the process of reserving a medium a popup appears when the button is clicked to guide the user through the process. In three steps the user logs in, selects their desired branch and confirms the reservation. A success animation plays after it is confirmed.
+- name: Main Page
+  file: library-useCase-7.mp4
+  figcaption: Our redesign also introduces a main page. It consists of curated lists that are horizontally scrollable. They showcase the most borrowed media, recommendations or bestseller lists from other publications.
