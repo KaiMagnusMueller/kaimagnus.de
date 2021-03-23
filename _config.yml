@@ -40,6 +40,10 @@ plugins:
 exclude:
   - .idea
   - .git
+#  - assets/docs/
+#  - _site/
+#make sure to enable docs processing before upload (possible on mac only for some reason)
+
 
 compress_html:
   clippings: all
