@@ -1,0 +1,32 @@
+body {
+  margin: 0 80px 0 80px;
+
+}
+
+.main-content {
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 60px;
+
+}
+
+@mixin link-transition-right {
+
+}
+
+$link-translate-right: translateX(12px);
+
+img {
+  width: 100%;
+}
+
+h2 {
+  @include text-h2;
+}
+
+p {
+  @include text-standard-m;
+}

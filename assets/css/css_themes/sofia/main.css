@@ -149,7 +149,7 @@ sup {
 }
 
 
-.dividerHeading p {
+.divider-header p {
     margin-bottom: 0;
 }
 
@@ -252,7 +252,7 @@ h2 {
     margin: 40px 0 100px 0;
 }
 
-.dividerHeading {
+.divider-header {
     font-size: 12px;
     text-transform: uppercase;
     color: var(--color-text-inactive);
@@ -262,7 +262,7 @@ h2 {
     align-content: space-between;
 }
 
-.dividerHeading p {
+.divider-header p {
     font-size: inherit;
     color: inherit;
 }

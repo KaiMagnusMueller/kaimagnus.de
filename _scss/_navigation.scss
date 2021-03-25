@@ -1,0 +1,27 @@
+.nav {
+  grid-column: span 4;
+  margin: 36px 0;
+
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+
+  color: $white-50;
+
+  .current {
+    color: $white-90;
+  }
+
+  li:first-of-type {
+    margin-right: auto;
+    font-size: 16px;
+  }
+
+  li:not(:first-of-type) {
+    margin-left: 18px;
+    @include text-annotation-xs;
+  }
+
+
+}

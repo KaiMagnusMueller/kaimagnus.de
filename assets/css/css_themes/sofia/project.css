@@ -123,7 +123,7 @@ p {
     width: 450px;
 }
 
-.dividerHeading {
+.divider-header {
     margin: 50px 0 30px 0;
     max-width: 450px;
 }
@@ -250,7 +250,7 @@ p {
         width: fill-available;
     }
 
-    .dividerHeading {
+    .divider-header {
         margin: 50px 0 30px 0;
         max-width: 450px;
     }

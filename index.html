@@ -3,75 +3,232 @@ layout: default
 title: Home
 description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at the HfG Schwäbisch Gmünd.
 ---
-<div class="mainContentPadding feature-container">
-    {% include navigation.html slim=false %}
-    {% for project in site.tags.featured %}
-<!--    <img class="feature-image-background" src="assets/img/{{ project.prefix }}-background.jpg">-->
-    <div class="feature">
-        <div class="feature-image-position">
-            <a class="feature-image-link" href="{{ project.url }}">
-                <img class="image" src="assets/img/{{ project.prefix }}-header.jpg" alt="{{ include.alt }}"/>
+{% include navigation.html %}
+
+
+<header id="hero" class="grid-4">
+    <div class="personal-intro">
+        <h1>Hi, I’m Kai Magnus.</h1>
+        <p>A Stuttgart, Germany based interaction designer working on human centered experiences and products, that help
+            us in daily life and productivity.</p>
+        <p>Let me show you what I've been working on.</p>
+    </div>
+</header>
+
+<section id="project-waterfall-wrapper" class="grid-4">
+    {% for project in site.categories.projects limit: 8 %}
+    <div class="project-waterfall-item">
+        <div class="tilt-helper" data-tilt data-tilt-max="3">
+            {% if project.annotation%}
+            <span class="project-item-annotation">{{ project.annotation }}</span>
+            {% endif %}
+
+            <a href="{{ project.url }}">
+                <div class="project-item-main" style="background-color: {{ project.color_main }};">
+                    <div class="aspect-wrapper-1-1">
+                        <picture>
+                            <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
+                        </picture>
+                    </div>
+                    <div class="aspect-wrapper-1-1">
+                        <div class="project-item-desc">
+                            <h2 class="">{{ project.title }}</h2>
+                            <div class="project-item-metadata">
+                                <p class="project-course">{{ project.course }}</p>
+                                <p class="semester_date">{{ project.semester_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </a>
-            <div class="feature-description">
-                <h2 class="feature-description-heading feature-description-item">{{ project.title }}</h2>
-                <p class="feature-description-item">{{ project.description }}</p>
-                <p class="metadata">
-                    <span class="course">{{ project.course }}</span>
-                    <br>
-                    <span class="semester_date">{{ project.semester_date }}</span>
-                </p>
-            </div>
         </div>
+        {% if forloop.index == 2 %}
+        <a href="index.html" class="button-link">
+            <p>random project</p>
+        </a>
+        {% endif %}
+
+        {% if forloop.index == 8 %}
+        <a href="projects.html" class="button-link">
+            <p>Show 1 more</p>
+        </a>
+        {% endif %}
     </div>
     {% endfor %}
+</section>
 
-    <div class="dividerHeading">
-        <p class="left">Recent Projects</p>
-        <a class="right" href="{{ site.baseurl }}{% link projects.html %}">All</a>
+<section id="featured-projects" class="">
+
+    <div class="featured-project grid-4">
+        {% for project in site.categories.projects %}
+        {% if project.prefix == "destinations" %}
+        <div class="featured-left">
+            <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
+                 data-tilt-max="3">
+                <a id="featured-{{project.prefix}}" href="{{ project.url }}">
+                    <div class="aspect-wrapper-1-1">
+                        <div class="project-item-desc">
+                            <h2 class="">{{ project.title }}</h2>
+                            <div class="project-item-metadata">
+                                <p class="project-course">{{ project.course }}</p>
+                                <p class="semester_date">{{ project.semester_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <p class="featured-desc">{{ project.description }}</p>
+        </div>
+        <div class="featured-right">
+            <div class="featured-image">
+                <picture><img src="assets/img/{{ project.prefix }}-header.jpg" alt=""></picture>
+            </div>
+            <div class="extended-text column column-3">
+                {% capture my_include %}{% include destinations-extended-text.md %}{% endcapture %}
+                {{ my_include | markdownify }}
+            </div>
+            <div class="gohfg-text column column-3">
+                {% capture my_include %}{% include gohfg-text.md %}{% endcapture %}
+                {{ my_include | markdownify }}
+                <a href="index.html" class="button-link button-highlight">
+                    <p>Go to the gohfg<br> project page</p>
+                </a>
+            </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
     </div>
+
+    <div class="featured-project grid-4">
+
+        {% for project in site.categories.projects %}
+        {% if project.prefix == "halo" %}
+        <div class="featured-left">
+            <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
+                 data-tilt-max="3">
+                <a id="featured-{{project.prefix}}" href="{{ project.url }}">
+                    <div class="aspect-wrapper-1-1">
+                        <div class="project-item-desc">
+                            <h2 class="">{{ project.title }}</h2>
+                            <div class="project-item-metadata">
+                                <p class="project-course">{{ project.course }}</p>
+                                <p class="semester_date">{{ project.semester_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <p class="featured-desc-s">{{ project.description }}</p>
+        </div>
+        <div class="featured-right">
+            <div class="featured-image">
+                <picture><img src="assets/img/{{ project.prefix }}-header.jpg" alt=""></picture>
+            </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+
+<!--    <div class="project-grid-rows">-->
+<!--        {% for project in site.categories.projects limit: 5 %}-->
+<!--        {% unless project.tags contains "featured" %}-->
+<!--        <div class="project-description project-grid-item">-->
+<!--            <a href="{{ project.url }}">-->
+<!--                <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>-->
+<!--            </a>-->
+<!--            <p class="project-description-item project-description-text">{{ project.description }}</p>-->
+<!--            <p class="metadata project-metadata">-->
+<!--                <span class="project-course">{{ project.course }}</span>-->
+<!--                <span class="semester_date">{{ project.semester_date }}</span>-->
+<!--            </p>-->
+<!--        </div>-->
+
+<!--        <a class="project-grid-item" href="{{ project.url }}">-->
+<!--            <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>-->
+<!--        </a>-->
+<!--        {% endunless %}-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+
+<!--    {% for project in site.tags.featured %}-->
+<!--&lt;!&ndash;    <img class="feature-image-background" src="assets/img/{{ project.prefix }}-background.jpg">&ndash;&gt;-->
+<!--    <div class="feature">-->
+<!--        <div class="feature-image-position">-->
+<!--            <a class="feature-image-link" href="{{ project.url }}">-->
+<!--                <img class="image" src="assets/img/{{ project.prefix }}-header.jpg" alt="{{ include.alt }}"/>-->
+<!--            </a>-->
+<!--            <div class="feature-description">-->
+<!--                <h2 class="feature-description-heading feature-description-item">{{ project.title }}</h2>-->
+<!--                <p class="feature-description-item">{{ project.description }}</p>-->
+<!--                <p class="metadata">-->
+<!--                    <span class="course">{{ project.course }}</span>-->
+<!--                    <br>-->
+<!--                    <span class="semester_date">{{ project.semester_date }}</span>-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+
+<!--    <div class="dividerHeading">-->
+<!--        <p class="left">Recent Projects</p>-->
+<!--        <a class="right" href="{{ site.baseurl }}{% link projects.html %}">All</a>-->
+<!--    </div>-->
 </div>
 
 
-<div class="mainContentPadding">
+<!--<div class="mainContentPadding">-->
 
-    <div class="main-section">
-        <div class="project-grid-rows">
-            {% for project in site.categories.projects limit: 5 %}
-            {% unless project.tags contains "featured" %}
-            <div class="project-description project-grid-item">
-                <a href="{{ project.url }}">
-                    <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>
-                </a>
-                <p class="project-description-item project-description-text">{{ project.description }}</p>
-                <p class="metadata project-metadata">
-                    <span class="project-course">{{ project.course }}</span>
-                    <span class="semester_date">{{ project.semester_date }}</span>
-                </p>
-            </div>
+<!--    <div class="main-section">-->
+<!--        <div class="project-grid-rows">-->
+<!--            {% for project in site.categories.projects limit: 5 %}-->
+<!--            {% unless project.tags contains "featured" %}-->
+<!--            <div class="project-description project-grid-item">-->
+<!--                <a href="{{ project.url }}">-->
+<!--                    <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>-->
+<!--                </a>-->
+<!--                <p class="project-description-item project-description-text">{{ project.description }}</p>-->
+<!--                <p class="metadata project-metadata">-->
+<!--                    <span class="project-course">{{ project.course }}</span>-->
+<!--                    <span class="semester_date">{{ project.semester_date }}</span>-->
+<!--                </p>-->
+<!--            </div>-->
 
-            <a class="project-grid-item" href="{{ project.url }}">
-                <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
-            </a>
-            {% endunless %}
-            {% endfor %}
-        </div>
+<!--            <a class="project-grid-item" href="{{ project.url }}">-->
+<!--                <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>-->
+<!--            </a>-->
+<!--            {% endunless %}-->
+<!--            {% endfor %}-->
+<!--        </div>-->
 
-        <div class="button-container">
-            <a class="" href="/projects/"><p class="button-text">
-                All Projects</p></a>
-        </div>
-    </div>
+<!--        <div class="button-container">-->
+<!--            <a class="" href="/projects/"><p class="button-text">-->
+<!--                All Projects</p></a>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<section id="vita" class="grid-4">
 
     {% if site.articles == true %}
-    <div class="dividerHeading articles-divider">
+    <div class="divider-header articles-divider">
         <p class="left">Articles</p>
-        <a class="right" href="{{ site.baseurl }}{% link articles.html %}">All</a>
+        <a class="right" href="{{ site.baseurl }}{% link articles.html %}">
+            <p>All</p>
+        </a>
+    </div>
+
+    <div class="divider-header vita-divider">
+        <p class="left">Vita</p>
     </div>
 
     <div class="main-section article-section">
         {% for article in site.categories.articles limit: 3 %}
 
-        <div class="article-item">
+        <div class="article-list-item">
             <a href="{{ article.url }}">
                 <h2 class="article-heading">{{ article.title }}</h2>
                 <p class="article-date">{{ article.date | date: "%-d %B %Y"}}</p>
@@ -81,23 +238,26 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% endfor %}
     </div>
     {% endif %}
-
-
-    <div class="dividerHeading">
-        <p class="left">Vita</p>
+    <div class="vita-picture-container aspect-wrapper-1-1">
+        <img class="vita-picture" src="/assets/img/kaimagnus-portrait.jpg">
     </div>
-
-    <div class="main-section">
-        {% include vita.html %}
+    <div class="vita-timeline">
+        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
+        {{ my_include | markdownify }}
     </div>
-
-    <div class="dividerHeading">
-        <p class="left">Contact</p>
+    <div class="vita-motivation">
+        {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
+        {{ my_include | markdownify }}
     </div>
+</section>
 
-    <div class="main-section">
-        {% include contact.html %}
-    </div>
 
-    {% include footer.html %}
+<div class="divider-header">
+    <p class="left">Contact</p>
 </div>
+
+<div class="main-section">
+    {% include contact.html %}
+</div>
+
+{% include footer.html %}

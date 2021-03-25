@@ -26,7 +26,6 @@ twitter_username: "@_kaimagnus"
 github_username:
 
 # Open Portfolio Template Settings
-css_theme: sofia
 articles: true
 
 # Build settings
@@ -50,3 +49,6 @@ compress_html:
   comments: all
   endings: all
   blanklines: true
+
+sass:
+  sass_dir: ./_scss

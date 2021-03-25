@@ -1,0 +1,90 @@
+.featured-left {
+  grid-column: 1 /2;
+}
+
+.project-description {
+  @include text-bold-l;
+  margin-bottom: 60px;
+}
+
+//article {
+//  p:nth-child(2) {
+//    position: relative;
+//    margin-left: 16px;
+//
+//    &:before {
+//      content: "";
+//      height: 223px;
+//      background-color: white;
+//      width: 4px;
+//      position: absolute;
+//      top: 5px;
+//      left: 0;
+//    }
+//  }
+//}
+
+.project-header:first-of-type {
+  margin-top: 200px;
+}
+
+h3 {
+  @include text-h2;
+  margin: 38px 0 10px 0;
+}
+
+.project {
+  p, h1, h2, h3, h4 {
+    grid-column: 2 / -1;
+    width: 52%;
+  }
+
+
+}
+
+figcaption {
+  @include text-standard-m
+}
+
+.project-media-figure {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+
+  margin: 100px 0 70px 0;
+
+  img {
+    grid-column: 2 / -1;
+  }
+
+  figcaption {
+    grid-column: 1 / 2;
+    display: flex;
+    margin-top: auto;
+  }
+}
+
+
+.use-case-container {
+  grid-column: 1 / -1;
+
+  .use-case-selector-group {
+    margin-top: 100px;
+  }
+
+  figure {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    figcaption {
+      grid-column: 1 / 2;
+    }
+
+    video {
+      grid-column: 2 /-1;
+    }
+  }
+
+}

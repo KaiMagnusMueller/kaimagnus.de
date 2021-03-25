@@ -1,0 +1,317 @@
+.personal-intro {
+  grid-column: 2 / span 2;
+  margin-top: 150px;
+  margin-bottom: 200px;
+
+  h1 {
+    @include text-h1;
+    color: $bg-color;
+    background-color: white;
+    padding: 7px 8px 2px 8px;
+    line-height: 1em;
+    width: fit-content;
+  }
+
+  p {
+    @include text-bold-l;
+  }
+}
+
+.project-waterfall-item {
+  grid-column: span 1;
+
+  &:first-of-type {
+    grid-column-start: 1;
+  }
+
+  //&:nth-of-type(6) {
+  //  grid-column-start: 1;
+  //}
+
+  picture {
+    display: block;
+  }
+
+  .project-item-annotation {
+    margin-left: 17px;
+    margin-bottom: 13px;
+    display: block;
+    @include text-annotation-s;
+  }
+
+  .project-item-annotation::before {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 6px;
+    margin-right: 7px;
+    content: ' ';
+    background-image: url("/assets/src/pointer.svg");
+    width: 20px;
+    height: 20px;
+  }
+
+  &:nth-of-type(1) {
+    margin-top: 86px;
+  }
+
+  &:nth-of-type(3) {
+    margin-top: 190px;
+  }
+
+  &:nth-of-type(4) {
+    margin-top: 64px;
+  }
+
+  &:nth-of-type(5) {
+    margin-top: 118px;
+  }
+
+  &:nth-of-type(6) {
+    margin-top: 64px;
+  }
+
+  &:nth-of-type(7) {
+    margin-top: 180px;
+  }
+
+  &:nth-of-type(8) {
+    margin-top: 86px;
+  }
+
+  .button-link {
+    grid-column: 2/ span 1;
+    margin-top: 57px;
+    height: 98px;
+
+  }
+}
+
+.project-item-main > *, .project-item-main:before {
+  grid-area: 1/1;
+}
+
+.button-link {
+  border: 4px solid $white-30;
+  display: flex;
+  align-items: flex-end;
+
+  p {
+    @include text-annotation-l;
+    color: $white-30;
+    margin: 0 auto 14px 18px;
+    line-height: 1.3em;
+    transition: transform .5s;
+  }
+
+  &:hover p {
+    transform: $link-translate-right;
+  }
+
+}
+
+.tilt-helper {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.project-item-desc {
+  box-sizing: border-box;
+  padding: 20px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    transform: translateZ(20px)
+  }
+
+  .project-item-metadata p {
+    margin: 0 0 0 0;
+    @include text-annotation-l;
+    font-size: 16px;
+    opacity: .7;
+    transform: translateZ(20px)
+  }
+
+}
+
+.aspect-wrapper-1-1 {
+  display: grid;
+
+  img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+}
+
+.aspect-wrapper-1-1:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E");
+  line-height: 0;
+}
+
+.aspect-wrapper-1-1 > *, .aspect-wrapper-1-1:before {
+  grid-area: 1/1;
+}
+
+#featured-projects {
+  margin-top: 400px;
+
+  .featured-project{
+    margin-bottom: 300px;
+  }
+
+  .featured-title {
+    height: fit-content;
+  }
+
+
+
+  .featured-desc {
+    @include text-bold-l;
+    margin-top: 26px;
+  }
+
+  .featured-desc-s {
+    margin-top: 26px;
+  }
+
+}
+
+.featured-right {
+  grid-column: 2 / -1;
+
+  picture {
+    display: block;
+  }
+
+
+}
+
+.extended-text {
+  position: relative;
+  margin-top: 48px;
+
+  p {
+    @include text-standard-m;
+
+    &:first-of-type {
+      margin-left: 16px;
+    }
+  }
+
+  &:before {
+    content: "";
+    height: 50%;
+    background-color: white;
+    width: 4px;
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+}
+
+.column {
+  column-gap: 30px;
+
+  & > p {
+    break-inside: avoid;
+    margin-top: 0;
+
+  }
+
+  h2 {
+    column-span: all;
+    margin-bottom: 17px;
+  }
+
+  .button-link {
+    height: 125px;
+    box-sizing: border-box;
+  }
+}
+
+.column-3 {
+  column-count: 3;
+}
+
+.column-2 {
+  column-count: 2;
+  column-gap: 30px;
+}
+
+.gohfg-text {
+  margin-top: 90px;
+}
+
+.button-highlight {
+    border-color: $white-90;
+    p {
+      color: $white-90;
+    }
+}
+
+.divider-header {
+  border-bottom: 4px solid $white-90;
+}
+
+#vita {
+  margin-bottom: 130px;
+
+  .articles-divider {
+
+  }
+
+  .vita-divider {
+    grid-column: 2 / -1;
+  }
+
+}
+
+.divider-header {
+  display: flex;
+  align-content: space-between;
+  margin-bottom: 40px;
+
+  p {
+    @include text-annotation-xs;
+    margin: 0 0 6px 0;
+
+  }
+
+  :nth-child(2) {
+    margin-left: auto;
+  }
+}
+
+.article-list-item {
+  margin-bottom: 28px;
+
+  a {
+    color: $white-90;
+  }
+
+  .article-date {
+    @include text-bold-s
+  }
+
+}
+
+.vita-picture-container {
+  height: fit-content;
+}
+
+#contact {
+  margin-bottom: 260px;
+}
+
+.contact-text {
+  font-style: normal;
+}
+
+#vita, #contact {
+  p > a, h2 > a {
+    color: $link-color;
+  }
+}
