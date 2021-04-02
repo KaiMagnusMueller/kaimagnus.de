@@ -24,6 +24,7 @@ $(function () {
         const video = firstFigure.find(">:first-child").get(0).play()
 
     } catch (e) {
+        console.log(e)
         console.log("no use case")
     }
 

@@ -33,42 +33,48 @@ layout: posts
     {{ content }}
 </article>
 
+<section class="grid-4">
+    <a class="link-back" href="/index.html#projects">Back to Projects</a>
+</section>
 
 
-<div class="divider-header">
-    <p class="left"></p>
-</div>
-
-<div class="nextproject-container">
-
-    {% if page.next.url %}
-    {% if page.next.categories contains "projects" %}
-    <div class="nextproject">
-        <a href="{{page.next.url}}">
-            <div class="nextproject-description">
-                <p class="nextproject-heading">Next</p>
-                <p class="nextproject-title">{{page.next.title}}</p>
-            </div>
-            <img class="image nextproject-img" src="../assets/img/{{ page.next.prefix }}-start.jpg"/>
-        </a>
+<!--<section class="grid-4">
+    <div class="divider-header">
+        <p class="left"></p>
     </div>
-    {% endif %}
-    {% endif %}
 
-    {% if page.previous.url %}
-    {% if page.previous.categories contains "projects" %}
-    <div class="nextproject">
-        <a href="{{page.previous.url}}">
-            <div class="nextproject-description nextproject-right">
-                <p class="nextproject-heading">Previous</p>
-                <p class="nextproject-title">{{page.previous.title}}</p>
-            </div>
-            <img class="image nextproject-img"
-                 src="../assets/img/{{ page.previous.prefix }}-start.jpg"/>
-        </a>
+    <div class="nextproject-container">
+
+        {% if page.next.url %}
+        {% if page.next.categories contains "projects" %}
+        <div class="nextproject">
+            <a href="{{page.next.url}}">
+                <div class="nextproject-description">
+                    <p class="nextproject-heading">Next</p>
+                    <p class="nextproject-title">{{page.next.title}}</p>
+                </div>
+                <img class="image nextproject-img" src="../assets/img/{{ page.next.prefix }}-start.jpg"/>
+            </a>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if page.previous.url %}
+        {% if page.previous.categories contains "projects" %}
+        <div class="nextproject">
+            <a href="{{page.previous.url}}">
+                <div class="nextproject-description nextproject-right">
+                    <p class="nextproject-heading">Previous</p>
+                    <p class="nextproject-title">{{page.previous.title}}</p>
+                </div>
+                <img class="image nextproject-img"
+                     src="../assets/img/{{ page.previous.prefix }}-start.jpg"/>
+            </a>
+        </div>
+        {% endif %}
+        {% endif %}
     </div>
-    {% endif %}
-    {% endif %}
-</div>
+</section>-->
+
 
 {% include footer.html %}

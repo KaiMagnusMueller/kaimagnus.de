@@ -23,10 +23,3 @@ img {
   width: 100%;
 }
 
-h2 {
-  @include text-h2;
-}
-
-p {
-  @include text-standard-m;
-}

@@ -1,5 +1,5 @@
 {% if include.media == "video" %}
-<figure class="figure-project project-media-figure">
+<figure class="figure-project project-media-figure grid-4">
     <video
             {% if include.border == true %}
             class="project-media"
@@ -13,7 +13,7 @@
     <figcaption class="figcaption-project">{{ include.caption }}</figcaption>
 </figure>
 {% elsif include.media == "image" %}
-<figure class="figure-project project-media-figure">
+<figure class="figure-project project-media-figure grid-4">
     <img
             {% if include.border == true %}
             class="project-media"

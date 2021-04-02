@@ -5,7 +5,6 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 ---
 {% include navigation.html %}
 
-
 <header id="hero" class="grid-4">
     <div class="personal-intro">
         <h1>Hi, I’m Kai Magnus.</h1>
@@ -15,7 +14,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     </div>
 </header>
 
-<section id="project-waterfall-wrapper" class="grid-4">
+<section id="projects" class="grid-4">
     {% for project in site.categories.projects limit: 8 %}
     <div class="project-waterfall-item">
         <div class="tilt-helper" data-tilt data-tilt-max="3">

@@ -20,6 +20,8 @@ a:hover {
   color: $white-90;
 }
 
+
+
 @mixin text-h1 {
   font-size: 37px;
 }
@@ -31,18 +33,18 @@ a:hover {
 
 }
 
-@mixin text-bold-l {
-  font-size: 21px;
-  line-height: 30px;
-  margin: 16px 0;
-}
-
 @mixin text-standard-m {
   font-size: 18px;
   font-weight: 500;
   line-height: 25px;
   letter-spacing: .3px;
   margin: 8px 0 22px 0;
+}
+
+@mixin text-bold-l {
+  font-size: 21px;
+  line-height: 30px;
+  margin: 16px 0;
 }
 
 @mixin text-bold-m {
@@ -79,4 +81,18 @@ a:hover {
   letter-spacing: .7px;
   text-transform: uppercase;
 
+}
+
+h2 {
+  @include text-h2;
+}
+
+p {
+  @include text-standard-m;
+}
+
+//project page headlines
+h3 {
+  @include text-h2;
+  margin: 38px 0 10px 0;
 }
