@@ -11,6 +11,9 @@ color_main: "#004144"
 colors: []
 custom_style: destinations_style
 custom_js: 
-description: "Wires is a prototyping app for macOS. It aims to bridge screen design and hardware prototyping. Patch based programming of inputs and outputs makes combining."
+external_page: www.build-destinations.com
+external_page_title: Visit the goHfG project site
+description: "Destinations is a concept "
 annotation: Most Recent
 ---
+

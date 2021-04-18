@@ -48,8 +48,9 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% endif %}
 
         {% if forloop.index == 8 %}
+        {% assign project_count = site.categories.projects | size | minus: 8 %}
         <a href="projects.html" class="button-link">
-            <p>Show 1 more</p>
+            <p>Show {{ project_count }} more</p>
         </a>
         {% endif %}
     </div>
