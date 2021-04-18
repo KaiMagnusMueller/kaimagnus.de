@@ -24,13 +24,13 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 
             <a href="{{ project.url }}">
                 <div class="project-item-main" style="background-color: {{ project.color_main }};">
-                    <div class="aspect-wrapper-1-1">
-                        <picture>
+                    <div class="outer aspect-1-1">
+                        <picture class="inner">
                             <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
                         </picture>
                     </div>
-                    <div class="aspect-wrapper-1-1">
-                        <div class="project-item-desc">
+                    <div class="outer aspect-1-1">
+                        <div class="project-item-desc inner">
                             <h2 class="">{{ project.title }}</h2>
                             <div class="project-item-metadata">
                                 <p class="project-course">{{ project.course }}</p>
@@ -212,8 +212,8 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 <!--    </div>-->
 
 <section id="vita" class="grid-4">
-
-    {% if site.articles == true %}
+<!--    <div class="">-->
+        {% if site.articles == true %}
     <div class="divider-header articles-divider">
         <p class="left">Articles</p>
         <a class="right" href="{{ site.baseurl }}{% link articles.html %}">
@@ -240,6 +240,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     {% endif %}
     <div class="vita-picture-container aspect-wrapper-1-1">
         <img class="vita-picture" src="/assets/img/kaimagnus-portrait.jpg">
+        </picture>
     </div>
     <div class="vita-timeline">
         {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
@@ -249,6 +250,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
         {{ my_include | markdownify }}
     </div>
+<!--    </div>-->
 </section>
 
 

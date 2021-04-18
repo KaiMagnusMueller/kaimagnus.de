@@ -8,7 +8,6 @@
     color: $bg-color;
     background-color: white;
     padding: 7px 8px 2px 8px;
-    line-height: 1em;
     width: fit-content;
   }
 
@@ -155,18 +154,46 @@
   grid-area: 1/1;
 }
 
-#featured-projects {
-  margin-top: 400px;
+.aspect-wrapper-1-1 {
+  display: grid;
 
-  .featured-project{
-    margin-bottom: 300px;
+  img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+}
+
+.aspect-wrapper-1-2:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 1'%3E%3C/svg%3E");
+  line-height: 0;
+}
+
+.aspect-wrapper-1-2 > *, .aspect-wrapper-1-2:before {
+  grid-area: 1/2;
+}
+
+.aspect-wrapper-1-2 {
+  display: grid;
+
+  img {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+}
+
+#featured-projects {
+
+  .featured-project {
+    margin-top: clamp(200px, 20vh, 280px);
   }
 
   .featured-title {
     height: fit-content;
   }
-
-
 
   .featured-desc {
     @include text-bold-l;
@@ -253,17 +280,16 @@
 }
 
 .button-highlight {
-    border-color: $white-90;
-    p {
-      color: $white-90;
-    }
-}
+  border-color: $white-90;
 
-.divider-header {
-  border-bottom: 4px solid $white-90;
+  p {
+    color: $white-90;
+  }
 }
 
 #vita {
+  margin-top: clamp(200px, 20vh, 280px);
+
   margin-bottom: 130px;
 
   .articles-divider {
@@ -280,7 +306,9 @@
   align-content: space-between;
   margin-bottom: 40px;
 
+  border-bottom: 4px solid $white-90;
   p {
+    //@include text-h1;
     @include text-annotation-xs;
     margin: 0 0 6px 0;
 
@@ -305,6 +333,10 @@
 
 .vita-picture-container {
   height: fit-content;
+
+  .vita-picture {
+    //height: 50%;
+  }
 }
 
 #contact {
@@ -319,4 +351,30 @@
   p > a, h2 > a {
     color: $link-color;
   }
+}
+
+.outer {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+  }
+
+  > .inner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.aspect-2-1:before {
+  padding-top: (1 / 2) * 100%;
+}
+
+.aspect-1-1:before {
+  padding-top: (1 / 1) * 100%;
 }

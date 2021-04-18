@@ -24,7 +24,12 @@ a:hover {
 
 @mixin text-h1 {
   font-size: 37px;
+  font-weight: 600;
+  line-height: 1em;
+  letter-spacing: .3px;
+  margin: 0;
 }
+
 
 @mixin text-h2 {
   font-size: 26px;
