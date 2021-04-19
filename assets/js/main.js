@@ -1,5 +1,5 @@
 $(function () {
-
+    console.log("document ready")
 
     //Observer for starting and stopping use case ucvideos when they come into and goe out of view
     const observer = new IntersectionObserver(callback, {threshold: 0.8});
@@ -14,18 +14,21 @@ $(function () {
 
     //console.log($(".use-case-figure-group").find(">:first-child"))
 
-    try {
-        const firstFigure = $(".use-case-figure-group").find(">:first-child")
+    if ($(".use-case-container").css("display") !== "none") {
+        try {
+            const firstFigure = $(".use-case-figure-group").find(">:first-child")
 
+            firstFigure.addClass("active")
+            firstFigure.children().show()
 
-        firstFigure.addClass("active")
-        firstFigure.children().show()
-
-        const video = firstFigure.find(">:first-child").get(0).play()
-
-    } catch (e) {
-        console.log(e)
-        console.log("no use case")
+            const video = firstFigure.find(">:first-child").get(0).play()
+            const firstSelector = $(".use-case-selector-group").find(">:first-child")
+            firstSelector.addClass("active")
+        } catch (e) {
+            console.log("no use case")
+        }
+    } else {
+        console.log("use case hidden")
     }
 
 
@@ -37,11 +40,6 @@ $(function () {
     // fetchVideoAndPlay(video, video.getAttribute("src"))
     //
     //
-
-
-    const firstSelector = $(".use-case-selector-group").find(">:first-child")
-
-    firstSelector.addClass("active")
 
 // TODO: add active to all use cases
 
@@ -170,6 +168,7 @@ $(function () {
     }
 
 })
+
 
 function decode(a) {
     // ROT13 : a Caesar cipher
@@ -314,3 +313,19 @@ function openMailer(element) {
 //         })
 //     }
 // })
+
+
+// HAMBURGER
+let hamburger = document.getElementById('hamburger');
+let nav = document.getElementById('nav');
+hamburger.addEventListener('click', function () {
+
+    console.log("test")
+    if (hamburger.classList.contains('open')) {
+        hamburger.classList.remove('open');
+        nav.classList.remove('open');
+    } else {
+        hamburger.classList.add('open');
+        nav.classList.add('open');
+    }
+});

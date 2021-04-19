@@ -70,6 +70,9 @@ a:hover {
   font-size: 15px;
   letter-spacing: .7px;
   text-transform: uppercase;
+  @media screen and (max-width: 1200px){
+    font-size: 13px;
+  }
 }
 
 @mixin text-annotation-l {
@@ -101,3 +104,5 @@ h3 {
   @include text-h2;
   margin: 38px 0 10px 0;
 }
+
+

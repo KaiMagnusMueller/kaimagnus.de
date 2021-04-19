@@ -1,7 +1,8 @@
 body {
-  padding: 0 80px;
+  padding: 0 clamp(26px, 5vw, 80px);
+;
   margin: 0 auto 0 auto;
-  max-width: 1440px;
+  max-width: 1440px - 160px;
 }
 
 .main-content {
@@ -10,7 +11,7 @@ body {
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  grid-column-gap: 60px;
+  grid-column-gap: clamp(20px, 5vw, 60px);
 
 }
 

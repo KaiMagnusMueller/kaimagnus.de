@@ -378,3 +378,14 @@
 .aspect-1-1:before {
   padding-top: (1 / 1) * 100%;
 }
+
+
+@media screen and (max-width: 550px){
+.personal-intro {
+  grid-column: 1 / -1;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+}
+}
