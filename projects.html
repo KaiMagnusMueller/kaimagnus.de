@@ -4,7 +4,7 @@ title: All Projects
 permalink: /projects
 ---
 
-<section id="projects" class="grid-4">
+<section id="projects" class="project-page grid-4">
     <h1>{{ page.title}}</h1>
 
 {% for project in site.categories.projects %}
@@ -15,7 +15,7 @@ permalink: /projects
         {% endif %}
 
         <a href="{{ project.url }}" id="{{forloop.index}}">
-            <div class="project-item-main" style="background-color: {{ project.color_main }};">
+            <div class="project-item-main project-compact" style="background-color: {{ project.color_main }};">
                 <div class="outer aspect-1-1">
                     <picture class="inner">
                         <img class="image" src="/assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
