@@ -56,10 +56,11 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     {% endfor %}
 
     <a href="projects.html#3" id="projects-expand" class="button-mobile-expand">
-        <div class="button-plus">
-            <span></span>
-            <span></span>
-        </div>
+<!--        <div class="button-plus">-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--        </div>-->
+        <img class="saw-shape" src="assets/src/jigsaw.svg">
     </a>
 </section>
 
@@ -159,13 +160,16 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         </div>
 
         {% endfor %}
+
+        <a href="articles.html" id="articles-expand" class="button-mobile-expand">
+            <!--        <div class="button-plus">-->
+            <!--            <span></span>-->
+            <!--            <span></span>-->
+            <!--        </div>-->
+            <img class="saw-shape" src="assets/src/jigsaw.svg">
+        </a>
     </div>
-    <a href="articles.html" id="articles-expand" class="button-mobile-expand">
-        <div class="button-plus">
-            <span></span>
-            <span></span>
-        </div>
-    </a>
+
     {% endif %}
 
     <div class="divider-header vita-divider">
@@ -180,6 +184,9 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
         {{ my_include | markdownify }}
     </div>
+    <div class="divider-header motivation-divider">
+        <p class="left">Motivation</p>
+    </div>
     <div class="vita-motivation">
         {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
         {{ my_include | markdownify }}
@@ -187,14 +194,4 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     <!--    </div>-->
 </section>
 
-
-<section id="contact" class="grid-4">
-
-<div class="divider-header">
-    <p class="left">Contact</p>
-</div>
-
-    {% include contact.html %}
-
-</section>
 
