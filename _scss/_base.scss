@@ -1,8 +1,5 @@
 body {
-  padding: 0 clamp(26px, 5vw, 80px);
-;
-  margin: 0 auto 0 auto;
-  max-width: 1440px - 160px;
+  margin: 0;
 }
 
 .main-content {
@@ -12,6 +9,11 @@ body {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-column-gap: clamp(20px, 5vw, 60px);
+
+  padding: 0 clamp(26px, 5vw, 80px);
+;
+  margin: 0 auto 0 auto;
+  max-width: 1440px - 160px;
 
 }
 
@@ -29,4 +31,10 @@ img {
 
 .grid-4-center-section {
   grid-column: 2 / span 2;
+}
+
+@media screen and (max-width: 550px) {
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
 }

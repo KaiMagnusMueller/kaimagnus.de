@@ -73,6 +73,9 @@ a:hover {
   @media screen and (max-width: 1200px){
     font-size: 13px;
   }
+  @media screen and (max-width: 550px){
+    font-size: revert;
+  }
 }
 
 @mixin text-annotation-l {

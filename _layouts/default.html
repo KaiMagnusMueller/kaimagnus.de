@@ -20,10 +20,14 @@ layout: compress
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+{% include navigation.html %}
 
         {{ content }}
+
+        {% include footer.html %}
+
         <script type="text/javascript" src="/assets/js/vendor/vanilla-tilt.min.js"></script>
         <script type="text/javascript" src="/assets/js/vendor/jquery-3.4.0.slim.min.js"></script>
-<script type="text/javascript" src="/assets/js/main.js"></script>
+<script type="text/javascript" src="/assets/js/src/main.js"></script>
 </body>
 </html>

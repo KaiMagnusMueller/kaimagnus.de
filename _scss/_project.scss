@@ -132,10 +132,19 @@ figcaption {
   grid-column: 2 / -1;
   width: 52%;
 
+  &:before{
+    content: "Footnotes";
+    text-transform: uppercase;
+    @include text-annotation-xs;
+  }
+
   ol {
-    padding: 0;
+    border-top: 4px solid $white-90;
+    margin-top: 6px;
+    padding: 40px 0 0;
   }
 }
+
 
 .link-back {
   grid-column: 2 /-1;

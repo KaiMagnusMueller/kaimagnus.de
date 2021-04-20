@@ -320,7 +320,6 @@ let hamburger = document.getElementById('hamburger');
 let nav = document.getElementById('nav');
 hamburger.addEventListener('click', function () {
 
-    console.log("test")
     if (hamburger.classList.contains('open')) {
         hamburger.classList.remove('open');
         nav.classList.remove('open');
@@ -329,3 +328,18 @@ hamburger.addEventListener('click', function () {
         nav.classList.add('open');
     }
 });
+
+// let projectEexpand = document.getElementById("projects-expand")
+// let projects = document.getElementById("projects")
+// console.log("test")
+// projectEexpand.addEventListener("click", () => {
+//     console.log("test")
+//
+//     if (projectEexpand.classList.contains('open')) {
+//         projectEexpand.classList.remove('open');
+//         projects.classList.remove('open');
+//     } else {
+//         projectEexpand.classList.add('open');
+//         projects.classList.add('open');
+//     }
+// })

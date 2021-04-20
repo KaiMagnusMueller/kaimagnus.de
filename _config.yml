@@ -39,6 +39,12 @@ plugins:
 exclude:
   - .idea
   - .git
+  - node_modules/
+  - package-lock.json
+  - package.json
+#  - assets/js/src/
+  - assets/js/dist/
+#  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/
 #make sure to enable docs processing before upload (possible on mac only for some reason)

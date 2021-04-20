@@ -3,7 +3,6 @@ layout: default
 title: Home
 description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at the HfG Schwäbisch Gmünd.
 ---
-{% include navigation.html %}
 
 <header id="hero" class="grid-4">
     <div class="personal-intro">
@@ -14,7 +13,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     </div>
 </header>
 
-<section id="projects" class="grid-4">
+<section id="projects" class="index-projects grid-4">
     {% for project in site.categories.projects limit: 8 %}
     <div class="project-waterfall-item">
         <div class="tilt-helper" data-tilt data-tilt-max="3">
@@ -22,7 +21,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             <span class="project-item-annotation">{{ project.annotation }}</span>
             {% endif %}
 
-            <a href="{{ project.url }}">
+            <a href="{{ project.url }}" id="{{forloop.index}}">
                 <div class="project-item-main" style="background-color: {{ project.color_main }};">
                     <div class="outer aspect-1-1">
                         <picture class="inner">
@@ -42,19 +41,26 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             </a>
         </div>
         {% if forloop.index == 2 %}
-        <a href="index.html" class="button-link">
+        <a href="index.html" class="button-link random-project-button">
             <p>random project</p>
         </a>
         {% endif %}
 
         {% if forloop.index == 8 %}
         {% assign project_count = site.categories.projects | size | minus: 8 %}
-        <a href="projects.html" class="button-link">
+        <a href="projects.html" class="button-link all-project-button">
             <p>Show {{ project_count }} more</p>
         </a>
         {% endif %}
     </div>
     {% endfor %}
+
+    <a href="projects.html#3" id="projects-expand" class="button-mobile-expand">
+        <div class="button-plus">
+            <span></span>
+            <span></span>
+        </div>
+    </a>
 </section>
 
 <section id="featured-projects" class="">
@@ -132,97 +138,14 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     </div>
 </section>
 
-
-<!--    <div class="project-grid-rows">-->
-<!--        {% for project in site.categories.projects limit: 5 %}-->
-<!--        {% unless project.tags contains "featured" %}-->
-<!--        <div class="project-description project-grid-item">-->
-<!--            <a href="{{ project.url }}">-->
-<!--                <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>-->
-<!--            </a>-->
-<!--            <p class="project-description-item project-description-text">{{ project.description }}</p>-->
-<!--            <p class="metadata project-metadata">-->
-<!--                <span class="project-course">{{ project.course }}</span>-->
-<!--                <span class="semester_date">{{ project.semester_date }}</span>-->
-<!--            </p>-->
-<!--        </div>-->
-
-<!--        <a class="project-grid-item" href="{{ project.url }}">-->
-<!--            <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>-->
-<!--        </a>-->
-<!--        {% endunless %}-->
-<!--        {% endfor %}-->
-<!--    </div>-->
-
-<!--    {% for project in site.tags.featured %}-->
-<!--&lt;!&ndash;    <img class="feature-image-background" src="assets/img/{{ project.prefix }}-background.jpg">&ndash;&gt;-->
-<!--    <div class="feature">-->
-<!--        <div class="feature-image-position">-->
-<!--            <a class="feature-image-link" href="{{ project.url }}">-->
-<!--                <img class="image" src="assets/img/{{ project.prefix }}-header.jpg" alt="{{ include.alt }}"/>-->
-<!--            </a>-->
-<!--            <div class="feature-description">-->
-<!--                <h2 class="feature-description-heading feature-description-item">{{ project.title }}</h2>-->
-<!--                <p class="feature-description-item">{{ project.description }}</p>-->
-<!--                <p class="metadata">-->
-<!--                    <span class="course">{{ project.course }}</span>-->
-<!--                    <br>-->
-<!--                    <span class="semester_date">{{ project.semester_date }}</span>-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    {% endfor %}-->
-
-<!--    <div class="dividerHeading">-->
-<!--        <p class="left">Recent Projects</p>-->
-<!--        <a class="right" href="{{ site.baseurl }}{% link projects.html %}">All</a>-->
-<!--    </div>-->
-</div>
-
-
-<!--<div class="mainContentPadding">-->
-
-<!--    <div class="main-section">-->
-<!--        <div class="project-grid-rows">-->
-<!--            {% for project in site.categories.projects limit: 5 %}-->
-<!--            {% unless project.tags contains "featured" %}-->
-<!--            <div class="project-description project-grid-item">-->
-<!--                <a href="{{ project.url }}">-->
-<!--                    <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>-->
-<!--                </a>-->
-<!--                <p class="project-description-item project-description-text">{{ project.description }}</p>-->
-<!--                <p class="metadata project-metadata">-->
-<!--                    <span class="project-course">{{ project.course }}</span>-->
-<!--                    <span class="semester_date">{{ project.semester_date }}</span>-->
-<!--                </p>-->
-<!--            </div>-->
-
-<!--            <a class="project-grid-item" href="{{ project.url }}">-->
-<!--                <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>-->
-<!--            </a>-->
-<!--            {% endunless %}-->
-<!--            {% endfor %}-->
-<!--        </div>-->
-
-<!--        <div class="button-container">-->
-<!--            <a class="" href="/projects/"><p class="button-text">-->
-<!--                All Projects</p></a>-->
-<!--        </div>-->
-<!--    </div>-->
-
 <section id="vita" class="grid-4">
-<!--    <div class="">-->
-        {% if site.articles == true %}
+    <!--    <div class="">-->
+    {% if site.articles == true %}
     <div class="divider-header articles-divider">
         <p class="left">Articles</p>
         <a class="right" href="{{ site.baseurl }}{% link articles.html %}">
             <p>All</p>
         </a>
-    </div>
-
-    <div class="divider-header vita-divider">
-        <p class="left">Vita</p>
     </div>
 
     <div class="main-section article-section">
@@ -237,9 +160,20 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 
         {% endfor %}
     </div>
+    <a href="articles.html" id="articles-expand" class="button-mobile-expand">
+        <div class="button-plus">
+            <span></span>
+            <span></span>
+        </div>
+    </a>
     {% endif %}
-    <div class="vita-picture-container aspect-wrapper-1-1">
-        <img class="vita-picture" src="/assets/img/kaimagnus-portrait.jpg">
+
+    <div class="divider-header vita-divider">
+        <p class="left">Vita</p>
+    </div>
+
+    <div class="vita-picture-container outer aspect-1-1">
+        <img class="vita-picture inner" src="/assets/img/kaimagnus-portrait.jpg">
         </picture>
     </div>
     <div class="vita-timeline">
@@ -250,16 +184,17 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
         {{ my_include | markdownify }}
     </div>
-<!--    </div>-->
+    <!--    </div>-->
 </section>
 
+
+<section id="contact" class="grid-4">
 
 <div class="divider-header">
     <p class="left">Contact</p>
 </div>
 
-<div class="main-section">
     {% include contact.html %}
-</div>
 
-{% include footer.html %}
+</section>
+

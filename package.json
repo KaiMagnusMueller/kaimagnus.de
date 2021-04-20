@@ -1,0 +1,26 @@
+{
+  "name": "kaimagnus.de",
+  "version": "1.0.0",
+  "description": "Kai Magnus portfolio site development",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "rollup": "^2.45.2",
+    "vanilla-tilt": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaiMagnusMueller/kaimagnus.de.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaiMagnusMueller/kaimagnus.de/issues"
+  },
+  "homepage": "https://github.com/KaiMagnusMueller/kaimagnus.de#readme"
+}

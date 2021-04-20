@@ -10,3 +10,4 @@ assets/img/*
 *.pdf
 *.key
 google*.html
+node_modules/
