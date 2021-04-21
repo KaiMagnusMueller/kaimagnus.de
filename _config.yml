@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /:categories/:title:output_ext
+permalink: /:categories/:title
 url: "http://kaimagnus.de" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: "@_kaimagnus"
 github_username:
@@ -44,6 +44,8 @@ exclude:
   - package.json
 #  - assets/js/src/
   - assets/js/dist/
+  - rollup.config.js
+  - readme.md
 #  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/

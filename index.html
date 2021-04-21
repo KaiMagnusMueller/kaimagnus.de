@@ -144,7 +144,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     {% if site.articles == true %}
     <div class="divider-header articles-divider">
         <p class="left">Articles</p>
-        <a class="right" href="{{ site.baseurl }}{% link articles.html %}">
+        <a class="right" href="{% link articles.html %}">
             <p>All</p>
         </a>
     </div>
@@ -161,7 +161,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 
         {% endfor %}
 
-        <a href="articles.html" id="articles-expand" class="button-mobile-expand">
+        <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand">
             <!--        <div class="button-plus">-->
             <!--            <span></span>-->
             <!--            <span></span>-->
