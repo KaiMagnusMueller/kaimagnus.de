@@ -1,24 +1,15 @@
 ---
-layout: posts
+layout: default
 ---
 
-<div class="main-content-padding-article">
-    {% include navigation.html slim=true %}
-</div>
-<div class="main-content-padding-article article-container">
 
-    <article class="article">
-        <h2 class="article-title">{{ page.title }}</h2>
+    <article class="article grid-4">
+        <h1 class="article-title">{{ page.title }}</h1>
         {{ content }}
-    </article>
-
-</div>
-
-<div class="main-content-padding-article footer-container">
 
 
-    <div class="main-section article-section">
-        <h3 class="article-heading-other">Recent Posts</h3>
+    <div class="recent-articles">
+        <h2 class="article-heading-other">Recent Posts</h2>
         {% for article in site.categories.articles %}
 
         {% unless page.url == article.url %}
@@ -32,7 +23,5 @@ layout: posts
 
         {% endfor %}
     </div>
+    </article>
 
-    {% include footer.html %}
-
-</div>

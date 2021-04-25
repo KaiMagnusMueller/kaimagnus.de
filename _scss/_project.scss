@@ -2,14 +2,18 @@ article {
   a {
     color: #3b7bec;
   }
-}
 
-.article-background {
-  .divider-header, .nextproject-container {
-    grid-column: 2 / -1;
-    width: 52%;
+  p {
+    //@include text-standard-l
   }
 }
+
+//.article-background {
+//  .divider-header, .nextproject-container {
+//    grid-column: 2 / -1;
+//    width: 52%;
+//  }
+//}
 
 
 .featured-left {
@@ -25,11 +29,6 @@ article {
       width: 60%;
     }
   }
-}
-
-.project-description {
-  @include text-bold-l;
-  margin-bottom: 60px;
 }
 
 //article {
@@ -53,6 +52,7 @@ article {
   margin-top: 200px;
 }
 
+// > because Otherwise the footnote is only 1/4 wide
 .project > {
   p, h1, h2, h3, h4 {
     grid-column: 2 / -1;
@@ -60,8 +60,22 @@ article {
   }
 }
 
+.project {
+  //Fix for nested grid-4
+  .grid-4 {
+    padding: 0;
+  }
+}
+
+.project-description {
+  @include text-bold-l;
+  margin-bottom: 60px;
+  //width: auto !important;
+}
+
 figcaption {
   @include text-standard-m;
+  margin-bottom: 0;
 }
 
 .project-media-figure {

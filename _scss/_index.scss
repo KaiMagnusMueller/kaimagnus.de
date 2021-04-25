@@ -5,6 +5,7 @@
 
   h1 {
     @include text-h1;
+    line-height: 1em;
     color: $bg-color;
     background-color: white;
     padding: 7px 8px 2px 8px;

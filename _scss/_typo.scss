@@ -25,7 +25,7 @@ a:hover {
 @mixin text-h1 {
   font-size: 37px;
   font-weight: 600;
-  line-height: 1em;
+  line-height: 1.3em;
   letter-spacing: .3px;
   margin: 0;
 }
@@ -38,6 +38,14 @@ a:hover {
 
 }
 
+@mixin text-standard-l {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: .3px;
+  margin: 8px 0 22px 0;
+}
+
 @mixin text-standard-m {
   font-size: 18px;
   font-weight: 500;
@@ -46,8 +54,17 @@ a:hover {
   margin: 8px 0 22px 0;
 }
 
+@mixin text-bold-xl {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 41px;
+  margin: 16px 0;
+}
+
 @mixin text-bold-l {
-  font-size: 21px;
+  //TODO: decide if 22px or 21px is better
+  font-size: 22px;
+  font-weight: 600;
   line-height: 30px;
   margin: 16px 0;
 }
