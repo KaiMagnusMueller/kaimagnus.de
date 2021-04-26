@@ -12,12 +12,13 @@ header_caption: ""
 ---
 
 
-{% include media.html
-border=false
-media="image"
-file="wires-header.jpg"
-alt=""
-caption="Patches are grouped to indicate their responsibilities. Grey patches contain logic and other basic functionality, purple patches control properties and animations. Screen elements themselves are blue. Patches that communicate with connected hardware are turquoise, referencing the Arduino board color." %}
+{% responsive_image
+border: "false"
+media: "image"
+file: "wires-header.jpg"
+path: assets/img/wires-header.jpg
+alt: ""
+caption: "Patches are grouped to indicate their responsibilities. Grey patches contain logic and other basic functionality, purple patches control properties and animations. Screen elements themselves are blue. Patches that communicate with connected hardware are turquoise, referencing the Arduino board color." %}
 
 (header image)
 

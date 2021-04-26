@@ -32,6 +32,7 @@ articles: true
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-responsive-image
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -60,3 +61,13 @@ compress_html:
 
 sass:
   sass_dir: ./_scss
+
+responsive_image:
+  template: _includes/media.html
+  sizes:
+    - width: 320
+    - width: 480
+    - width: 550
+    - width: 800
+    - width: 945
+    - width: 1440
