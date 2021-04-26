@@ -99,46 +99,70 @@ figcaption {
 
 .use-case-container {
   grid-column: 1 / -1;
+}
 
-  .use-case-selector-group {
-    grid-column: 2 / -1;
+.use-case-selector-group {
+  grid-column: 2 / -1;
 
-    margin: 100px 0 20px 0;
+  margin: 100px 0 20px 0;
+}
+
+.use-case-figure-group {
+  grid-column: 1 / -1;
+}
+
+.use-case-selector {
+  @include text-h2;
+  font-size: 24px;
+  border: none;
+  background: none;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background-color: white;
+    transition: all .3s;
+    transform: scaleX(1);
+    left: 0;
   }
 
-  .use-case-figure-group {
-    grid-column: 1 / -1;
-  }
-
-  .use-case-selector {
-    @include text-h2;
-    font-size: 24px;
-    border: none;
-    background: none;
-    color: white;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-
-
-  figure {
-    grid-column: 1 / -1;
-
-    margin: 0;
-    grid-auto-flow: dense;
-
-    figcaption {
-      grid-column: 1 / 2;
-      margin-top: auto;
+  &:hover {
+    &:after {
+      width: 100%;
+      transform: scaleX(1);
     }
-
-    video {
-      grid-column: 2 /-1;
-      width: fit-content;
-      width: -webkit-fill-available;
-    }
   }
 
+  &.active {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+figure {
+  grid-column: 1 / -1;
+
+  margin: 0;
+  grid-auto-flow: dense;
+
+  figcaption {
+    grid-column: 1 / 2;
+    margin-top: auto;
+  }
+
+  video {
+    grid-column: 2 /-1;
+    width: fit-content;
+    width: -webkit-fill-available;
+  }
 }
 
 .footnotes {
@@ -146,7 +170,7 @@ figcaption {
   grid-column: 2 / -1;
   width: 52%;
 
-  &:before{
+  &:before {
     content: "Footnotes";
     text-transform: uppercase;
     @include text-annotation-xs;
