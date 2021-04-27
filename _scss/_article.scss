@@ -13,11 +13,11 @@
   }
 
   margin-top: 150px;
-  margin-bottom: 200px;
+  margin-bottom: 195px;
 
   h1 {
     @include text-h1;
-    margin-bottom: 0px;
+    margin: 0;
   }
 
   h2 {

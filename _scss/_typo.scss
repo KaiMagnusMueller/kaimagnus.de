@@ -1,5 +1,5 @@
 body {
-  font-family: SofiaPro, sans-serif;
+  font-family: "SofiaPro", sans-serif;
   font-weight: 600;
   color: $white-90;
   background-color: $bg-color;
@@ -27,14 +27,13 @@ a:hover {
   font-weight: 600;
   line-height: 1.3em;
   letter-spacing: .3px;
-  margin: 0;
 }
 
 
 @mixin text-h2 {
   font-size: 26px;
   margin: 0;
-  letter-spacing: .3px;
+  letter-spacing: .1px;
 
 }
 
