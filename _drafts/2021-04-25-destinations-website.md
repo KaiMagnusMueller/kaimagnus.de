@@ -25,6 +25,9 @@ My first version of our website served it's purpose but now we wanted to take it
 
 ## Finding a Design Direction
 
+Our first versions' design was more more or less based on our final presentation with a dark background and blue outlines for elements in the front, although I adapted the design and added a few features. 
+
+We first started exploring other existing product pages and identities, which I arranged in a grade to better understand the space that we are operating in and where we want to be. 
 
 
 ()
