@@ -50,6 +50,7 @@ exclude:
 #  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/
+  - assets/resized/
 #make sure to enable docs processing before upload (possible on mac only for some reason)
 
 
@@ -64,6 +65,8 @@ sass:
 
 responsive_image:
   template: _includes/media.html
+  output_path_format: assets/resized/%{dirname}/%{width}/%{basename}
+  default_quality: 90
   sizes:
     - width: 320
     - width: 480
@@ -71,3 +74,4 @@ responsive_image:
     - width: 800
     - width: 945
     - width: 1440
+    - width: 1890
