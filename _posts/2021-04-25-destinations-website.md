@@ -44,4 +44,4 @@ We first started exploring other existing product pages and identities, which I 
 The overall design was mostly based on the design of our final presentations' slides with a dark background and blue outlines for elements in the front.
 
 
-End it should serve as a platform for new developments and announcementsit and that we want to find more people who are you go to hell
+End it should serve as a platform for new developments and announcements it and that we want to find more people who are you go to hell
