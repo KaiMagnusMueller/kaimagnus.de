@@ -24,9 +24,18 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             <a href="{{ project.url }}" id="{{forloop.index}}">
                 <div class="project-item-main" style="background-color: {{ project.color_main }};">
                     <div class="outer aspect-1-1">
-                        <picture class="inner">
-                            <img class="image" src="assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
-                        </picture>
+
+                        {%- capture image_path -%}
+                        assets/img/{{ project.prefix }}-start.jpg
+                        {%- endcapture -%}
+
+                        {% responsive_image_block %}
+                        template: _includes/responsive_image.html
+                        path: {{ image_path }}
+                        picture_class: inner
+                        img_class:
+                        {% endresponsive_image_block %}
+
                     </div>
                     <div class="outer aspect-1-1">
                         <div class="project-item-desc inner">
@@ -88,7 +97,14 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         </div>
         <div class="featured-right">
             <div class="featured-image">
-                <picture><img src="assets/img/{{ project.prefix }}-header.jpg" alt=""></picture>
+                {%- capture image_path -%}
+                assets/img/{{ project.prefix }}-header.jpg
+                {%- endcapture -%}
+
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                {% endresponsive_image_block %}
             </div>
             <div class="extended-text column column-3">
                 {% capture my_include %}{% include destinations-extended-text.md %}{% endcapture %}
@@ -130,7 +146,14 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         </div>
         <div class="featured-right">
             <div class="featured-image">
-                <picture><img src="assets/img/{{ project.prefix }}-header.jpg" alt=""></picture>
+                {%- capture image_path -%}
+                assets/img/{{ project.prefix }}-header.jpg
+                {%- endcapture -%}
+
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                {% endresponsive_image_block %}
             </div>
         </div>
 
@@ -185,8 +208,13 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     </div>
 
     <div class="vita-picture-container outer aspect-1-1">
-        <img class="vita-picture inner" src="/assets/img/kaimagnus-portrait.jpg">
-        </picture>
+
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: assets/img/kaimagnus-portrait.jpg
+        picture_class: inner
+        img_class: vita-picture
+        {% endresponsive_image_block %}
     </div>
     <div class="vita-timeline">
         {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}

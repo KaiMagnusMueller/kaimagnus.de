@@ -32,6 +32,7 @@ articles: true
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-responsive-image
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -49,6 +50,7 @@ exclude:
 #  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/
+  - assets/resized/
 #make sure to enable docs processing before upload (possible on mac only for some reason)
 
 
@@ -60,3 +62,16 @@ compress_html:
 
 sass:
   sass_dir: ./_scss
+
+responsive_image:
+  template: _includes/media.html
+  output_path_format: assets/resized/%{dirname}/%{width}/%{basename}
+  default_quality: 90
+  sizes:
+    - width: 320
+    - width: 480
+    - width: 550
+    - width: 800
+    - width: 945
+    - width: 1440
+    - width: 1890
