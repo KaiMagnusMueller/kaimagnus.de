@@ -32,6 +32,8 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
                         {% responsive_image_block %}
                         template: _includes/responsive_image.html
                         path: {{ image_path }}
+                        picture_class: inner
+                        img_class:
                         {% endresponsive_image_block %}
 
                     </div>
@@ -206,9 +208,13 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     </div>
 
     <div class="vita-picture-container outer aspect-1-1">
-        <picture class="inner">
-        <img class="vita-picture" src="/assets/img/kaimagnus-portrait.jpg">
-        </picture>
+
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: assets/img/kaimagnus-portrait.jpg
+        picture_class: inner
+        img_class: vita-picture
+        {% endresponsive_image_block %}
     </div>
     <div class="vita-timeline">
         {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}

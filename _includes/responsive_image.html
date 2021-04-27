@@ -1,6 +1,6 @@
-<picture class="inner"
+<picture class="{{ picture_class}}"
 {% for i in resized %}
 <source media="(max-width: {{ i.width }}px)" srcset="/{{ i.path }}">
 {% endfor %}
-<img class="image" src="/{{ path }}" alt="{{ alt }}">
+<img class="{{img_class}}" src="/{{ path }}" alt="{{ alt }}">
 </picture>
