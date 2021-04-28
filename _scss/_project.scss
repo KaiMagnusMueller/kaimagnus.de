@@ -18,16 +18,21 @@ article {
 
 .featured-left {
   grid-column: 1 /2;
+}
 
-  .button-link {
-    border-color: $white-90;
-    height: 100px;
-    margin-top: 60px;
+.project-page-title-box {
+  margin-bottom: 60px;
+}
 
-    p {
-      color: $white-90;
-      width: 60%;
-    }
+.button-link {
+  border-color: $white-90;
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  & > * {
+    color: $white-90;
+    width: 60%;
   }
 }
 

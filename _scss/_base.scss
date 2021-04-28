@@ -25,6 +25,7 @@ $link-translate-right: translateX(12px);
 img {
   width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .grid-4-center-section {
@@ -34,6 +35,12 @@ img {
 .project-page-title {
   @include text-h1;
    margin: 150px 0 200px;
+}
+
+.project-media {
+  max-width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
 @media screen and (max-width: 550px) {

@@ -1,11 +1,9 @@
 
 
 .article {
-  & > {
-    p, h1, h2, h3, h4 {
+  & > * {
       grid-column: 2 / -1;
       width: 52%;
-    }
   }
 
   .grid-4 {
@@ -26,7 +24,9 @@
   }
 
   .project-media-figure {
-    margin: 70px 0 70px;
+    grid-column: 1 / -1;
+    margin: 60px 0 60px;
+    width: revert;
   }
 }
 
@@ -34,12 +34,11 @@
   grid-column: 2 / span 2;
   margin-top: 150px;
   margin-bottom: 200px;
+  width: 100%;
 
-  & > {
-    p, h1, h2, h3, h4, div {
+  & > * {
       grid-column: 2 / -1;
       width: 52%;
-    }
   }
 
   a {
