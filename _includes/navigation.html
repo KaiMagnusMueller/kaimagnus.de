@@ -1,5 +1,5 @@
 <nav class="navigation grid-4">
-    <ul class="nav" id="nav">
+    <div class="nav" id="nav">
         <div class="nav-title">
             <a class="current" href="/">Kai Magnus Müller</a>
 
@@ -13,5 +13,5 @@
             <a href="{{ item.link }}" {% if page.url== item.link %}class="current"{% endif %}>{{ item.name }}</a>
             {% endfor %}
         </div>
-    </ul>
+    </div>
 </nav>
