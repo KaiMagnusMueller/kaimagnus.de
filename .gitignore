@@ -12,3 +12,4 @@ assets/resized/*
 *.key
 google*.html
 node_modules/
+.vscode/

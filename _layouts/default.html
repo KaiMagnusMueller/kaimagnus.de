@@ -65,7 +65,8 @@ layout: compress
             src: url('/assets/fonts/webFonts/SofiaProRegular/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProRegular/font.woff') format('woff');
         }
 
-
+        {%- if page.name == "index.html" %}
+        {%- endif %}
     </style>
 
     <link rel="stylesheet" href="/assets/css/main.css">
