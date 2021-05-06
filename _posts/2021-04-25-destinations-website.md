@@ -92,9 +92,11 @@ The studio page is another new addition, where we want to present ourselves as a
 
 ## Development
 
-Development of our new website was led by me, with additional work done by Johanna Wellnitz. The site is based on the template engine Jekyll with plain JavaScript for handling the message pop up and it's states. Personal premiere was using PHP for our message delivery backend. Having no prior experience developing an actually interactive website the idea to let visitors send messages to us was challenging, daunting even as I had no immediate solution in mind. 
+Development of our new website was led by me, with additional work done by Johanna Wellnitz. The site is based on the template engine Jekyll with plain JavaScript for handling the message pop up and it's states. Personal premiere was using PHP for our message delivery backend. Having no prior experience developing an actually interactive website the idea to let visitors send messages to us was challenging, daunting even, as I had no immediate solution in mind. 
 
-After researching different options, like embedding a third-party comment system, I came across PHP, which our web server supports and after reading the documentation turned out to be pretty powerful and suited for our task. I favor this self-made approach for a couple of reasons, the biggest being simplicity. Embedding other services comes with a lot of overhead and would detract from this carefully designed experience that we build. Suddenly we wouldn't be sure where the messages from our users would be stored, creating privacy issues. It would also simply take longer to load, considering our website consists of static HTML right now loading an external, JavaScript-based framework would be a lot slower.
+After researching different options, like embedding a third-party comment system, I came across PHP. Our web server already supports it and after reading the documentation it turned out to be pretty powerful and suited for our task. 
+
+I favor this self-made approach for a couple of reasons, the biggest being simplicity. Embedding other services comes with a lot of overhead and would detract from this carefully designed experience that we build. Suddenly, the messages from our users would be stored on third-party servers and loading an external JavaScript-based framework would be a lot slower. Considering our website consists of static HTML right now that would have a major impact on our page speed. 
 
 The Project can be found on [GitHub][GHLink].
 

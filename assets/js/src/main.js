@@ -349,14 +349,16 @@ const randomBtn = document.getElementById('random-button');
 if (randomBtn) {
     randomBtn.addEventListener('click', () => {
 
+        //get and parse data attr as JSON
         const sites = $(randomBtn).data("sites")
+        //get number of existing keys
         const objKeys = Object.keys(sites);
+        //get random number according to existing key count
         const rndIndex = Math.floor(Math.random() * (objKeys.length))
-
+        //get the value of a random key 
         const rndUrl = sites[objKeys[rndIndex]]
 
-        console.log()
-
+        //navigate to value as url
         window.location.href = rndUrl
     })
 }

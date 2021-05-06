@@ -80,30 +80,6 @@ article {
   //width: auto !important;
 }
 
-figcaption {
-  @include text-standard-m;
-  margin-bottom: 0;
-}
-
-.project-media-figure {
-  grid-column: 1 / -1;
-
-  grid-auto-flow: dense;
-
-  margin: 100px 0 70px 0;
-
-  picture {
-    grid-column: 2 / -1;
-  }
-
-  figcaption {
-    grid-column: 1 / 2;
-    display: flex;
-    margin-top: auto;
-  }
-}
-
-
 .use-case-container {
   grid-column: 1 / -1;
 }

@@ -28,6 +28,8 @@
         {% endfor %}
         <img src="/{{ path }}" alt="{{ alt }}">
     </picture>
+    {% if caption == true %}
     <figcaption class="figcaption-project">{{ caption }}</figcaption>
+    {% endif %}
 </figure>
 {% endif %}
