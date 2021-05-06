@@ -4,9 +4,11 @@ title: All Articles
 permalink: /articles/
 ---
 
-<h1 class="article-all-heading">{{ page.title}}</h1>
+<section id="projects" class="page-content-margin-small grid-4">
 
-<div class="main-section-all article-section">
+<h1 class="page-title articles-heading">{{ page.title}}</h1>
+
+<div class="all-article-section">
   {% for article in site.categories.articles %}
 
   <div class="article-item">
@@ -18,3 +20,4 @@ permalink: /articles/
 
   {% endfor %}
 </div>
+</section>

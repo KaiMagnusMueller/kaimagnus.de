@@ -10,8 +10,8 @@
     padding: 0;
   }
 
-  margin-top: 150px;
-  margin-bottom: 195px;
+  // margin-top: 150px;
+  // margin-bottom: 195px;
 
   h1 {
     @include text-h1;
@@ -33,10 +33,19 @@
   }
 }
 
+.articles-heading {
+  grid-column: 2 / -1;
+  width: 52%;
+}
+
+.all-article-section {
+  grid-column: 2 / -1;
+  width: 52%;
+}
+
 .recent-articles {
   grid-column: 2 / span 2;
   margin-top: 150px;
-  margin-bottom: 200px;
   width: 100%;
 
   & > * {

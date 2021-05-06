@@ -50,14 +50,14 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             </a>
         </div>
         {% if forloop.index == 2 %}
-        <a href="index.html" class="button-link random-project-button">
+        <button id="random-button" class="button-link random-project-button">
             <p>random project</p>
-        </a>
+        </button>
         {% endif %}
 
         {% if forloop.index == 8 %}
         {% assign project_count = site.categories.projects | size | minus: 8 %}
-        <a href="projects.html" class="button-link all-project-button">
+        <a href="/projects/" class="button-link all-project-button">
             <p>Show {{ project_count }} more</p>
         </a>
         {% endif %}

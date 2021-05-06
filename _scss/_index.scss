@@ -64,7 +64,7 @@
   }
 
   &:nth-of-type(5) {
-    margin-top: 118px;
+    margin-top: 115px;
   }
 
   &:nth-of-type(6) {
@@ -72,16 +72,16 @@
   }
 
   &:nth-of-type(7) {
-    margin-top: 180px;
+    margin-top: 175px;
   }
 
   &:nth-of-type(8) {
-    margin-top: 86px;
+    margin-top: 80px;
   }
 
   .button-link {
     grid-column: 2/ span 1;
-    margin-top: 57px;
+    margin-top: 64px;
     height: 98px;
 
       border: 4px solid $white-30;
@@ -107,6 +107,11 @@
   border: 4px solid $white-30;
   display: flex;
   align-items: flex-end;
+  width: 100%;
+  border-radius: 0;
+  background-color: unset;
+  font: unset;
+  cursor: pointer;
 
   & > *  {
     @include text-annotation-l;

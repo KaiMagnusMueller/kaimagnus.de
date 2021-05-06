@@ -24,18 +24,6 @@ article {
   margin-bottom: 60px;
 }
 
-.button-link {
-  border-color: $white-90;
-  height: 100px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-  & > * {
-    color: $white-90;
-    width: 60%;
-  }
-}
-
 //article {
 //  p:nth-child(2) {
 //    position: relative;
@@ -57,6 +45,20 @@ article {
   margin-top: 200px;
 }
 
+.project-header {
+  .button-link {
+    border-color: $white-90;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  
+    & > * {
+      color: $white-90;
+      width: 60%;
+    }
+  }
+}
+
 // > because Otherwise the footnote is only 1/4 wide
 .project > {
   p, h1, h2, h3, h4 {
@@ -74,7 +76,7 @@ article {
 
 .project-description {
   @include text-bold-l;
-  margin-bottom: 60px;
+  margin: 26px 0 60px;
   //width: auto !important;
 }
 
