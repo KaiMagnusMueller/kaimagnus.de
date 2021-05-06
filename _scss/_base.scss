@@ -65,7 +65,7 @@ figcaption {
 
   margin: 100px 0 70px 0;
 
-  picture {
+  img {
     grid-column: 2 / -1;
   }
 
@@ -79,7 +79,7 @@ figcaption {
 
 @media screen and (max-width: 550px) {
   .grid-4 {
-    grid-template-columns: 1fr;
+    display: block;
   }
 
   .page-content-margin-small {
@@ -114,27 +114,22 @@ figcaption {
     }
   }
 
-  .project-media-figure {
-    grid-column: 1 / -1;
-  
-    picture {
-      grid-column: 1 / -1;
+  .project-media-figure {  
+    img {
+      height: unset;
     }
   
     figcaption {
       margin-top: 20px;
-      grid-column: 1 / -1;
     }
   }
 
   .project-media-figure:first-of-type {
-    picture {
       img {
         height: 200px;
         object-fit: cover;
         
       }
-    }
   }
   
 }

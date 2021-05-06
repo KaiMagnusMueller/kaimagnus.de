@@ -50,7 +50,7 @@ a:hover {
   font-weight: 500;
   line-height: 25px;
   letter-spacing: .3px;
-  margin: 8px 0 22px 0;
+  margin: 14px 0 14px 0;
 }
 
 @mixin text-bold-xl {
@@ -137,3 +137,8 @@ blockquote {
   }
 }
 
+@media screen and (max-width: 550px) {
+  blockquote {
+    margin: 1em 0;
+  }
+}

@@ -17,7 +17,7 @@ border: "true"
 media: "image"
 path: assets/img/wires-start.jpg
 alt: ""
-caption: "" %}
+%}
 
 It's time for a new Website.
 
@@ -94,9 +94,10 @@ The studio page is another new addition, where we want to present ourselves as a
 
 Development of our new website was led by me, with additional work done by Johanna Wellnitz. The site is based on the template engine Jekyll with plain JavaScript for handling the message pop up and it's states. Personal premiere was using PHP for our message delivery backend. Having no prior experience developing an actually interactive website the idea to let visitors send messages to us was challenging, daunting even, as I had no immediate solution in mind. 
 
-After researching different options, like embedding a third-party comment system, I came across PHP. Our web server already supports it and after reading the documentation it turned out to be pretty powerful and suited for our task. 
+I researched various options and settled for a self-made approach in the end. There are a number of reasons for my decision, but discussing them would be out of scope for this post. 
 
-I favor this self-made approach for a couple of reasons, the biggest being simplicity. Embedding other services comes with a lot of overhead and would detract from this carefully designed experience that we build. Suddenly, the messages from our users would be stored on third-party servers and loading an external JavaScript-based framework would be a lot slower. Considering our website consists of static HTML right now that would have a major impact on our page speed. 
+It was a quite smooth experience developing the website, building new parts and having my progress deployed live on github pages was nice to see. It was very fun to see Johanna for example checking in some changes, and then discussing them in the evening together with pull requests. While leading the development of this page came naturally because I was also the main contributor, I started to assign my teammates some tasks to help me out like testing, writing texts, designing favicons and so on. 
+
 
 The Project can be found on [GitHub][GHLink].
 
@@ -106,7 +107,6 @@ The Project can be found on [GitHub][GHLink].
 </a>
 {% endcomment %}
 
-It was a quite smooth experience developing the website, building new parts and having my progress deployed live on github pages was nice to see. It was very fun to see Johanna for example checking in some changes, and then discussing them in the evening together with pull requests. While leading the development of this page came naturally because I was also the main contributor, I started to assign my teammates some tasks to help me out like testing, writing texts, designing favicons and so on. 
 
 
 

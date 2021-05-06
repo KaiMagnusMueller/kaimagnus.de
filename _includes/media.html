@@ -15,20 +15,44 @@
     <figcaption class="figcaption-project">{{ include.caption }}</figcaption>
 </figure>
 {% elsif media == "image" %}
+
+
+{% if picture_class %}
+
+{% capture picture_class2 %}{{ picture_class }} {% endcapture %}
+
+{% endif %}
+
 <figure class="figure-project project-media-figure grid-4">
 
-    <picture
-            {%- if border == "true" %}
-            class="project-media"
-            {%- elsif border == "false" %}
-            class="project-media-noborder"
-            {%- endif %}>
-        {% for i in resized %}
-        <source media="(max-width: {{ i.width }}px)" srcset="/{{ i.path }}">
-        {% endfor %}
-        <img src="/{{ path }}" alt="{{ alt }}">
-    </picture>
-    {% if caption == true %}
+
+{% capture srcset %}
+{% for i in resized %}
+/{{ i.path }} {{ i.width }}w,
+{% endfor %}
+{% endcapture %}
+
+{% capture imgClass %}
+{%- if border == "true" -%}
+project-media
+{%- elsif border == "false" -%}
+project-media-noborder
+{%- endif -%}
+{% endcapture %}
+
+{% capture imgClass %}
+{%- if border == "true" -%}
+project-media
+{%- elsif border == "false" -%}
+project-media-noborder
+{%- endif -%}
+{% endcapture %}
+
+
+<img class="{{ picture_class2 }}{{ imgClass }}" src="/{{ path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+
+
+    {% if caption %}
     <figcaption class="figcaption-project">{{ caption }}</figcaption>
     {% endif %}
 </figure>
