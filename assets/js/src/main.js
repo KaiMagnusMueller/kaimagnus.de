@@ -343,3 +343,21 @@ hamburger.addEventListener('click', function () {
 //         projects.classList.add('open');
 //     }
 // })
+
+
+const randomBtn = document.getElementById('random-button');
+if (randomBtn) {
+    randomBtn.addEventListener('click', () => {
+
+        const sites = $(randomBtn).data("sites")
+        const objKeys = Object.keys(sites);
+        const rndIndex = Math.floor(Math.random() * (objKeys.length))
+
+        const rndUrl = sites[objKeys[rndIndex]]
+
+        console.log()
+
+        window.location.href = rndUrl
+    })
+}
+

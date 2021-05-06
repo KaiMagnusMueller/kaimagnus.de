@@ -50,8 +50,27 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             </a>
         </div>
         {% if forloop.index == 2 %}
-        <button id="random-button" class="button-link random-project-button">
-            <p>random project</p>
+        
+        {%- capture projectSites -%}
+        {
+        {%- for post in site.categories.projects -%}
+        "{{- post.prefix -}}": "{{- post.url -}}"
+        {%- unless forloop.last == true%},{% endunless -%}
+        {%- endfor -%}
+        }
+    {%- endcapture -%}
+
+    {%- capture projectPrefixes -%}
+    [
+    {%- for post in site.categories.projects -%}
+    "{{- post.prefix -}}"
+    {%- unless forloop.last == true%},{% endunless -%}
+    {%- endfor -%}
+    ]
+{%- endcapture -%}
+
+        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
+        <p>random project</p>
         </button>
         {% endif %}
 
