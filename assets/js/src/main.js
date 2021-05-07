@@ -2,7 +2,7 @@ $(function () {
     console.log("document ready")
 
     //Observer for starting and stopping use case ucvideos when they come into and goe out of view
-    const observer = new IntersectionObserver(callback, {threshold: 0.8});
+    const observer = new IntersectionObserver(callback, { threshold: 0.8 });
 
     //Get all videos on a page
     const videos = document.getElementsByTagName("video")
@@ -41,7 +41,7 @@ $(function () {
     //
     //
 
-// TODO: add active to all use cases
+    // TODO: add active to all use cases
 
 
     $(".use-case-selector").on("click", function () {
@@ -361,5 +361,44 @@ if (randomBtn) {
         //navigate to value as url
         window.location.href = rndUrl
     })
+}
+
+$(".lightbox-source").on("click", (e) => {
+    console.log(e.currentTarget)
+    //get lightbox div of eleement
+
+    let lightbox = $(e.currentTarget).parent().children(".lightbox")
+    
+    let lightboxImg = lightbox.children(".lightbox-img")
+
+    let lbImageSrc = lightboxImg.data("src")
+
+    $(lightboxImg).attr("src", lbImageSrc);
+
+    if (this.complete) {
+        loaded(lightbox)
+    } else {
+        this.addEventListener('load', loaded(lightbox))
+        this.addEventListener('error', function () {
+            alert('error')
+        })
+    }
+})
+
+
+$(".lightbox").on("click", (e) => {
+    console.log(e)
+
+    $(e.currentTarget).removeClass("open")
+})
+
+var lb = document.getElementsByClassName("lightbox-img")
+
+console.log(lb)
+
+function loaded(elem) {
+    elem.addClass("open")
+
+    console.log("loaded")
 }
 
