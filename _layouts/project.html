@@ -4,41 +4,7 @@ layout: posts
 
 {% include navigation.html %}
 
-<section class="project-header grid-4">
-    <div class="featured-left">
-        <div class="featured-title project-page-title-box tilt-helper" style="background-color: {{ page.color_main }};" data-tilt
-             data-tilt-max="3">
-            <div class="aspect-wrapper-1-1">
-                <div class="project-item-desc">
-                    <h2 class="">{{ page.title }}</h2>
-                    <div class="project-item-metadata">
-                        <p class="project-course">{{ page.course }}</p>
-                        <p class="semester_date">{{ page.semester_date }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% if page.external_page %}
-        <a href="{{ page.external_page }}" class="button-link">
-            <p>{{ page.external_page_title }}</p>
-        </a>
-        {% endif %}
-
-    </div>
-    <div class="featured-right">
-        <div class="featured-image">
-
-
-            <picture>
-                <img src="/assets/img/wires-header.jpg" alt="{{ page.description }}">
-            </picture>
-        </div>
-    </div>
-</section>
-
 <article class="project grid-4">
-    <p class="project-description">{{ page.description }}</p>
-
     {{ content }}
 </article>
 
