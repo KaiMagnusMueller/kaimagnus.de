@@ -35,16 +35,18 @@
 
   .project-item-annotation {
     margin-left: 18px;
-    margin-bottom: 12px;
-    display: block;
+    margin-bottom: 18px;
     @include text-annotation-s;
+    display: flex;
+    align-items: flex-end;
   }
 
   .project-item-annotation::before {
     display: inline-block;
     vertical-align: top;
-    margin-top: 10px;
-    margin-right: 7px;
+    margin-right: 8px;
+    margin-bottom: -6px;
+
     content: ' ';
     background-image: url("/assets/src/pointer.svg");
     width: 20px;
@@ -186,57 +188,6 @@
 #articles-expand {
 }
 
-.aspect-wrapper-1-1 {
-  display: grid;
-
-  img {
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-}
-
-.aspect-wrapper-1-1:before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E");
-  line-height: 0;
-}
-
-.aspect-wrapper-1-1 > *, .aspect-wrapper-1-1:before {
-  grid-area: 1/1;
-}
-
-.aspect-wrapper-1-1 {
-  display: grid;
-
-  img {
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-}
-
-.aspect-wrapper-1-2:before {
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 1'%3E%3C/svg%3E");
-  line-height: 0;
-}
-
-.aspect-wrapper-1-2 > *, .aspect-wrapper-1-2:before {
-  grid-area: 1/2;
-}
-
-.aspect-wrapper-1-2 {
-  display: grid;
-
-  img {
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-
-}
-
 #featured-projects {
 
   .featured-project {
@@ -375,41 +326,12 @@
   display: none;
 }
 
-.article-list-item {
-  margin-bottom: 26px;
-
-  a {
-    color: $white-90;
-  }
-
-  .article-date {
-    @include text-bold-s
-  }
-}
-
 .vita-picture-container {
   height: fit-content;
 
   .vita-picture {
     //height: 50%;
   }
-}
-
-#contact {
-  margin-bottom: 260px;
-
-  .divider-header {
-    grid-column: 1 /-1;
-  }
-
-  address {
-    grid-column: 1 /-1;
-
-  }
-}
-
-footer p {
-  grid-column: 1 /-1;
 }
 
 .contact-text {
@@ -452,16 +374,7 @@ footer p {
 }
 
 @media screen and (max-width: 1200px) {
-  .project-waterfall-item {
-    .project-item-annotation {
-      display: flex;
-      align-items: flex-end;
-    }
 
-    .project-item-annotation::before {
-      margin-bottom: -6px;
-    }
-  }
 }
 
 @media screen and (max-width: 550px) {

@@ -35,6 +35,10 @@ a:hover {
   margin: 0;
   letter-spacing: .1px;
 
+  @media screen and (max-width: 1200px){
+  font-size: 24px;
+  line-height: 1.3em;
+  }
 }
 
 @mixin text-standard-l {
@@ -100,6 +104,9 @@ a:hover {
   line-height: 1.4em;
   letter-spacing: .7px;
   text-transform: uppercase;
+  @media screen and (max-width: 1200px){
+    font-size: 16px;
+  }
 }
 
 @mixin text-annotation-xs {

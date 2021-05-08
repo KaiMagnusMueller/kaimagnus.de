@@ -70,7 +70,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 {%- endcapture -%}
 
         <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
-        <p>random project</p>
+        <p>Random Project</p>
         </button>
         {% endif %}
 
@@ -101,8 +101,8 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
                  data-tilt-max="3">
                 <a id="featured-{{project.prefix}}" href="{{ project.url }}">
-                    <div class="aspect-wrapper-1-1">
-                        <div class="project-item-desc">
+                    <div class="outer aspect-1-1">
+                        <div class="inner project-item-desc">
                             <h2 class="">{{ project.title }}</h2>
                             <div class="project-item-metadata">
                                 <p class="project-course">{{ project.course }}</p>
@@ -150,8 +150,8 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
                  data-tilt-max="3">
                 <a id="featured-{{project.prefix}}" href="{{ project.url }}">
-                    <div class="aspect-wrapper-1-1">
-                        <div class="project-item-desc">
+                    <div class="outer aspect-1-1">
+                        <div class="inner project-item-desc">
                             <h2 class="">{{ project.title }}</h2>
                             <div class="project-item-metadata">
                                 <p class="project-course">{{ project.course }}</p>

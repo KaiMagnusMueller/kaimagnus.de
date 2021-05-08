@@ -8,11 +8,23 @@ body {
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: clamp(20px, 5vw, 60px);
+  // grid-column-gap: clamp(20px, 5vw, 60px);
+  // padding: 0 clamp(26px, 5vw, 80px);
 
-  padding: 0 clamp(26px, 5vw, 80px);
+  grid-column-gap: 60px;
+  padding: 0 80px;
   margin: 0 auto 0 auto;
   max-width: 1440px - 160px;
+
+  @media screen and (max-width: 1200px) {
+    grid-column-gap: 3vw;
+    padding: 3vw;
+  }
+
+  @media (max-width: 1200px) {
+    grid-column-gap: 20px;
+    padding: 0 26px;
+  }
 }
 
 @mixin link-transition-right {
@@ -108,7 +120,6 @@ figcaption {
     opacity: 0;
     background-color: #00000088;
     transition: 0.3s opacity;
-
   }
 
   &.open {
@@ -120,9 +131,49 @@ figcaption {
     }
 
     .lightbox-bg {
-    opacity: 1;
+      opacity: 1;
     }
   }
+}
+
+.article-list-item {
+  margin-bottom: 26px;
+
+  a {
+    color: $white-90;
+  }
+
+  .article-date {
+    @include text-bold-s
+  }
+}
+
+#contact {
+  margin-bottom: 260px;
+
+  .divider-header {
+    grid-column: 1 /-1;
+  }
+
+  address {
+    grid-column: 1 /-1;
+
+  }
+}
+
+footer p {
+  grid-column: 1 /-1;
+}
+
+@media (max-width: 1200px) {
+  .page-content-margin-small {
+    margin-top: 80px;
+    margin-bottom: 120px;
+  }
+
+  #contact {
+    margin-bottom: 120px;
+  }  
 }
 
 @media screen and (max-width: 550px) {
@@ -177,4 +228,8 @@ figcaption {
       object-fit: cover;
     }
   }
+}
+
+button {
+  padding: 0;
 }
