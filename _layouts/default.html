@@ -2,27 +2,84 @@
 layout: compress
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="{{ site.twitter_username }}" />
     <meta name="twitter:title" content="{{ page.title }}{{ site.title }}" />
     <meta name="twitter:description" content="{{ page.description }}" />
     <meta name="description" content="{{ page.description }}">
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
 
     <title>{{ page.title }}{{ site.title }}</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="/assets/css/css_themes/{{ site.css_theme }}/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/fonts/SofiaPro/SofiaPro.css">
+    <style>
+        /**
+ * @license
+ * MyFonts Webfont Build ID 4032825, 2021-03-29T09:37:06-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: SofiaPro-Regular by Mostardesign
+ * URL: https://www.myfonts.com/fonts/mostardesign/sofia-pro/regular/
+ *
+ * Webfont: SofiaPro-SemiBold by Mostardesign
+ * URL: https://www.myfonts.com/fonts/mostardesign/sofia-pro/semi-bold/
+ *
+ * Webfont: SofiaPro-Bold by Mostardesign
+ * URL: https://www.myfonts.com/fonts/mostardesign/sofia-pro/bold/
+ *
+ *
+ * Webfonts copyright: Copyright © Olivier Gourvat - Mostardesign Type Foundry, 2020. All rights reserved.
+ *
+ * © 2021 MyFonts Inc
+*/
+
+
+        /* @import must be at top of file, otherwise CSS will not work */
+        @import url("//hello.myfonts.net/count/3d8939");
+
+        @font-face {
+            font-family: "SofiaPro";
+            font-weight: 700;
+            font-display: swap;
+            src: url('/assets/fonts/webFonts/SofiaProBold/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProBold/font.woff') format('woff');
+        }
+        @font-face {
+            font-family: "SofiaPro";
+            font-weight: 600;
+            font-display: swap;
+            src: url('/assets/fonts/webFonts/SofiaProSemiBold/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProSemiBold/font.woff') format('woff');
+        }
+        @font-face {
+            font-family: "SofiaPro";
+            font-weight: 400;
+            font-display: swap;
+            src: url('/assets/fonts/webFonts/SofiaProRegular/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProRegular/font.woff') format('woff');
+        }
+
+        {%- if page.name == "index.html" %}
+        {%- endif %}
+    </style>
+
+    <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
+{% include navigation.html %}
 
         {{ content }}
 
+        {% include footer.html %}
+
+        <script type="text/javascript" src="/assets/js/vendor/vanilla-tilt.min.js"></script>
+        <script type="text/javascript" src="/assets/js/vendor/jquery-3.6.0.slim.min.js"></script>
+<script type="text/javascript" src="/assets/js/src/main.js"></script>
 </body>
 </html>

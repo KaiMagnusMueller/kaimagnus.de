@@ -1,26 +1,39 @@
 ---
-layout: allItems
+layout: default
 title: All Projects
 permalink: /projects/
 ---
 
-<h1>{{ page.title}}</h1>
 
-    <div class="main-section-all project-grid-rows">
-        {% for project in site.categories.projects %}
-        <div class="project-description project-grid-item">
-            <a href="{{ project.url }}">
-                <h2 class="project-description-item project-description-heading">{{ project.title }}</h2>
-            </a>
-            <p class="project-description-item project-description-text">{{ project.description }}</p>
-            <p class="metadata project-metadata">
-                <span class="project-course">{{ project.course }}</span>
-                <span class="semester_date">{{ project.semester_date }}</span>
-            </p>
-        </div>
+<section id="projects" class="page-content-margin-small grid-4">
+    <h1 class="page-title">{{ page.title}}</h1>
 
-        <a class="project-grid-item" href="{{ project.url }}">
-            <img class="image" src="../assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
+{% for project in site.categories.projects %}
+<div class="project-waterfall-item">
+    <div class="tilt-helper" data-tilt data-tilt-max="3">
+        {% if project.annotation%}
+        <span class="project-item-annotation">{{ project.annotation }}</span>
+        {% endif %}
+
+        <a href="{{ project.url }}" id="{{forloop.index}}">
+            <div class="project-item-main project-compact" style="background-color: {{ project.color_main }};">
+                <div class="outer aspect-1-1">
+                    <picture class="inner">
+                        <img class="image" src="/assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
+                    </picture>
+                </div>
+                <div class="outer aspect-1-1">
+                    <div class="project-item-desc inner">
+                        <h2 class="">{{ project.title }}</h2>
+                        <div class="project-item-metadata">
+                            <p class="project-course">{{ project.course }}</p>
+                            <p class="semester_date">{{ project.semester_date }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </a>
-        {% endfor %}
     </div>
+</div>
+{% endfor %}
+</section>

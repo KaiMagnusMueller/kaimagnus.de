@@ -9,3 +9,17 @@
 ``bundle exec jekyll serve`` to start server
 
 see https://jekyllrb.com/docs/
+
+
+`` 
+{% responsive_image
+border: "true"
+media: "image"
+path: assets/img/wires-start.jpg
+alt: ""
+picture_class: "asdf"
+caption: "" 
+%}
+``
+
+remove variables like caption if not in use

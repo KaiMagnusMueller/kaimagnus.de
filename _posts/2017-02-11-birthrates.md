@@ -1,12 +1,13 @@
 ---
 layout: project
 title:  "Global Birth Rates Interactive Data Viz"
-date:   2017-07-16 10:19:47 +0100
+date:   2017-07-15 10:19:47 +0100
 semester_date: Winter 2016
 categories: [projects]
 tags: []
 course: GENERATIVE DESIGN
 prefix: birthrates
+color_main: "#5E091C"
 colors: ["#32a1ed", "#040404", "#f5f1df"]
 custom_style: birthrates_style
 custom_js:

@@ -20,19 +20,19 @@ description: >- # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /:categories/:title:output_ext
+permalink: /:categories/:title
 url: "http://kaimagnus.de" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: "@_kaimagnus"
 github_username:
 
 # Open Portfolio Template Settings
-css_theme: sofia
 articles: true
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-responsive-image
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -40,8 +40,17 @@ plugins:
 exclude:
   - .idea
   - .git
+  - node_modules/
+  - package-lock.json
+  - package.json
+#  - assets/js/src/
+  - assets/js/dist/
+  - rollup.config.js
+  - readme.md
+#  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/
+  - assets/resized/
 #make sure to enable docs processing before upload (possible on mac only for some reason)
 
 
@@ -50,3 +59,19 @@ compress_html:
   comments: all
   endings: all
   blanklines: true
+
+sass:
+  sass_dir: ./_scss
+
+responsive_image:
+  template: _includes/media.html
+  output_path_format: assets/resized/%{dirname}/%{width}/%{basename}
+  default_quality: 90
+  sizes:
+    - width: 320
+    - width: 480
+    - width: 550
+    - width: 800
+    - width: 945
+    - width: 1440
+    - width: 1890

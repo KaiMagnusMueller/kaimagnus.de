@@ -5,8 +5,11 @@ _site/
 .idea
 assets/fonts/*
 assets/img/*
+assets/resized/*
 .DS_Store
 *.mp4
 *.pdf
 *.key
 google*.html
+node_modules/
+.vscode/

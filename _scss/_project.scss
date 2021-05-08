@@ -1,0 +1,192 @@
+article {
+  a {
+    color: #3b7bec;
+  }
+
+  p {
+    //@include text-standard-l
+  }
+}
+
+//.article-background {
+//  .divider-header, .nextproject-container {
+//    grid-column: 2 / -1;
+//    width: 52%;
+//  }
+//}
+
+
+.featured-left {
+  grid-column: 1 /2;
+}
+
+.project-page-title-box {
+  margin-bottom: 60px;
+}
+
+//article {
+//  p:nth-child(2) {
+//    position: relative;
+//    margin-left: 16px;
+//
+//    &:before {
+//      content: "";
+//      height: 223px;
+//      background-color: white;
+//      width: 4px;
+//      position: absolute;
+//      top: 5px;
+//      left: 0;
+//    }
+//  }
+//}
+
+.project-header:first-of-type {
+  margin-top: 200px;
+}
+
+.project-header {
+  .button-link {
+    border-color: $white-90;
+    height: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  
+    & > * {
+      color: $white-90;
+      width: 60%;
+    }
+  }
+}
+
+// > because Otherwise the footnote is only 1/4 wide
+.project > {
+  p, h1, h2, h3, h4 {
+    grid-column: 2 / -1;
+    width: 52%;
+  }
+}
+
+.project {
+  //Fix for nested grid-4
+  .grid-4 {
+    padding: 0;
+  }
+}
+
+.project-description {
+  @include text-bold-l;
+  margin: 26px 0 60px;
+  //width: auto !important;
+}
+
+.use-case-container {
+  grid-column: 1 / -1;
+}
+
+.use-case-selector-group {
+  grid-column: 2 / -1;
+
+  margin: 100px 0 20px 0;
+}
+
+.use-case-figure-group {
+  grid-column: 1 / -1;
+}
+
+.use-case-selector {
+  @include text-h2;
+  font-size: 24px;
+  border: none;
+  background: none;
+  color: white;
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background-color: white;
+    transition: all .3s;
+    transform: scaleX(1);
+    left: 0;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
+      transform: scaleX(1);
+    }
+  }
+
+  &.active {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+figure {
+  grid-column: 1 / -1;
+
+  margin: 0;
+  grid-auto-flow: dense;
+
+  figcaption {
+    grid-column: 1 / 2;
+    margin-top: auto;
+  }
+
+  video {
+    grid-column: 2 /-1;
+    width: fit-content;
+    width: -webkit-fill-available;
+  }
+}
+
+.footnotes {
+  margin-top: 50px;
+  grid-column: 2 / -1;
+  width: 52%;
+
+  &:before {
+    content: "Footnotes";
+    text-transform: uppercase;
+    @include text-annotation-xs;
+  }
+
+  ol {
+    border-top: 4px solid $white-90;
+    margin-top: 6px;
+    padding: 40px 0 0;
+  }
+}
+
+
+.link-back {
+  grid-column: 2 /-1;
+  color: $white-90;
+  margin: 50px 0 260px 0;
+
+  &::before {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 4px;
+    margin: 0 15px 3px 0;
+    content: ' ';
+    background-color: $white-90;
+    transition: width .5s;
+  }
+
+  &:hover {
+    &::before {
+      width: 45px;
+    }
+  }
+}
+
