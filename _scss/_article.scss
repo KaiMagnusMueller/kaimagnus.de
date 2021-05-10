@@ -14,7 +14,7 @@
 
   & > * {
       grid-column: 2 / -1;
-      width: 52%;
+      width: 475px;
   }
 
   .grid-4 {
@@ -34,7 +34,6 @@
   }
 
   h2 {
-    @include text-h2;
     margin: 38px 0 10px 0;
   }
 
@@ -98,11 +97,6 @@
   .article {
     & > * {
         width: 70%;
-    }
-  
-    h2 {
-      @include text-h2;
-      margin: 38px 0 10px 0;
     }
   
     .project-media-figure {
