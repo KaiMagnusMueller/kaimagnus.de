@@ -17,3 +17,10 @@ description: "Destinations is a concept "
 annotation: Most Recent
 ---
 
+{% responsive_image 
+    border: "false"
+    media: "image"
+    path: assets/img/destinations-header.jpg
+    alt: "Wires application screenshot" 
+    caption: "Wires is a prototyping app for macOS. It aims to bridge screen design and hardware prototyping. Patch based programming of inputs and outputs makes combining them with screens or buttons designed in Sketch as easy as possible." %}
+
