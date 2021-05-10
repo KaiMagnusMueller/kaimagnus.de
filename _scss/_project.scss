@@ -78,6 +78,10 @@ article {
     grid-column: 2 / -1;
     width: 52%;
   }
+
+  p, h3 {
+    margin-bottom: 0;
+  }
 }
 
 .project {
@@ -102,7 +106,7 @@ article {
 .use-case-selector-group {
   grid-column: 2 / -1;
 
-  margin: 100px 0 20px 0;
+  margin: 60px 0 20px 0;
 }
 
 .use-case-figure-group {
@@ -165,7 +169,7 @@ figure {
 }
 
 .footnotes {
-  margin-top: 50px;
+  margin-top: 60px;
   grid-column: 2 / -1;
   width: 52%;
 

@@ -55,8 +55,7 @@ img {
 }
 
 .project-media {
-  max-width: 100%;
-  border-radius: 2px;
+  max-width: 75%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
@@ -71,19 +70,20 @@ figcaption {
 .project-media-figure {
   cursor: pointer;
   grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
 
   grid-auto-flow: dense;
 
   margin: 100px 0 70px 0;
 
   img {
-    grid-column: 2 / -1;
   }
 
   figcaption {
-    grid-column: 1 / 2;
     display: flex;
     margin-top: auto;
+    margin-left: 60px;
   }
 }
 
@@ -144,7 +144,7 @@ figcaption {
   }
 
   .article-date {
-    @include text-bold-s
+    @include text-bold-s;
   }
 }
 
@@ -157,7 +157,6 @@ figcaption {
 
   address {
     grid-column: 1 /-1;
-
   }
 }
 
@@ -173,7 +172,7 @@ footer p {
 
   #contact {
     margin-bottom: 120px;
-  }  
+  }
 }
 
 @media screen and (max-width: 550px) {

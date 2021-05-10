@@ -1,5 +1,5 @@
 {% if include.media == "video" %}
-<figure class="figure-project project-media-figure grid-4">
+<figure class="figure-project project-media-figure">
     <video {% if include.border==true %} class="project-media" {% elsif include.border==false %}
         class="project-media-noborder" {% endif %} controls="controls" muted loop
         src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
@@ -15,7 +15,7 @@
 
 {% endif %}
 
-<figure class="figure-project project-media-figure grid-4">
+<figure class="figure-project project-media-figure">
 
 
     {% capture srcset %}
