@@ -27,6 +27,31 @@ body {
   }
 }
 
+.blog-content {
+  max-width: 1280px;
+  padding: 0 80px;
+  margin: unset auto;
+  max-width: 1440px - 160px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 3vw;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 0 26px;
+  }
+
+  & > {
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+      width: 475px;
+    }
+  }
+}
+
 @mixin link-transition-right {
 }
 
@@ -75,7 +100,7 @@ figcaption {
 
   grid-auto-flow: dense;
 
-  margin: 100px 0 70px 0;
+  margin: 60px 0 60px 0;
 
   img {
     max-width: 75%;
@@ -163,6 +188,24 @@ figcaption {
 
 footer p {
   grid-column: 1 /-1;
+}
+
+.footnotes {
+  margin-top: 60px;
+  grid-column: 2 / -1;
+  width: 475px;
+
+  &:before {
+    content: "Footnotes";
+    text-transform: uppercase;
+    @include text-annotation-xs;
+  }
+
+  ol {
+    border-top: 4px solid $white-90;
+    margin-top: 6px;
+    padding: 40px 0 0;
+  }
 }
 
 @media (max-width: 1200px) {

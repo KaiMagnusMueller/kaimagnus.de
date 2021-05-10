@@ -4,13 +4,25 @@ layout: posts
 
 {% include navigation.html %}
 
-<article class="project grid-4">
+<article class="project blog-content">
+
+    <div class="featured-title project-page-title-box tilt-helper" style="background-color: {{ page.color_main }};"
+    data-tilt data-tilt-max="3">
+    <div class="">
+        <div class="project-item-desc">
+            <h1 class="">{{ page.title }}</h1>
+            <div class="project-item-metadata">
+                <p class="project-course">{{ page.course }}</p>
+                <p class="semester_date">{{ page.semester_date }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
     {{ content }}
+    <a class="link-back" href="/index.html#projects">Back to Projects</a>
 </article>
 
-<section class="grid-4">
-    <a class="link-back" href="/index.html#projects">Back to Projects</a>
-</section>
 
 
 <!--<section class="grid-4">
