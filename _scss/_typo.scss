@@ -144,18 +144,7 @@ h3 {
   margin: 38px 0 10px 0;
 }
 
-blockquote {
-  border-left: 4px solid;
-  padding-left: 20px;
-  margin: 16px 0 16px 0;
-  box-sizing: border-box;
 
-  * {
-    margin: 12px 0;
-    font-size: 28px;
-    line-height: 1.2em;
-  }
-}
 
 @media screen and (max-width: 550px) {
   blockquote {

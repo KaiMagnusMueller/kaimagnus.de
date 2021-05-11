@@ -98,7 +98,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% for project in site.categories.projects %}
         {% if project.prefix == "destinations" %}
         <div class="featured-left">
-            <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
+            <div id="featured-sticky" class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
                  data-tilt-max="3">
                 <a id="featured-{{project.prefix}}" href="{{ project.url }}">
                     <div class="outer aspect-1-1">
@@ -112,7 +112,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
                     </div>
                 </a>
             </div>
-            <p class="featured-desc">{{ project.description }}</p>
+            <!-- <p class="featured-desc">{{ project.description }}</p> -->
         </div>
         <div class="featured-right">
             <div class="featured-image">

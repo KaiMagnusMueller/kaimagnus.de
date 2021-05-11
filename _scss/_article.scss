@@ -2,7 +2,7 @@
 
   & > * {
       grid-column: 2 / -1;
-      width: 475px;
+
   }
 
   .grid-4 {
@@ -16,7 +16,8 @@
   }
 
   h2 {
-    margin: 38px 0 10px 0;
+    margin-top: 38px;
+    margin-bottom: 10px;
   }
 
   .project-media-figure {
@@ -31,12 +32,12 @@
 
 .articles-heading {
   grid-column: 2 / -1;
-  width: 52%;
+  width: 50%;
 }
 
 .all-article-section {
   grid-column: 2 / -1;
-  width: 52%;
+  width: 50%;
 }
 
 .recent-articles {
@@ -55,14 +56,20 @@
   }
   
   & > * {
-      grid-column: 2 / -1;
-      width: 52%;
+
   }
 
   a {
     color: $white-90;
   }
+  a:visited {
+    color: $white-90;
+  }
 }
+
+// .article + #contact {
+//   width: 50%;
+// }
 
 @media (max-width: 1200px) {
   .article {
