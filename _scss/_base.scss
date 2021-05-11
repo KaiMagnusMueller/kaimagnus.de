@@ -30,7 +30,7 @@ body {
 .blog-content {
   max-width: 1280px;
   padding: 0 80px;
-  margin: unset auto;
+  margin: auto;
   max-width: 1440px - 160px;
 
   @media screen and (max-width: 1200px) {
@@ -40,7 +40,7 @@ body {
   @media (max-width: 1200px) {
     padding: 0 26px;
   }
-  
+
   p {
     @include text-standard-proj;
   }
