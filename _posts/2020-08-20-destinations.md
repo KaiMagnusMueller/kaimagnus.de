@@ -13,14 +13,12 @@ custom_style: destinations_style
 custom_js: 
 external_page: www.build-destinations.com
 external_page_title: Visit the goHfG project site
-description: "Destinations is a concept "
+description: "Destinations simplifies the wayfinding design process. Users can view a digital representation of their project site and visually plan visitor routes and sign placements."
 annotation: Most Recent
 ---
 
-{% responsive_image 
-    border: "false"
-    media: "image"
-    path: assets/img/destinations-header.jpg
-    alt: "Wires application screenshot" 
-    caption: "Wires is a prototyping app for macOS. It aims to bridge screen design and hardware prototyping. Patch based programming of inputs and outputs makes combining them with screens or buttons designed in Sketch as easy as possible." %}
-
+{% include header.html 
+    media="image"
+    file="destinations-header.jpg" 
+    alt="Destinations application screenshot" 
+    caption="Destinations simplifies the wayfinding design process. It assists during analysis of project sites, placement of signs and management of visitor routes." %}
