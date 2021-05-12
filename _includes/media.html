@@ -50,7 +50,10 @@
     {% endif %}
     <div class="lightbox">
         <div class="lightbox-bg"></div>
-        <img class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
+        <div class="lightbox-group">
+            <img class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
+            <p>{{ caption }}</p>
+        </div>
     </div>
 </figure>
 

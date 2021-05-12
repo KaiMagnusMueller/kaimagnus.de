@@ -22,5 +22,3 @@ annotation: Most Recent
     file="destinations-header.jpg" 
     alt="Destinations application screenshot" 
     caption="Destinations simplifies the wayfinding design process. It assists during analysis of project sites, placement of signs and management of visitor routes." %}
-
-    
