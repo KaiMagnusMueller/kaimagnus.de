@@ -56,7 +56,7 @@ article {
   .featured-left {
     width: 25%;
   }
-  
+
   .featured-right {
     width: 75%;
   }
@@ -88,6 +88,8 @@ article {
 
   h1 {
     margin-bottom: -12px;
+    @include text-h2;
+    font-size: 30px;
   }
 }
 
@@ -126,7 +128,6 @@ article {
   margin: 26px auto 60px;
   //width: auto !important;
   grid-column: 2 / -1;
-  width: 50%;
 }
 
 .use-case-container {
@@ -241,16 +242,6 @@ figure {
 }
 
 @media (max-width: 1200px) {
-  .project > {
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-      width: 70%;
-    }
-  }
-
   .project-description {
     width: 70%;
   }
@@ -260,23 +251,59 @@ figure {
   }
 }
 
-@media (max-width: 550px) {
-  .project > {
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-      width: 100%;
+@media (max-width: 850px) {
+  .project-header {
+    flex-direction: column;
+  
+    .featured-left {
+      width: 70%;
+      margin: 0 auto 20px;
+    }
+
+    .project-page-title-box {
+      margin-right: 0;
+    }
+  
+    .featured-right {
+      width: 70%;
+      margin: 0 auto;
+
     }
   }
 
-  .project-description {
-    width: 100%;
-  }
+  .use-case-figure {
+    flex-direction: column;
 
-  .footnotes {
-    width: 100%;
+    .use-case-video {
+      max-width: 100%;
+    }
+
+    .use-case-figcaption {
+      margin-top: 20px;
+      margin-left: 0;
+    }
+  }
+}
+
+
+@media (max-width: 550px) {
+  .project-header {
+    flex-direction: column;
+  
+    .featured-left {
+      width: 100%;
+      margin: 0 auto 20px;
+    }
+
+    .project-page-title-box {
+      margin-right: 0;
+    }
+  
+    .featured-right {
+      width: 100%;
+      margin: 0 auto;
+
+    }
   }
 
   .project-header:first-of-type {

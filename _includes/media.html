@@ -40,9 +40,11 @@
     {%- endif -%}
     {% endcapture %}
 
+    <div class="media-wrapper">
 
-    <img class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
-        srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+        <img class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
+            srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+    </div>
 
 
     {% if caption %}

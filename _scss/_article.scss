@@ -71,14 +71,9 @@
 //   width: 50%;
 // }
 
-@media (max-width: 1200px) {
+@media (max-width: 850px) {
   .article {
-    & > * {
-        width: 70%;
-    }
-  
     .project-media-figure {
-      grid-column: 1 / -1;
       margin: 30px 0 30px;
       width: revert;
     }
@@ -97,11 +92,6 @@
 
   .recent-articles { 
     margin-top: 80px;
-
-    width: 100%; 
-    & > * {
-        width: 70%;
-    }
   }
 }
 
