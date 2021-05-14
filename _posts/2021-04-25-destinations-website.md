@@ -15,7 +15,7 @@ header_caption: ""
 {% responsive_image
 border: "true"
 media: "image"
-path: assets/img/wires-start.jpg
+path: assets/img/articles/website-final2x.png
 alt: ""
 %}
 
@@ -23,7 +23,7 @@ It's time for a new Website.
 
 In February, I came back from my small break during winter that I took after finishing my degree. Around that time we placed top three at the goHfG award and decided now it's the right time to get serious about our project's presentation and to show it to the outside world. 
 
-Directly after we officially finished our project at the University, I developed a small website to show and explain what our project is about and what our thoughts were while designing it. We wanted to recruit more team members for our project and have a platform for news, announcements, and new developments, with the goal to get the attention of other people and make them interested in working with us. The design was done rather quick with a video showing our use case being in the center, and highlights of a few major features not unlike a standard product page. 
+Directly after we officially finished our project at the University I developed a small website to show and explain what our project is about and what our thoughts were while designing it. We wanted to recruit more team members for our project and have a platform for news, announcements, and new developments, with the goal to get the attention of other people and make them interested in working with us. The design was done rather quick with a video showing our use case being in the center, and highlights of a few major features not unlike a standard product page. 
 
 My first version of our website served its purpose, but now we wanted to take it a step further and start to think about an actual identity. 
 
@@ -49,13 +49,13 @@ caption: "A lot of product pages operate in the bottom left - unemotional and fa
 {% responsive_image
 border: "true"
 media: "image"
-path: assets/img/wires-start.jpg
+path: assets/img/articles/website-concepts2x.png
 alt: ""
-caption: "Some in progress designs by Johanna and me." %}
+caption: "Some in-progress designs by Johanna and me." %}
 
 > Almost naturally we got into an asynchronous working process, powered by leaving each other comments on our designs.
 
-After a few weeks of iteration, it became clear that we favoured a bright design with one major foreground color and thin dark borders. During this time we merged our explorations and started working on one main concept. 
+After a few weeks of iteration, it became clear that we favored a bright design with one major foreground color and thin dark borders. During this time we merged our explorations and started working on one main concept. 
 
 Almost naturally we got into an asynchronous working process, powered by leaving each other comments on our designs, the main reason being our different schedules during the working week. One evening, someone would leave a comment or question on someones design and the next day someone else would respond. A process that worked really well for us.
 
@@ -65,9 +65,9 @@ Almost naturally we got into an asynchronous working process, powered by leaving
 {% responsive_image
 border: "true"
 media: "image"
-path: assets/img/wires-start.jpg
+path: assets/img/articles/website-final2x.png
 alt: ""
-caption: "" %}
+caption: "Our final design. " %}
 
 Here a look at our final design, or view the website live at [build-destinations.com](https://www.build-destinations.com). 
 
@@ -82,8 +82,7 @@ One of our main goals was to get in contact with potential partners or signage d
 {% responsive_image
 border: "true"
 media: "image"
-path: assets/img/wires-start.jpg
-alt: ""
+path: assets/img/articles/website-popup.png
 caption: "With this message form, visitors can message us without having to pull up an email application. This reduces friction and will result in more feedback." %}
 
 Back to our website. Next we have a 'How it works' page detailing our application concept. They include similar content to our old website, but expand on it and are brought in line with our new identity. 
@@ -96,7 +95,7 @@ Development of our new website was led by me, with additional work done by Johan
 
 I researched various options and settled for a self-made approach in the end. There are a number of reasons for my decision, but discussing them would be out of scope for this post. 
 
-It was a quite smooth experience developing the website, building new parts and having my progress deployed live on github pages was nice to see. It was very fun to see Johanna for example checking in some changes, and then discussing them in the evening together with pull requests. While leading the development of this page came naturally because I was also the main contributor, I started to assign my teammates some tasks to help me out like testing, writing texts, designing favicons and so on. 
+It was a quite smooth experience developing the website, building new parts and having my progress deployed live on GitHub pages was nice to see. It was very fun to see my team members checking in some changes, and then discussing them in the evening together with pull requests. While leading the development of this page came naturally because I was also the main contributor, I started to assign my teammates some tasks to help me out like testing, writing texts, designing favicons and so on. 
 
 
 The Project can be found on [GitHub][GHLink].

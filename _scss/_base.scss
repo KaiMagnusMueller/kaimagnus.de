@@ -182,6 +182,8 @@ figcaption {
 
   .lightbox-img {
     background-color: $bg-color;
+    width: 75%;
+    max-height: 90vh;
 
     @media (orientation) {
     }
