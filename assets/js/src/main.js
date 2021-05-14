@@ -367,8 +367,8 @@ $(".lightbox-source").on("click", (e) => {
     console.log(e.currentTarget)
     //get lightbox div of eleement
 
-    let lightbox = $(e.currentTarget).parent().children(".lightbox")
-    let lightboxGroup = $(e.currentTarget).parent().children(".lightbox").children(".lightbox-group")
+    let lightbox = $(e.currentTarget).parent().parent().children(".lightbox")
+    let lightboxGroup = $(e.currentTarget).parent().parent().children(".lightbox").children(".lightbox-group")
     
     console.log(lightbox)
     let lightboxImg = lightboxGroup.children(".lightbox-img")

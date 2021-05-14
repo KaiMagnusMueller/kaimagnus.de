@@ -110,7 +110,6 @@ img {
 }
 
 .project-media {
-  max-width: 75%;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
@@ -132,14 +131,16 @@ figcaption {
 
   margin: 60px 0 60px 0;
 
+  .media-wrapper {
+    width: 75%;
+  }
+
   img {
-    max-width: 75%;
     max-height: 750px;
     object-fit: contain;
-    // object-position: right;
+    object-position: right;
     margin-left: auto;
-    background-color: #1a1a1a;
-    width: unset;
+    // background-color: #1a1a1a;
   }
 
   figcaption {
@@ -301,8 +302,8 @@ footer p {
   
     margin: 60px 0 60px 0;
   
-    img {
-      max-width: 100%;
+    .media-wrapper {
+      width: 100%;
     }
   
     figcaption {
@@ -370,16 +371,6 @@ footer p {
 
   .project-media-figure {
     flex-direction: column;
-    img {
-      height: unset;
-      max-width: 100%;
-    }
-
-    figcaption {
-      margin-top: 20px;
-      padding-left: 0;
-      width: 100%;
-    }
   }
 
   .project-media-figure:first-of-type {
