@@ -88,6 +88,8 @@ article {
 
   h1 {
     margin-bottom: -12px;
+    @include text-h2;
+    font-size: 30px;
   }
 }
 

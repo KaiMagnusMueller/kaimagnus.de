@@ -69,13 +69,15 @@ body {
     box-sizing: border-box;
   
     p {
+      //possibly remove
       margin: 14px 0 14px !important;
+      padding: 12px 0;
     }
   
     * {
       margin: 12px 0;
       font-size: 28px;
-      line-height: 1.2em;
+      line-height: 1.3em;
     }
   }
 }
@@ -132,12 +134,20 @@ figcaption {
 
   img {
     max-width: 75%;
+    max-height: 750px;
+    object-fit: contain;
+    // object-position: right;
+    margin-left: auto;
+    background-color: #1a1a1a;
+    width: unset;
   }
 
   figcaption {
     display: flex;
     margin-top: auto;
-    margin-left: 60px;
+    padding-left: 60px;
+    width: 25%;
+    box-sizing: border-box;
   }
 }
 
