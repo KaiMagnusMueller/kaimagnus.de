@@ -53,6 +53,9 @@ exclude:
   - assets/resized/
 #make sure to enable docs processing before upload (possible on mac only for some reason)
 
+include:
+  - .htaccess
+
 
 compress_html:
   clippings: all
