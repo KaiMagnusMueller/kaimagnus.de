@@ -69,7 +69,7 @@ A signage system can easily grow to include hundreds of different signs and beco
 
 All of this data must be kept up-to-date in an ongoing project. Inevitably, changes occur during work and after coordination with project partners. This makes the process prone to errors and creates a lot of manual work. 
 
-
+{% include useCase.html useCaseName="destinations-useCase" %}
 
 
 

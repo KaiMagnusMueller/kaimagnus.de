@@ -1,0 +1,21 @@
+- name: Route Creation
+  file: destinations-useCase-01.mp4
+  figcaption: After selecting a location, visitor routes from and to it can be reated. A simulation of visitor paths is displayed on the floor plan. 
+- name: Decision Points
+  file: destinations-useCase-02.mp4
+  figcaption: |
+    After switching to the information path tab, users can view the shortest possible connection between start and end point. Along that path decision points, identified by the system, are displayed. Multiple paths can run through the same points as well. 
+    
+    After toggling the placement analysis mode the system displays possible sign locations depending on visibility and other factors. 
+- name: Sign Locations
+  file: destinations-useCase-03.mp4
+  figcaption: |
+    Now, designers can place estimated sign positions on the plan. Destinations does not automate the creation of wayfinding systems, instead the goal is to simplify and assist in design process.
+
+    Sign locations are tied to decision points and once created, they are available to other paths as well.
+- name: Dynamic Messages
+  file: destinations-useCase-04_1.mp4
+  figcaption: In the next tab, users can view all paths and their connected signs. After creating templates in graphic design software, certain text areas can be filled with variables like room numbers. Here, signs are displayed including data connected to other paths. 
+- name: 3D Simulation
+  file: destinations-useCase-05.mp4
+  figcaption: Finally signs can be accurately placed on surfaces and simulated. Designers can now better judge how signs interact with their surroundings.
