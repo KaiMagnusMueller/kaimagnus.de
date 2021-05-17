@@ -13,7 +13,7 @@ custom_style: destinations_style
 custom_js: 
 external_page: www.build-destinations.com
 external_page_title: Visit the goHfG project site
-description: "Destinations simplifies the design process of wayfinding systems. Users can view a digital representation of their project site and visually plan visitor routes and sign placements."
+description: "Destinations is an application concept that simplifies the design process of wayfinding systems. Users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages."
 annotation: Most Recent
 --- 
 
@@ -27,13 +27,23 @@ annotation: Most Recent
 
 Wayfinding systems are used to help and guide visitors navigating large buildings or places. In cities, we are constantly surrounded by such systems to give us orientation. Wayfinding systems have the difficult task of connecting rooms and floors of buildings or even whole buildings on a strategic level. At the same time, every sign has to be easily understood by first-time-visitors. After entering a building, visitors have many different goals or objectives in mind that they want to complete and they expect to be guided to them without friction. 
 
-Most ambiguities in a guidance system can be eliminated by increasing the number of signs. More elegant than increasing the frequency of information is to achieve the best possible positioning of signs in a space. The foundation for this is a wayfinding strategy. Cost considerations, aspects of sustainability and aesthetic criteria also dictate to use as few signs as possible, but as many as necessary.
+Most ambiguities in a guidance system can be eliminated by increasing the number of signs. More elegant than increasing the frequency of information is to achieve the best possible positioning of signs in a space. The foundation for this is a sound wayfinding strategy. 
 
 > Goal of this project is to first understand the design process of wayfinding systems and then design a specialized application for it.
 
 ## The Current Design Process
 
-Currently, the work process of designers in the creation of guidance systems is strongly characterized by manual work. Signs are located on printed floor plans and the digital designs of signs have to be manually referenced using Post-It's, for example. There is no solution for designers to get an overview of all sign locations and the designs of those signs together. Information chains must also be created manually. In addition, all information and its references need to be kept up to date manually and continuously.
+A wayfinding designers design process can be divided into
+
+TODO
+
+There are two types of projects for wayfinding designers. Either they are tasked to create signage for an existing building or a planned building. 
+
+Currently, the work process of designers in the creation of guidance systems is strongly characterized by manual work. Signs are located on printed floor plans and the digital designs of signs have to be manually referenced using Post-It's, for example. Although the process can be made easier with digital tools, there is no solution for designers to get an overview of all sign locations and the designs of those signs together. Information sequences must also be created manually. In addition, all information and its references need to be kept up to date manually and continuously. 
+
+> "[We worked very graphically] while piecing those sequences together and checked step-by-step if the routes are cohesive."
+
+This becomes even more of a problem when working on large projects that can encompass 3.000 signs or more. For this reason, one of our interview partners uses a custom database software to manage their projects internally. 
 
 {% comment %}
 For our research, we primarily worked with three books. "Wayshowing > Wayfinding" by Per Mollerup, serves as an easy and compact introduction to signaling. "The Wayfinding Handbook" by David Gibson describes the development process in more detail and "The Signage Design Manual" by Edo Smitshuijzen goes into great detail and gives a complete overview of the entire design process. 
@@ -69,11 +79,42 @@ A signage system can easily grow to include hundreds of different signs and beco
 
 All of this data must be kept up-to-date in an ongoing project. Inevitably, changes occur during work and after coordination with project partners. This makes the process prone to errors and creates a lot of manual work. 
 
+> Following our research, we formulated three how might we questions that encapsulate our findings
+
+1. How might we aid designers in analyzing project sites?
+2. How might we eliminate repetitive tasks and simplify management of signage databases?
+3. How can we use simulation to preview sign concepts before production?
+
+
+
 {% include useCase.html useCaseName="destinations-useCase" %}
 
+## Data Structure
 
+One of the most important aspects of Destinations is it's data structure that is highly optimized for the design workflow. Basis is a 2D or 3D model of a site, from which decision points are generated. 
 
+{% responsive_image 
+    border: "true"
+    media: "image"
+    path: assets/img/destinations-circulation-patterns.jpg
+    alt: "Destinations data structure" 
+    caption: "" %}
 
+{% comment%}
+
+Left: Graphic detailing the destinations data structure in different layers. 
+
+|  Templates
+|  Signs                   |
+|  Information Sequences   |
+|  Decision Points         |  
+|  Building Model          |
+----------------------
+Right: Workflow in Destinations
+
+Building Model -> Visitor Routes -> Information Sequences -> Signs 
+
+{% endcomment%}
 
 
 [Get the Documentation (.pdf, 47MB)][Doc]

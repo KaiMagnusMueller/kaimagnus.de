@@ -1,6 +1,6 @@
 - name: Route Creation
   file: destinations-useCase-01.mp4
-  figcaption: After selecting a location, visitor routes from and to it can be reated. A simulation of visitor paths is displayed on the floor plan. 
+  figcaption: After selecting a location, visitor routes from and to it can be created. A simulation of visitor paths is displayed on the floor plan. 
 - name: Decision Points
   file: destinations-useCase-02.mp4
   figcaption: |
