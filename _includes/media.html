@@ -4,7 +4,7 @@
         class="project-media-noborder" {% endif %} controls="controls" muted loop
         src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
     </video>
-    <figcaption class="figcaption-project">{{ include.caption }}</figcaption>
+    <figcaption class="figcaption-project">{{ include.caption | markdownify }}</figcaption>
 </figure>
 {% elsif media == "image" %}
 
@@ -48,7 +48,7 @@
 
 
     {% if caption %}
-    <figcaption class="figcaption-project">{{ caption }}</figcaption>
+    <figcaption class="figcaption-project">{{ caption | markdownify }}</figcaption>
     {% endif %}
     <div class="lightbox">
         <div class="lightbox-bg"></div>
