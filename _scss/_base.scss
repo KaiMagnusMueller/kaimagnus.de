@@ -41,7 +41,7 @@ body {
     padding: 0 26px;
   }
 
-  p {
+  & > p {
     @include text-standard-proj;
   }
 
@@ -116,9 +116,11 @@ img {
 .page-main-section {
 }
 
-figcaption {
-  @include text-standard-m;
-  margin-bottom: 0;
+  figcaption, .use-case-figcaption, figcaption-project {
+    p {
+      @include text-standard-m; 
+    margin-bottom: 0;
+  }
 }
 
 .project-media-figure {

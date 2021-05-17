@@ -13,7 +13,7 @@
             <video class="use-case-video" preload="auto" muted="" hidden="" playsinline controls
                    src="../assets/video/{{ video.file }}"></video>
             {% if video.figcaption %}
-            <figcaption class="use-case-figcaption" style="display: none;">{{ video.figcaption }}</figcaption>{% endif %}
+            <figcaption class="use-case-figcaption" style="display: none;">{{ video.figcaption | markdownify }}</figcaption>{% endif %}
         </figure>
         {% endfor %}
     </div>
