@@ -33,23 +33,17 @@ Most ambiguities in a guidance system can be eliminated by increasing the number
 
 ## The Current Design Process
 
-A wayfinding designers design process can be divided into
+The relevant stages of the wayfinding design process for our project are analysis, strategy, programming and design. 
 
-TODO
+During analysis designers get an understanding for the architecture, either through plans, renders or by visiting a building if it exists already. They analyze lines of sight and circulation patterns. 
 
-There are two types of projects for wayfinding designers. Either they are tasked to create signage for an existing building or a planned building. 
-
-Currently, the work process of designers in the creation of guidance systems is strongly characterized by manual work. Signs are located on printed floor plans and the digital designs of signs have to be manually referenced using Post-It's, for example. Although the process can be made easier with digital tools, there is no solution for designers to get an overview of all sign locations and the designs of those signs together. Information sequences must also be created manually. In addition, all information and its references need to be kept up to date manually and continuously. 
+Following analysis, a strategy is developed outlining how visitors should be guided through a site. Where traffic flows should be combined or split up, which hallways should be highlighted and how a hierarchy should be constructed. 
 
 > "[We worked very graphically] while piecing those sequences together and checked step-by-step if the routes are cohesive."
+ 
+During programming, designers determine where visitors have to make decisions and create the first signs and sign sequences. They also start working on which messages - like rooms and directions - should be displayed on them. Visitors should not be overwhelmed with information and get confirmation on their way in a predictable manner. 
 
-This becomes even more of a problem when working on large projects that can encompass 3.000 signs or more. For this reason, one of our interview partners uses a custom database software to manage their projects internally. 
-
-{% comment %}
-For our research, we primarily worked with three books. "Wayshowing > Wayfinding" by Per Mollerup, serves as an easy and compact introduction to signaling. "The Wayfinding Handbook" by David Gibson describes the development process in more detail and "The Signage Design Manual" by Edo Smitshuijzen goes into great detail and gives a complete overview of the entire design process. 
-
-When comparing the design process in all three sources, it becomes clear that the authors are largely in agreement. There are only minor differences, which gives them additional credibility. 
-{% endcomment %}
+Finally, in the design phase different variants of signs are created. Prototypes are manufactured to test different materials, colors and the signs themselves in their intended size. Sometimes walls or even rooms are created from cardboard to test how signs have to be positioned in their environment.
 
 {% responsive_image 
     border: "true"
@@ -57,6 +51,22 @@ When comparing the design process in all three sources, it becomes clear that th
     path: assets/img/destinations-system-design-process.jpg
     alt: "Wayfinding system design process according to literature" 
     caption: "During our research phase we compared the design process how it is described in 'Wayshowing > Wayfinding' and 'The Wayfinding Handbook'." %}
+
+{% comment %}
+
+## Problems
+
+There are two types of projects for wayfinding designers. Either they are tasked to create signage for an existing building or a planned building. 
+
+Currently, the work process of designers in the creation of guidance systems is strongly characterized by manual work. Signs are located on printed floor plans and the digital designs of signs have to be manually referenced using Post-It's, for example. Although the process can be made easier with digital tools, there is no solution for designers to get an overview of all sign locations and the designs of those signs together. Information sequences must also be created manually. In addition, all information and its references need to be kept up to date manually and continuously. 
+{% endcomment %}
+
+{% comment %}
+For our research, we primarily worked with three books. "Wayshowing > Wayfinding" by Per Mollerup, serves as an easy and compact introduction to signaling. "The Wayfinding Handbook" by David Gibson describes the development process in more detail and "The Signage Design Manual" by Edo Smitshuijzen goes into great detail and gives a complete overview of the entire design process. 
+
+When comparing the design process in all three sources, it becomes clear that the authors are largely in agreement. There are only minor differences, which gives them additional credibility. 
+{% endcomment %}
+
 
 ## Circulation Patterns
 
@@ -75,9 +85,10 @@ Sign positions can then be drawn where they are needed to get an overview of the
 
 ## Signage Databases
 
-A signage system can easily grow to include hundreds of different signs and become very complex. Therefore, it is necessary to create a separate database with all signs, in which data such as sign type, size, messages and exact position is recorded. 
+A wayfinding system can easily grow to include hundreds of different signs and become very complex. Therefore, it is necessary to create a separate database with all signs, in which data such as sign type, size, messages and exact position is recorded. 
 
-All of this data must be kept up-to-date in an ongoing project. Inevitably, changes occur during work and after coordination with project partners. This makes the process prone to errors and creates a lot of manual work. 
+All of this data must be kept up-to-date in an ongoing project. Inevitably, changes occur during work and after coordination with project partners. This makes the process prone to errors and creates a lot of manual work. This becomes even more of a problem when working on large projects that can encompass 3.000 signs or more. For this reason, one of our interview partners uses a custom database software to manage their projects internally. 
+
 
 > Following our research, we formulated three how might we questions that encapsulate our findings
 
@@ -91,7 +102,13 @@ All of this data must be kept up-to-date in an ongoing project. Inevitably, chan
 
 ## Data Structure
 
-One of the most important aspects of Destinations is it's data structure that is highly optimized for the design workflow. Basis is a 2D or 3D model of a site, from which decision points are generated. 
+One of the most important aspects of Destinations is it's data structure that is highly optimized for the design workflow. Basis is a 2D or 3D model of a site, from which decision points are generated. On top of these two components users create information sequences between places. They run through decision points on their way to their destination. When signs are created they are assigned to a decision point and have access to all information sequences that run through that point. Because of this, signs can access the destinations referenced by sequences and in turn properties of those destinations. 
+
+As the last puzzle piece, templates connected to signs can be dynamically filled with referenced data like room properties. 
+
+TODO
+
+This approach makes Destinations and its workflow highly flexible. Properties are dynamic and editable and connected elements are updated correspondingly. 
 
 {% responsive_image 
     border: "true"
@@ -116,6 +133,10 @@ Building Model -> Visitor Routes -> Information Sequences -> Signs
 
 {% endcomment%}
 
+### About
+This project was created during summer semester 2020 together with [Martin Wehl](http://www.martinwehl.de) as part of our bachelor thesis in Interaction Design at HfG Schwäbisch Gmünd. The project was supervised by Marc Guntow and [Daniel Utz](http://www.danielutz.de). 
+
+It is part of the goHfG startup program and was awarded the goAward in February 2021. More information and updates available at [www.build-destinations.com](www.build-destinations.com).
 
 [Get the Documentation (.pdf, 47MB)][Doc]
 
