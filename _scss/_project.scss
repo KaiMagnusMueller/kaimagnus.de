@@ -161,12 +161,17 @@ article {
   display: flex;
   flex-direction: row;
 
+  .player-wrapper {
+  }
+
   .use-case-video {
-    max-width: 75%;
+    // max-width: 75%;
   }
 
   .use-case-figcaption {
-    margin-left: 60px;
+    padding-left: 60px;
+    width: 25%;
+    box-sizing: border-box
   }
 }
 
@@ -292,7 +297,8 @@ figure {
 
     .use-case-figcaption {
       margin-top: 20px;
-      margin-left: 0;
+      padding-left: 0;
+      width: 100%;
     }
   }
 }
@@ -335,12 +341,9 @@ figure {
   }
 
   .use-case-figure {
-    .use-case-video {
-      max-width: 82%;
-    }
-  
     .use-case-figcaption {
-      margin-left: 60px;
+      padding-left: 60px;
+      width: 18%;
     }
   }
 }
