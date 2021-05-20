@@ -22,8 +22,23 @@
     <div class="featured-right">
 
         {% if include.media == "video" %}
-        <video controls="controls" muted loop src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
-        </video>
+
+        {% assign figure-type = "media" %}
+
+        {% capture in_file -%}
+        {{- include.file -}}
+        {%- endcapture %}
+    
+        {% capture in_alt -%}
+        {{- include.alt -}}
+        {%- endcapture %}
+    
+        {% capture in_border -%}
+        {{- include.border -}}
+        {%- endcapture %}
+    
+        {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
+
         {% elsif include.media == "image" %}
         <div class="featured-image">
             <picture>
@@ -35,4 +50,23 @@
     
     
 </section>
+{% comment %}
+{% raw %}
+
+{% if include.caption !== null %}
+
+{% capture description %}
+{{ include.caption }}
+{% endcapture %}
+
+{% elsif %}
+
+{% capture description %}
+{{ page.description }}
+{% endcapture %}
+
+{% endif %}
+{% endraw %}
+{% endcomment %}
+
 <p class="project-description">{{ page.description }}</p>

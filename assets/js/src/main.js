@@ -21,7 +21,7 @@ $(function () {
             firstFigure.addClass("active")
             firstFigure.children().show()
 
-            const video = firstFigure.find(">:first-child").get(0).play()
+            const video = firstFigure.find("video").get(0).play()
             const firstSelector = $(".use-case-selector-group").find(">:first-child")
             firstSelector.addClass("active")
         } catch (e) {
@@ -54,7 +54,8 @@ $(function () {
             const index = $(this).index();
             // console.log(index)
 
-            const figGroup = $(this).parent().parent().find(".use-case-figure-group")
+            //TODO: make more flexible to changes of html relationships
+            const figGroup = $(this).parent().parent().parent().find(".use-case-figure-group")
             //console.log(figGroup)
 
             //activeFig is the current selected figure
@@ -69,20 +70,20 @@ $(function () {
             $(activeFig).children().show()
             $(activeFig).siblings().children().hide()
 
-            $(activeFig).find(">:first-child").get(0).currentTime = 0
-            $(activeFig).find(">:first-child").get(0).play()
-            $(activeFig).siblings().find(">:first-child").get(0).pause()
+            $(activeFig).find("video").get(0).currentTime = 0
+            $(activeFig).find("video").get(0).play()
+            $(activeFig).siblings().find("video").get(0).pause()
 
 
         }
     })
 
     $('.use-case-video').on('ended', function () {
-        const index = $(this).parent().index();
-        console.log(index);
+        const index = $(this).parent().parent().index();
+        // console.log(index);
         //console.log($(this).parent());
 
-        const figGroup = $(this).parent().parent()
+        const figGroup = $(this).parent().parent().parent()
         // console.log(figGroup)
 
         const length = figGroup.children().length;
@@ -100,9 +101,15 @@ $(function () {
         $(activeFig).children().show()
         $(activeFig).siblings().children().hide()
 
-        $(activeFig).find(">:first-child").get(0).currentTime = 0
-        $(activeFig).find(">:first-child").get(0).play()
-        $(activeFig).siblings().find(">:first-child").get(0).pause()
+
+        console.log($(figGroup));
+        console.log($(figGroup).children());
+        console.log($(activeFig).find("video"));
+        console.log($(activeFig).find("video").get(0));
+
+        $(activeFig).find("video").get(0).currentTime = 0
+        $(activeFig).find("video").get(0).play()
+        $(activeFig).siblings().find("video").get(0).pause()
 
 
         const selectorGroup = $(figGroup).parent().find(".use-case-selector-group")
@@ -405,3 +412,8 @@ function loaded(elem) {
     console.log("loaded")
 }
 
+
+
+let videos = document.getElementsByClassName("video-player")
+
+console.log(videos)

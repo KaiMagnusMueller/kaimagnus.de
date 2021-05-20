@@ -1,4 +1,7 @@
 {% assign usecase = site.data[include.useCaseName] %}
+
+{% assign figure-type = "usecase" %}
+
 <div class="use-case-container">
 
     <div class="use-case-selector-group">
@@ -10,13 +13,26 @@
     <div class="use-case-figure-group">
         {% for video in usecase %}
         <figure class="use-case-figure">
-            <video class="use-case-video" preload="auto" muted="" hidden="" playsinline controls
-                   src="../assets/video/{{ video.file }}"></video>
+
+
+            {% capture in_file -%}
+            {{- video.file -}}
+            {%- endcapture %}
+            
+            {% capture in_alt -%}
+            {{- include.alt -}}
+            {%- endcapture %}
+            
+            {% capture in_border -%}
+            {{- include.border -}}
+            {%- endcapture %}
+
+            {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
+            
             {% if video.figcaption %}
-            <figcaption class="use-case-figcaption" style="display: none;">{{ video.figcaption | markdownify }}</figcaption>{% endif %}
+            <figcaption class="use-case-figcaption" style="display: none;">{{ video.figcaption | markdownify }}
+            </figcaption>{% endif %}
         </figure>
         {% endfor %}
     </div>
 </div>
-
-

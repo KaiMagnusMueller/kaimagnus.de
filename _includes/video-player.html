@@ -1,0 +1,35 @@
+<div class="player-wrapper" 
+
+{%- if include.type == "usecase" %}
+hidden
+{% endif -%}
+>
+
+{% if include.type == "media" %}
+    <video class="player-video
+    {%- if include.border==true -%}
+    project-media 
+    {% elsif include.border==false -%}
+        project-media-noborder
+        {%- endif -%}" 
+         controls="controls" muted loop
+        src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
+    </video>
+
+    {% elsif include.type == "usecase" %}
+
+    <video class="player-video use-case-video" preload="auto" muted="" playsinline controls
+    src="../assets/video/{{ include.file }}">
+</video>
+{% endif %}
+
+    <div class="player-controls">
+        <button type="button" class="video-button-playpause video-controls-button">Play/Pause</button>
+        <button type="button" class="video-button-stop video-controls-button">Stop</button>
+        <progress class="video-progress" value="0" min="0">
+            <span class="video-progress-bar"></span>
+        </progress>
+        <button type="button" class="video-button-mute video-controls-button">Mute/Unmute</button>
+        <button type="button" class="video-button-fs video-controls-button">Fullscreen</button>
+    </div>
+</div>
