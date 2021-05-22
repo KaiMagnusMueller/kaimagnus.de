@@ -1,5 +1,5 @@
 ## GoHfG
 
-This project has been chosen to be part of the goHfG founders initiative. Being a designer means to gather and create ideas and connect them.
+This project has been chosen to be part of the goHfG founders initiative and won the goHfG award in February this year. 
 
-This project has been chosen to be part of the goHfG founders initiative. Being a designer means to gather and create ideas and connect them.
+ We are currently building a team, seeking partnerships and feedback to build this product. For more information and news about developments, visit the Destinations website.

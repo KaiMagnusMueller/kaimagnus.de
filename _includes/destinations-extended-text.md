@@ -1,5 +1,7 @@
-Wires is a prototyping app for macOS. It aims to bridge screen design and hardware prototyping. Patch based programming of inputs and outputs makes combining them with screens or buttons designed in Sketch as easy as possible.
+Destinations is an application concept that simplifies the design process of wayfinding systems. It streamlines and simplifies the whole design process which is currently dominated by manual work and a disjointed workflow. Users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages.
 
-Being a designer means to gather and create ideas and connect them in new ways while maintaining a strategic working process. My main motivation is essentially about grasping and understanding any kind of topic no matter the size. Synthesizing findings into great products, concepts and visions is one of my greatest joys.
+During this project, we analyzed the design process in detail, spoke with designers and discovered pain points that they come in contact with during their work. 
 
-Wires is a prototyping app for macOS. It aims to bridge screen design and hardware prototyping. Patch based programming of inputs and outputs makes combining them with screens or buttons designed in Sketch as easy as possible.
+Based on our findings, we designed an improved workflow and data model from the ground up. Destinations uses the potential of a digital application to bring greater flexibility, speed and features like reactivity.
+
+In Destinations, users can load building data to explore and analyze. From there on, designers can simulate visitors, traffic flows and create routes for their wayfinding system. They can then use those routes to create information sequences and signage. Finally, tools to insert data into designs and simulation complete the process. 
