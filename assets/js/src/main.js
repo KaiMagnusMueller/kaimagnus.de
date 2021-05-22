@@ -430,6 +430,7 @@ if (window.matchMedia("(pointer: coarse)")) {
     const mute = document.getElementsByClassName('mute');
     const fullscreen = document.getElementsByClassName('fullscreen');
 
+    let focusedPlayer
 
     for (let elem of playerWrappers) {
         elem.addEventListener('mouseenter', (e) => {
@@ -477,10 +478,7 @@ if (window.matchMedia("(pointer: coarse)")) {
             // console.log(currentTime);
 
             progressBar.value = currentTime;
-
-            var value = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100
-            // console.log(value);
-            progressBar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+            updateProgressBar(progressBar)
         });
     }
 
@@ -514,25 +512,20 @@ if (window.matchMedia("(pointer: coarse)")) {
             const video = playerWrapper.find("video")[0]
             const button = playerWrapper.find(".playpause")[0]
 
-            updateButton("startPause", button)
+            // updateButton("startPause", button)
             video.pause()
         })
-    }
 
-    for (const elem of progress) {
         elem.addEventListener('mouseup', (e) => {
             console.log("mouseup");
             const playerWrapper = $(e.target).parents(".player-wrapper")
             const video = playerWrapper.find("video")[0]
             const button = playerWrapper.find(".playpause")[0]
 
-            updateButton("startPlay", button)
+            // updateButton("startPlay", button)
             video.play()
         })
-    }
 
-
-    for (const elem of progress) {
         elem.addEventListener('input', (e) => {
             const progressBar = e.target
             const playerWrapper = $(e.target).parents(".player-wrapper")
@@ -540,9 +533,7 @@ if (window.matchMedia("(pointer: coarse)")) {
 
             video.currentTime = progressBar.value
 
-            const value = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100
-            progressBar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
-
+            updateProgressBar(progressBar)
             // console.log(video.currentTime);
         });
     }
@@ -691,4 +682,10 @@ if (window.matchMedia("(pointer: coarse)")) {
          console.log(playerWrapper[0]);
         playerWrapper[0].setAttribute('data-fullscreen', !!state);
      }
+}
+
+function updateProgressBar(bar) {
+    const value = (bar.value-bar.min)/(bar.max-bar.min)*100
+    bar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+
 }
