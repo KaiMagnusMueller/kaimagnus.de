@@ -13,17 +13,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    background-color: rgb(75, 75, 75);
-    opacity: 0.8;
-    backdrop-filter: blur(20px) brightness(50%);
-    -webkit-backdrop-filter: blur(20px) brightness(50%);
-    background: none;
+    background-color: rgba(43, 43, 48, 0.8);
+    opacity: 1;
+
     transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
 
     /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
-    @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    @supports (-webkit-backdrop-filter: blur()) {
         & {
-            background-color: rgba(43, 43, 48, 0.7);
+            -webkit-backdrop-filter: brightness(40%) blur(20px);
+            background: none;
         }
     }
 
