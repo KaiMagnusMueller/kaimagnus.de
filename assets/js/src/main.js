@@ -430,17 +430,25 @@ if (window.matchMedia("(pointer: coarse)")) {
     const mute = document.getElementsByClassName('mute');
     const fullscreen = document.getElementsByClassName('fullscreen');
 
+    let focusedPlayer
 
     for (let elem of playerWrappers) {
         elem.addEventListener('mouseenter', (e) => {
+            const progressBar = $(e.target).find(".progress")[0]
             const playerControls = $(e.target).find(".player-controls")
-            if(playerControls.hasClass("faded")) playerControls.toggleClass("faded")
+            const video = $(e.target).find("video")[0]
+
+            if (playerControls.hasClass("faded")) playerControls.toggleClass("faded")
+
+            progressBar.value = video.currentTime;
+            updateProgressBar(progressBar)
+
         })
 
         elem.addEventListener('mouseleave', (e) => {
             const playerControls = $(e.target).find(".player-controls")
-            if(!playerControls.hasClass("faded")) playerControls.toggleClass("faded")
-            
+            if (!playerControls.hasClass("faded")) playerControls.toggleClass("faded")
+
         })
 
     }
@@ -465,25 +473,23 @@ if (window.matchMedia("(pointer: coarse)")) {
         })
 
         elem.addEventListener('timeupdate', (e) => {
-
             const playerWrapper = $(e.target).parents(".player-wrapper")
-            const progressBar = playerWrapper.find(".progress")[0]
+            const playerControls = playerWrapper.find(".player-controls")
 
-            if (!progressBar.getAttribute('max')) progressBar.setAttribute('max', e.target.duration);
+            if (!playerControls.hasClass("faded")) {
+                const progressBar = playerWrapper.find(".progress")[0]
+                if (!progressBar.getAttribute('max')) progressBar.setAttribute('max', e.target.duration);
 
-            const currentTime = e.target.currentTime
-            const duration = progressBar.getAttribute("max")
+                const currentTime = e.target.currentTime
+                const duration = progressBar.getAttribute("max")
 
-            // console.log(currentTime);
+                // console.log(currentTime);
 
-            progressBar.value = currentTime;
-
-            var value = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100
-            // console.log(value);
-            progressBar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+                progressBar.value = currentTime;
+                updateProgressBar(progressBar)
+            }
         });
     }
-
 
     // for (const elem of playpause) {
     //     elem.addEventListener('click', (e) => {
@@ -514,25 +520,20 @@ if (window.matchMedia("(pointer: coarse)")) {
             const video = playerWrapper.find("video")[0]
             const button = playerWrapper.find(".playpause")[0]
 
-            updateButton("startPause", button)
+            // updateButton("startPause", button)
             video.pause()
         })
-    }
 
-    for (const elem of progress) {
         elem.addEventListener('mouseup', (e) => {
             console.log("mouseup");
             const playerWrapper = $(e.target).parents(".player-wrapper")
             const video = playerWrapper.find("video")[0]
             const button = playerWrapper.find(".playpause")[0]
 
-            updateButton("startPlay", button)
+            // updateButton("startPlay", button)
             video.play()
         })
-    }
 
-
-    for (const elem of progress) {
         elem.addEventListener('input', (e) => {
             const progressBar = e.target
             const playerWrapper = $(e.target).parents(".player-wrapper")
@@ -540,9 +541,7 @@ if (window.matchMedia("(pointer: coarse)")) {
 
             video.currentTime = progressBar.value
 
-            const value = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100
-            progressBar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
-
+            updateProgressBar(progressBar)
             // console.log(video.currentTime);
         });
     }
@@ -554,7 +553,7 @@ if (window.matchMedia("(pointer: coarse)")) {
     //     // console.log(video.audioTracks);  
     //     // console.log(video.audioTracks[0]);  
     //     // console.log(video.audioTracks.length); 
-            
+
     //     // if (!video.audioTracks[0]) { elem.disabled = true}
 
     //     // if (video.muted) {
@@ -633,13 +632,13 @@ if (window.matchMedia("(pointer: coarse)")) {
 
     for (let elem of videos) {
         elem.addEventListener('error', (e) => {
-            // console.log(e);
+            console.log(e);
         })
     }
 
     for (let elem of videos) {
         elem.addEventListener('waiting', (e) => {
-            // console.log(e);
+            //console.log(e);
         })
     }
 
@@ -667,28 +666,34 @@ if (window.matchMedia("(pointer: coarse)")) {
         })
     }
 
-    var handleFullscreen = function(playerWrapper) {
+    var handleFullscreen = function (playerWrapper) {
         if (isFullScreen()) {
-           if (document.exitFullscreen) document.exitFullscreen();
-           else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
-           else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
-           else if (document.msExitFullscreen) document.msExitFullscreen();
-           setFullscreenData(playerWrapper, false);
+            if (document.exitFullscreen) document.exitFullscreen();
+            else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+            else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+            else if (document.msExitFullscreen) document.msExitFullscreen();
+            setFullscreenData(playerWrapper, false);
         }
         else {
-           if (playerWrapper.requestFullscreen) playerWrapper.requestFullscreen();
-           else if (playerWrapper.mozRequestFullScreen) playerWrapper.mozRequestFullScreen();
-           else if (playerWrapper.webkitRequestFullScreen) playerWrapper.webkitRequestFullScreen();
-           else if (playerWrapper.msRequestFullscreen) playerWrapper.msRequestFullscreen();
-           setFullscreenData(playerWrapper, true);
+            if (playerWrapper.requestFullscreen) playerWrapper.requestFullscreen();
+            else if (playerWrapper.mozRequestFullScreen) playerWrapper.mozRequestFullScreen();
+            else if (playerWrapper.webkitRequestFullScreen) playerWrapper.webkitRequestFullScreen();
+            else if (playerWrapper.msRequestFullscreen) playerWrapper.msRequestFullscreen();
+            setFullscreenData(playerWrapper, true);
         }
-     }
-     var isFullScreen = function() {
+    }
+    var isFullScreen = function () {
         return !!(document.fullscreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
-     }
-    
-     var setFullscreenData = function(playerWrapper, state) {
-         console.log(playerWrapper[0]);
+    }
+
+    var setFullscreenData = function (playerWrapper, state) {
+        console.log(playerWrapper[0]);
         playerWrapper[0].setAttribute('data-fullscreen', !!state);
-     }
+    }
+}
+
+function updateProgressBar(bar) {
+    const value = (bar.value - bar.min) / (bar.max - bar.min) * 100
+    bar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+
 }
