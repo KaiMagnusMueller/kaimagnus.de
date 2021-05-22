@@ -4,13 +4,23 @@ layout: posts
 
 {% include navigation.html %}
 
-<article class="project grid-4">
+<article class="blog-content project">
+
+
+    <!-- alternate title style, simmilliar to personal introduction -->
+<!-- <div class="project-title">
+    <h1 style="background-color: {{ project.color_main }};">{{ page.title }}</h1>
+    <div class="project-item-metadata">
+        <span class="project-course">{{ page.course }}</span>
+        <span class="semester_date">{{ page.semester_date }}</span>
+    </div>
+</div> -->
+
+
     {{ content }}
+    <a class="link-back" href="/index.html#projects">Back to Projects</a>
 </article>
 
-<section class="grid-4">
-    <a class="link-back" href="/index.html#projects">Back to Projects</a>
-</section>
 
 
 <!--<section class="grid-4">

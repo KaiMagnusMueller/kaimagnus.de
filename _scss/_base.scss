@@ -1,5 +1,9 @@
 body {
   margin: 0;
+
+  // -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
 }
 
 .main-content {
@@ -27,7 +31,77 @@ body {
   }
 }
 
+.blog-content {
+  padding: 0 80px;
+  margin: auto;
+  max-width: 1440px - 160px;
+  margin-bottom: 260px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 3vw;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 0 26px;
+  }
+
+  & > p,
+  ol {
+    @include text-standard-proj;
+  }
+
+  & > p:last-of-type {
+    margin-bottom: 50px;
+  }
+
+  & > {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    .footnotes,
+    .link-back,
+    blockquote,
+    ol,
+    .recent-articles {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  h2,
+  h3 {
+    margin: 68px auto 10px auto;
+  }
+
+  blockquote {
+    border-left: 4px solid;
+    padding-left: 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+
+    p {
+      //possibly remove
+      margin: 14px 0 14px !important;
+      padding: 12px 0;
+    }
+
+    * {
+      margin: 12px 0;
+      font-size: 28px;
+      line-height: 1.3em;
+    }
+  }
+}
+
 @mixin link-transition-right {
+}
+
+ol {
+  // padding-left: 20px;
 }
 
 $link-translate-right: translateX(12px);
@@ -36,6 +110,10 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+video {
   display: block;
 }
 
@@ -55,35 +133,50 @@ img {
 }
 
 .project-media {
-  max-width: 100%;
-  border-radius: 2px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
 .page-main-section {
 }
 
-figcaption {
-  @include text-standard-m;
-  margin-bottom: 0;
+figcaption,
+.use-case-figcaption,
+figcaption-project {
+  p {
+    @include text-standard-m;
+    margin-bottom: 0;
+  }
 }
 
+.project-media-figure, .use-case-figure {
+  .media-wrapper, .player-wrapper {
+    width: 75%;
+  }
+}
 .project-media-figure {
   cursor: pointer;
   grid-column: 1 / -1;
+  display: flex;
+  flex-direction: row;
 
   grid-auto-flow: dense;
 
-  margin: 100px 0 70px 0;
+  margin: 60px 0 60px 0;
 
   img {
-    grid-column: 2 / -1;
+    max-height: 750px;
+    object-fit: contain;
+    object-position: right;
+    margin-left: auto;
+    // background-color: #1a1a1a;
   }
 
   figcaption {
-    grid-column: 1 / 2;
     display: flex;
     margin-top: auto;
+    padding-left: 60px;
+    width: 25%;
+    box-sizing: border-box;
   }
 }
 
@@ -93,21 +186,40 @@ figcaption {
 
   z-index: 1;
 
-  .lightbox-img {
+  .lightbox-group {
     z-index: 3;
     position: fixed;
     top: 50%;
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.98);
+    transition: 0.3s all;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: flex-end;
+
+    width: fit-content;
+
+    p {
+      width: 25%;
+      max-width: 320px;
+      padding-left: 60px;
+      margin-bottom: 0;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
+  }
+
+  .lightbox-img {
+    background-color: $bg-color;
+    width: 75%;
+    max-height: 90vh;
 
     @media (orientation) {
     }
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
 
-    transition: 0.3s all;
+    object-fit: contain;
   }
 
   .lightbox-bg {
@@ -118,14 +230,17 @@ figcaption {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background-color: #00000088;
+
+    background-color: #000000de;
+    // backdrop-filter: blur(5px);
+
     transition: 0.3s opacity;
   }
 
   &.open {
     visibility: visible;
 
-    .lightbox-img {
+    .lightbox-group {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
     }
@@ -144,7 +259,7 @@ figcaption {
   }
 
   .article-date {
-    @include text-bold-s
+    @include text-bold-s;
   }
 }
 
@@ -157,12 +272,29 @@ figcaption {
 
   address {
     grid-column: 1 /-1;
-
   }
 }
 
 footer p {
   grid-column: 1 /-1;
+}
+
+.footnotes {
+  margin-top: 60px;
+  grid-column: 2 / -1;
+  width: 475px;
+
+  &:before {
+    content: "Footnotes";
+    text-transform: uppercase;
+    @include text-annotation-xs;
+  }
+
+  ol {
+    border-top: 4px solid $white-90;
+    margin-top: 6px;
+    padding: 40px 0 0;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -173,12 +305,69 @@ footer p {
 
   #contact {
     margin-bottom: 120px;
-  }  
+  }
+}
+
+@media (max-width: 850px) {
+  .blog-content {
+    & > {
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      .footnotes,
+      .link-back,
+      blockquote,
+      .recent-articles {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .project-media-figure, .use-case-figure {
+    .media-wrapper, .player-wrapper {
+      width: 100%;
+    }
+  }
+
+  .project-media-figure {
+    flex-direction: column;
+
+    margin: 60px 0 60px 0;
+
+    figcaption {
+      display: flex;
+      margin-top: 20px;
+      padding-left: 0;
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {
   .grid-4 {
     display: block;
+  }
+
+  .blog-content {
+    & > {
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      .footnotes,
+      .link-back,
+      blockquote,
+      .recent-articles {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 
   .page-content-margin-small {
@@ -213,13 +402,7 @@ footer p {
   }
 
   .project-media-figure {
-    img {
-      height: unset;
-    }
-
-    figcaption {
-      margin-top: 20px;
-    }
+    flex-direction: column;
   }
 
   .project-media-figure:first-of-type {
@@ -232,4 +415,59 @@ footer p {
 
 button {
   padding: 0;
+}
+
+@media (min-width: 1700px) {
+  .grid-4 {
+    max-width: 1920px - 160px;
+  }
+
+  .blog-content {
+    padding: 0 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1920px - 160px;
+
+    & > {
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      .footnotes,
+      .link-back,
+      blockquote,
+      ol,
+      .recent-articles {
+        max-width: 36%;
+        margin-left: 25%;
+        margin-right: auto;
+      }
+    }
+
+    a {
+      @include text-standard-proj;
+    }
+  }
+
+  .project-media-figure, .use-case-figure {
+    .media-wrapper, .player-wrapper {
+      width: 82%;
+    }
+  }
+
+  .project-media-figure {
+    img {
+      max-height: 900px;
+    }
+    figcaption {
+      width: 18%;
+    }
+  }
+
+  .lightbox {
+    .lightbox-group {
+      width: 90%;
+    }
+  }
 }

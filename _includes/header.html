@@ -1,10 +1,10 @@
-<section class="project-header grid-4">
+<section class="project-header">
     <div class="featured-left">
         <div class="featured-title project-page-title-box tilt-helper" style="background-color: {{ page.color_main }};"
             data-tilt data-tilt-max="3">
             <div class="outer aspect-1-1">
                 <div class="inner project-item-desc">
-                    <h2 class="">{{ page.title }}</h2>
+                    <h1 class="">{{ page.title }}</h1>
                     <div class="project-item-metadata">
                         <p class="project-course">{{ page.course }}</p>
                         <p class="semester_date">{{ page.semester_date }}</p>
@@ -13,7 +13,7 @@
             </div>
         </div>
         {% if page.external_page %}
-        <a href="{{ page.external_page }}" class="button-link">
+        <a href="//{{ page.external_page }}" class="button-link">
             <p>{{ page.external_page_title }}</p>
         </a>
         {% endif %}
@@ -22,8 +22,23 @@
     <div class="featured-right">
 
         {% if include.media == "video" %}
-        <video controls="controls" muted loop src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
-        </video>
+
+        {% assign figure-type = "media" %}
+
+        {% capture in_file -%}
+        {{- include.file -}}
+        {%- endcapture %}
+    
+        {% capture in_alt -%}
+        {{- include.alt -}}
+        {%- endcapture %}
+    
+        {% capture in_border -%}
+        {{- include.border -}}
+        {%- endcapture %}
+    
+        {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
+
         {% elsif include.media == "image" %}
         <div class="featured-image">
             <picture>
@@ -32,7 +47,26 @@
         </div>
         {% endif %}
     </div>
-
-    <p class="project-description">{{ page.description }}</p>
-
+    
+    
 </section>
+{% comment %}
+{% raw %}
+
+{% if include.caption !== null %}
+
+{% capture description %}
+{{ include.caption }}
+{% endcapture %}
+
+{% elsif %}
+
+{% capture description %}
+{{ page.description }}
+{% endcapture %}
+
+{% endif %}
+{% endraw %}
+{% endcomment %}
+
+<p class="project-description">{{ page.description }}</p>

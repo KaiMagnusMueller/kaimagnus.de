@@ -1,0 +1,17 @@
+- name: Save Item
+  file: halo-useCase-1.mp4
+  figcaption: 
+- name: Navigations
+  file: halo-useCase-2.mp4
+  figcaption: |
+
+- name: History & Review
+  file: halo-useCase-3.mp4
+  figcaption: |
+
+- name: Save Snippets
+  file: halo-useCase-4.mp4
+  figcaption: 
+- name: Save Explorations
+  file: halo-useCase-5.mp4
+  figcaption: 

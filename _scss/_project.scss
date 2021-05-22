@@ -19,12 +19,13 @@ article {
 //  }
 //}
 
-.featured-left {
-  grid-column: 1 /2;
-}
-
 .project-page-title-box {
-  margin-bottom: 60px;
+  // margin-bottom: 60px;
+  margin-right: 60px;
+
+  h1 {
+    margin-bottom: 16px;
+  }
 }
 
 //article {
@@ -49,14 +50,24 @@ article {
 }
 
 .project-header {
+  display: flex;
   grid-column: 1/-1;
+
+  .featured-left {
+    width: 25%;
+  }
+
+  .featured-right {
+    width: 75%;
+  }
 
   .button-link {
     border-color: $white-90;
     height: 100px;
     margin-top: 30px;
     margin-bottom: 30px;
-
+    margin-right: 60px;
+    width: auto;
     & > * {
       color: $white-90;
       width: 60%;
@@ -68,45 +79,100 @@ article {
   }
 }
 
-// > because Otherwise the footnote is only 1/4 wide
-.project > {
-  p,
-  h1,
-  h2,
-  h3,
-  h4 {
-    grid-column: 2 / -1;
-    width: 52%;
-  }
-}
-
 .project {
+  margin-top: 100px;
+
   //Fix for nested grid-4
   .grid-4 {
     padding: 0;
   }
+
+  h1 {
+    margin-bottom: -12px;
+    @include text-h2;
+    font-size: 30px;
+  }
 }
 
-.project-description {
-  @include text-bold-l;
-  margin: 26px 0 60px;
+.project-title {
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: inherit;
+  margin-bottom: -30px;
+
+  h1 {
+    line-height: 1em;
+    color: $bg-color;
+    background-color: white;
+    padding: 5px 8px 6px 8px;
+    width: fit-content;
+    margin: 0;
+  }
+
+  span {
+    margin: 0 0 0 0;
+    @include text-annotation-xs;
+    opacity: 0.7;
+  }
+
+  .project-course {
+    margin-right: 20px;
+  }
+}
+
+.project .project-description {
+  @include text-bold-xl;
+  margin: 26px auto 60px;
   //width: auto !important;
   grid-column: 2 / -1;
-  width: 52%;
+  position: relative;
+
+  // &:before {
+  //   content: "";
+  //   height: 60%;
+  //   background-color: white;
+  //   width: 4px;
+  //   position: absolute;
+  //   top: 5px;
+  //   left: -16px;
+  // }
 }
 
 .use-case-container {
   grid-column: 1 / -1;
+  margin: 60px 0;
 }
 
 .use-case-selector-group {
-  grid-column: 2 / -1;
+  grid-column: 1 / span 3;
 
-  margin: 100px 0 20px 0;
+  margin-bottom: 20px;
 }
 
 .use-case-figure-group {
   grid-column: 1 / -1;
+}
+
+.use-case-figure {
+  display: flex;
+  flex-direction: row;
+
+  .player-wrapper {
+  }
+
+  .use-case-video {
+    // max-width: 75%;
+  }
+
+  .use-case-figcaption {
+    padding-left: 60px;
+    width: 25%;
+    box-sizing: border-box
+  }
 }
 
 .use-case-selector {
@@ -164,28 +230,15 @@ figure {
   }
 }
 
-.footnotes {
-  margin-top: 50px;
-  grid-column: 2 / -1;
-  width: 52%;
-
-  &:before {
-    content: "Footnotes";
-    text-transform: uppercase;
-    @include text-annotation-xs;
-  }
-
-  ol {
-    border-top: 4px solid $white-90;
-    margin-top: 6px;
-    padding: 40px 0 0;
-  }
-}
-
 .link-back {
+  display: block;
   grid-column: 2 /-1;
   color: $white-90;
   margin: 50px 0 260px 0;
+
+  &:visited {
+    color: $white-90;
+  }
 
   &::before {
     display: inline-block;
@@ -206,16 +259,6 @@ figure {
 }
 
 @media (max-width: 1200px) {
-  .project > {
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-      width: 70%;
-    }
-  }
-
   .project-description {
     width: 70%;
   }
@@ -225,26 +268,82 @@ figure {
   }
 }
 
-@media (max-width: 550px) {
-  .project > {
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-      width: 100%;
+@media (max-width: 850px) {
+  .project-header {
+    flex-direction: column;
+  
+    .featured-left {
+      width: 70%;
+      margin: 0 auto 20px;
+    }
+
+    .project-page-title-box {
+      margin-right: 0;
+    }
+  
+    .featured-right {
+      width: 70%;
+      margin: 0 auto;
+
     }
   }
 
-  .project-description {
-    width: 100%;
-  }
+  .use-case-figure {
+    flex-direction: column;
 
-  .footnotes {
-    width: 100%;
+    .use-case-video {
+      max-width: 100%;
+    }
+
+    .use-case-figcaption {
+      margin-top: 20px;
+      padding-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 550px) {
+  .project-header {
+    flex-direction: column;
+  
+    .featured-left {
+      width: 100%;
+      margin: 0 auto 20px;
+    }
+
+    .project-page-title-box {
+      margin-right: 0;
+    }
+  
+    .featured-right {
+      width: 100%;
+      margin: 0 auto;
+
+    }
   }
 
   .project-header:first-of-type {
     margin-top: 0;
+  }
+}
+
+@media (min-width: 1700px) {
+  .project-header { 
+    h1 {
+      font-size: 37px;
+    }
+  }
+
+  .project .project-description {
+    margin-left: 25% ;
+  }
+
+  .use-case-figure {
+    .use-case-figcaption {
+      padding-left: 60px;
+      width: 18%;
+    }
   }
 }
