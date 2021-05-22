@@ -1,7 +1,7 @@
 {% if include.media == "video" %}
 <figure class="figure-project project-media-figure">
 
-    {% assign figure-type = "media" %}
+    {%- assign figure-type = "media" -%}
 
     {% capture in_file -%}
     {{- include.file -}}
@@ -15,7 +15,7 @@
     {{- include.border -}}
     {%- endcapture %}
 
-    {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
+    {%- include video-player.html type=figure-type file=in_file alt=in_alt border=in_border -%}
 
 
 

@@ -101,12 +101,6 @@ $(function () {
         $(activeFig).children().show()
         $(activeFig).siblings().children().hide()
 
-
-        console.log($(figGroup));
-        console.log($(figGroup).children());
-        console.log($(activeFig).find("video"));
-        console.log($(activeFig).find("video").get(0));
-
         $(activeFig).find("video").get(0).currentTime = 0
         $(activeFig).find("video").get(0).play()
         $(activeFig).siblings().find("video").get(0).pause()
@@ -376,7 +370,7 @@ $(".lightbox-source").on("click", (e) => {
 
     let lightbox = $(e.currentTarget).parent().parent().children(".lightbox")
     let lightboxGroup = $(e.currentTarget).parent().parent().children(".lightbox").children(".lightbox-group")
-    
+
     console.log(lightbox)
     let lightboxImg = lightboxGroup.children(".lightbox-img")
     console.log(lightboxImg)
@@ -402,9 +396,9 @@ $(".lightbox").on("click", (e) => {
     $(e.currentTarget).removeClass("open")
 })
 
-var lb = document.getElementsByClassName("lightbox-img")
+const lb = document.getElementsByClassName("lightbox-img")
 
-console.log(lb)
+// console.log(lb)
 
 function loaded(elem) {
     elem.addClass("open")
@@ -414,6 +408,287 @@ function loaded(elem) {
 
 
 
-let videos = document.getElementsByClassName("video-player")
 
-console.log(videos)
+if (window.matchMedia("(pointer: coarse)")) {
+
+    console.log("----- video player");
+    const videos = document.getElementsByClassName("player-video")
+    const videoPlayers = document.getElementsByClassName("player-controls")
+    const playerWrappers = document.getElementsByClassName("player-wrapper")
+    const playerControls = document.getElementsByClassName("player-control")
+
+    for (let element of videos) {
+        element.controls = false
+    }
+
+    for (let element of videoPlayers) {
+        element.style.display = "flex"
+    }
+
+    const playpause = document.getElementsByClassName('playpause');
+    const progress = document.getElementsByClassName('progress');
+    const mute = document.getElementsByClassName('mute');
+    const fullscreen = document.getElementsByClassName('fullscreen');
+
+
+    for (let elem of playerWrappers) {
+        elem.addEventListener('mouseenter', (e) => {
+            const playerControls = $(e.target).find(".player-controls")
+            if(playerControls.hasClass("faded")) playerControls.toggleClass("faded")
+        })
+
+        elem.addEventListener('mouseleave', (e) => {
+            const playerControls = $(e.target).find(".player-controls")
+            if(!playerControls.hasClass("faded")) playerControls.toggleClass("faded")
+            
+        })
+
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('loadedmetadata', (e) => {
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const progressBar = playerWrapper.find(".progress")[0]
+            progressBar.setAttribute('max', e.target.duration)
+        })
+
+        elem.addEventListener('click', (e) => {
+            if (elem.paused || elem.ended) {
+                // updateButton("startPlay", thisButton)
+                elem.play()
+                console.log("play");
+            } else {
+                // updateButton("startPause", thisButton)
+                elem.pause()
+                console.log("pause");
+            }
+        })
+
+        elem.addEventListener('timeupdate', (e) => {
+
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const progressBar = playerWrapper.find(".progress")[0]
+
+            if (!progressBar.getAttribute('max')) progressBar.setAttribute('max', e.target.duration);
+
+            const currentTime = e.target.currentTime
+            const duration = progressBar.getAttribute("max")
+
+            // console.log(currentTime);
+
+            progressBar.value = currentTime;
+
+            var value = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100
+            // console.log(value);
+            progressBar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+        });
+    }
+
+
+    // for (const elem of playpause) {
+    //     elem.addEventListener('click', (e) => {
+    //         // console.log(e.target);
+    //         // console.log($(e.target).parents(".player-wrapper"))
+
+    //         const thisButton = e.target
+
+    //         const playerWrapper = $(e.target).parents(".player-wrapper")
+    //         const video = playerWrapper.find("video")[0]
+
+    //         if (video.paused || video.ended) {
+    //             // updateButton("startPlay", thisButton)
+    //             video.play()
+    //             console.log("play");
+    //         } else {
+    //             // updateButton("startPause", thisButton)
+    //             video.pause()
+    //             console.log("pause");
+    //         }
+    //     });
+    // }
+
+    for (const elem of progress) {
+        elem.addEventListener('mousedown', (e) => {
+            console.log("mousedown");
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const video = playerWrapper.find("video")[0]
+            const button = playerWrapper.find(".playpause")[0]
+
+            updateButton("startPause", button)
+            video.pause()
+        })
+    }
+
+    for (const elem of progress) {
+        elem.addEventListener('mouseup', (e) => {
+            console.log("mouseup");
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const video = playerWrapper.find("video")[0]
+            const button = playerWrapper.find(".playpause")[0]
+
+            updateButton("startPlay", button)
+            video.play()
+        })
+    }
+
+
+    for (const elem of progress) {
+        elem.addEventListener('input', (e) => {
+            const progressBar = e.target
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const video = playerWrapper.find("video")[0]
+
+            video.currentTime = progressBar.value
+
+            const value = (progressBar.value-progressBar.min)/(progressBar.max-progressBar.min)*100
+            progressBar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+
+            // console.log(video.currentTime);
+        });
+    }
+
+    // for (const elem of mute) {
+    //     // const playerWrapper = $(elem).parents(".player-wrapper")
+    //     // const video = playerWrapper.find("video")[0]
+
+    //     // console.log(video.audioTracks);  
+    //     // console.log(video.audioTracks[0]);  
+    //     // console.log(video.audioTracks.length); 
+            
+    //     // if (!video.audioTracks[0]) { elem.disabled = true}
+
+    //     // if (video.muted) {
+    //     //     updateButton("startMute", elem)
+    //     // } else {
+    //     //     updateButton("startUnute", elem)
+    //     // }
+    //     // console.log("muted");
+
+
+    //     elem.addEventListener('click', (e) => {
+    //     console.log("muted");
+
+    //         const thisButton = e.target
+
+    //         const playerWrapper = $(e.target).parents(".player-wrapper")
+    //         const video = playerWrapper.find("video")[0]
+
+    //         if (video.muted) {
+    //             video.muted = false
+    //             updateButton("startUnmute", thisButton)
+
+    //             console.log("mute: off");
+    //         } else {
+    //             video.muted = true
+    //             updateButton("startMute", thisButton)
+    //             console.log("mute: on");
+    //         }
+    //     });
+    // }
+
+    // for (const elem of fullscreen) {
+    //     elem.addEventListener('click', (e) => {
+    //         const thisButton = e.target
+    //         const playerWrapper = $(e.target).parents(".player-wrapper")
+
+    //         handleFullscreen(playerWrapper);
+
+    //     });
+    // }
+
+    function updateButton(e, source) {
+        switch (e) {
+            case "startPause":
+                source.innerHTML = "Play"
+                break;
+            case "startPlay":
+                source.innerHTML = "Pause"
+                break;
+            case "startMute":
+                source.innerHTML = "X"
+                break;
+            case "startUnmute":
+                source.innerHTML = "O"
+                break;
+            default:
+                break;
+        }
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('pause', (e) => {
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const button = playerWrapper.find(".playpause")[0]
+            // updateButton("startPause", button)
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('play', (e) => {
+            const playerWrapper = $(e.target).parents(".player-wrapper")
+            const button = playerWrapper.find(".playpause")[0]
+            // updateButton("startPlay", button)
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('error', (e) => {
+            // console.log(e);
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('waiting', (e) => {
+            // console.log(e);
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('abort', (e) => {
+            console.log(e);
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('ended', (e) => {
+            console.log(e);
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('stalled', (e) => {
+            console.log(e);
+        })
+    }
+
+    for (let elem of videos) {
+        elem.addEventListener('suspend', (e) => {
+            // console.log(e);
+        })
+    }
+
+    var handleFullscreen = function(playerWrapper) {
+        if (isFullScreen()) {
+           if (document.exitFullscreen) document.exitFullscreen();
+           else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+           else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+           else if (document.msExitFullscreen) document.msExitFullscreen();
+           setFullscreenData(playerWrapper, false);
+        }
+        else {
+           if (playerWrapper.requestFullscreen) playerWrapper.requestFullscreen();
+           else if (playerWrapper.mozRequestFullScreen) playerWrapper.mozRequestFullScreen();
+           else if (playerWrapper.webkitRequestFullScreen) playerWrapper.webkitRequestFullScreen();
+           else if (playerWrapper.msRequestFullscreen) playerWrapper.msRequestFullscreen();
+           setFullscreenData(playerWrapper, true);
+        }
+     }
+     var isFullScreen = function() {
+        return !!(document.fullscreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
+     }
+    
+     var setFullscreenData = function(playerWrapper, state) {
+         console.log(playerWrapper[0]);
+        playerWrapper[0].setAttribute('data-fullscreen', !!state);
+     }
+}
