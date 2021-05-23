@@ -1,17 +1,19 @@
-- name: Save Item
+- name: Open and Save
   file: halo-useCase-1.mp4
-  figcaption: 
-- name: Navigations
+  figcaption: After searching, the results appear in the main exploration view together with important keywords. Users can select and open results to read or watch. To remember intersting information, they can click the 'save' button to highlight that item on the graph.  
+- name: Navigation
   file: halo-useCase-2.mp4
   figcaption: |
+    By clicking on keywords, users can start new searches and explore related content. New results are displayed in a second layer. An infinite amount of new layers can be opened and a minimap helps to keep track of the overall graph. 
 
+    Authors and other semantic data is highlighted and can be used for navigation as well.
 - name: History & Review
   file: halo-useCase-3.mp4
   figcaption: |
-
+    Following the exploration phase, users can toggle a switch to review the information they found so far and trace their actions step-by-step. This history view uses the same data and color codings as the exploration graph and is updated concurrently. 
 - name: Save Snippets
   file: halo-useCase-4.mp4
-  figcaption: 
+  figcaption: Saved items are highlighted here as well. After exploring a broad selection of intersting items, users can save smaller quotes of the most important pieces of information. 
 - name: Save Explorations
   file: halo-useCase-5.mp4
-  figcaption: 
+  figcaption: To make it easier to focus while allowing users to work on multiple topics at the same time, Halo can save and load separate explorations. 
