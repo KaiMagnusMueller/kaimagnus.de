@@ -14,4 +14,4 @@
 {% endfor %}
 {% endcapture %}
 
-<img class="{{ picture_class }}" src="/{{ path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+<img loading="lazy" class="{{ picture_class }}" src="/{{ path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">

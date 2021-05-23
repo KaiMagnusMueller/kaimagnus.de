@@ -83,7 +83,7 @@
     {% endcapture %}
 
     <div class="media-wrapper">
-        <img class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
+        <img loading="lazy" class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
             srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
     </div>
 
@@ -94,7 +94,7 @@
     <div class="lightbox">
         <div class="lightbox-bg"></div>
         <div class="lightbox-group">
-            <img class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
+            <img loading="lazy" class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
             <p>{{ caption }}</p>
         </div>
     </div>
