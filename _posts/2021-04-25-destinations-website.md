@@ -7,7 +7,7 @@ course:
 prefix: 
 custom_style:
 custom_js:
-description:
+description_short: "Designing the Destinations website"
 header_caption: ""
 ---
 
