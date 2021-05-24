@@ -78,3 +78,6 @@ responsive_image:
     - width: 945
     - width: 1440
     - width: 1890
+
+version_css: 2
+version_js: 2.15

@@ -69,7 +69,7 @@ layout: compress
         {%- endif %}
     </style>
 
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?v={{ site.version_css }}">
 </head>
 <body>
 {% include navigation.html %}
@@ -80,6 +80,6 @@ layout: compress
 
         <script type="text/javascript" src="/assets/js/vendor/vanilla-tilt.min.js"></script>
         <script type="text/javascript" src="/assets/js/vendor/jquery-3.6.0.slim.min.js"></script>
-<script type="text/javascript" src="/assets/js/src/main.js"></script>
+<script type="text/javascript" src="/assets/js/src/main.js?v={{ site.version_js }}"></script>
 </body>
 </html>
