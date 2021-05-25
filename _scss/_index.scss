@@ -235,6 +235,10 @@
     }
   }
 
+  p:last-of-type {
+    margin: 0;
+  }
+
   &:before {
     content: "";
     height: 50%;
@@ -283,6 +287,10 @@
 
 .gohfg-text {
   margin-top: 90px;
+
+  p:last-of-type {
+    margin: 0;
+  }
 }
 
 .button-highlight {

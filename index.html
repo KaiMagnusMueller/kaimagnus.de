@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Home
-description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at the HfG Schwäbisch Gmünd.
+title: Kai Magnus Müller - Interaction Design
+description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder of Destinations.
 ---
 
 <header id="hero" class="grid-4">
@@ -21,7 +21,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
             <span class="project-item-annotation">{{ project.annotation }}</span>
             {% endif %}
 
-            <a href="{{ project.url }}" id="{{forloop.index}}">
+            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
                 <div class="project-item-main" style="background-color: {{ project.color_main }};">
                     <div class="outer aspect-1-1">
 
@@ -100,7 +100,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         <div class="featured-left">
             <div id="featured-sticky" class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
                  data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}">
+                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
                     <div class="outer aspect-1-1">
                         <div class="inner project-item-desc">
                             <h2 class="">{{ project.title }}</h2>
@@ -149,7 +149,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         <div class="featured-left">
             <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
                  data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}">
+                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
                     <div class="outer aspect-1-1">
                         <div class="inner project-item-desc">
                             <h2 class="">{{ project.title }}</h2>
@@ -186,7 +186,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
     {% if site.articles == true %}
     <div class="divider-header articles-divider">
         <p class="left">Articles</p>
-        <a class="right" href="{% link articles.html %}">
+        <a class="right" href="{% link articles.html %}" alt="Go to all articles">
             <p>All</p>
         </a>
     </div>
@@ -195,7 +195,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
         {% for article in site.categories.articles limit: 3 %}
 
         <div class="article-list-item">
-            <a href="{{ article.url }}">
+            <a href="{{ article.url }}" alt="{{article.description_short}}">
                 <h2 class="article-heading">{{ article.title }}</h2>
                 <p class="article-date">
                     {%- assign day = article.date | date: "%-d"  %}
@@ -211,7 +211,7 @@ description: Hello, I'm Kai Magnus Müller. I'm an Interaction Design student at
 
         {% endfor %}
 
-        <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand">
+        <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand" alt="Go to all articles">
             <!--        <div class="button-plus">-->
             <!--            <span></span>-->
             <!--            <span></span>-->

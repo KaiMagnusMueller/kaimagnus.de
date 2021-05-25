@@ -7,7 +7,7 @@ course:
 prefix: oldwebsite
 custom_style:
 custom_js:
-description:
+description_short: "Visit the old website"
 header_caption: ""
 ---
 
