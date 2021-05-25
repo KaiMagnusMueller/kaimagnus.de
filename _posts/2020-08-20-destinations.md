@@ -136,8 +136,8 @@ Building Model -> Visitor Routes -> Information Sequences -> Signs
 
 {% endcomment%}
 
-### About
-This project was created during summer semester 2020 together with [Martin Wehl](http://www.martinwehl.de) as part of our bachelor thesis in Interaction Design at HfG Schwäbisch Gmünd. The project was supervised by Marc Guntow and [Daniel Utz](http://www.danielutz.de). 
+## About
+This project was created during summer semester 2020 together with [Martin Wehl](http://www.martinwehl.de) as part of our bachelor thesis in Interaction Design at HfG Schwäbisch Gmünd. The project was supervised by Prof. Marc Guntow and [ Prof. Daniel Utz](http://www.danielutz.de). 
 
 It is part of the goHfG startup program and was awarded the goAward in February 2021. More information and updates available at [www.build-destinations.com](www.build-destinations.com).
 
