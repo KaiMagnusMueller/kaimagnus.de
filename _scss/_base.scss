@@ -115,6 +115,7 @@ img {
 
 video {
   display: block;
+  width: 100%;
 }
 
 .grid-4-center-section {
@@ -182,7 +183,6 @@ figcaption-project {
 
 .lightbox {
   // display: none;
-  visibility: hidden;
 
   z-index: 1;
 

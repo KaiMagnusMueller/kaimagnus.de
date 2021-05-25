@@ -12,7 +12,7 @@ color_main: "#004144"
 colors: []
 custom_style: destinations_style
 custom_js: 
-external_page: www.build-destinations.com
+external_page: www.dev.build-destinations.com
 external_page_title: Visit the goHfG project site
 description: "Destinations is an application concept that simplifies the design process of wayfinding systems. Users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages."
 description_short: "Destinations is an application concept that simplifies the design process of wayfinding systems."
@@ -107,11 +107,11 @@ All of this data must be kept up-to-date in an ongoing project. Inevitably, chan
 
 One of the most important aspects of Destinations is it's data structure that is highly optimized for the design workflow. Basis is a 2D or 3D model of a site, from which decision points are generated. On top of these two components users create information sequences between places. They run through decision points on their way to their destination. When signs are created they are assigned to a decision point and have access to all information sequences that run through that point. Because of this, signs can access the destinations referenced by sequences and in turn properties of those destinations. 
 
-As the last puzzle piece, templates connected to signs can be dynamically filled with referenced data like room properties. 
-
-TODO
+As the last puzzle piece, templates connected to signs can be dynamically filled with referenced data like room properties.
 
 This approach makes Destinations and its workflow highly flexible. Properties are dynamic and editable and connected elements are updated correspondingly. 
+
+{% comment%}
 
 {% responsive_image 
     border: "true"
@@ -120,7 +120,6 @@ This approach makes Destinations and its workflow highly flexible. Properties ar
     alt: "Destinations data structure" 
     caption: "" %}
 
-{% comment%}
 
 Left: Graphic detailing the destinations data structure in different layers. 
 
@@ -135,6 +134,8 @@ Right: Workflow in Destinations
 Building Model -> Visitor Routes -> Information Sequences -> Signs 
 
 {% endcomment%}
+
+
 
 ## About
 This project was created during summer semester 2020 together with [Martin Wehl](http://www.martinwehl.de) as part of our bachelor thesis in Interaction Design at HfG Schwäbisch Gmünd. The project was supervised by Prof. Marc Guntow and [ Prof. Daniel Utz](http://www.danielutz.de). 

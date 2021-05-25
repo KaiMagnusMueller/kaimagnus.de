@@ -132,7 +132,7 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
             <div class="gohfg-text column column-3">
                 {% capture my_include %}{% include gohfg-text.md %}{% endcapture %}
                 {{ my_include | markdownify }}
-                <a href="index.html" class="button-link button-highlight">
+                <a href="//www.dev.build-destinations.com" class="button-link button-highlight">
                     <p>Go to the gohfg<br> project page</p>
                 </a>
             </div>
@@ -164,16 +164,7 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
             <p class="featured-desc-s">{{ project.description }}</p>
         </div>
         <div class="featured-right">
-            <div class="featured-image">
-                {%- capture image_path -%}
-                assets/img/{{ project.prefix }}-header.jpg
-                {%- endcapture -%}
-
-                {% responsive_image_block %}
-                template: _includes/responsive_image.html
-                path: {{ image_path }}
-                {% endresponsive_image_block %}
-            </div>
+                {%- include video-player.html type="media" file="halo-header.mp4" -%}
         </div>
 
         {% endif %}

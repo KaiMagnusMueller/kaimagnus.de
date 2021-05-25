@@ -365,15 +365,15 @@ if (randomBtn) {
 }
 
 $(".lightbox-source").on("click", (e) => {
-    console.log(e.currentTarget)
+    // console.log(e.currentTarget)
     //get lightbox div of eleement
 
     let lightbox = $(e.currentTarget).parent().parent().children(".lightbox")
     let lightboxGroup = $(e.currentTarget).parent().parent().children(".lightbox").children(".lightbox-group")
 
-    console.log(lightbox)
+    // console.log(lightbox)
     let lightboxImg = lightboxGroup.children(".lightbox-img")
-    console.log(lightboxImg)
+    // console.log(lightboxImg)
 
     let lbImageSrc = lightboxImg.data("src")
 
@@ -391,9 +391,12 @@ $(".lightbox-source").on("click", (e) => {
 
 
 $(".lightbox").on("click", (e) => {
-    console.log(e)
 
     $(e.currentTarget).removeClass("open")
+
+    $(e.currentTarget).css({
+        'visibility': 'hidden'
+      });
 })
 
 const lb = document.getElementsByClassName("lightbox-img")
@@ -401,8 +404,11 @@ const lb = document.getElementsByClassName("lightbox-img")
 // console.log(lb)
 
 function loaded(elem) {
-    elem.addClass("open")
 
+    elem.addClass("open")
+    $(elem).css({
+        'visibility': 'visible'
+      });
     console.log("loaded")
 }
 

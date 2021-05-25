@@ -91,7 +91,7 @@
     {% if caption %}
     <figcaption class="figcaption-project">{{ caption | markdownify }}</figcaption>
     {% endif %}
-    <div class="lightbox">
+    <div class="lightbox" style="visibility: hidden;">
         <div class="lightbox-bg"></div>
         <div class="lightbox-group">
             <img loading="lazy" class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
