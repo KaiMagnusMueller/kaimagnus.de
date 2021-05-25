@@ -288,7 +288,7 @@
 .gohfg-text {
   margin-top: 90px;
 
-  p:last-of-type {
+  & > p:last-of-type {
     margin: 0;
   }
 }
