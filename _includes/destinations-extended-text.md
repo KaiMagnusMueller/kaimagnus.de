@@ -1,4 +1,4 @@
-Destinations is an application concept that simplifies the design process of wayfinding systems. It streamlines and simplifies the whole design process which is currently dominated by manual work and a disjointed workflow. Users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages.
+Destinations is an application concept that simplifies the design process of wayfinding systems. It maps the complete design process, which is currently dominated by manual work. In Destinations, users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages. 
 
 During this project, we analyzed the design process in detail, spoke with designers and discovered pain points that they come in contact with during their work. 
 

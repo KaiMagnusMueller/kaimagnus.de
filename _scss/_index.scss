@@ -12,6 +12,7 @@
     background-color: white;
     padding: 5px 8px 6px 8px;
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0;
   }
 
@@ -235,8 +236,13 @@
     }
   }
 
-  p:last-of-type {
-    margin: 0;
+  & > p:nth-of-type(3){
+    margin-bottom: 0;
+  }
+
+  //safari column fix
+  & > p:nth-of-type(4){
+    margin-top: 0;
   }
 
   &:before {
@@ -271,7 +277,7 @@
   }
 
   .button-link {
-    height: 112px;
+    height: 125px;
     box-sizing: border-box;
   }
 }
@@ -429,16 +435,15 @@
     &:nth-of-type(3) {
       margin-bottom: 40px;
     }
-
-    h2 {
+  }
+  .project-item-desc {
+    h2, h1 {
       font-size: 38px;
     }
 
     p {
       font-size: 20px;
     }
-  }
-  .project-item-desc {
   }
 
   .index-projects .project-waterfall-item:nth-of-type(n + 4) {

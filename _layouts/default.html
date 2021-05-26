@@ -4,6 +4,7 @@ layout: compress
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="twitter:card" content="summary" />
@@ -52,12 +53,14 @@ layout: compress
             font-display: swap;
             src: url('/assets/fonts/webFonts/SofiaProBold/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProBold/font.woff') format('woff');
         }
+
         @font-face {
             font-family: "SofiaPro";
             font-weight: 600;
             font-display: swap;
             src: url('/assets/fonts/webFonts/SofiaProSemiBold/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProSemiBold/font.woff') format('woff');
         }
+
         @font-face {
             font-family: "SofiaPro";
             font-weight: 400;
@@ -65,21 +68,23 @@ layout: compress
             src: url('/assets/fonts/webFonts/SofiaProRegular/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProRegular/font.woff') format('woff');
         }
 
-        {%- if page.name == "index.html" %}
+        {%- if page.name=="index.html"%}
         {%- endif %}
     </style>
 
     <link rel="stylesheet" href="/assets/css/main.css?v={{ site.version_css }}">
 </head>
+
 <body>
-{% include navigation.html %}
+    {% include navigation.html %}
 
-        {{ content }}
+    {{ content }}
 
-        {% include footer.html %}
+    {% include footer.html %}
 
-        <script type="text/javascript" src="/assets/js/vendor/vanilla-tilt.min.js"></script>
-        <script type="text/javascript" src="/assets/js/vendor/jquery-3.6.0.slim.min.js"></script>
-<script type="text/javascript" src="/assets/js/src/main.js?v={{ site.version_js }}"></script>
+    <script type="text/javascript" src="/assets/js/vendor/vanilla-tilt.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/jquery-3.6.0.slim.min.js"></script>
+    <script type="text/javascript" src="/assets/js/src/main.js?v={{ site.version_js }}"></script>
 </body>
+
 </html>

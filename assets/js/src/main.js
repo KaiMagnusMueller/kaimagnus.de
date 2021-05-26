@@ -364,59 +364,62 @@ if (randomBtn) {
     })
 }
 
-$(".lightbox-source").on("click", (e) => {
-    // console.log(e.currentTarget)
-    //get lightbox div of eleement
+if (!window.matchMedia("(pointer: coarse)").matches) {
 
-    let lightbox = $(e.currentTarget).parent().parent().children(".lightbox")
-    let lightboxGroup = $(e.currentTarget).parent().parent().children(".lightbox").children(".lightbox-group")
+    $(".lightbox-source").on("click", (e) => {
+        // console.log(e.currentTarget)
+        //get lightbox div of eleement
 
-    // console.log(lightbox)
-    let lightboxImg = lightboxGroup.children(".lightbox-img")
-    // console.log(lightboxImg)
+        let lightbox = $(e.currentTarget).parent().parent().children(".lightbox")
+        let lightboxGroup = $(e.currentTarget).parent().parent().children(".lightbox").children(".lightbox-group")
 
-    let lbImageSrc = lightboxImg.data("src")
+        // console.log(lightbox)
+        let lightboxImg = lightboxGroup.children(".lightbox-img")
+        // console.log(lightboxImg)
 
-    $(lightboxImg).attr("src", lbImageSrc);
+        let lbImageSrc = lightboxImg.data("src")
 
-    if (this.complete) {
-        loaded(lightbox)
-    } else {
-        this.addEventListener('load', loaded(lightbox))
-        this.addEventListener('error', function () {
-            alert('error')
-        })
+        $(lightboxImg).attr("src", lbImageSrc);
+
+        if (this.complete) {
+            loaded(lightbox)
+        } else {
+            this.addEventListener('load', loaded(lightbox))
+            this.addEventListener('error', function () {
+                alert('error')
+            })
+        }
+    })
+
+
+    $(".lightbox").on("click", (e) => {
+
+        $(e.currentTarget).removeClass("open")
+
+        $(e.currentTarget).css({
+            'visibility': 'hidden'
+        });
+    })
+
+    const lb = document.getElementsByClassName("lightbox-img")
+
+    // console.log(lb)
+
+    function loaded(elem) {
+
+        elem.addClass("open")
+        $(elem).css({
+            'visibility': 'visible'
+        });
+        console.log("loaded")
     }
-})
-
-
-$(".lightbox").on("click", (e) => {
-
-    $(e.currentTarget).removeClass("open")
-
-    $(e.currentTarget).css({
-        'visibility': 'hidden'
-      });
-})
-
-const lb = document.getElementsByClassName("lightbox-img")
-
-// console.log(lb)
-
-function loaded(elem) {
-
-    elem.addClass("open")
-    $(elem).css({
-        'visibility': 'visible'
-      });
-    console.log("loaded")
 }
 
 
 
+if (!window.matchMedia("(pointer: coarse)").matches) {
 
-if (window.matchMedia("(pointer: coarse)")) {
-
+    console.log(window.matchMedia("(pointer: coarse)"));
     console.log("----- video player");
     const videos = document.getElementsByClassName("player-video")
     const videoPlayers = document.getElementsByClassName("player-controls")

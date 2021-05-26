@@ -10,19 +10,22 @@ course: Bachelor Project
 prefix: destinations
 color_main: "#004144"
 colors: []
-custom_style: destinations_style
-custom_js: 
 external_page: www.dev.build-destinations.com
 external_page_title: Visit the goHfG project site
 description: "Destinations is an application concept that simplifies the design process of wayfinding systems. Users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages."
 description_short: "Destinations is an application concept that simplifies the design process of wayfinding systems."
 
 annotation: Most Recent
+
+sitemap:
+    priority: 1
+
+
 --- 
 
 {% include header.html 
-    media="image"
-    file="destinations-header.jpg" 
+    media="video"
+    file="destinations-header-2.mp4" 
     alt="Destinations application screenshot" 
     caption="Destinations simplifies the wayfinding design process. It assists during analysis of project sites, placement of signs and management of visitor routes." %}
 
@@ -140,7 +143,7 @@ Building Model -> Visitor Routes -> Information Sequences -> Signs
 ## About
 This project was created during summer semester 2020 together with [Martin Wehl](http://www.martinwehl.de) as part of our bachelor thesis in Interaction Design at HfG Schwäbisch Gmünd. The project was supervised by Prof. Marc Guntow and [ Prof. Daniel Utz](http://www.danielutz.de). 
 
-It is part of the goHfG startup program and was awarded the goAward in February 2021. More information and updates available at [www.build-destinations.com](www.build-destinations.com).
+It is part of the goHfG startup program and was awarded the goAward in February 2021. More information and updates available at [www.build-destinations.com](https://www.dev.build-destinations.com).
 
 [Get the Documentation (.pdf, 47MB)][Doc]
 

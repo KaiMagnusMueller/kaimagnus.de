@@ -171,7 +171,7 @@ article {
   .use-case-figcaption {
     padding-left: 60px;
     width: 25%;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 }
 
@@ -270,7 +270,7 @@ figure {
 @media (max-width: 850px) {
   .project-header {
     flex-direction: column;
-  
+
     .featured-left {
       width: 70%;
       margin: 0 auto 20px;
@@ -279,11 +279,10 @@ figure {
     .project-page-title-box {
       margin-right: 0;
     }
-  
+
     .featured-right {
       width: 70%;
       margin: 0 auto;
-
     }
   }
 
@@ -302,11 +301,10 @@ figure {
   }
 }
 
-
 @media (max-width: 550px) {
   .project-header {
     flex-direction: column;
-  
+
     .featured-left {
       width: 100%;
       margin: 0 auto 20px;
@@ -315,12 +313,24 @@ figure {
     .project-page-title-box {
       margin-right: 0;
     }
-  
+
     .featured-right {
       width: 100%;
       margin: 0 auto;
-
     }
+
+    .button-link {
+      width: unset;
+      margin-right: 0;
+    }
+  }
+
+  .use-case-selector {
+    line-height: 1em;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+    width: intrinsic;
   }
 
   .project-header:first-of-type {
@@ -329,14 +339,14 @@ figure {
 }
 
 @media (min-width: 1700px) {
-  .project-header { 
+  .project-header {
     h1 {
       font-size: 37px;
     }
   }
 
   .project .project-description {
-    margin-left: 25% ;
+    margin-left: 25%;
   }
 
   .use-case-figure {

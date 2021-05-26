@@ -6,7 +6,7 @@
     project-media 
     {% elsif include.border==false -%}
         project-media-noborder
-        {%- endif -%}" controls="controls" muted loop src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
+        {%- endif -%}" controls="controls" playsinline muted loop src="../assets/video/{{ include.file }}" alt="{{ include.alt }}">
     </video>
 
     {%- elsif include.type == "usecase" -%}

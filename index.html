@@ -2,6 +2,8 @@
 layout: default
 title: Kai Magnus Müller - Interaction Design
 description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder of Destinations.
+sitemap:
+    priority: 1
 ---
 
 <header id="hero" class="grid-4">
@@ -50,7 +52,7 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
             </a>
         </div>
         {% if forloop.index == 2 %}
-        
+
         {%- capture projectSites -%}
         {
         {%- for post in site.categories.projects -%}
@@ -58,19 +60,20 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
         {%- unless forloop.last == true%},{% endunless -%}
         {%- endfor -%}
         }
-    {%- endcapture -%}
+        {%- endcapture -%}
 
-    {%- capture projectPrefixes -%}
-    [
-    {%- for post in site.categories.projects -%}
-    "{{- post.prefix -}}"
-    {%- unless forloop.last == true%},{% endunless -%}
-    {%- endfor -%}
-    ]
-{%- endcapture -%}
+        {%- capture projectPrefixes -%}
+        [
+        {%- for post in site.categories.projects -%}
+        "{{- post.prefix -}}"
+        {%- unless forloop.last == true%},{% endunless -%}
+        {%- endfor -%}
+        ]
+        {%- endcapture -%}
 
-        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
-        <p>Random Project</p>
+        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}'
+            data-sites='{{projectSites}}'>
+            <p>Random Project</p>
         </button>
         {% endif %}
 
@@ -84,10 +87,10 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
     {% endfor %}
 
     <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
-<!--        <div class="button-plus">-->
-<!--            <span></span>-->
-<!--            <span></span>-->
-<!--        </div>-->
+        <!--        <div class="button-plus">-->
+        <!--            <span></span>-->
+        <!--            <span></span>-->
+        <!--        </div>-->
         <img class="saw-shape" src="assets/src/jigsaw.svg" width="115" height="22" alt="View all articles">
     </a>
 </section>
@@ -98,8 +101,8 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
         {% for project in site.categories.projects %}
         {% if project.prefix == "destinations" %}
         <div class="featured-left">
-            <div id="featured-sticky" class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
-                 data-tilt-max="3">
+            <div id="featured-sticky" class="featured-title tilt-helper"
+                style="background-color: {{ project.color_main }};" data-tilt data-tilt-max="3">
                 <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
                     <div class="outer aspect-1-1">
                         <div class="inner project-item-desc">
@@ -115,16 +118,9 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
             <!-- <p class="featured-desc">{{ project.description }}</p> -->
         </div>
         <div class="featured-right">
-            <div class="featured-image">
-                {%- capture image_path -%}
-                assets/img/{{ project.prefix }}-header.jpg
-                {%- endcapture -%}
 
-                {% responsive_image_block %}
-                template: _includes/responsive_image.html
-                path: {{ image_path }}
-                {% endresponsive_image_block %}
-            </div>
+            {%- include video-player.html type="media" file="destinations-header-2.mp4" -%}
+
             <div class="extended-text column column-3">
                 {% capture my_include %}{% include destinations-extended-text.md %}{% endcapture %}
                 {{ my_include | markdownify }}
@@ -148,7 +144,7 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
         {% if project.prefix == "halo" %}
         <div class="featured-left">
             <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
-                 data-tilt-max="3">
+                data-tilt-max="3">
                 <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
                     <div class="outer aspect-1-1">
                         <div class="inner project-item-desc">
@@ -164,7 +160,7 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
             <p class="featured-desc-s">{{ project.description }}</p>
         </div>
         <div class="featured-right">
-                {%- include video-player.html type="media" file="halo-header.mp4" -%}
+            {%- include video-player.html type="media" file="halo-header.mp4" -%}
         </div>
 
         {% endif %}
@@ -189,7 +185,7 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
             <a href="{{ article.url }}" alt="{{article.description_short}}">
                 <h2 class="article-heading">{{ article.title }}</h2>
                 <p class="article-date">
-                    {%- assign day = article.date | date: "%-d"  %}
+                    {%- assign day = article.date | date: "%-d" %}
                     {%- case day %}
                     {%- when '1' or '21' or '31' %}{{ day }}st
                     {%- when '2' or '22' %}{{ day }}nd
@@ -217,15 +213,16 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
         <p class="left">Vita</p>
     </div>
 
-    <div class="vita-picture-container outer aspect-1-1">
-
-        {% responsive_image_block %}
-        template: _includes/responsive_image.html
-        path: assets/img/kaimagnus-portrait.jpg
-        picture_class: inner
-        img_class: vita-picture
-        alt: "Kai Magnus Müller portrait picture"
-        {% endresponsive_image_block %}
+    <div class="vita-picture-container">
+        <div class="outer aspect-1-1">
+            {% responsive_image_block %}
+            template: _includes/responsive_image.html
+            path: assets/img/kaimagnus-portrait.jpg
+            picture_class: inner
+            img_class: vita-picture
+            alt: "Kai Magnus Müller portrait picture"
+            {% endresponsive_image_block %}
+        </div>
     </div>
     <div class="vita-timeline">
         {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
@@ -240,5 +237,3 @@ description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder 
     </div>
     <!--    </div>-->
 </section>
-
-
