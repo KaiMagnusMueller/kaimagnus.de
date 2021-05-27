@@ -18,7 +18,7 @@ description_short: "Destinations is an application concept that simplifies the d
 annotation: Most Recent
 
 sitemap:
-    priority: 1
+    priority: 1.0
 
 
 --- 

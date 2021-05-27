@@ -10,7 +10,7 @@ custom_js:
 description_short: "Designing the Destinations website"
 header_caption: ""
 sitemap:
-    priority: 1
+    priority: 1.0
 ---
 
 
