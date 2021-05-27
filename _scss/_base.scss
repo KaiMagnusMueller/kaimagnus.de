@@ -20,11 +20,6 @@ body {
   margin: 0 auto 0 auto;
   max-width: 1440px - 160px;
 
-  @media screen and (max-width: 1200px) {
-    grid-column-gap: 3vw;
-    padding: 3vw;
-  }
-
   @media (max-width: 1200px) {
     grid-column-gap: 20px;
     padding: 0 26px;
@@ -36,10 +31,6 @@ body {
   margin: auto;
   max-width: 1440px - 160px;
   margin-bottom: 260px;
-
-  @media screen and (max-width: 1200px) {
-    padding: 3vw;
-  }
 
   @media (max-width: 1200px) {
     padding: 0 26px;
@@ -345,6 +336,9 @@ footer p {
       width: 100%;
     }
   }
+
+  #contact, .footer {
+  width: 70%;}
 }
 
 @media screen and (max-width: 550px) {
@@ -411,6 +405,10 @@ footer p {
       height: 200px;
       object-fit: cover;
     }
+  }
+  #contact, .footer {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
 
