@@ -119,7 +119,7 @@ a:hover {
     font-size: 13px;
   }
   @media screen and (max-width: 550px) {
-    font-size: revert;
+    font-size: unquote("min(1.6vmax, 13px)");
   }
   @media (min-width: 1700px) {
     font-size: 17px;
