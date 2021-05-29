@@ -32,9 +32,7 @@
   display: none;
 }
 
-
 @media screen and (max-width: 550px) {
-
   .nav {
     grid-column: span 1;
     margin: 26px 0;
@@ -46,7 +44,7 @@
     flex-direction: column;
     //position: absolute;
     //transform: translateY(-100%);
-    transition: all .3s cubic-bezier(0.42, 0, 0.12, 0.98);
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.12, 0.98);
     background-color: inherit;
     width: 100%;
     padding: 0;
@@ -77,11 +75,10 @@
     cursor: pointer;
     background-color: unset;
     position: relative;
-    transition: all .3s cubic-bezier(0.42, 0, 0.12, 0.98);
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.12, 0.98);
 
-     span {
-
-       display: block;
+    span {
+      display: block;
       height: inherit;
       width: 100%;
       background: white;
@@ -100,8 +97,7 @@
     }
 
     #hamburger {
-    transform: scaleY(2);
+      transform: scaleY(2);
     }
   }
 }
-

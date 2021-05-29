@@ -46,7 +46,7 @@ exclude:
 #  - assets/js/src/
   - assets/js/dist/
   - rollup.config.js
-  - readme.md
+  - README.md
 #  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/
