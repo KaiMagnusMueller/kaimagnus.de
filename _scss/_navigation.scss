@@ -34,7 +34,6 @@
 
 @media screen and (max-width: 550px) {
   .nav {
-    grid-column: span 1;
     margin: 26px 0;
     flex-direction: column;
   }
@@ -42,19 +41,25 @@
   .nav-items {
     margin: 20px 0 -40% 0;
     flex-direction: column;
-    //position: absolute;
-    //transform: translateY(-100%);
-    transition: all 0.3s cubic-bezier(0.42, 0, 0.12, 0.98);
+    transition: all 0.46s cubic-bezier(0.42, 0, 0.12, 0.98);
     background-color: inherit;
     width: 100%;
     padding: 0;
+    // clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
+    visibility: hidden;
 
-    clip-path: polygon(0% 0%, 0% 0%, 100% 0%, 100% 0%);
-    //visibility: hidden;
     a {
+      opacity: 0;
       margin: 11px 0 0 0;
       font-size: 14px;
       width: fit-content;
+      transform: translateY(-10px);
+
+      @for $i from 4 through 1 {
+        &:nth-of-type(#{5 - $i}) {
+          transition: all 0.3s cubic-bezier(0.42, 0, 0.12, 0.98) 0.04s * $i;
+        }
+      }
     }
   }
 
@@ -90,14 +95,32 @@
   .open {
     .nav-items {
       visibility: visible;
-
-      clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
-
-      margin-bottom: 0%;
+      margin-bottom: 10%;
     }
 
     #hamburger {
       transform: scaleY(2);
+    }
+  }
+
+  .open {
+    .nav-items {
+      a {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .open {
+    .nav-items {
+      a {
+        @for $i from 1 through 4 {
+          &:nth-of-type(#{$i}) {
+            transition: all 0.3s cubic-bezier(0.42, 0, 0.12, 0.98) 0.04s * $i;
+          }
+        }
+      }
     }
   }
 }
