@@ -42,7 +42,8 @@ body {
     padding: 0 18px;
   }
 
-  & > p, ol {
+  & > p,
+  ol {
     @include text-standard-proj;
   }
 
@@ -146,8 +147,10 @@ figcaption-project {
   }
 }
 
-.project-media-figure, .use-case-figure {
-  .media-wrapper, .player-wrapper {
+.project-media-figure,
+.use-case-figure {
+  .media-wrapper,
+  .player-wrapper {
     width: 75%;
   }
 }
@@ -316,16 +319,23 @@ footer p {
       .footnotes,
       .link-back,
       blockquote,
-      .recent-articles {
+      .recent-articles,
+      ol {
         width: 70%;
         margin-left: auto;
         margin-right: auto;
       }
     }
+
+    ol {
+      padding-left: 20px;
+    }
   }
 
-  .project-media-figure, .use-case-figure {
-    .media-wrapper, .player-wrapper {
+  .project-media-figure,
+  .use-case-figure {
+    .media-wrapper,
+    .player-wrapper {
       width: 100%;
     }
   }
@@ -340,6 +350,14 @@ footer p {
       margin-top: 20px;
       padding-left: 0;
       width: 100%;
+    }
+  }
+
+  figcaption,
+  .use-case-figcaption,
+  figcaption-project {
+    p:first-of-type {
+      margin: 0;
     }
   }
 
@@ -369,13 +387,10 @@ footer p {
         margin-right: auto;
       }
     }
-    & > p, ol {
+    & > p,
+    ol {
       @include text-standard-m;
     }
-  }
-
-  ol {
-    padding-left: 20px;
   }
 
   .page-content-margin-small {
@@ -409,9 +424,20 @@ footer p {
     }
   }
 
-  .project-media-figure {
-    flex-direction: column;
-  }
+
+.figure-project, .use-case-container {
+  padding: 16px 0;
+  border-top: solid 4px white ;
+  border-bottom: solid 4px white ;
+
+}
+//   .project-media-figure figcaption, .use-case-figcaption {
+// padding-bottom: 16px;
+//     border-bottom: solid 4px white;
+//     // width: 90%;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
 
   .project-media-figure:first-of-type {
     img {
@@ -419,7 +445,8 @@ footer p {
       object-fit: cover;
     }
   }
-  #contact, .footer {
+  #contact,
+  .footer {
     width: 100%;
     box-sizing: border-box;
   }
@@ -462,8 +489,10 @@ button {
     }
   }
 
-  .project-media-figure, .use-case-figure {
-    .media-wrapper, .player-wrapper {
+  .project-media-figure,
+  .use-case-figure {
+    .media-wrapper,
+    .player-wrapper {
       width: 82%;
     }
   }

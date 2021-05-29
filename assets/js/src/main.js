@@ -18,6 +18,7 @@ $(function () {
         try {
             const firstFigure = $(".use-case-figure-group").find(">:first-child")
 
+            firstFigure.show()
             firstFigure.addClass("active")
             firstFigure.children().show()
 
@@ -64,11 +65,13 @@ $(function () {
 
 
             $(activeFig).addClass("active")
+            $(activeFig).show()
             $(activeFig).siblings().removeClass("active")
 
 
             $(activeFig).children().show()
             $(activeFig).siblings().children().hide()
+            $(activeFig).siblings().hide()
 
             $(activeFig).find("video").get(0).currentTime = 0
             $(activeFig).find("video").get(0).play()
@@ -96,10 +99,12 @@ $(function () {
 
         $(activeFig).addClass("active")
         $(activeFig).siblings().removeClass("active")
+        $(activeFig).show()
 
 
         $(activeFig).children().show()
         $(activeFig).siblings().children().hide()
+        $(activeFig).siblings().hide()
 
         $(activeFig).find("video").get(0).currentTime = 0
         $(activeFig).find("video").get(0).play()
