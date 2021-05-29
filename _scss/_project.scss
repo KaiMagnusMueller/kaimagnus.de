@@ -302,6 +302,17 @@ figure {
 }
 
 @media (max-width: 550px) {
+
+  .project-header h1 {
+    @include text-h1
+  }
+
+  .project .project-description {
+    @include text-h2;
+    margin: 26px auto 60px;
+  }
+
+
   .project-header {
     flex-direction: column;
 
@@ -330,7 +341,7 @@ figure {
     margin-bottom: 10px;
     display: block;
     position: relative;
-    width: intrinsic;
+    width: fit-content;
   }
 
   .project-header:first-of-type {

@@ -24,6 +24,9 @@ body {
     grid-column-gap: 20px;
     padding: 0 26px;
   }
+  @media (max-width: 550px) {
+    padding: 0 18px;
+  }
 }
 
 .blog-content {
@@ -35,9 +38,11 @@ body {
   @media (max-width: 1200px) {
     padding: 0 26px;
   }
+  @media (max-width: 550px) {
+    padding: 0 18px;
+  }
 
-  & > p,
-  ol {
+  & > p, ol {
     @include text-standard-proj;
   }
 
@@ -93,6 +98,7 @@ body {
 
 ol {
   // padding-left: 20px;
+  box-sizing: border-box;
 }
 
 $link-translate-right: translateX(12px);
@@ -363,6 +369,13 @@ footer p {
         margin-right: auto;
       }
     }
+    & > p, ol {
+      @include text-standard-m;
+    }
+  }
+
+  ol {
+    padding-left: 20px;
   }
 
   .page-content-margin-small {
