@@ -425,16 +425,16 @@
     padding: 15px;
     h2,
     h1 {
-      font-size: unquote("min(2.4vmax, 18px)");
+      font-size: unquote("min(2.5vw, 20px)");
     }
 
     p {
-      font-size: unquote("min(1.6vmax, 13px);");
+      font-size: unquote("min(1.8vw, 13px);");
     }
   }
 
   .button-link > * {
-    font-size: unquote("min(1.6vmax, 13px);");
+    font-size: unquote("min(1.8vmax, 13px);");
 }
 
   .column > p {
@@ -560,11 +560,10 @@
     padding: 15px;
     h2,
     h1 {
-      font-size: unquote("min(2.4vmax, 18px)");
+      font-size: unquote("min(5vw, 28px);");
     }
-
     p {
-      font-size: unquote("min(1.6vmax, 13px);");
+      font-size: unquote("min(4vw, 13px);");
     }
   }
 
