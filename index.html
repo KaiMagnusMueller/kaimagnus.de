@@ -3,8 +3,10 @@ layout: default
 title: Kai Magnus Müller - Interaction Design
 description: Hello, I'm Kai Magnus Müller. Interaction Designer and co-founder of Destinations.
 sitemap:
-priority: 1.0
-changefreq: weekly
+
+sitemap:
+    priority: 1.0
+    changefreq: weekly
 ---
 
 <header id="hero" class="grid-4">
@@ -16,7 +18,7 @@ changefreq: weekly
     </div>
 </header>
 
-<section id="projects" class="projects-waterfall grid-4">
+<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4">
     {% for project in site.categories.projects limit: 8 %}
     <div class="project-waterfall-item">
         <div class="tilt-helper" data-tilt data-tilt-max="3">
