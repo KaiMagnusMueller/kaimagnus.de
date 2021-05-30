@@ -6,10 +6,6 @@ article {
   a:visited {
     color: #8ab5ff;
   }
-
-  p {
-    //@include text-standard-l
-  }
 }
 
 //.article-background {
@@ -45,13 +41,9 @@ article {
 //  }
 //}
 
-.project-header:first-of-type {
-  margin-top: 200px;
-}
-
 .project-header {
   display: flex;
-  grid-column: 1/-1;
+  margin-top: 200px;
 
   .featured-left {
     width: 25%;
@@ -80,7 +72,6 @@ article {
 }
 
 .project {
-  margin-top: 100px;
 
   //Fix for nested grid-4
   .grid-4 {
@@ -270,6 +261,7 @@ figure {
   }
 
   .project-header {
+    margin-top: 100px;
     .button-link {
       margin-right: 26px;
     }
@@ -285,12 +277,9 @@ figure {
 }
 
 @media (max-width: 850px) {
-  .project-header:first-of-type {
-    margin-top: 0;
-  }
-
   .project-header {
     flex-direction: column;
+    margin-top: 100px;
 
     .featured-left {
       width: 70%;
@@ -329,10 +318,6 @@ figure {
 }
 
 @media (orientation: landscape) and (max-width: 850px) {
-  .project {
-    margin-top: 30px;
-  }
-
   .project-header {
     .project-page-title-box {
       .aspect-1-1::before {
@@ -343,10 +328,6 @@ figure {
 }
 
 @media (max-width: 550px) {
-  .project {
-    margin-top: 50px;
-  }
-
   .project .project-description {
     @include text-h2;
     margin: 26px auto 60px;
@@ -354,6 +335,8 @@ figure {
 
   .project-header {
     flex-direction: column;
+    margin-top: 30px;
+
     h1 {
       @include text-h1;
     }
