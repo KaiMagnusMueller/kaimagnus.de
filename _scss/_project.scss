@@ -269,6 +269,12 @@ figure {
     margin-right: 26px;
   }
 
+  .project-header {
+    .button-link {
+      margin-right: 26px;
+    }
+  }
+
   .use-case-figcaption {
     padding-left: 26px;
   }
@@ -282,7 +288,7 @@ figure {
   .project-header:first-of-type {
     margin-top: 0;
   }
-  
+
   .project-header {
     flex-direction: column;
 
@@ -291,17 +297,20 @@ figure {
       margin: 0 auto 20px;
     }
 
-    .project-page-title-box {
+    .button-link {
       margin-right: 0;
-
-      .aspect-1-1::before {
-        padding-top: 50%;
-      }
     }
 
     .featured-right {
-      width: 70%;
+      width: 100%;
       margin: 0 auto;
+    }
+  }
+
+  .project-page-title-box {
+    margin-right: 0;
+    .aspect-1-1::before {
+      padding-top: 50%;
     }
   }
 
@@ -319,7 +328,7 @@ figure {
   }
 }
 
-@media (orientation:landscape) and (max-width: 850px) {
+@media (orientation: landscape) and (max-width: 850px) {
   .project {
     margin-top: 30px;
   }
@@ -332,7 +341,6 @@ figure {
     }
   }
 }
-
 
 @media (max-width: 550px) {
   .project {
@@ -353,10 +361,6 @@ figure {
     .featured-left {
       width: 100%;
       margin: 0 auto 20px;
-    }
-
-    .featured-right {
-      width: 100%;
     }
 
     .button-link {
