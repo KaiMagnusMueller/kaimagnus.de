@@ -80,5 +80,5 @@ responsive_image:
     - width: 1890
 
 version: 
-  css: 2.1
-  js: 2.15
+  css: 2.4
+  js: 2.16

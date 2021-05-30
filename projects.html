@@ -8,11 +8,11 @@ sitemap:
 ---
 
 
-<section id="projects" class="page-content-margin-small grid-4">
+<section id="projects" class="page-content-margin-small projects-waterfall  grid-4">
     <h1 class="page-title">{{ page.title}}</h1>
 
 {% for project in site.categories.projects %}
-<div class="project-waterfall-item">
+<div class="project-waterfall-item projects-page-item">
     <div class="tilt-helper" data-tilt data-tilt-max="3">
         {% if project.annotation%}
         <span class="project-item-annotation">{{ project.annotation }}</span>

@@ -31,9 +31,12 @@ sitemap:
     {% endunless %}
     {%- endfor -%}
     {%- for page in site.pages -%}
-    {%- unless page.sitemap.exclude == "yes" or page.name == "feed.xml" -%}
+    {%- unless page.sitemap.exclude == "yes" or page.name == "/feed.xml" -%}
     <url>
-        <loc>{{ site.url }}{{ page.url | remove: "index.html" }}</loc>
+    {% comment %}
+        <loc>{{ site.url }}{{page.dir}}{{ page.name }}</loc>
+    {% endcomment %}
+        <loc>{{ site.url }}{{page.url}}</loc>
         {% if page.sitemap.lastmod %}
         <lastmod>{{- page.sitemap.lastmod | date: "%Y-%m-%d" -}}</lastmod>
         {%- elsif page.date -%}

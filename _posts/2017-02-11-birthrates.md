@@ -14,8 +14,7 @@ custom_js:
 description: This interactive data visualization displays the population and birth rates of every country on earth. The user can travel from 1950 up until 2010 and watch the countries develop. 
 ---
 
-{% include media.html 
-    border=true
+{% include header.html 
     media="video"
     file="birthrates-header.mp4" 
     alt="" 

@@ -6,10 +6,6 @@ article {
   a:visited {
     color: #8ab5ff;
   }
-
-  p {
-    //@include text-standard-l
-  }
 }
 
 //.article-background {
@@ -45,13 +41,9 @@ article {
 //  }
 //}
 
-.project-header:first-of-type {
-  margin-top: 200px;
-}
-
 .project-header {
   display: flex;
-  grid-column: 1/-1;
+  margin-top: 200px;
 
   .featured-left {
     width: 25%;
@@ -80,7 +72,6 @@ article {
 }
 
 .project {
-  margin-top: 100px;
 
   //Fix for nested grid-4
   .grid-4 {
@@ -160,19 +151,12 @@ article {
 .use-case-figure {
   display: flex;
   flex-direction: row;
+}
 
-  .player-wrapper {
-  }
-
-  .use-case-video {
-    // max-width: 75%;
-  }
-
-  .use-case-figcaption {
-    padding-left: 60px;
-    width: 25%;
-    box-sizing: border-box;
-  }
+.use-case-figcaption {
+  padding-left: 60px;
+  width: 25%;
+  box-sizing: border-box;
 }
 
 .use-case-selector {
@@ -184,30 +168,41 @@ article {
   margin-right: 20px;
   cursor: pointer;
   position: relative;
+  transition: all 0.3s;
 
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 0;
-    background-color: white;
-    transition: all 0.3s;
-    transform: scaleX(1);
-    left: 0;
+  // &:after {
+  //   content: "";
+  //   display: block;
+  //   position: absolute;
+  //   height: 4px;
+  //   width: 0;
+  //   background-color: white;
+  //   transition: all 0.3s;
+  //   transform: scaleX(1);
+  //   left: 0;
+  // }
+
+  opacity: 0.5;
+
+  // &:after {
+  //   display: none;
+  // }
+  &.active {
+    opacity: 1;
   }
 
   &:hover {
-    &:after {
-      width: 100%;
-      transform: scaleX(1);
-    }
+    // &:after {
+    //   width: 100%;
+    //   transform: scaleX(1);
+    // }
+    opacity: 1;
   }
 
   &.active {
-    &:after {
-      width: 100%;
-    }
+    // &:after {
+    //   width: 100%;
+    // }
   }
 }
 
@@ -230,8 +225,8 @@ figure {
 }
 
 .link-back {
+  @include text-standard-m;
   display: block;
-  grid-column: 2 /-1;
   color: $white-90;
   margin: 50px 0 260px 0;
 
@@ -261,6 +256,20 @@ figure {
   .project-description {
     width: 70%;
   }
+  .project-page-title-box {
+    margin-right: 26px;
+  }
+
+  .project-header {
+    margin-top: 100px;
+    .button-link {
+      margin-right: 26px;
+    }
+  }
+
+  .use-case-figcaption {
+    padding-left: 26px;
+  }
 
   .footnotes {
     width: 70%;
@@ -270,19 +279,27 @@ figure {
 @media (max-width: 850px) {
   .project-header {
     flex-direction: column;
+    margin-top: 100px;
 
     .featured-left {
       width: 70%;
       margin: 0 auto 20px;
     }
 
-    .project-page-title-box {
+    .button-link {
       margin-right: 0;
     }
 
     .featured-right {
-      width: 70%;
+      width: 100%;
       margin: 0 auto;
+    }
+  }
+
+  .project-page-title-box {
+    margin-right: 0;
+    .aspect-1-1::before {
+      padding-top: 50%;
     }
   }
 
@@ -292,31 +309,41 @@ figure {
     .use-case-video {
       max-width: 100%;
     }
+  }
+  .use-case-figcaption {
+    margin-top: 20px;
+    padding-left: 0;
+    width: 100%;
+  }
+}
 
-    .use-case-figcaption {
-      margin-top: 20px;
-      padding-left: 0;
-      width: 100%;
+@media (orientation: landscape) and (max-width: 850px) {
+  .project-header {
+    .project-page-title-box {
+      .aspect-1-1::before {
+        padding-top: 25%;
+      }
     }
   }
 }
 
 @media (max-width: 550px) {
+  .project .project-description {
+    @include text-h2;
+    margin: 26px auto 60px;
+  }
+
   .project-header {
     flex-direction: column;
+    margin-top: 30px;
+
+    h1 {
+      @include text-h1;
+    }
 
     .featured-left {
       width: 100%;
       margin: 0 auto 20px;
-    }
-
-    .project-page-title-box {
-      margin-right: 0;
-    }
-
-    .featured-right {
-      width: 100%;
-      margin: 0 auto;
     }
 
     .button-link {
@@ -325,17 +352,25 @@ figure {
     }
   }
 
+  .use-case-selector-group {
+    // display: flex;
+    // overflow: scroll;
+    // width: max-content;
+  }
+
   .use-case-selector {
     line-height: 1em;
     margin-bottom: 10px;
     display: block;
     position: relative;
-    width: intrinsic;
+    width: fit-content;
   }
 
-  .project-header:first-of-type {
-    margin-top: 0;
-  }
+  // .use-case-figcaption {
+  //   // width: 90%;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }
 
 @media (min-width: 1700px) {

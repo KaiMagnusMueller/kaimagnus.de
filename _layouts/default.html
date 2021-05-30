@@ -68,6 +68,13 @@ layout: compress
             src: url('/assets/fonts/webFonts/SofiaProRegular/font.woff2') format('woff2'), url('/assets/fonts/webFonts/SofiaProRegular/font.woff') format('woff');
         }
 
+        @media screen and (max-width: 550px) {
+            .nav-items {
+                margin: 20px 0 -40% 0;
+                visibility: hidden;
+            }
+        }
+        
         {%- if page.name=="index.html"%}
         {%- endif %}
     </style>
