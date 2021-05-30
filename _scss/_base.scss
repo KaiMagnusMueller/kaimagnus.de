@@ -403,9 +403,19 @@ footer p {
 }
 
 @media (max-width: 1200px) {
+  .project-media-figure {
+    cursor: revert;
+  }
+
   .page-content-margin-small {
     margin-top: 80px;
     margin-bottom: 120px;
+  }
+
+  .project-media-figure {
+    figcaption {
+      padding-left: 26px;
+    }
   }
 
   #contact {
@@ -574,10 +584,6 @@ footer p {
 
   .projects-page-item:nth-of-type(2n) {
     margin-top: 40px;
-  }
-
-  .project-item-desc {
-    padding: 15px;
   }
 
   .project-waterfall-item {

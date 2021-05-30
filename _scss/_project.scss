@@ -234,8 +234,8 @@ figure {
 }
 
 .link-back {
+  @include text-standard-m;
   display: block;
-  grid-column: 2 /-1;
   color: $white-90;
   margin: 50px 0 260px 0;
 
@@ -264,6 +264,13 @@ figure {
 @media (max-width: 1200px) {
   .project-description {
     width: 70%;
+  }
+  .project-page-title-box {
+    margin-right: 26px;
+  }
+
+  .use-case-figcaption {
+    padding-left: 26px;
   }
 
   .footnotes {
