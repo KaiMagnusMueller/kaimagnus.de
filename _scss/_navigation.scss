@@ -32,6 +32,12 @@
   display: none;
 }
 
+@media (orientation:landscape) and (max-width: 850px) {
+  .nav {
+    margin: 26px 0;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .nav {
     margin: 26px 0;
