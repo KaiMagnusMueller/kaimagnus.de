@@ -71,7 +71,7 @@ path: assets/img/articles/website-final2x.png
 alt: ""
 caption: "Our final design. " %}
 
-Here a look at our final design, or view the website live at [build-destinations.com](https://www.build-destinations.com). 
+Here a look at our final design, or view the website live at [build-destinations.com](https://www.dev.build-destinations.com). 
 
 As stated before, it uses a white background paired with black text and some highlight colors. We use the Sofia Pro typeface for headings and large text and Libre Baskerville for paragraph texts. Sections are separated by a thin black lines and can be divided into two and three columns. To draw a visitors eyes' to content elements, we designed a series of small geometric shapes that are applied at random.
 
