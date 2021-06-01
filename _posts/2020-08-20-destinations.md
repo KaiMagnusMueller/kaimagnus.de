@@ -108,7 +108,7 @@ All of this data must be kept up-to-date in an ongoing project. Inevitably, chan
 
 ## Data Structure
 
-One of the most important aspects of Destinations is it's data structure that is highly optimized for the design workflow. Basis is a 2D or 3D model of a site, from which decision points are generated. On top of these two components users create information sequences between places. They run through decision points on their way to their destination. When signs are created they are assigned to a decision point and have access to all information sequences that run through that point. Because of this, signs can access the destinations referenced by sequences and in turn properties of those destinations. 
+One of the most important aspects of Destinations is it's data structure that is highly optimized for the design workflow. Basis is a 2D or 3D model of a site, from which decision points are generated. On top of these two components users create information sequences between places. They connect the previously generated decision points on their way to their destination. When signs are created they are assigned to a decision point and have access to all information sequences that run through that point. Because of this, signs can access the destinations referenced by sequences and in turn properties of those destinations. 
 
 As the last puzzle piece, templates connected to signs can be dynamically filled with referenced data like room properties.
 

@@ -1,6 +1,8 @@
 ## Summer 2020
 
-Successfully graduated at HfG with Destinations as bachelor project.
+Successfully graduated from HfG with Destinations as bachelor project.
+
+Destinations enters the goHfG startup initiative.
 
 ## Spring / Summer 2019
 
