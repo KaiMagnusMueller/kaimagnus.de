@@ -5,7 +5,8 @@
   padding: 0;
   list-style: none;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  @include text-annotation-xs;
 
   color: $white-50;
 
@@ -15,7 +16,8 @@
 }
 
 .nav-title {
-  font-size: 16px;
+  margin-right: 18px;
+
 }
 
 .nav-items {
@@ -24,8 +26,14 @@
 
   a {
     margin-left: 18px;
-    @include text-annotation-xs;
   }
+}
+
+.nav-horiz-divider {
+  height: 2px;
+  flex-grow: 1;
+  background-color: $white-90;
+  margin: 0 20px;
 }
 
 #hamburger {
@@ -74,7 +82,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 0;
   }
+
+  .nav-horiz-divider {
+    display: none;
+  }
+
 
   #hamburger {
     z-index: 1;
