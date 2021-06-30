@@ -1,3 +1,17 @@
+.navigation {
+  left: 0;
+  position: absolute;
+  top: 0px;
+  /* width: 100%; */
+  right: 0;
+  opacity: 0;
+  transition: all .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.navigation:hover {
+  opacity: 1;
+} 
+
 .nav {
   grid-column: span 4;
   margin: 36px 0;
@@ -8,10 +22,15 @@
   align-items: center;
   @include text-annotation-xs;
 
-  color: $white-50;
+  color: $white-0;
 
   .current {
-    color: $white-90;
+    color: $white-10;
+  }
+
+  a{
+
+    text-decoration: none;
   }
 }
 
@@ -32,7 +51,7 @@
 .nav-horiz-divider {
   height: 2px;
   flex-grow: 1;
-  background-color: $white-90;
+  background-color: $white-0;
   margin: 0 20px;
 }
 

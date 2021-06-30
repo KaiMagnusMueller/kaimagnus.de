@@ -1,22 +1,32 @@
 .personal-intro {
-  grid-column: 2 / span 2;
-  // margin-top: 150px;
+  grid-column: 1 / span 4;
+  margin: 140px 0;
   // margin-bottom: 195px;
-  margin-top: clamp(40px, 20vh, 300px);
-  margin-bottom: clamp(195px, 25vh, 360px);
+  // margin-top: clamp(40px, 20vh, 300px);
+  // margin-bottom: clamp(195px, 25vh, 360px);
 
-  h1 {
+  min-height: 100vh;
+
+  .inline-highlight {
     line-height: 1em;
-    color: $bg-color;
-    background-color: white;
-    padding: 5px 8px 6px 8px;
+    color: $text-color;
+    background-color: $bg-color;
+    padding: 5px 8px 12px 8px;
     width: fit-content;
     width: -moz-fit-content;
-    margin: 0;
+    margin-bottom: 0.3em;
+    display: inline-block;
+    }
+
+  a {
+    // text-decoration-color: rgb(231, 0, 200);
+    text-decoration-color: rgb(19, 231, 0)
   }
 
   p {
-    @include text-bold-l;
+    @include text-h1;
+    font-weight: 700;
+    margin-bottom: 40px;
   }
 }
 
