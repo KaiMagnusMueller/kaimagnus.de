@@ -19,8 +19,16 @@
     }
 
   a {
-    // text-decoration-color: rgb(231, 0, 200);
-    text-decoration-color: rgb(19, 231, 0)
+    text-decoration-color: rgb(231, 0, 200);
+    // text-decoration-color: rgb(19, 231, 0)
+    // text-decoration-color: rgb(158, 158, 158)
+    transition: none;
+  }
+
+  a:hover {
+    // text-decoration-color: rgb(46, 0, 40);
+    // opacity: .6;
+    color: rgb(109, 0, 94)
   }
 
   p {

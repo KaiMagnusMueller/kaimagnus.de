@@ -23,7 +23,7 @@ changefreq: weekly
     </div>
 </header>
 
-<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4 section-wide">
+<section id="projects" class="projects-waterfall  mobile-projects-limit mobile-small-projects-grid section-wide grid-4">
     {% for project in site.categories.projects limit: 8 %}
     <div class="project-waterfall-item">
         <div class="tilt-helper" data-tilt data-tilt-max="3">
@@ -105,6 +105,12 @@ changefreq: weekly
                 transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
         </svg>
     </a>
+</section>
+
+<section>
+    {% for project in site.categories.projects %}
+
+    {% endfor %}
 </section>
 
 <section id="vita" class="grid-4">

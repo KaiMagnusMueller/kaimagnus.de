@@ -37,7 +37,11 @@ body {
 .section-wide {
   padding: 0 40px;
   margin: 0 auto 0 auto;
-  max-width: 1440px - 160px;
+  max-width: 1920px - 160px;
+
+  @media (max-width: 1700px) {
+    max-width: 1920px - 160px;
+  }
 
   @media (max-width: 1200px) {
     grid-column-gap: 20px;
@@ -155,6 +159,14 @@ video {
   transform: perspective(1000px);
 }
 
+.waterfall-grid {
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  column-count: 4;
+  break-inside: avoid;
+}
+
 .project-waterfall-item {
   grid-column: span 1;
 
@@ -246,12 +258,12 @@ video {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  // color: white;
 
   p {
     margin: 0 0 0 0;
     @include text-annotation-l;
     font-size: 16px;
-    opacity: 0.7;
   }
 }
 
@@ -665,9 +677,6 @@ button {
 }
 
 @media (min-width: 1700px) {
-  .grid-4 {
-    max-width: 1920px - 160px;
-  }
 
   .blog-content {
     padding: 0 80px;

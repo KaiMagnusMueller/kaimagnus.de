@@ -29,16 +29,8 @@ a:visited {
 }
 
 a:hover {
-  &::before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    left: .05em;
-    right: .03em;
-    bottom: .10em;
-    background: $white-10;
-  }
-  color: $white-90;
+
+  // color: $white-90;
 }
 
 @mixin text-h1 {
