@@ -1,5 +1,5 @@
 .personal-intro {
-  grid-column: 2 / span 2;
+  grid-column: 1 / -1;
   // margin-top: 150px;
   // margin-bottom: 195px;
   margin-top: clamp(40px, 20vh, 300px);
@@ -230,12 +230,16 @@
 }
 
 .vita-divider {
-  grid-column: 2 / -1;
+  grid-column: 3 / -1;
   grid-row: 1;
 }
 
 .motivation-divider {
   display: none;
+}
+
+.articles-divider {
+  grid-column: 1 / span 2;
 }
 
 .vita-picture-container {
@@ -244,6 +248,18 @@
   .vita-picture {
     //height: 50%;
   }
+}
+
+.vita-timeline, .vita-motivation  {
+  grid-column: 3 / span 2;
+}
+
+.article-section {
+  grid-column: span 2;
+}
+
+.vita-section {
+  grid-column: span 2;
 }
 
 .contact-text {

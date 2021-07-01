@@ -9,12 +9,17 @@ sitemap:
     changefreq: weekly
 ---
 
-<header id="hero" class="grid-4">
+<header id="hero" class="grid-4 section-thin">
     <div class="personal-intro">
-        <h1>Hi, I’m Kai Magnus.</h1>
-        <p>A Stuttgart, Germany based interaction designer working on human centered experiences and products, that help
-            us in daily life and productivity.</p>
-        <p>Let me show you what I've been working on.</p>
+        <p><span class="inline-highlight">Hi, I’m Kai Magnus.</span><br> A product designer at <a
+                href="https://www.syncier.com">Syncier</a>, working on human centered experiences and products.
+            Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
+            companies and at <a href="https://www.precious-forever.com">precious design</a> working for a CRM startup.
+            <p>    
+                While studying, I wrote a bachelor thesis about <a href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a> , designed a  <a href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>. 
+            </p>
+
+        </p>
     </div>
 </header>
 
@@ -102,81 +107,12 @@ sitemap:
     </a>
 </section>
 
-<section id="featured-projects" class="">
-
-    <div class="featured-project grid-4">
-        {% for project in site.categories.projects %}
-        {% if project.prefix == "destinations" %}
-        <div class="featured-left">
-            <div id="featured-sticky" class="featured-title tilt-helper"
-                style="background-color: {{ project.color_main }};" data-tilt data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
-                    <div class="outer aspect-1-1">
-                        <div class="inner project-item-desc">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- <p class="featured-desc">{{ project.description }}</p> -->
-        </div>
-        <div class="featured-right">
-
-            {%- include video-player.html type="media" file="destinations-header-2.mp4" -%}
-
-            <div class="extended-text column column-3">
-                {% capture my_include %}{% include destinations-extended-text.md %}{% endcapture %}
-                {{ my_include | markdownify }}
-            </div>
-            <div class="gohfg-text column column-3">
-                {% capture my_include %}{% include gohfg-text.md %}{% endcapture %}
-                {{ my_include | markdownify }}
-                <a href="//www.dev.build-destinations.com" class="button-link button-highlight">
-                    <p>Go to the gohfg<br> project page</p>
-                </a>
-            </div>
-        </div>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-
-    <div class="featured-project grid-4">
-
-        {% for project in site.categories.projects %}
-        {% if project.prefix == "halo" %}
-        <div class="featured-left">
-            <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
-                data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
-                    <div class="outer aspect-1-1">
-                        <div class="inner project-item-desc">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <p class="featured-desc-s">{{ project.description }}</p>
-        </div>
-        <div class="featured-right">
-            {%- include video-player.html type="media" file="halo-header.mp4" -%}
-        </div>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-</section>
-
 <section id="vita" class="grid-4">
     <!--    <div class="">-->
+
+    <div class="article-section">
+
+
     {% if site.articles == true %}
     <div class="divider-header articles-divider">
         <p class="left">Articles</p>
@@ -185,7 +121,7 @@ sitemap:
         </a>
     </div>
 
-    <div class="main-section article-section">
+    <div class="main-section">
         {% for article in site.categories.articles limit: 3 %}
 
         <div class="article-list-item">
@@ -218,25 +154,12 @@ sitemap:
     </div>
 
     {% endif %}
+</div>
+
+<div class="vita-section">
 
     <div class="divider-header vita-divider">
         <p class="left">Vita</p>
-    </div>
-
-    <div class="vita-picture-container">
-        <div class="outer aspect-1-1">
-            {% responsive_image_block %}
-            template: _includes/responsive_image.html
-            path: assets/img/kaimagnus-portrait.jpg
-            picture_class: inner
-            img_class: vita-picture
-            alt: "Kai Magnus Müller portrait picture"
-            {% endresponsive_image_block %}
-        </div>
-    </div>
-    <div class="vita-timeline">
-        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
-        {{ my_include | markdownify }}
     </div>
     <div class="divider-header motivation-divider">
         <p class="left">Motivation</p>
@@ -246,4 +169,6 @@ sitemap:
         {{ my_include | markdownify }}
     </div>
     <!--    </div>-->
+</div>
+
 </section>

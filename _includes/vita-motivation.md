@@ -1,5 +1,3 @@
-## Thinking
-
 Being a designer means to gather and create ideas and connect them in new ways while maintaining a strategic working process. My main motivation is essentially about grasping and understanding any kind of topic no matter the complexity. Synthesizing findings into great products, concepts and visions is one of my greatest joys. 
 
 ## Working
