@@ -17,18 +17,24 @@
     margin-bottom: 0.3em;
     display: inline-block;
     }
-
+    
   a {
-    text-decoration-color: rgb(231, 0, 200);
+    // text-decoration-color: rgb(231, 0, 200);
+    // text-decoration-color: #00aac5;
     // text-decoration-color: rgb(19, 231, 0)
     // text-decoration-color: rgb(158, 158, 158)
     transition: none;
+    text-decoration: none;
+    color: #F2F2F2;
+    background-color: black;
+    padding: 0px 8px 3px 8px;
+    line-height: 1em;
   }
 
   a:hover {
     // text-decoration-color: rgb(46, 0, 40);
     // opacity: .6;
-    color: rgb(109, 0, 94)
+    color: rgb(179, 28, 158)
   }
 
   p {

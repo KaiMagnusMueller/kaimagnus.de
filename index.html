@@ -23,6 +23,32 @@ changefreq: weekly
     </div>
 </header>
 
+<section class="section-wide section-align-right">
+    {%- capture projectSites -%}
+    {
+    {%- for post in site.categories.projects -%}
+    "{{- post.prefix -}}": "{{- post.url -}}"
+    {%- unless forloop.last == true%},{% endunless -%}
+    {%- endfor -%}
+    }
+    {%- endcapture -%}
+    
+    {%- capture projectPrefixes -%}
+    [
+    {%- for post in site.categories.projects -%}
+    "{{- post.prefix -}}"
+    {%- unless forloop.last == true%},{% endunless -%}
+    {%- endfor -%}
+    ]
+    {%- endcapture -%}
+    
+    <button id="random-button" class="button random-project-button" data-prefixes='{{- projectPrefixes -}}'
+        data-sites='{{projectSites}}'>
+        Random Project
+    </button>
+</section>
+
+
 <section id="projects" class="projects-waterfall  mobile-projects-limit mobile-small-projects-grid section-wide grid-4">
     {% for project in site.categories.projects limit: 8 %}
     <div class="project-waterfall-item">
@@ -32,7 +58,7 @@ changefreq: weekly
             {% endif %}
 
             <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
-                <div class="project-item-main" style="background-color: {{ project.color_main }};">
+                <div class="project-item-main">
                     <div class="outer aspect-1-1">
 
                         {%- capture image_path -%}
@@ -47,8 +73,8 @@ changefreq: weekly
                         {% endresponsive_image_block %}
 
                     </div>
-                    <div class="outer aspect-1-1">
-                        <div class="project-item-desc inner">
+                    <div class="aspect-1-1">
+                        <div class="project-item-desc ">
                             <h2 class="">{{ project.title }}</h2>
                             <div class="project-item-metadata">
                                 <p class="project-course">{{ project.course }}</p>
@@ -60,29 +86,6 @@ changefreq: weekly
             </a>
         </div>
         {% if forloop.index == 2 %}
-
-        {%- capture projectSites -%}
-        {
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}": "{{- post.url -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        }
-        {%- endcapture -%}
-
-        {%- capture projectPrefixes -%}
-        [
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        ]
-        {%- endcapture -%}
-
-        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}'
-            data-sites='{{projectSites}}'>
-            <p>Random Project</p>
-        </button>
         {% endif %}
 
         {% if forloop.index == 8 %}
