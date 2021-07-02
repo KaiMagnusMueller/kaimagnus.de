@@ -1,9 +1,9 @@
 .personal-intro {
   grid-column: 1 / -1;
-  // margin-top: 150px;
-  // margin-bottom: 195px;
-  margin-top: clamp(40px, 20vh, 300px);
-  margin-bottom: clamp(195px, 25vh, 360px);
+  margin-top: 80px;
+  margin-bottom: 80px;
+  // margin-top: clamp(40px, 20vh, 300px);
+  // margin-bottom: clamp(195px, 25vh, 360px);
 
   h1 {
     line-height: 1em;
@@ -16,7 +16,9 @@
   }
 
   p {
-    @include text-bold-l;
+    @include text-h1;
+    font-weight: 700;
+    margin-bottom: 80px;
   }
 }
 
