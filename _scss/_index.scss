@@ -1,5 +1,5 @@
 .personal-intro {
-  grid-column: 1 / -1;
+  grid-column: 1 / 4;
   margin-top: 80px;
   margin-bottom: 80px;
   // margin-top: clamp(40px, 20vh, 300px);
@@ -20,12 +20,19 @@
     font-weight: 700;
     margin-bottom: 80px;
   }
+
+  a, .inline-highlight {
+    background-color: $text-color;
+    color: $bg-color;
+    padding: 0 8px;
+  }
+
+  a:hover {
+    background-color: #aaa;
+  }
 }
 
-.project-item-main > *,
-.project-item-main:before {
-  grid-area: 1/1;
-}
+
 
 .button-link {
   border: 4px solid $white-30;

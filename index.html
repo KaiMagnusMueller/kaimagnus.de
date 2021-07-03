@@ -23,7 +23,7 @@ sitemap:
     </div>
 </header>
 
-<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4">
+<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4 section-wide">
     {% for project in site.categories.projects limit: 8 %}
     <div class="project-waterfall-item">
         <div class="tilt-helper" data-tilt data-tilt-max="3">
@@ -59,7 +59,7 @@ sitemap:
                 </div>
             </a>
         </div>
-        {% if forloop.index == 2 %}
+        {% if forloop.index == 10 %}
 
         {%- capture projectSites -%}
         {
@@ -85,7 +85,7 @@ sitemap:
         </button>
         {% endif %}
 
-        {% if forloop.index == 8 %}
+        {% if forloop.index == 10 %}
         {% assign project_count = site.categories.projects | size | minus: 8 %}
         <a href="/projects/" class="button-link all-project-button">
             <p>Show {{ project_count }} more</p>
@@ -107,7 +107,7 @@ sitemap:
     </a>
 </section>
 
-<section id="vita" class="grid-4">
+<section id="vita" class="grid-4 section-thin">
     <!--    <div class="">-->
 
     <div class="article-section">
