@@ -1,7 +1,11 @@
 ---
 layout: project
 title:  "Destinations"
-title_long:  "Wayfinding design software"
+# Short title for tab title
+tab_title_extended:  "Wayfinding design software"
+# title extension for tab title
+display_title:
+# Long version for index html
 date:   2020-08-20 10:19:47 +0100
 semester_date: Summer 2020
 categories: [projects]

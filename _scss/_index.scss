@@ -1,13 +1,13 @@
 .personal-intro {
   grid-column: 1 / 4;
-  margin-top: 80px;
-  margin-bottom: 80px;
+  // margin-top: 80px;
+  // margin-bottom: 80px;
   // margin-top: clamp(40px, 20vh, 300px);
   // margin-bottom: clamp(195px, 25vh, 360px);
 
   h1 {
     line-height: 1em;
-    color: $bg-color;
+    color: $text-color;
     background-color: white;
     padding: 5px 8px 6px 8px;
     width: fit-content;
@@ -22,8 +22,8 @@
   }
 
   a, .inline-highlight {
-    background-color: $text-color;
-    color: $bg-color;
+    background-color: $bg-color;
+    color: $text-color;
     padding: 0 8px;
   }
 
