@@ -9,7 +9,7 @@ priority: 1.0
 changefreq: weekly
 ---
 
-<header id="hero" class="grid-4 section-thin margin-bt--l margin-top--s">
+<header id="hero" class="grid-4 section-thin margin-bt--xl margin-top--s">
     <div class="personal-intro">
         <p><span class="inline-highlight">Hi, I’m Kai Magnus.</span><br> A product designer at <a
                 href="https://www.syncier.com">Syncier</a>, working on human centered experiences and products.
@@ -30,67 +30,87 @@ changefreq: weekly
 <section id="projects"
     class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4 section-thin margin-top--l margin-bt--l ">
 
-    <ul class="projects-list grid-sec-l">
+    <div class="project-section grid-sec-l">
 
-        {% for project in site.categories.projects limit: 8 %}
-        <li class="project-waterfall-item">
-            <hr>
-            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
-                {{ project.title }}
-            </a>
+        <div class="divider-header">
+            <p class="left">Projects</p>
 
-            {% if forloop.index == 8%}
-            <hr>
-            {% endif %}
-        </li>
-        {% endfor %}
-
-        {%- capture projectSites -%}
-        {
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}": "{{- post.url -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        }
-        {%- endcapture -%}
-
-        {%- capture projectPrefixes -%}
-        [
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        ]
-        {%- endcapture -%}
-
-        <div class="project-waterfall-item project-list-links flex-space-between">
-            <button id="random-button" class="minimal-btn text-annotation-s" data-prefixes='{{- projectPrefixes -}}'
-                data-sites='{{projectSites}}'>
-                Random Project
-            </button>
-            <a href="/projects/" class="text-annotation-s">
-                All
-            </a>
         </div>
 
-        <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
-            <!--        <div class="button-plus">-->
-            <!--            <span></span>-->
-            <!--            <span></span>-->
-            <!--        </div>-->
-            <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-                viewBox="0 0 114.829 21.657">
-                <path data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                    transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-            </svg>
-        </a>
-    </ul>
+        <ul class="projects-list ">
+
+            {% for project in site.categories.projects limit: 8 %}
+            <li class="list-item">
+                <a class="text-bold-m" href="{{ project.url }}" id="{{forloop.index}}"
+                    alt="{{ project.description_short}}" title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
+                    {{ project.title }}
+                </a>
+
+                <hr>
+            </li>
+            {% endfor %}
+
+            {%- capture projectSites -%}
+            {
+            {%- for post in site.categories.projects -%}
+            "{{- post.prefix -}}": "{{- post.url -}}"
+            {%- unless forloop.last == true%},{% endunless -%}
+            {%- endfor -%}
+            }
+            {%- endcapture -%}
+
+            {%- capture projectPrefixes -%}
+            [
+            {%- for post in site.categories.projects -%}
+            "{{- post.prefix -}}"
+            {%- unless forloop.last == true%},{% endunless -%}
+            {%- endfor -%}
+            ]
+            {%- endcapture -%}
+
+            <div class="list-item project-list-links flex-space-between">
+                <button id="random-button" title="Go to random project" class="minimal-btn text-annotation-s" data-prefixes='{{- projectPrefixes -}}'
+                    data-sites='{{projectSites}}'>
+                    Random Project
+                </button>
+
+                <a href="{% link projects.html %}" id="articles-expand" class="button-mobile-expand"
+                alt="Go to all projects" title="Go to all projects">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="9"
+                    viewBox="0 0 27 9" shape-rendering="crispEdges">
+                    <defs>
+                        <clipPath>
+                            <rect width="27" height="9" />
+                        </clipPath>
+                    </defs>
+                    <g id="icon-expand" clip-path="url(#clip-icon-expand)">
+                        <path data-name="Pfad 99" d="M-0,0l5-5,5,5,5-5,5,5,5-5" transform="translate(1 7)" fill="none"
+                            stroke="#000" stroke-width="2" />
+                    </g>
+                </svg>
+            </a>
+
+            </div>
+
+            <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
+                <!--        <div class="button-plus">-->
+                <!--            <span></span>-->
+                <!--            <span></span>-->
+                <!--        </div>-->
+                <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
+                    viewBox="0 0 114.829 21.657">
+                    <path data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
+                        transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
+                </svg>
+            </a>
+        </ul>
+    </div>
 
     {% comment %}
     <ul class="projects-list">
 
         {% for project in site.categories.projects limit: 8 %}
-        <li class="project-waterfall-item">
+        <li class="list-item">
             <hr>
             <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
                 {{ project.course }}
@@ -106,21 +126,40 @@ changefreq: weekly
 
 </section>
 
-<section id="article" class="grid-4 section-thin margin-top--l margin-bt--l">
+<section id="article" class="grid-4 section-thin margin-top--l margin-bt--xl">
     <!--    <div class="">-->
 
     <div class="article-section grid-sec-l">
         {% if site.articles == true %}
-        <div class="divider-header articles-divider">
+        <div class="divider-header ">
             <p class="left">Articles</p>
-            <a class="right" href="{% link articles.html %}" alt="Go to all articles">
-                <p>All</p>
-            </a>
+
         </div>
 
         <div class="main-section">
-            {% for article in site.categories.articles limit: 3 %}
 
+            <ul class="projects-list grid-sec-l">
+                {% for article in site.categories.articles limit: 3 %}
+
+                <li class="list-item article-list-item">
+                    <a class="text-bold-m article-link" href="{{ article.url }}" alt="{{article.description_short}}">
+                        {{ article.title }}
+                        {% comment %}
+                        <span class="article-date">
+                            {%- assign day = article.date | date: "%-d" %}
+                            {%- case day %}
+                            {%- when '1' or '21' or '31' %}{{ day }}st
+                            {%- when '2' or '22' %}{{ day }}nd
+                            {%- when '3' or '23' %}{{ day }}rd
+                            {%- else %}{{ day }}th
+                            {%- endcase %}
+                            {{- article.date | date: " %B, %Y" }}</span>
+                            {% endcomment %}
+                    </a>
+                    <hr>
+                </li>
+
+                <!-- 
             <div class="article-list-item">
                 <a href="{{ article.url }}" alt="{{article.description_short}}">
                     <h2 class="article-heading">{{ article.title }}</h2>
@@ -134,20 +173,25 @@ changefreq: weekly
                         {%- endcase %}
                         {{- article.date | date: " %B, %Y" }}</p>
                 </a>
-            </div>
+            </div> -->
 
-            {% endfor %}
+                {% endfor %}
+            </ul>
+
 
             <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand"
-                alt="Go to all articles">
-                <!--        <div class="button-plus">-->
-                <!--            <span></span>-->
-                <!--            <span></span>-->
-                <!--        </div>-->
-                <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-                    viewBox="0 0 114.829 21.657">
-                    <path data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                        transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
+                alt="Go to all articles" title="Go to all articles">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="9"
+                    viewBox="0 0 27 9" shape-rendering="crispEdges">
+                    <defs>
+                        <clipPath>
+                            <rect width="27" height="9" />
+                        </clipPath>
+                    </defs>
+                    <g id="icon-expand" clip-path="url(#clip-icon-expand)">
+                        <path data-name="Pfad 99" d="M-0,0l5-5,5,5,5-5,5,5,5-5" transform="translate(1 7)" fill="none"
+                            stroke="#000" stroke-width="2" />
+                    </g>
                 </svg>
             </a>
         </div>
