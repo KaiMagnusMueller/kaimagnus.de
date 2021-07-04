@@ -1,12 +1,12 @@
 body {
   font-family: "SofiaPro", sans-serif;
   font-weight: 600;
-  color: $white-10;
-  background-color: $text-color;
+  color: $text-color;
+  background-color: $bg-color;
 }
 
 a {
-  color: inherit;
+  color: $text-color;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -17,7 +17,7 @@ a:visited {
 }
 
 a:hover {
-  color: $white-90;
+  // color: $white-90;
 }
 
 @mixin text-h1 {
@@ -112,9 +112,13 @@ a:hover {
 }
 
 @mixin text-annotation-s {
+  font-family: "SofiaPro", sans-serif;
   font-size: 15px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  font-weight: 600;
+  color: $white-10;
+
   @media screen and (max-width: 1200px) {
     font-size: 13px;
   }
@@ -166,6 +170,10 @@ p {
 h3 {
   @include text-h2;
   margin: 38px 0 10px 0;
+}
+
+.text-annotation-s {
+  @include text-annotation-s
 }
 
 @media screen and (max-width: 550px) {

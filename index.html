@@ -5,60 +5,45 @@ description: Portfolio of Kai Magnus Müller, Interaction Designer at Syncier an
 sitemap:
 
 sitemap:
-    priority: 1.0
-    changefreq: weekly
+priority: 1.0
+changefreq: weekly
 ---
 
-<header id="hero" class="grid-4 section-thin margin-bt--l margin-top--m">
+<header id="hero" class="grid-4 section-thin margin-bt--l margin-top--s">
     <div class="personal-intro">
         <p><span class="inline-highlight">Hi, I’m Kai Magnus.</span><br> A product designer at <a
                 href="https://www.syncier.com">Syncier</a>, working on human centered experiences and products.
             Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
             companies and at <a href="https://www.precious-forever.com">precious design</a> working for a CRM startup.
-            </p>
-            <p>    
-                While studying, I wrote a bachelor thesis about <a href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a> , designed a  <a href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>. 
-            </p>
+        </p>
+        <p>
+            While studying, I wrote a bachelor thesis about <a
+                href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a> , designed a <a
+                href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a
+                href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a
+                href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
+        </p>
 
     </div>
 </header>
 
-<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4 section-wide">
-    {% for project in site.categories.projects limit: 8 %}
-    <div class="project-waterfall-item">
-        <div class="tilt-helper" data-tilt data-tilt-max="3">
-            {% if project.annotation%}
-            <span class="project-item-annotation">{{ project.annotation }}</span>
-            {% endif %}
+<section id="projects"
+    class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4 section-thin margin-top--l margin-bt--l ">
 
+    <ul class="projects-list grid-sec-l">
+
+        {% for project in site.categories.projects limit: 8 %}
+        <li class="project-waterfall-item">
+            <hr>
             <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
-                <div class="project-item-main" style="background-color: {{ project.color_main }};">
-                    <div class="outer aspect-1-1">
-
-                        {%- capture image_path -%}
-                        assets/img/{{ project.prefix }}-start.jpg
-                        {%- endcapture -%}
-
-                        {% responsive_image_block %}
-                        template: _includes/responsive_image.html
-                        path: {{ image_path }}
-                        picture_class: inner
-                        img_class:
-                        {% endresponsive_image_block %}
-
-                    </div>
-                    <div class="outer aspect-1-1">
-                        <div class="project-item-desc inner">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {{ project.title }}
             </a>
-        </div>
-        {% if forloop.index == 10 %}
+
+            {% if forloop.index == 8%}
+            <hr>
+            {% endif %}
+        </li>
+        {% endfor %}
 
         {%- capture projectSites -%}
         {
@@ -78,96 +63,112 @@ sitemap:
         ]
         {%- endcapture -%}
 
-        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}'
-            data-sites='{{projectSites}}'>
-            <p>Random Project</p>
-        </button>
-        {% endif %}
-
-        {% if forloop.index == 10 %}
-        {% assign project_count = site.categories.projects | size | minus: 8 %}
-        <a href="/projects/" class="button-link all-project-button">
-            <p>Show {{ project_count }} more</p>
-        </a>
-        {% endif %}
-    </div>
-    {% endfor %}
-
-    <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
-        <!--        <div class="button-plus">-->
-        <!--            <span></span>-->
-        <!--            <span></span>-->
-        <!--        </div>-->
-        <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-            viewBox="0 0 114.829 21.657">
-            <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-        </svg>
-    </a>
-</section>
-
-<section id="vita" class="grid-4 section-thin">
-    <!--    <div class="">-->
-
-    <div class="article-section">
-
-
-    {% if site.articles == true %}
-    <div class="divider-header articles-divider">
-        <p class="left">Articles</p>
-        <a class="right" href="{% link articles.html %}" alt="Go to all articles">
-            <p>All</p>
-        </a>
-    </div>
-
-    <div class="main-section">
-        {% for article in site.categories.articles limit: 3 %}
-
-        <div class="article-list-item">
-            <a href="{{ article.url }}" alt="{{article.description_short}}">
-                <h2 class="article-heading">{{ article.title }}</h2>
-                <p class="article-date">
-                    {%- assign day = article.date | date: "%-d" %}
-                    {%- case day %}
-                    {%- when '1' or '21' or '31' %}{{ day }}st
-                    {%- when '2' or '22' %}{{ day }}nd
-                    {%- when '3' or '23' %}{{ day }}rd
-                    {%- else %}{{ day }}th
-                    {%- endcase %}
-                    {{- article.date | date: " %B, %Y" }}</p>
+        <div class="project-waterfall-item project-list-links flex-space-between">
+            <button id="random-button" class="minimal-btn text-annotation-s" data-prefixes='{{- projectPrefixes -}}'
+                data-sites='{{projectSites}}'>
+                Random Project
+            </button>
+            <a href="/projects/" class="text-annotation-s">
+                All
             </a>
         </div>
 
-        {% endfor %}
-
-        <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand" alt="Go to all articles">
+        <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
             <!--        <div class="button-plus">-->
             <!--            <span></span>-->
             <!--            <span></span>-->
             <!--        </div>-->
             <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
                 viewBox="0 0 114.829 21.657">
-                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16" transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
+                <path data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
+                    transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
             </svg>
         </a>
-    </div>
+    </ul>
 
-    {% endif %}
-</div>
+    {% comment %}
+    <ul class="projects-list">
 
-<div class="vita-section">
+        {% for project in site.categories.projects limit: 8 %}
+        <li class="project-waterfall-item">
+            <hr>
+            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
+                {{ project.course }}
+            </a>
 
-    <div class="divider-header vita-divider">
-        <p class="left">Vita</p>
+            {% if forloop.index == 8%}
+            <hr>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endcomment %}
+
+</section>
+
+<section id="article" class="grid-4 section-thin margin-top--l margin-bt--l">
+    <!--    <div class="">-->
+
+    <div class="article-section grid-sec-l">
+        {% if site.articles == true %}
+        <div class="divider-header articles-divider">
+            <p class="left">Articles</p>
+            <a class="right" href="{% link articles.html %}" alt="Go to all articles">
+                <p>All</p>
+            </a>
+        </div>
+
+        <div class="main-section">
+            {% for article in site.categories.articles limit: 3 %}
+
+            <div class="article-list-item">
+                <a href="{{ article.url }}" alt="{{article.description_short}}">
+                    <h2 class="article-heading">{{ article.title }}</h2>
+                    <p class="article-date">
+                        {%- assign day = article.date | date: "%-d" %}
+                        {%- case day %}
+                        {%- when '1' or '21' or '31' %}{{ day }}st
+                        {%- when '2' or '22' %}{{ day }}nd
+                        {%- when '3' or '23' %}{{ day }}rd
+                        {%- else %}{{ day }}th
+                        {%- endcase %}
+                        {{- article.date | date: " %B, %Y" }}</p>
+                </a>
+            </div>
+
+            {% endfor %}
+
+            <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand"
+                alt="Go to all articles">
+                <!--        <div class="button-plus">-->
+                <!--            <span></span>-->
+                <!--            <span></span>-->
+                <!--        </div>-->
+                <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
+                    viewBox="0 0 114.829 21.657">
+                    <path data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
+                        transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
+                </svg>
+            </a>
+        </div>
+
+        {% endif %}
     </div>
-    <div class="divider-header motivation-divider">
-        <p class="left">Motivation</p>
+</section>
+
+<section id="vita" class="grid-4 section-thin margin-top--l margin-bt--l">
+    <div class="vita-section grid-sec-l">
+        <div class="divider-header vita-divider">
+            <p class="left">Vita</p>
+        </div>
+        <div class="divider-header motivation-divider">
+            <p class="left">Motivation</p>
+        </div>
+        <div class="vita-motivation">
+            {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
+            {{ my_include | markdownify }}
+        </div>
+        <!--    </div>-->
     </div>
-    <div class="vita-motivation">
-        {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
-        {{ my_include | markdownify }}
-    </div>
-    <!--    </div>-->
-</div>
 
 </section>

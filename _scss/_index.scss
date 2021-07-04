@@ -22,8 +22,8 @@
   }
 
   a, .inline-highlight {
-    background-color: $bg-color;
-    color: $text-color;
+    background-color: $text-color;
+    color: $bg-color;
     padding: 0 8px;
   }
 
@@ -222,7 +222,7 @@
   align-content: space-between;
   margin-bottom: 40px;
 
-  border-bottom: 4px solid $white-90;
+  border-bottom: 2px solid $white-10;
 
   p {
     //@include text-h1;
@@ -264,11 +264,9 @@
 }
 
 .article-section {
-  grid-column: span 2;
 }
 
 .vita-section {
-  grid-column: span 2;
 }
 
 .contact-text {
