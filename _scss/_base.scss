@@ -528,6 +528,26 @@ footer p {
   }
 }
 
+input[type="text"] {
+  appearance: none;
+  border-radius: 0;
+  background-color: unset;
+  border: none;
+  border: solid 2px black;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  padding: 8px 6px;
+}
+input[type="text"]:focus {
+  border-radius: 0;
+  outline: none;
+  background-color: white;
+  // box-shadow: #00000069 0 0 6px inset;
+  border: solid 2px black;
+// outline-offset: 2px;
+}
+
+
 @media (max-width: 850px) {
   .blog-content {
     & > {
