@@ -116,7 +116,7 @@ a:hover {
   // letter-spacing: 0.5px;
   // text-transform: uppercase;
   font-weight: 600;
-  color: $white-10;
+  color: $text-color;
 
   @media screen and (max-width: 1200px) {
     font-size: 13px;
@@ -153,6 +153,28 @@ a:hover {
   }
 }
 
+@mixin text-list-item {
+  font-family: "SofiaPro", sans-serif;
+  font-size: 16px;
+  // letter-spacing: 0.5px;
+  // text-transform: uppercase;
+  // font-weight: 600;
+  color: $text-color;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 13px;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: unquote("min(1.6vmax, 13px)");
+  }
+  @media (min-width: 1700px) {
+    font-size: 17px;
+  }
+}
+
+
+
+
 h1 {
 }
 
@@ -174,6 +196,15 @@ h3 {
 
 .text-bold-m {
   @include text-bold-m
+}
+
+.text-list-item {
+  @include text-list-item
+}
+
+.text-list-header {
+  @include text-list-item;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 550px) {

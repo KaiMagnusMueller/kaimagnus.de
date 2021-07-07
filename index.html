@@ -33,7 +33,7 @@ changefreq: weekly
     <div class="project-section grid-sec-l">
 
         <div class="divider-header">
-            <p class="left">Projects</p>
+            <p class="left text-list-header">Projects</p>
 
         </div>
 
@@ -41,7 +41,7 @@ changefreq: weekly
 
             {% for project in site.categories.projects limit: 8 %}
             <li class="list-item">
-                <a class="text-bold-m" href="{{ project.url }}" id="{{forloop.index}}"
+                <a class="text-list-item" href="{{ project.url }}" id="{{forloop.index}}"
                     alt="{{ project.description_short}}" title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
                     {{ project.title }}
                 </a>
@@ -69,12 +69,12 @@ changefreq: weekly
             {%- endcapture -%}
 
             <div class="list-item project-list-links flex-space-between">
-                <button id="random-button" title="Go to random project" class="minimal-btn text-annotation-s" data-prefixes='{{- projectPrefixes -}}'
+                <button id="random-button" title="Go to random project" class="minimal-btn text-list-item" data-prefixes='{{- projectPrefixes -}}'
                     data-sites='{{projectSites}}'>
                     Random Project
                 </button>
 
-                <a href="{% link projects.html %}" id="articles-expand" class="button-mobile-expand"
+                <a href="{% link projects.html %}" id="articles-expand" class="button-mobile-expand text-list-item"
                 alt="Go to all projects" title="Go to all projects">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="9"
                     viewBox="0 0 27 9" shape-rendering="crispEdges">
@@ -112,7 +112,7 @@ changefreq: weekly
         {% for project in site.categories.projects limit: 8 %}
         <li class="list-item">
             <hr>
-            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
+            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}" class="text-list-item">
                 {{ project.course }}
             </a>
 
@@ -132,7 +132,7 @@ changefreq: weekly
     <div class="article-section grid-sec-l">
         {% if site.articles == true %}
         <div class="divider-header ">
-            <p class="left">Articles</p>
+            <p class="left text-list-header">Articles</p>
 
         </div>
 
@@ -141,8 +141,8 @@ changefreq: weekly
             <ul class="projects-list grid-sec-l">
                 {% for article in site.categories.articles limit: 3 %}
 
-                <li class="list-item article-list-item">
-                    <a class="text-bold-m article-link" href="{{ article.url }}" alt="{{article.description_short}}">
+                <li class="list-item article-list-item ">
+                    <a class="article-link text-list-item" href="{{ article.url }}" alt="{{article.description_short}}">
                         {{ article.title }}
                         {% comment %}
                         <span class="article-date">
@@ -203,7 +203,7 @@ changefreq: weekly
 <section id="vita" class="grid-4 section-thin margin-top--l margin-bt--l">
     <div class="vita-section grid-sec-l">
         <div class="divider-header vita-divider">
-            <p class="left">Vita</p>
+            <p class="left text-list-header">Vita</p>
         </div>
         <div class="divider-header motivation-divider">
             <p class="left">Motivation</p>
