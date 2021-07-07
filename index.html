@@ -32,22 +32,18 @@ changefreq: weekly
 
     <div class="project-section grid-sec-l">
 
-        <div class="divider-header">
+        <div class="divider-header border-btm">
             <p class="left text-list-header">Projects</p>
 
         </div>
 
-        <ul class="projects-list ">
+        <div class="projects-list ">
 
             {% for project in site.categories.projects limit: 8 %}
-            <li class="list-item">
-                <a class="text-list-item" href="{{ project.url }}" id="{{forloop.index}}"
-                    alt="{{ project.description_short}}" title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
+
+            <a class="list-item text-list-item border-btm" href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}" title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
                     {{ project.title }}
                 </a>
-
-                <hr>
-            </li>
             {% endfor %}
 
             {%- capture projectSites -%}
@@ -103,7 +99,7 @@ changefreq: weekly
                         transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
                 </svg>
             </a>
-        </ul>
+        </div>
     </div>
 
     {% comment %}
@@ -131,18 +127,17 @@ changefreq: weekly
 
     <div class="article-section grid-sec-l">
         {% if site.articles == true %}
-        <div class="divider-header ">
+        <div class="divider-header border-btm">
             <p class="left text-list-header">Articles</p>
 
         </div>
 
         <div class="main-section">
 
-            <ul class="projects-list grid-sec-l">
+            <div class="projects-list grid-sec-l">
                 {% for article in site.categories.articles limit: 3 %}
 
-                <li class="list-item article-list-item ">
-                    <a class="article-link text-list-item" href="{{ article.url }}" alt="{{article.description_short}}">
+                    <a class="list-item article-list-item article-link text-list-item border-btm" href="{{ article.url }}" alt="{{article.description_short}}">
                         {{ article.title }}
                         {% comment %}
                         <span class="article-date">
@@ -156,8 +151,6 @@ changefreq: weekly
                             {{- article.date | date: " %B, %Y" }}</span>
                             {% endcomment %}
                     </a>
-                    <hr>
-                </li>
 
                 <!-- 
             <div class="article-list-item">
@@ -176,10 +169,11 @@ changefreq: weekly
             </div> -->
 
                 {% endfor %}
-            </ul>
+        </div>
 
+        <div class="list-item">
 
-            <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand"
+            <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand "
                 alt="Go to all articles" title="Go to all articles">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="9"
                     viewBox="0 0 27 9" shape-rendering="crispEdges">
@@ -194,6 +188,8 @@ changefreq: weekly
                     </g>
                 </svg>
             </a>
+        </div>
+
         </div>
 
         {% endif %}

@@ -237,11 +237,8 @@ video {
 .list-item {
   appearance: none;
   display: block;
-
-
-  hr {
-    border-color: black;
-  }
+  
+  padding: 8px 0;
 
   &:hover {
     // hr {
@@ -293,6 +290,11 @@ video {
       color: $white-30;
     }
   }
+}
+
+.border-btm {
+  border-bottom: 2px solid $text-color;
+
 }
 
 .project-item-main {
@@ -666,14 +668,6 @@ input[type="text"]:focus {
   .page-content-margin-small {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  .page-main-section {
-    .list-item {
-      &:nth-of-type(3) {
-        margin-bottom: 0;
-      }
-    }
   }
 
   .projects-waterfall {
