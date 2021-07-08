@@ -7,7 +7,7 @@ body {
 
 a {
   color: $text-color;
-  text-decoration: none;
+  text-decoration: underline;
   transition: color 0.3s;
 }
 
@@ -199,7 +199,10 @@ h3 {
 }
 
 .text-list-item {
-  @include text-list-item
+  @include text-list-item;
+  a {
+    text-decoration: none;
+  }
 }
 
 .text-list-header {

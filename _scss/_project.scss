@@ -1,15 +1,15 @@
-article {
-  a {
-    color: #3b7bec;
-  }
+// article {
+//   a {
+//     color: #3b7bec;
+//   }
 
-  a:visited {
-    color: #8ab5ff;
-  }
-}
+//   a:visited {
+//     color: #8ab5ff;
+//   }
+// }
 
 //.article-background {
-//  .divider-header, .nextproject-container {
+//  .list-header, .nextproject-container {
 //    grid-column: 2 / -1;
 //    width: 52%;
 //  }
@@ -164,7 +164,7 @@ article {
   font-size: 24px;
   border: none;
   background: none;
-  color: white;
+  color: $text-color;
   margin-right: 20px;
   cursor: pointer;
   position: relative;

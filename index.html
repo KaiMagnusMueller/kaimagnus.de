@@ -32,18 +32,22 @@ changefreq: weekly
 
     <div class="project-section grid-sec-l">
 
-        <div class="divider-header border-btm">
+        <div class="list-header border-btm">
             <p class="left text-list-header">Projects</p>
 
         </div>
 
-        <div class="projects-list ">
+        <ul class="projects-list ">
+
+            <!-- PROJECT LIST ITEM -->
 
             {% for project in site.categories.projects limit: 8 %}
-
-            <a class="list-item text-list-item border-btm" href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}" title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
+            <li class="list-item text-list-item border-btm">
+                <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}"
+                    title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
                     {{ project.title }}
                 </a>
+            </li>
             {% endfor %}
 
             {%- capture projectSites -%}
@@ -64,29 +68,30 @@ changefreq: weekly
             ]
             {%- endcapture -%}
 
-            <div class="list-item project-list-links flex-space-between">
-                <button id="random-button" title="Go to random project" class="minimal-btn text-list-item" data-prefixes='{{- projectPrefixes -}}'
-                    data-sites='{{projectSites}}'>
+            <!-- RANDOM BUTTOM, VIEW ALL LINK, INCLUDED IN LI -->
+
+            <li class="list-item project-list-links flex-space-between">
+                <button id="random-button" title="Go to random project" class="minimal-btn text-list-item"
+                    data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
                     Random Project
                 </button>
 
                 <a href="{% link projects.html %}" id="articles-expand" class="button-mobile-expand text-list-item"
-                alt="Go to all projects" title="Go to all projects">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="9"
-                    viewBox="0 0 27 9" shape-rendering="crispEdges">
-                    <defs>
-                        <clipPath>
-                            <rect width="27" height="9" />
-                        </clipPath>
-                    </defs>
-                    <g id="icon-expand" clip-path="url(#clip-icon-expand)">
-                        <path data-name="Pfad 99" d="M-0,0l5-5,5,5,5-5,5,5,5-5" transform="translate(1 7)" fill="none"
-                            stroke="#000" stroke-width="2" />
-                    </g>
-                </svg>
-            </a>
-
-            </div>
+                    alt="Go to all projects" title="Go to all projects">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27"
+                        height="9" viewBox="0 0 27 9" shape-rendering="crispEdges">
+                        <defs>
+                            <clipPath>
+                                <rect width="27" height="9" />
+                            </clipPath>
+                        </defs>
+                        <g id="icon-expand" clip-path="url(#clip-icon-expand)">
+                            <path data-name="Pfad 99" d="M-0,0l5-5,5,5,5-5,5,5,5-5" transform="translate(1 7)"
+                                fill="none" stroke="#000" stroke-width="2" />
+                        </g>
+                    </svg>
+                </a>
+            </li>
 
             <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
                 <!--        <div class="button-plus">-->
@@ -99,7 +104,7 @@ changefreq: weekly
                         transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
                 </svg>
             </a>
-        </div>
+        </ul>
     </div>
 
     {% comment %}
@@ -108,7 +113,8 @@ changefreq: weekly
         {% for project in site.categories.projects limit: 8 %}
         <li class="list-item">
             <hr>
-            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}" class="text-list-item">
+            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}"
+                class="text-list-item">
                 {{ project.course }}
             </a>
 
@@ -127,32 +133,32 @@ changefreq: weekly
 
     <div class="article-section grid-sec-l">
         {% if site.articles == true %}
-        <div class="divider-header border-btm">
+        <div class="list-header border-btm">
             <p class="left text-list-header">Articles</p>
-
         </div>
 
-        <div class="main-section">
+        <ul class="main-section projects-list grid-sec-l">
+            {% for article in site.categories.articles limit: 3 %}
+            <li class="list-item text-list-item border-btm">
+                <a class=" article-list-item article-link" href="{{ article.url }}"
+                    alt="{{article.description_short}}">
+                    {{ article.title }}
+                    {% comment %}
+                    <span class="article-date">
+                        {%- assign day = article.date | date: "%-d" %}
+                        {%- case day %}
+                        {%- when '1' or '21' or '31' %}{{ day }}st
+                        {%- when '2' or '22' %}{{ day }}nd
+                        {%- when '3' or '23' %}{{ day }}rd
+                        {%- else %}{{ day }}th
+                        {%- endcase %}
+                        {{- article.date | date: " %B, %Y" }}</span>
+                    {% endcomment %}
+                </a>
+            </li>
+            {% endfor %}
 
-            <div class="projects-list grid-sec-l">
-                {% for article in site.categories.articles limit: 3 %}
-
-                    <a class="list-item article-list-item article-link text-list-item border-btm" href="{{ article.url }}" alt="{{article.description_short}}">
-                        {{ article.title }}
-                        {% comment %}
-                        <span class="article-date">
-                            {%- assign day = article.date | date: "%-d" %}
-                            {%- case day %}
-                            {%- when '1' or '21' or '31' %}{{ day }}st
-                            {%- when '2' or '22' %}{{ day }}nd
-                            {%- when '3' or '23' %}{{ day }}rd
-                            {%- else %}{{ day }}th
-                            {%- endcase %}
-                            {{- article.date | date: " %B, %Y" }}</span>
-                            {% endcomment %}
-                    </a>
-
-                <!-- 
+            <!-- 
             <div class="article-list-item">
                 <a href="{{ article.url }}" alt="{{article.description_short}}">
                     <h2 class="article-heading">{{ article.title }}</h2>
@@ -168,41 +174,34 @@ changefreq: weekly
                 </a>
             </div> -->
 
-                {% endfor %}
-        </div>
 
-        <div class="list-item">
+            <li class="list-item">
 
-            <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand "
-                alt="Go to all articles" title="Go to all articles">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="9"
-                    viewBox="0 0 27 9" shape-rendering="crispEdges">
-                    <defs>
-                        <clipPath>
-                            <rect width="27" height="9" />
-                        </clipPath>
-                    </defs>
-                    <g id="icon-expand" clip-path="url(#clip-icon-expand)">
-                        <path data-name="Pfad 99" d="M-0,0l5-5,5,5,5-5,5,5,5-5" transform="translate(1 7)" fill="none"
-                            stroke="#000" stroke-width="2" />
-                    </g>
-                </svg>
-            </a>
-        </div>
-
-        </div>
-
+                <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand "
+                    alt="Go to all articles" title="Go to all articles">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27"
+                        height="9" viewBox="0 0 27 9" shape-rendering="crispEdges">
+                        <defs>
+                            <clipPath>
+                                <rect width="27" height="9" />
+                            </clipPath>
+                        </defs>
+                        <g id="icon-expand" clip-path="url(#clip-icon-expand)">
+                            <path data-name="Pfad 99" d="M-0,0l5-5,5,5,5-5,5,5,5-5" transform="translate(1 7)"
+                                fill="none" stroke="#000" stroke-width="2" />
+                        </g>
+                    </svg>
+                </a>
+            </li>
+        </ul>
         {% endif %}
     </div>
 </section>
 
 <section id="vita" class="grid-4 section-thin margin-top--l margin-bt--l">
     <div class="vita-section grid-sec-l">
-        <div class="divider-header vita-divider border-btm">
+        <div class="list-header vita-divider border-btm">
             <p class="left text-list-header">Vita</p>
-        </div>
-        <div class="divider-header motivation-divider border-btm">
-            <p class="left">Motivation</p>
         </div>
         <div class="vita-motivation">
             {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}

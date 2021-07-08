@@ -114,9 +114,13 @@ body {
     padding: 0 18px;
   }
 
-  & > p,
+  // & > p,
+  // ol {
+  //   // @include text-standard-proj;
+  // }
+
   ol {
-    @include text-standard-proj;
+    @include text-standard-m;
   }
 
   & > p:last-of-type {
@@ -146,20 +150,14 @@ body {
   }
 
   blockquote {
-    border-left: 4px solid;
-    padding-left: 20px;
+    border: 2px solid;
+    padding: 20px;
     margin-top: 24px;
     margin-bottom: 24px;
     box-sizing: border-box;
 
-    p {
-      //possibly remove
-      margin: 14px 0 14px !important;
-      padding: 12px 0;
-    }
-
     * {
-      margin: 12px 0;
+      margin: 0;
       font-size: 28px;
       line-height: 1.3em;
     }
@@ -237,22 +235,17 @@ video {
 .list-item {
   appearance: none;
   display: block;
-  
   padding: 8px 0;
+  
+  // a {
+  //   transition: all .3s cubic-bezier(0.42, 0, 0.12, 0.98);
+  // }
 
-  &:hover {
-    // hr {
-    //   border: 2px solid #000;
-    // }
-
-    // background-color: $text-color;
-    // color: $bg-color;
-  }
-
-
-  //&:nth-of-type(6) {
-  //  grid-column-start: 1;
-  //}
+  // &:hover {
+  //   a {
+  //     transform: translateX(20px);
+  //   }
+  // }
 
   picture {
     display: block;
@@ -348,7 +341,7 @@ video {
 }
 
 .project-media {
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+  // box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
 }
 
 .page-main-section {
@@ -479,7 +472,7 @@ figcaption-project {
 #contact {
   margin-bottom: 260px;
 
-  .divider-header {
+  .list-header {
     grid-column: 1 /4;
   }
 
@@ -712,8 +705,8 @@ input[type="text"]:focus {
   .figure-project,
   .use-case-container {
     padding: 16px 0;
-    border-top: solid 4px white;
-    border-bottom: solid 4px white;
+    border-top: solid 2px $text-color;
+    border-bottom: solid 2px $text-color;
   }
   //   .project-media-figure figcaption, .use-case-figcaption {
   // padding-bottom: 16px;

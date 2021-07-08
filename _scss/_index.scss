@@ -29,6 +29,7 @@
     background-color: $text-color;
     color: $bg-color;
     padding: 0 8px;
+    text-decoration: none;
   }
 
   a:hover {
@@ -215,7 +216,7 @@
   }
 }
 
-.divider-header {
+.list-header {
   display: flex;
   align-content: space-between;
 
@@ -447,7 +448,7 @@
     margin: 0;
     width: 100%;
     box-sizing: border-box;
-    .divider-header {
+    .list-header {
       p {
         margin: 0 0 6px 0;
       }
@@ -458,7 +459,7 @@
     }
   }
 
-  .divider-header {
+  .list-header {
     margin-top: 100px;
   }
   .article-section {
