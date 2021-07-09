@@ -330,59 +330,9 @@
   .button-link > * {
     font-size: unquote("min(1.8vmax, 13px);");
 }
-
-  .column > p {
-    break-inside: auto;
-  }
-
-  .grid-4 {
-  }
-
-  .extended-text {
-    &::before {
-      display: none;
-    }
-
-    & p:first-of-type {
-      margin-left: 0;
-    }
-
-    & > p:nth-of-type(3) {
-      margin-bottom: revert;
-    }
-
-    //safari column fix
-    & > p:nth-of-type(4) {
-      margin-top: revert;
-    }
-  }
-
-  #vita {
-    grid-template-columns: repeat(2, 1fr);
-    // width: 70%;
-  }
   .grid-span-all {
     grid-column: 1 /-1;
     grid-row: 1;
-  }
-  .article-section {
-    grid-column: 1 /-1;
-    grid-row: 2;
-    margin-bottom: 40px;
-  }
-
-  .vita-divider {
-    grid-column: 1 /-1;
-    grid-row: 3;
-  }
-
-  .vita-picture-container {
-    grid-column: 1 / span 1;
-    grid-row: 5;
-    margin: 40px 0;
-    .aspect-1-1:before {
-      padding-top: 50%;
-    }
   }
 }
 // // @media (max-width: 850px) and (orientation: landscape){

@@ -43,8 +43,8 @@ changefreq: weekly
 
             {% for project in site.categories.projects limit: 8 %}
             <li class="list-item text-list-item border-btm">
-                <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}"
-                    title="{{ page.title }}{% if page.tab_title_extended %} - {{ page.tab_title_extended }}{% endif %}">
+                <a class="ts-right-20" href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}"
+                    title="{{ project.title }}{% if project.tab_title_extended %} - {{ project.tab_title_extended }}{% endif %}">
                     {{ project.title }}
                 </a>
             </li>
@@ -140,7 +140,7 @@ changefreq: weekly
         <ul class="main-section projects-list grid-sec-l">
             {% for article in site.categories.articles limit: 3 %}
             <li class="list-item text-list-item border-btm">
-                <a class=" article-list-item article-link" href="{{ article.url }}"
+                <a class="ts-right-20" href="{{ article.url }}"
                     alt="{{article.description_short}}">
                     {{ article.title }}
                     {% comment %}
