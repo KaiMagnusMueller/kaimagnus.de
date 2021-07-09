@@ -61,42 +61,18 @@ body {
   }
 }
 
-.margin-bt--xl {
-  margin-bottom: 200px;
-}
-
-.margin-bt--l {
-  margin-bottom: 120px;
-}
-
-.margin-bt--s {
-  margin-bottom: 20px;
-}
-
-.margin-top--l {
-  margin-top: 120px;
-}
-
-.margin-top--m {
-  margin-top: 100px;
-}
-
-.margin-top--s {
-  margin-top: 20px;
-}
-
 .blog-content {
-  padding: 0 80px;
-  margin: auto;
-  max-width: 1440px - 160px;
-  margin-bottom: 260px;
+  // padding: 0 80px;
+  // margin: auto;
+  // max-width: 1440px - 160px;
+  // margin-bottom: 260px;
 
-  @media (max-width: 1200px) {
-    padding: 0 26px;
-  }
-  @media (max-width: 550px) {
-    padding: 0 18px;
-  }
+  // @media (max-width: 1200px) {
+  //   padding: 0 26px;
+  // }
+  // @media (max-width: 550px) {
+  //   padding: 0 18px;
+  // }
 
   // & > p,
   // ol {
@@ -122,15 +98,17 @@ body {
     blockquote,
     ol,
     .recent-articles {
-      width: 50%;
-      margin-left: auto;
+      //TODO: Experiment, revert if neccessary
+      width: 75%;
+      // width: 50%;
+      margin-left: 0;
       margin-right: auto;
     }
   }
 
   h2,
   h3 {
-    margin: 68px auto 10px auto;
+    margin: 68px auto 10px 0;
   }
 
   blockquote {
@@ -218,8 +196,8 @@ video {
   display: block;
   padding: 2px 0;
 
-  a {
-  padding: 6px 0;
+  * {
+    padding: 6px 0;
     display: block;
   }
 
@@ -314,7 +292,30 @@ figcaption-project {
 
   grid-auto-flow: dense;
 
-  margin: 60px 0 60px 0;
+  margin: 40px 0;
+
+  .media-wrapper {
+    position: relative;
+  }
+
+  .expand-button {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+      transition: all 0.3s cubic-bezier(0.42, 0, 0.12, 0.98);
+      pointer-events: none;
+    * {
+      display: block;
+    }
+  }
+
+  .media-wrapper:hover {
+    .expand-button {
+      opacity: 1;
+    }
+  }
 
   img {
     cursor: pointer;
@@ -328,7 +329,7 @@ figcaption-project {
   figcaption {
     display: flex;
     margin-top: auto;
-    padding-left: 60px;
+    padding-left: 30px;
     width: 25%;
     box-sizing: border-box;
   }
@@ -361,6 +362,7 @@ figcaption-project {
       margin-bottom: 0;
       margin-right: auto;
       box-sizing: border-box;
+      color: $bg-color;
     }
   }
 
@@ -384,10 +386,21 @@ figcaption-project {
     height: 100%;
     opacity: 0;
 
-    background-color: #000000de;
+    background-color: #000000ec;
     // backdrop-filter: blur(5px);
 
     transition: 0.3s opacity;
+
+    p {
+      color: $bg-color;
+      display: flex;
+      justify-content: center;
+      opacity: 0.7;
+    }
+
+    svg {
+      stroke: $bg-color;
+    }
   }
 
   &.open {
@@ -410,6 +423,9 @@ figcaption-project {
 
 .footer p {
   grid-column: 1 /-1;
+}
+
+footer {
 }
 
 .footnotes {
@@ -714,4 +730,42 @@ button {
       width: 90%;
     }
   }
+}
+
+// HELPER CLASSES
+
+.margin-bt--xl {
+  margin-bottom: 200px;
+}
+
+.margin-bt--l {
+  margin-bottom: 120px;
+}
+
+.margin-bt--m {
+  margin-bottom: 100px;
+}
+
+.margin-bt--sl {
+  margin-bottom: 40px;
+}
+
+.margin-bt--s {
+  margin-bottom: 20px;
+}
+
+.margin-top--l {
+  margin-top: 120px;
+}
+
+.margin-top--m {
+  margin-top: 100px;
+}
+
+.margin-top--sl {
+  margin-top: 40px;
+}
+
+.margin-top--s {
+  margin-top: 20px;
 }

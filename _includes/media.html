@@ -85,6 +85,14 @@
     <div class="media-wrapper">
         <img loading="lazy" class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
             srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+        <div class="expand-button">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="29" viewBox="0 0 29 29" shape-rendering="crispEdges" transform="">
+                <g transform="translate(7 7)">
+                   <path data-name="Pfad 99" d="M0,15l15-15" fill="none" stroke="#000" stroke-width="2"></path>
+                   <path data-name="Pfad 99" d="M0,0l15-0,0+15" fill="none" stroke="#000" stroke-width="2"></path>
+                </g>
+            </svg>
+        </div>
     </div>
 
 
@@ -92,7 +100,17 @@
     <figcaption class="figcaption-project">{{ caption | markdownify }}</figcaption>
     {% endif %}
     <div class="lightbox" style="visibility: hidden;">
-        <div class="lightbox-bg"></div>
+        <div class="lightbox-bg">
+            <p>Press ESC to close</p>
+            <div class="expand-button">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="29" viewBox="0 0 29 29" shape-rendering="crispEdges" transform="">
+                    <g transform="translate(7 7)">
+                       <path data-name="Pfad 99" d="M0,15l15-15" fill="none" stroke="#fff" stroke-width="2"></path>
+                       <path data-name="Pfad 99" d="M0,0l15-0,0+15" fill="none" stroke="#fff" stroke-width="2"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
         <div class="lightbox-group">
             <img loading="lazy" class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
             <p>{{ caption }}</p>

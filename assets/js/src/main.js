@@ -371,6 +371,8 @@ if (randomBtn) {
 
 if (!window.matchMedia("(pointer: coarse)").matches) {
 
+let openLightbox 
+
     $(".lightbox-source").on("click", (e) => {
         // console.log(e.currentTarget)
         //get lightbox div of eleement
@@ -378,6 +380,8 @@ if (!window.matchMedia("(pointer: coarse)").matches) {
         let lightbox = $(e.currentTarget).parent().parent().children(".lightbox")
         let lightboxGroup = $(e.currentTarget).parent().parent().children(".lightbox").children(".lightbox-group")
 
+
+        openLightbox = $(e.currentTarget).parent().parent().children(".lightbox")
         // console.log(lightbox)
         let lightboxImg = lightboxGroup.children(".lightbox-img")
         // console.log(lightboxImg)
@@ -396,7 +400,6 @@ if (!window.matchMedia("(pointer: coarse)").matches) {
         }
     })
 
-
     $(".lightbox").on("click", (e) => {
 
         $(e.currentTarget).removeClass("open")
@@ -404,7 +407,22 @@ if (!window.matchMedia("(pointer: coarse)").matches) {
         $(e.currentTarget).css({
             'visibility': 'hidden'
         });
+
+        openLightbox = null
     })
+
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        var isEscape = false;
+        if ("key" in evt) {
+            isEscape = (evt.key === "Escape" || evt.key === "Esc");
+        } else {
+            isEscape = (evt.keyCode === 27);
+        }
+        if (isEscape) {
+            closeLightbox(openLightbox)
+        }
+    };
 
     const lb = document.getElementsByClassName("lightbox-img")
 
@@ -417,6 +435,17 @@ if (!window.matchMedia("(pointer: coarse)").matches) {
             'visibility': 'visible'
         });
         console.log("loaded")
+    }
+
+    function closeLightbox(e) {
+
+       e.removeClass("open")
+
+       e.css({
+            'visibility': 'hidden'
+        });
+
+        openLightbox = null
     }
 }
 
