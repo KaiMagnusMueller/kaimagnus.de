@@ -22,7 +22,7 @@ body {
 
   @media (max-width: 1200px) {
     grid-column-gap: 20px;
-    padding: 0 26px;
+    padding: 0 60px;
   }
   @media (max-width: 550px) {
     padding: 0 18px;
@@ -35,8 +35,7 @@ body {
   max-width: 1440px - 160px;
 
   @media (max-width: 1200px) {
-    grid-column-gap: 20px;
-    padding: 0 26px;
+    padding: 0 60px;
   }
   @media (max-width: 550px) {
     padding: 0 18px;
@@ -53,7 +52,6 @@ body {
   }
 
   @media (max-width: 1200px) {
-    grid-column-gap: 20px;
     padding: 0 26px;
   }
   @media (max-width: 550px) {
@@ -99,16 +97,16 @@ body {
     ol,
     .recent-articles {
       //TODO: Experiment, revert if neccessary
-      width: 75%;
-      // width: 50%;
-      margin-left: 0;
+      // width: 75%;
+      width: 50%;
+      margin-left: auto;
       margin-right: auto;
     }
   }
 
   h2,
   h3 {
-    margin: 68px auto 10px 0;
+    margin: 68px auto 10px auto;
   }
 
   blockquote {
@@ -212,6 +210,9 @@ video {
 .border-btm {
   border-bottom: 2px solid $text-color;
 }
+.border-top {
+  border-top: 2px solid $text-color;
+}
 
 .project-item-main {
   //   display: grid;
@@ -242,11 +243,12 @@ video {
   color: inherit;
   text-rendering: unset;
   font-weight: unset;
+  border-radius: 0;
 }
 
 #random-button {
   // margin-top: 10px;
-  transition: all 1.2s 0.2s cubic-bezier(0.42, 0, 0.12, 0.98);
+  transition: opacity 1.2s 0.2s cubic-bezier(0.42, 0, 0.12, 0.98);
 }
 
 .flex-right {
@@ -433,14 +435,14 @@ footer {
 
   &:before {
     content: "Footnotes";
-    text-transform: uppercase;
-    @include text-annotation-xs;
+    @include text-list-item;
+    font-weight: 700;
   }
 
   ol {
     border-top: 4px solid $white-90;
-    margin-top: 6px;
-    padding: 40px 0 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -732,6 +734,15 @@ button {
 
 // HELPER CLASSES
 
+//TEXT UTILITIES
+
+.deco-none {
+  text-decoration: none;
+}
+
+
+//MARGINS
+
 .margin-bt--xl {
   margin-bottom: 200px;
 }
@@ -741,7 +752,7 @@ button {
 }
 
 .margin-bt--m {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .margin-bt--sl {
@@ -757,7 +768,7 @@ button {
 }
 
 .margin-top--m {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .margin-top--sl {
@@ -779,7 +790,7 @@ button {
 }
 
 .margin-bt--m {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .margin-bt--sl {
@@ -795,7 +806,7 @@ button {
 }
 
 .margin-top--m {
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .margin-top--sl {

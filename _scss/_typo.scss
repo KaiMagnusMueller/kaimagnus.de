@@ -80,7 +80,7 @@ a:hover {
 @mixin text-bold-xl {
   font-size: 30px;
   font-weight: 600;
-  line-height: 2.6rem;
+  line-height: 2.4rem;
   margin: 16px 0;
 
   @media (max-width: 850px) {
@@ -207,6 +207,10 @@ h3 {
 
 .text-bold-m {
   @include text-bold-m
+}
+
+.text-bold-xl {
+  @include text-bold-xl
 }
 
 .text-list-item {

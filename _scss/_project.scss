@@ -24,32 +24,21 @@
   }
 }
 
-//article {
-//  p:nth-child(2) {
-//    position: relative;
-//    margin-left: 16px;
-//
-//    &:before {
-//      content: "";
-//      height: 223px;
-//      background-color: white;
-//      width: 4px;
-//      position: absolute;
-//      top: 5px;
-//      left: 0;
-//    }
-//  }
-//}
-
 .project-header {
+  position: relative;
 
-  .header-title {
-    width: 75%;
-    margin: 0;
+  .header-media {
+    display: flex;
   }
 
   .header-image {
     width: 75%;
+  }
+
+  .header-details {
+    width: 25%;
+    padding-left: 30px;
+    box-sizing: border-box;
   }
 
   .button-link {
@@ -108,22 +97,47 @@
   }
 }
 
-.project .project-description {
-  @include text-bold-xl;
-  margin: 26px 0 60px;
-  //width: auto !important;
-  grid-column: 2 / -1;
-  position: relative;
+.header-title {
+  width: 50%;
+  top: 10px;
+  z-index: 1;
+  margin: auto;
+}
 
-  // &:before {
-  //   content: "";
-  //   height: 60%;
-  //   background-color: white;
-  //   width: 4px;
-  //   position: absolute;
-  //   top: 5px;
-  //   left: -16px;
-  // }
+.fl-header-button {
+  visibility: hidden;
+}
+
+.header-title.floating {
+  position: sticky;
+
+  display: flex;
+
+  background-color: $bg-color;
+  border: solid 2px $text-color;
+  box-sizing: border-box;
+  
+  z-index: 1;
+
+  h1 {
+    flex-grow: 1;
+    font-size: 16px;
+  }
+
+  .fl-header-segment {
+    padding: 12px;
+    display: block;
+    line-height: 1em;
+
+
+  }
+
+  .fl-header-button {
+    visibility: visible;
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
 }
 
 .use-case-container {
@@ -273,11 +287,6 @@ figure {
   .project-header {
     flex-direction: column;
     margin-top: 100px;
-
-    .header-title {
-      width: 100%;
-      margin: 0;
-    }
   
     .header-image {
       width: 100%;
@@ -286,6 +295,11 @@ figure {
     .button-link {
       margin-right: 0;
     }
+  }
+
+  .header-title {
+    width: 100%;
+    margin: 0;
   }
 
   .project-page-title-box {

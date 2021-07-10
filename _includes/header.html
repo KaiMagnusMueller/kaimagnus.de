@@ -1,29 +1,41 @@
-<section class="project-header margin-bt--sl margin-top--s">
-    <div class="header-title">
-        <div class="">
-            <h1 class="text-title">{{ page.title }}</h1>
-            <div class="list-header border-btm margin-top--s">
-            </div>
-            <ul class="projects-list margin-bt--sl">
-        
-                <!-- PROJECT LIST ITEM -->
-        
-                <li class="list-item text-list-item border-btm">
-                    <span>
-                        {{ page.course }}
-                    </span>
-        
-                </li>
-                <li class="list-item text-list-item border-btm">
-                    <span>
-                        {{ page.semester_date }}
-                    </span>
-                </li>
-            </ul>
+<div class="header-title">
+        {% assign cat = page.categories[0] %}
+        {% assign cat_list = site.categories[cat] %}
+        {% for post in cat_list %}
+        {% if post.url == page.url %}
+        {% assign pOffset = forloop.index0 | minus: 1 %}
+        {% assign nOffset = pOffset | plus: 2 %}
+        {% if forloop.first == false %}
+        {% assign next_post = cat_list[pOffset] %}
+        {% endif %}
+        {% if forloop.last == false %}
+        {% assign previous_post = cat_list[nOffset] %}
+        {% endif %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+
+        <div class="fl-header-segment fl-header-button">
+            <a class="text-list-item deco-none" href="/index.html#projects">←</a>
         </div>
 
-    </div>
-    <div class="header-image">
+        <h1 class="fl-header-segment text-title">{{ page.title }}</h1>
+
+        <div class="fl-header-segment fl-header-button">
+            <a href="{{previous_post.url}}" class="text-list-item deco-none">←</a>
+        </div>
+
+        <button id="random-button" title="Go to random project" class="minimal-btn fl-header-segment fl-header-button text-list-item button-square"
+            data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
+            🔀
+        </button>
+        <div class="fl-header-segment fl-header-button button-square">
+            <a href="{{next_post.url}}" class="text-list-item deco-none">→</a>
+        </div>
+</div>
+
+<section class="project-header margin-bt--sl margin-top--s">
+    <div class="header-media">
 
         {% if include.media == "video" %}
 
@@ -44,12 +56,29 @@
         {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
 
         {% elsif include.media == "image" %}
-        <div class="featured-image">
+        <div class="header-image">
             <picture>
                 <img src="../assets/img/{{include.file}}" alt="{{ include.alt }}">
             </picture>
         </div>
         {% endif %}
+
+        <ul class="header-details projects-list margin-bt--sl">
+
+            <!-- PROJECT DETAILS -->
+
+            <li class="list-item text-list-item border-btm border-top">
+                <span>
+                    {{ page.course }}
+                </span>
+
+            </li>
+            <li class="list-item text-list-item border-btm">
+                <span>
+                    {{ page.semester_date }}
+                </span>
+            </li>
+        </ul>
     </div>
 
 </section>
@@ -72,4 +101,4 @@
 {% endraw %}
 {% endcomment %}
 
-<p class="project-description">{{ page.description }}</p>
+<p class="project-description text-bold-xl margin-bt--m">{{ page.description }}</p>
