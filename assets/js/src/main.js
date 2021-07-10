@@ -737,6 +737,6 @@ if (!window.matchMedia("(pointer: coarse)").matches) {
 
 function updateProgressBar(bar) {
     const value = (bar.value - bar.min) / (bar.max - bar.min) * 100
-    bar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
+    bar.style.background = 'linear-gradient(to right, #000 0%, #000 ' + value + '%, #fff ' + value + '%, #fff 100%)'
 
 }

@@ -25,6 +25,7 @@ a:hover {
   line-height: 1.4em;
   letter-spacing: 0.2px;
   margin: 0;
+  font-weight: 700;
   @media (max-width: 850px) {
     font-size: 1.5rem;
   }
@@ -161,12 +162,12 @@ a:hover {
   // font-weight: 600;
   color: $text-color;
 
-  @media screen and (max-width: 1200px) {
-    font-size: 13px;
-  }
-  @media screen and (max-width: 550px) {
-    font-size: unquote("min(1.6vmax, 13px)");
-  }
+  // @media screen and (max-width: 1200px) {
+  //   font-size: 13px;
+  // }
+  // @media screen and (max-width: 550px) {
+  //   font-size: unquote("min(1.6vmax, 13px)");
+  // }
   @media (min-width: 1700px) {
     font-size: 17px;
   }
@@ -187,7 +188,12 @@ p {
 
 //project page headlines
 h3 {
+  @include text-h2;
   margin: 38px 0 10px 0;
+}
+
+.text-title {
+  @include text-h1;
 }
 
 .text-annotation-s {

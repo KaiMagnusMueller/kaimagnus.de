@@ -12,8 +12,8 @@
     display: none;
     justify-content: space-between;
     // align-items: center;
-    padding: 12px;
-    background-color: rgba(43, 43, 48, 0.8);
+    padding: 6px 12px;
+    background-color: #e2e2e2cc;
     opacity: 1;
 
     transition: opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
@@ -40,11 +40,11 @@
 }
 
 .progress {
-    height: 4px;
+    height: 2px;
     border-radius: 0;
-    width: 80%;
-    background: linear-gradient(to right, #fff 0%, #fff 0%, #000 0%, #000 100%);
-    margin: 4px 0;
+    width: 100%;
+    background: linear-gradient(to right, #000 0%, #000 0%, #fff 0%, #fff 100%);
+    margin: 5px 0;
 }
 input[type="range"] {
     appearance: none;
@@ -69,7 +69,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     justify-content: center;
     padding: 12px;
-    background-color: #4b4b4b;
+    background-color: #cccccc;
     opacity: 0.8;
     backdrop-filter: blur(20px) brightness(50%);
     background: none;

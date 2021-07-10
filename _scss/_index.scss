@@ -16,8 +16,7 @@
   }
 
   p {
-    @include text-h1;
-    font-weight: 700;
+    font: inherit;
   }
 
   p:not(:last-of-type) {
