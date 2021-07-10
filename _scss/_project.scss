@@ -274,18 +274,17 @@ figure {
     flex-direction: column;
     margin-top: 100px;
 
-    .featured-left {
-      width: 70%;
-      margin: 0 auto 20px;
+    .header-title {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .header-image {
+      width: 100%;
     }
 
     .button-link {
       margin-right: 0;
-    }
-
-    .featured-right {
-      width: 100%;
-      margin: 0 auto;
     }
   }
 
@@ -322,7 +321,6 @@ figure {
 
 @media (max-width: 550px) {
   .project .project-description {
-    @include text-h2;
     margin: 26px auto 60px;
   }
 

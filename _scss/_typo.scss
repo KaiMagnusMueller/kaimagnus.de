@@ -27,7 +27,7 @@ a:hover {
   margin: 0;
   font-weight: 700;
   @media (max-width: 850px) {
-    font-size: 1.5rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -36,10 +36,10 @@ a:hover {
   margin: 0;
   letter-spacing: 0.1px;
 
-  @media screen and (max-width: 1200px) {
-    font-size: 24px;
-    line-height: 1.3em;
-  }
+  // @media screen and (max-width: 1200px) {
+  //   font-size: 24px;
+  //   line-height: 1.3em;
+  // }
   @media (min-width: 1700px) {
     font-size: 28px;
   }
@@ -80,8 +80,13 @@ a:hover {
 @mixin text-bold-xl {
   font-size: 30px;
   font-weight: 600;
-  line-height: 41px;
+  line-height: 2.6rem;
   margin: 16px 0;
+
+  @media (max-width: 850px) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
 }
 
 @mixin text-bold-l {
