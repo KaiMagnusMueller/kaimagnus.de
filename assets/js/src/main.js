@@ -740,3 +740,28 @@ function updateProgressBar(bar) {
     bar.style.background = 'linear-gradient(to right, #000 0%, #000 ' + value + '%, #fff ' + value + '%, #fff 100%)'
 
 }
+
+
+console.log("test");
+const titleObserver = new IntersectionObserver(titleObsCallback, { threshold: 1 });
+
+let titleElem = document.getElementsByClassName("header-title")
+
+titleObserver.observe(titleElem[0])
+
+function titleObsCallback(elems) {
+    console.log(elems);
+
+    elems.forEach(function (elem) {
+    console.log(elem.intersectionRatio);
+    console.log(elem.target.classList.contains("floating"));
+
+        if (elem.intersectionRatio < 1 && elem.target.classList.contains("floating") == false ) {
+            console.log("intersect");
+            elem.target.classList.toggle('floating')
+        } else if (elem.intersectionRatio == 1 && elem.target.classList.contains("floating") == true ){
+            console.log("intersect");
+            elem.target.classList.toggle('floating')
+        }
+    })
+}

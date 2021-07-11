@@ -1,37 +1,31 @@
 <div class="header-title">
-        {% assign cat = page.categories[0] %}
-        {% assign cat_list = site.categories[cat] %}
-        {% for post in cat_list %}
-        {% if post.url == page.url %}
-        {% assign pOffset = forloop.index0 | minus: 1 %}
-        {% assign nOffset = pOffset | plus: 2 %}
-        {% if forloop.first == false %}
-        {% assign next_post = cat_list[pOffset] %}
-        {% endif %}
-        {% if forloop.last == false %}
-        {% assign previous_post = cat_list[nOffset] %}
-        {% endif %}
-        {% break %}
-        {% endif %}
-        {% endfor %}
+    {% assign cat = page.categories[0] %}
+    {% assign cat_list = site.categories[cat] %}
+    {% for post in cat_list %}
+    {% if post.url == page.url %}
+    {% assign pOffset = forloop.index0 | minus: 1 %}
+    {% assign nOffset = pOffset | plus: 2 %}
+    {% if forloop.first == false %}
+    {% assign next_post = cat_list[pOffset] %}
+    {% endif %}
+    {% if forloop.last == false %}
+    {% assign previous_post = cat_list[nOffset] %}
+    {% endif %}
+    {% break %}
+    {% endif %}
+    {% endfor %}
 
-        <div class="fl-header-segment fl-header-button">
-            <a class="text-list-item deco-none" href="/index.html#projects">←</a>
-        </div>
-
+    <div class="header-wrap">
+        <a class="fl-header-segment fl-header-button text-list-item deco-none" href="/index.html#projects">←</a>
         <h1 class="fl-header-segment text-title">{{ page.title }}</h1>
-
-        <div class="fl-header-segment fl-header-button">
-            <a href="{{previous_post.url}}" class="text-list-item deco-none">←</a>
-        </div>
-
-        <button id="random-button" title="Go to random project" class="minimal-btn fl-header-segment fl-header-button text-list-item button-square"
-            data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
-            🔀
-        </button>
-        <div class="fl-header-segment fl-header-button button-square">
-            <a href="{{next_post.url}}" class="text-list-item deco-none">→</a>
-        </div>
+        <a href="{{previous_post.url}}" class="fl-header-segment fl-header-button text-list-item deco-none">←</a>
+        <button id="random-button" title="Go to random project"
+        class="minimal-btn fl-header-segment fl-header-button text-list-item button-square"
+        data-prefixes='{{- projectPrefixes -}}' data-sites='{{projectSites}}'>
+        🔀
+    </button>
+    <a href="{{next_post.url}}" class="fl-header-segment fl-header-button button-square text-list-item deco-none">→</a>
+</div>
 </div>
 
 <section class="project-header margin-bt--sl margin-top--s">

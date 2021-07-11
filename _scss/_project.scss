@@ -99,25 +99,35 @@
 
 .header-title {
   width: 50%;
-  top: 10px;
+  top: -20px;
+  padding-top: 31px;
   z-index: 1;
   margin: auto;
+  margin: 60px auto 60px;
+  
+position: sticky;
 }
 
 .fl-header-button {
   visibility: hidden;
+  display: none;
 }
 
 .header-title.floating {
-  position: sticky;
 
+
+  box-sizing: border-box;
+  z-index: 1;
+
+  .header-wrap {
   display: flex;
 
-  background-color: $bg-color;
-  border: solid 2px $text-color;
-  box-sizing: border-box;
+    width: 100%;
+    box-shadow: 0px 3px 13px #25252542;
+    border: solid 2px $text-color;
+    background-color: $bg-color;
   
-  z-index: 1;
+  }
 
   h1 {
     flex-grow: 1;
@@ -134,6 +144,10 @@
 
   .fl-header-button {
     visibility: visible;
+    display: block;
+    transition: all 0.3s;
+
+
     &:hover {
       background-color: $hover-color;
     }
@@ -235,7 +249,7 @@ figure {
   @include text-standard-m;
   display: block;
   color: $text-color;
-  margin: 50px 0 260px 0;
+  margin-top: 50px;
 
   &:visited {
     // color: $white-90;
