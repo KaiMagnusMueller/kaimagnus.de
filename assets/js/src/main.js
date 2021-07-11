@@ -745,23 +745,25 @@ function updateProgressBar(bar) {
 console.log("test");
 const titleObserver = new IntersectionObserver(titleObsCallback, { threshold: 1 });
 
+let helperElem = document.getElementsByClassName("sticky-helper")
 let titleElem = document.getElementsByClassName("header-title")
 
-titleObserver.observe(titleElem[0])
+titleObserver.observe(helperElem[0])
 
 function titleObsCallback(elems) {
     console.log(elems);
 
     elems.forEach(function (elem) {
     console.log(elem.intersectionRatio);
-    console.log(elem.target.classList.contains("floating"));
+    console.log(titleElem[0].classList.contains("floating"));
+    console.log(titleElem[0].classList);
 
-        if (elem.intersectionRatio < 1 && elem.target.classList.contains("floating") == false ) {
+        if (elem.intersectionRatio < 1 && titleElem[0].classList.contains("floating") == false ) {
             console.log("intersect");
-            elem.target.classList.toggle('floating')
-        } else if (elem.intersectionRatio == 1 && elem.target.classList.contains("floating") == true ){
+            titleElem[0].classList.toggle('floating')
+        } else if (elem.intersectionRatio == 1 && titleElem[0].classList.contains("floating") == true ){
             console.log("intersect");
-            elem.target.classList.toggle('floating')
+            titleElem[0].classList.toggle('floating')
         }
     })
 }

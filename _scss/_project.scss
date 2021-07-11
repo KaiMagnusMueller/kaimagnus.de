@@ -99,13 +99,26 @@
 
 .header-title {
   width: 50%;
-  top: -20px;
-  padding-top: 31px;
+  top: 20px;
+  // padding-top: 31px;
   z-index: 1;
   margin: auto;
   margin: 60px auto 60px;
   
 position: sticky;
+
+h1 {
+  line-height: 1em;
+  transition: all .3s ease;
+}
+}
+
+.header-wrap {
+  // border: solid 2px #121212b6;
+}
+
+.fl-header-segment {
+  padding: 12px;
 }
 
 .fl-header-button {
@@ -114,8 +127,6 @@ position: sticky;
 }
 
 .header-title.floating {
-
-
   box-sizing: border-box;
   z-index: 1;
 

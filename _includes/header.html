@@ -1,3 +1,4 @@
+<div class="sticky-helper"></div>
 <div class="header-title">
     {% assign cat = page.categories[0] %}
     {% assign cat_list = site.categories[cat] %}
@@ -14,7 +15,6 @@
     {% break %}
     {% endif %}
     {% endfor %}
-
     <div class="header-wrap">
         <a class="fl-header-segment fl-header-button text-list-item deco-none" href="/index.html#projects">←</a>
         <h1 class="fl-header-segment text-title">{{ page.title }}</h1>
