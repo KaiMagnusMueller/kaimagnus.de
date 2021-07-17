@@ -135,39 +135,10 @@ sitemap:
             <div class="gohfg-text column column-3">
                 {% capture my_include %}{% include gohfg-text.md %}{% endcapture %}
                 {{ my_include | markdownify }}
-                <a href="//www.dev.build-destinations.com" class="button-link button-highlight">
+                <a href="//www.build-destinations.com" class="button-link button-highlight">
                     <p>Go to the gohfg<br> project page</p>
                 </a>
             </div>
-        </div>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-
-    <div class="featured-project grid-4">
-
-        {% for project in site.categories.projects %}
-        {% if project.prefix == "halo" %}
-        <div class="featured-left">
-            <div class="featured-title tilt-helper" style="background-color: {{ project.color_main }};" data-tilt
-                data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
-                    <div class="outer aspect-1-1">
-                        <div class="inner project-item-desc">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <p class="featured-desc-s">{{ project.description }}</p>
-        </div>
-        <div class="featured-right">
-            {%- include video-player.html type="media" file="halo-header.mp4" -%}
         </div>
 
         {% endif %}
