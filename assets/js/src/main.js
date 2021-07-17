@@ -742,28 +742,28 @@ function updateProgressBar(bar) {
 }
 
 
-console.log("test");
-const titleObserver = new IntersectionObserver(titleObsCallback, { threshold: 1 });
+// console.log("test");
+// const titleObserver = new IntersectionObserver(titleObsCallback, { threshold: 1 });
 
-let helperElem = document.getElementsByClassName("sticky-helper")
-let titleElem = document.getElementsByClassName("header-title")
+// let helperElem = document.getElementsByClassName("sticky-helper")
+// let titleElem = document.getElementsByClassName("header-title")
 
-titleObserver.observe(helperElem[0])
+// titleObserver.observe(helperElem[0])
 
-function titleObsCallback(elems) {
-    console.log(elems);
+// function titleObsCallback(elems) {
+//     console.log(elems);
 
-    elems.forEach(function (elem) {
-    console.log(elem.intersectionRatio);
-    console.log(titleElem[0].classList.contains("floating"));
-    console.log(titleElem[0].classList);
+//     elems.forEach(function (elem) {
+//     console.log(elem.intersectionRatio);
+//     console.log(titleElem[0].classList.contains("floating"));
+//     console.log(titleElem[0].classList);
 
-        if (elem.intersectionRatio < 1 && titleElem[0].classList.contains("floating") == false ) {
-            console.log("intersect");
-            titleElem[0].classList.toggle('floating')
-        } else if (elem.intersectionRatio == 1 && titleElem[0].classList.contains("floating") == true ){
-            console.log("intersect");
-            titleElem[0].classList.toggle('floating')
-        }
-    })
-}
+//         if (elem.intersectionRatio < 1 && titleElem[0].classList.contains("floating") == false ) {
+//             console.log("intersect");
+//             titleElem[0].classList.toggle('floating')
+//         } else if (elem.intersectionRatio == 1 && titleElem[0].classList.contains("floating") == true ){
+//             console.log("intersect");
+//             titleElem[0].classList.toggle('floating')
+//         }
+//     })
+// }
