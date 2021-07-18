@@ -34,11 +34,16 @@ sitemap:
                         assets/img/{{ project.prefix }}-start.jpg
                         {%- endcapture -%}
 
+                        {%- capture image_alt -%}
+                        {{ project.title }} header image
+                        {%- endcapture -%}
+
                         {% responsive_image_block %}
                         template: _includes/responsive_image.html
                         path: {{ image_path }}
                         picture_class: inner
                         img_class:
+                        alt: {{image_alt}}
                         {% endresponsive_image_block %}
 
                     </div>
@@ -201,7 +206,7 @@ sitemap:
             path: assets/img/kaimagnus-portrait.jpg
             picture_class: inner
             img_class: vita-picture
-            alt: "Kai Magnus Müller portrait picture"
+            alt: "Portrait picture of Kai Magnus Müller"
             {% endresponsive_image_block %}
         </div>
     </div>

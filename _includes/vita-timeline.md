@@ -1,6 +1,10 @@
+## July 2021 
+
+Joined [Syncier Experience][Syncier] as an UX Designer to work on tools for insurances.
+
 ## Summer 2020
 
-Successfully graduated from HfG with Destinations as bachelor project.
+Successfully graduated from HfG with [Destinations][Destinations] as bachelor project.
 
 Destinations enters the goHfG startup initiative.
 
@@ -28,3 +32,5 @@ Studies of Interaction Design at the [Hochschule für Gestaltung][HfG] in Schwä
 [intuity]: https://www.intuity.de
 [precious]: http://precious-forever.com
 [HfG]: https://www.hfg-gmuend.de
+[Destinations]: https://www.build-destinations.com
+[Syncier]: https://www.syncier.com/de

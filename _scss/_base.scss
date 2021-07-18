@@ -384,6 +384,14 @@ footer p {
   grid-column: 1 /-1;
 }
 
+sup {
+  line-height: 0;
+
+  a {
+    padding: 4px;
+  }
+}
+
 .footnotes {
   margin-top: 60px;
   grid-column: 2 / -1;
