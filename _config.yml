@@ -50,7 +50,7 @@ exclude:
 #  - assets/js/vendor/
 #  - assets/docs/
 #  - _site/
-  - assets/resized/
+#  - assets/resized/
 #make sure to enable docs processing before upload (possible on mac only for some reason)
 
 include:
@@ -80,5 +80,5 @@ responsive_image:
     - width: 1890
 
 version: 
-  css: 2.4
+  css: 2.4.2
   js: 2.16
