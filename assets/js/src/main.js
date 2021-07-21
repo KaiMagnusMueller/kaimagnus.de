@@ -767,3 +767,14 @@ function updateProgressBar(bar) {
 //         }
 //     })
 // }
+
+const titleObserver = new IntersectionObserver(titleObsCallback, { threshold: 0.5 });
+
+let titleMediaElem = document.getElementsByClassName("header-media")
+let titleElem = document.getElementsByClassName("header-title")
+
+titleObserver.observe(titleMediaElem[0])
+
+function titleObsCallback(elems) {
+    console.log(elems);
+}
