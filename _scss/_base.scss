@@ -30,16 +30,18 @@ body {
 }
 
 .section-thin {
-  padding: 0 120px;
+  padding: 0 0px;
   margin: 0 auto 0 auto;
-  max-width: 1440px - 160px;
+    // max-width: 1440px - 160px;
 
-  @media (max-width: 1200px) {
-    padding: 0 60px;
-  }
-  @media (max-width: 550px) {
-    padding: 0 18px;
-  }
+    width: 50%;
+
+  // @media (max-width: 1200px) {
+  //   padding: 0 60px;
+  // }
+  // @media (max-width: 550px) {
+  //   padding: 0 18px;
+  // }
 }
 
 .section-wide {
@@ -262,7 +264,7 @@ video {
 }
 
 .grid-sec-l {
-  grid-column: span 3;
+  grid-column: span 5;
 }
 
 figcaption,
@@ -326,6 +328,7 @@ figcaption-project {
     display: flex;
     margin-top: auto;
     padding-left: 30px;
+    margin-right: 20px;
     width: 25%;
     box-sizing: border-box;
   }
