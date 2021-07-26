@@ -1,13 +1,11 @@
-.personal-intro {
-  grid-column: 2 / span 2;
-  // margin-top: 150px;
-  // margin-bottom: 195px;
-  margin-top: clamp(40px, 20vh, 300px);
-  margin-bottom: clamp(195px, 25vh, 360px);
+.mueller_os-hero {
+  height: 100vh;
+}
 
+.personal-intro {
   h1 {
     line-height: 1em;
-    color: $bg-color;
+    color: var(--bg-color);
     background-color: white;
     padding: 5px 8px 6px 8px;
     width: fit-content;
@@ -15,9 +13,21 @@
     margin: 0;
   }
 
-  p {
-    @include text-bold-l;
+  .inline-highlight {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 0 8px;
+    text-decoration: none;
+    width: fit-content;
   }
+}
+
+.mos-hero-main {
+  grid-template-rows: 1fr;
+}
+
+.mos-hero-footer {
+
 }
 
 .project-item-main > *,

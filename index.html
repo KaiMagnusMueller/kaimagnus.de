@@ -5,17 +5,73 @@ description: Portfolio of Kai Magnus Müller, Interaction Designer at Syncier an
 sitemap:
 
 sitemap:
-    priority: 1.0
-    changefreq: weekly
+priority: 1.0
+changefreq: weekly
 ---
-<header id="hero" class="grid-4">
-    <div class="personal-intro">
-        <h1>Hi, I’m Kai Magnus.</h1>
-        <p>A Stuttgart, Germany based interaction designer working on human centered experiences and products, that help
-            us in daily life and productivity.</p>
-        <p>Let me show you what I've been working on.</p>
+
+
+<section class="mueller_os-hero m--global displ-flex--vert flex--vert-sp-btw" id="hero" class="grid-4">
+    {% include navigation.html %}
+
+    <div class="mos-hero-main flex-expand gr-baseline">
+
+        <div class="personal-intro mos-window mos-window--primary border--all">
+
+            <div class="mos-window-title border--bt">
+                <p class="text-annotation-xs">Personal Intro</p>
+            </div>
+            <div class="mos-window-main">
+                <p class="inline-highlight font--semibold">Hi, I’m Kai Magnus.</p>
+                <p>A product designer at <a
+                        href="https://www.syncier.com">Syncier</a>, working on human centered experiences and products.
+                    Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
+                    companies and at <a href="https://www.precious-forever.com">precious design</a> working for a CRM
+                    startup.
+                </p>
+                <p>
+                    While studying, I wrote a bachelor thesis about <a
+                        href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a>, designed a
+                    <a href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a
+                        href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a
+                        href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
+                </p>
+            </div>
+            <div class="mos-window-footer">
+
+            </div>
+        </div>
+
+        {% assign featured_posts = site.tags.featured | reverse %}
+
+        {% for project in featured_posts %}
+
+        {{ project.title }}
+
+        {% endfor %}
+
+        <div class="personal-intro mos-window mos-window--primary border--all">
+
+            <div class="mos-window-title border--bt">
+                <p class="text-annotation-xs">Halo</p>
+            </div>
+            <div class="mos-window-main">
+                <p>Halo is a tool for web based research. Users can browse the web with a newly designed radial interface using semantic connections. A history lets users review research sessions so they can focus on exploring while not having to worry about losing information.
+                </p>
+                <img src="/assets/img/halo-header.jpg" alt="">
+            </div>
+            <div class="mos-window-footer">
+
+            </div>
+        </div>
     </div>
-</header>
+
+    <div class="mos-hero-footer grid-span-all displ-flex flex-align--center flex-gap--m m-top--m m-bt--s">
+        <p class="text-annotation-xs">mueller_os 3.1 © {{ site.time | date: '%Y' }}</p>
+        <p class="text-annotation-xs">Scroll for more</p>
+        <div class="horiz-line flex-expand border--bt"></div>
+        <p class="text-annotation-xs tabular-nums" id="unix-clock">1627248295498</p>
+    </div>
+</section>
 
 <section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4">
     {% for project in site.categories.projects limit: 8 %}
@@ -187,7 +243,8 @@ sitemap:
             <!--        </div>-->
             <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
                 viewBox="0 0 114.829 21.657">
-                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16" transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
+                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
+                    transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
             </svg>
         </a>
     </div>

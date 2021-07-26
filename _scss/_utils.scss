@@ -1,0 +1,74 @@
+//GENERAL
+
+.tabular-nums {
+    font-variant: tabular-nums;
+}
+
+//BORDER
+.border--all {
+    border: 1px solid var(--text-color);
+}
+
+.border--bt {
+    border-bottom: 1px solid var(--text-color);
+}
+
+//GRID
+
+.grid-item-l {
+    grid-column: span 3;
+}
+
+.grid-span-all {
+    grid-column: 1 / -1;
+}
+
+//FLEX
+.displ-flex{
+    display: flex;
+}
+
+.displ-flex--vert{
+display: flex;
+flex-direction: column;
+}
+
+.flex-expand {
+    flex-grow: 1;
+}
+
+.flex--vert-sp-btw {
+    align-content: space-between;
+}
+
+.flex-align--center {
+    align-items: center;
+}
+
+.flex-gap--m {
+    gap: 40px;
+}
+
+//MARGIN
+
+.m--global {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.m-top--s {
+    margin-top: 40px;
+}
+
+.m-bt--s {
+    margin-bottom: 40px;
+}
+
+
+.m-top--m {
+    margin-top: 60px;
+}
+
+.m-bt--m {
+    margin-bottom: 60px;
+}

@@ -711,3 +711,16 @@ function updateProgressBar(bar) {
     bar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
 
 }
+
+
+let unixClockElem = document.getElementById("unix-clock")
+
+window.setInterval(updateUnixClock, 5000)
+
+function updateUnixClock() {
+    console.log("update time");
+    const timeS = Math.floor(Date.now() / 1000)
+
+
+    unixClockElem.innerText = timeS
+}

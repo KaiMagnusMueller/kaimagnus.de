@@ -1,13 +1,15 @@
 .nav {
-  grid-column: span 4;
-  margin: 36px 0;
+  grid-column: 1 / -1;
 
-  padding: 0;
-  list-style: none;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  gap: 40px;
 
   color: $white-50;
+
+  a {
+    text-decoration: unset;
+  }
 
   .current {
     color: $white-90;
@@ -15,17 +17,11 @@
 }
 
 .nav-title {
-  font-size: 16px;
 }
 
 .nav-items {
-  margin-left: auto;
   display: flex;
-
-  a {
-    margin-left: 18px;
-    @include text-annotation-xs;
-  }
+  gap: 18px;
 }
 
 #hamburger {

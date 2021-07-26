@@ -9,9 +9,59 @@ body {
 .main-content {
 }
 
+.gr-baseline {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: min-content;
+  grid-column-gap: 40px;
+}
+
+.mos-window {
+
+  max-height: 440px;
+  overflow: scroll;
+  position: relative;
+
+.mos-window-title {
+  position: sticky;
+  top: 0;
+}
+
+  .mos-window-main {
+    padding: 20px;
+
+    p {
+      @include text-mos-body--m
+    }
+
+    p+p {
+      margin-top: 16px;
+    }
+
+    img {
+      margin: 20px 0;
+    }
+  }
+}
+
+.mos-window--primary {
+  grid-column: span 3;
+  //TODO: narrow screen css
+}
+
+.mos-window--secondary {
+  grid-column: span 3;
+  //TODO: narrow screen css
+}
+
+.mos-window-title {
+  padding: 9px 20px;
+}
+
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  
   // grid-column-gap: clamp(20px, 5vw, 60px);
   // padding: 0 clamp(26px, 5vw, 80px);
 
