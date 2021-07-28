@@ -80,9 +80,15 @@
     margin-top: 8px;
     position: absolute;
 
-    width: 120%;
+    width: max-content;
+    max-width: 120%;
   }
 }
+
+.mos-project-shortcut-image:hover {
+    outline: solid 1px white;
+    outline-offset: 1px;
+  }
 
 .relative-wrap {
   /*relative on second parent*/
