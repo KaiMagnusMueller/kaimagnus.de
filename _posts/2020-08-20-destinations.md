@@ -5,7 +5,7 @@ title_long:  "Wayfinding design software"
 date:   2020-08-20 10:19:47 +0100
 semester_date: Summer 2020
 categories: [projects]
-tags: [featured]
+tags: [featured, highlight]
 course: Bachelor Project
 prefix: destinations
 color_main: "#004144"

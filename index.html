@@ -17,17 +17,18 @@ changefreq: weekly
 
         <div class="personal-intro mos-window mos-window--primary border--all">
 
-            <div class="mos-window-title border--bt">
+            <div class="mos-window-bar mos-window-title border--bt">
                 <p class="text-annotation-xs">Personal Intro</p>
             </div>
             <div class="mos-window-main">
                 <p class="inline-highlight font--semibold">Hi, I’m Kai Magnus.</p>
-                <p>A product designer at <a
-                        href="https://www.syncier.com">Syncier</a>, working on human centered experiences and products.
+                <p>A product designer at <a href="https://www.syncier.com">Syncier</a>, working on human centered
+                    experiences and products.
                     Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
                     companies and at <a href="https://www.precious-forever.com">precious design</a> working for a CRM
                     startup.
                 </p>
+
                 <p>
                     While studying, I wrote a bachelor thesis about <a
                         href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a>, designed a
@@ -36,38 +37,129 @@ changefreq: weekly
                         href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
                 </p>
             </div>
-            <div class="mos-window-footer">
-
-            </div>
+            <svg class="mos-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
+                viewBox="0 0 13.104 13.104">
+                <rect width="13" height="13" fill="none" />
+                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
+                    stroke-width="1" />
+                <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
+                </line>
+            </svg>
         </div>
 
         {% assign featured_posts = site.tags.featured | reverse %}
 
         {% for project in featured_posts %}
 
-        {{ project.title }}
+
+        <div class="mos-featured-project mos-window mos-window--primary border--all">
+
+            <div class="mos-window-bar mos-window-title border--bt">
+                <p class="text-annotation-xs">{{ project.title }}</p>
+            </div>
+            <div class="mos-window-main">
+                <p>{{ project.description }}
+                </p>
+                <img src="/assets/img/{{ project.title }}-header.jpg" alt="">
+
+                <a class="mos-button--std border--all m-top--s m-bt--xl" href="{{ project.url }}">
+                    <p>View Project</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12.354" height="12.354" viewBox="0 0 12.354 12.354">
+                        <g data-name="Gruppe 175" transform="translate(0.354 0.5)">
+                            <line id="Linie_57" data-name="Linie 57" x1="11" y2="11" transform="translate(0 0.5)"
+                                fill="none" stroke="#fff" stroke-width="1" />
+                            <path id="Pfad_128" data-name="Pfad 128" d="M677,581h10v10"
+                                transform="translate(-675.5 -581)" fill="none" stroke="#fff" stroke-width="1" />
+                        </g>
+                    </svg>
+                </a>
+            </div>
+            <div class="mos-window-bar mos-window-footer border--top">
+                <p>{{ project.annotation}}</p>
+            </div>
+            <svg class="mos-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
+                viewBox="0 0 13.104 13.104">
+                <rect width="13" height="13" fill="none" />
+                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
+                    stroke-width="1" />
+                <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
+                </line>
+            </svg>
+        </div>
 
         {% endfor %}
 
-        <div class="personal-intro mos-window mos-window--primary border--all">
-
-            <div class="mos-window-title border--bt">
-                <p class="text-annotation-xs">Halo</p>
+        <div class="mos-article-window mos-window mos-window--secondary border--all">
+            <div class="mos-window-bar mos-window-title border--bt">
+                <p class="text-annotation-xs">Articles</p>
             </div>
             <div class="mos-window-main">
-                <p>Halo is a tool for web based research. Users can browse the web with a newly designed radial interface using semantic connections. A history lets users review research sessions so they can focus on exploring while not having to worry about losing information.
-                </p>
-                <img src="/assets/img/halo-header.jpg" alt="">
+                {% for article in site.categories.articles limit: 3 %}
+                <a class="mos-list-item" href="{{ article.url }}" alt="{{article.description_short}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
+                        <g transform="translate(0 0.707)">
+                            <line x2="16" transform="translate(0 6)" fill="none" stroke="#f5ffff" stroke-width="1" />
+                            <line x2="6" y2="6" transform="translate(10)" fill="none" stroke="#f5ffff"
+                                stroke-linecap="round" stroke-width="1" />
+                            <line y1="6" x2="6" transform="translate(10 6)" fill="none" stroke="#f5ffff"
+                                stroke-linecap="round" stroke-width="1" />
+                        </g>
+                    </svg>
+                    <p>{{ article.title }}</p>
+                </a>
+                {% endfor %}
             </div>
-            <div class="mos-window-footer">
+            <svg class="mos-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
+                viewBox="0 0 13.104 13.104">
+                <rect width="13" height="13" fill="none" />
+                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
+                    stroke-width="1" />
+                <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
+                </line>
+            </svg>
+        </div>
+        <div class="mos-project-shortcuts">
+            {% assign mos_shortcut_proj = site.tags.highlight %}
 
-            </div>
+            {% for project in mos_shortcut_proj %}
+            <a class="reset-decoration" href="{{ project.url }}" id="{{forloop.index}}"
+                alt="{{ project.description_short}}">
+                <div class="mos-project-shortcut">
+
+                    <div class="mos-project-shortcut-image outer aspect-1-1">
+                        {%- capture image_path -%}
+                        assets/img/{{ project.prefix }}-start.jpg
+                        {%- endcapture -%}
+
+                        {%- capture image_alt -%}
+                        {{ project.title }} header image
+                        {%- endcapture -%}
+
+                        {% responsive_image_block %}
+                        template: _includes/responsive_image.html
+                        path: {{ image_path }}
+                        picture_class: inner
+                        img_class:
+                        alt: {{image_alt}}
+                        {% endresponsive_image_block %}
+                    </div>
+                    <div class="overflow-wrap">
+
+                        <p>{{project.title}}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+
+
         </div>
     </div>
 
+
+
     <div class="mos-hero-footer grid-span-all displ-flex flex-align--center flex-gap--m m-top--m m-bt--s">
         <p class="text-annotation-xs">mueller_os 3.1 © {{ site.time | date: '%Y' }}</p>
-        <p class="text-annotation-xs">Scroll for more</p>
+        <a class="button--inline text-annotation-xs" href="/#vita">Scroll for more</a>
         <div class="horiz-line flex-expand border--bt"></div>
         <p class="text-annotation-xs tabular-nums" id="unix-clock">1627248295498</p>
     </div>

@@ -176,10 +176,11 @@ h3 {
   @include text-annotation-xs
 }
 
-
+//Text in XD looks like 600 even though its regular/500
 @mixin text-mos-body--m {
   font-weight: 500;
   font-size: 15px; 
+  line-height: 1.4em;
 }
 
 

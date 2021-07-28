@@ -4,9 +4,17 @@
     font-variant: tabular-nums;
 }
 
+.reset-decoration {
+    text-decoration: none;
+}
+
 //BORDER
 .border--all {
     border: 1px solid var(--text-color);
+}
+
+.border--top {
+    border-top: 1px solid var(--text-color);
 }
 
 .border--bt {
@@ -71,4 +79,8 @@ flex-direction: column;
 
 .m-bt--m {
     margin-bottom: 60px;
+}
+
+.m-bt--xl {
+    margin-bottom: 120px;
 }
