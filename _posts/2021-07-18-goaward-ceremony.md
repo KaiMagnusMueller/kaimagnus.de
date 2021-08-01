@@ -9,6 +9,8 @@ custom_style:
 custom_js:
 description_short: "My project, together with Johanna Wellnitz and Martin Wehl, won the goAward initiated by our University"
 header_caption: ""
+header_img: IMG_0546-small.jpg
+
 sitemap:
     priority: 1.0
 ---

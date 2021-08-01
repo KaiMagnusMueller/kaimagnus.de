@@ -3,12 +3,16 @@
 }
 
 .personal-intro {
-  margin-top: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 580px;
 
   h1 {
     line-height: 1em;
-    color: var(--bg-color);
-    background-color: white;
+    color: var(--text-color);
     padding: 5px 8px 6px 8px;
     width: fit-content;
     width: -moz-fit-content;
@@ -26,12 +30,59 @@
 
 .mos-hero-main {
   // grid-template-rows: 1fr;
+  height: 100%;
 
   .mos-window {
     grid-row: 1 / -1;
   }
+
+  .mos-window--postit:nth-of-type(1) {
+    background-color: var(--pi-green);
+    grid-column: 1 / span 2;
+    grid-row: 1;
+
+    margin-top: 70%;
+  }
+
+  .mos-window--postit:nth-of-type(2) {
+    background-color: var(--pi-pink);
+    grid-column: 7 / span 2;
+    grid-row: 1;
+    transform: translate(20%, 50%);
+  }
+
+  .mos-window--postit:nth-of-type(3) {
+    background-color: var(--pi-yellow);
+    grid-column: 11 / span 2;
+    grid-row: 1;
+    margin-top: auto;
+    margin-bottom: 140px;
+  }
+
+  .mos-window--postit-img {
+    background-color: var(--pi-blue);
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    margin-top: auto;
+    margin-bottom: 150px;
+    transform: translateX(50px);
+  }
+
+  .bg-pointgrid {
+    position: absolute;
+    left: 10%;
+    top: 40%;
+  }
 }
 
+.mos-project-window {
+  grid-column: 7 / span 3;
+width: fit-content;
+  background-color: var(--pi-green);
+  a {
+    text-decoration: none;
+  }
+}
 .mos-hero-footer {
 }
 
@@ -47,9 +98,44 @@
 }
 
 .mos-article-window {
-  grid-column: 8 / span 3;
-  grid-row: 1 / -1;
-  align-self: end;
+  grid-column: 2 / span 3;
+  grid-row: 1;
+  margin-top: -100px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.project-section {
+  position: relative;
+
+  .mos-window--postit:nth-of-type(1) {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+    transform: translateX(20%);
+  }
+  .mos-window--postit:nth-of-type(2) {
+    grid-column: 11 / span 2;
+    grid-row: 1;
+    transform: translate(-20%, 90%);
+  }
+
+  .bg-pointgrid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(10%, 20%);
+  }
+}
+
+.article-section {
+  position: relative;
+  .bg-pointgrid {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-20%, -40%);
+  }
 }
 
 .mos-project-shortcuts {
@@ -86,9 +172,9 @@
 }
 
 .mos-project-shortcut-image:hover {
-    outline: solid 1px white;
-    outline-offset: 1px;
-  }
+  outline: solid 1px white;
+  outline-offset: 2px;
+}
 
 .relative-wrap {
   /*relative on second parent*/
@@ -96,11 +182,10 @@
 }
 
 .overflow-wrap {
-
   overflow: hidden;
   background: lightblue;
-  
-      height: 100%;
+
+  height: 100%;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -113,7 +198,7 @@
   right: 0;
   height: 50px;
   width: 50px;
-  background: green;    
+  background: green;
 }
 .fuck-overflow {
   position: absolute;

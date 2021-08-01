@@ -713,14 +713,14 @@ function updateProgressBar(bar) {
 }
 
 
-let unixClockElem = document.getElementById("unix-clock")
+// let unixClockElem = document.getElementById("unix-clock")
 
-window.setInterval(updateUnixClock, 5000)
+// window.setInterval(updateUnixClock, 5000)
 
-function updateUnixClock() {
-    console.log("update time");
-    const timeS = Math.floor(Date.now() / 1000)
+// function updateUnixClock() {
+//     console.log("update time");
+//     const timeS = Math.floor(Date.now() / 1000)
 
 
-    unixClockElem.innerText = timeS
-}
+//     unixClockElem.innerText = timeS
+// }

@@ -10,23 +10,17 @@ changefreq: weekly
 ---
 
 
-<section class="mueller_os-hero m--global displ-flex--vert flex--vert-sp-btw" id="hero" class="grid-4">
-    {% include navigation.html %}
-
-    <div class="mos-hero-main flex-expand gr-baseline">
+<section class="mueller_os-hero m--global" id="hero" class="grid-4">
+    <div class="mos-hero-main gr-baseline">
 
         <div class="personal-intro mos-window mos-window--primary border--all">
-
-            <div class="mos-window-bar mos-window-title border--bt">
-                <p class="text-annotation-xs">Personal Intro</p>
-            </div>
-            <div class="mos-window-main">
-                <p class="inline-highlight font--semibold">Hi, I’m Kai Magnus.</p>
+            <div class="mos-window-main text-mos-body--l">
+                <p class="">Hi, I’m Kai Magnus.</p>
                 <p>A product designer at <a href="https://www.syncier.com">Syncier</a>, working on human centered
                     experiences and products.
                     Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
-                    companies and at <a href="https://www.precious-forever.com">precious design</a> working for a CRM
-                    startup.
+                    companies and at <a href="https://www.precious-forever.com">precious design</a> working on POS
+                    software.
                 </p>
 
                 <p>
@@ -47,327 +41,127 @@ changefreq: weekly
             </svg>
         </div>
 
-        {% assign featured_posts = site.tags.featured | reverse %}
 
-        {% for project in featured_posts %}
+        {% assign thepost = site.posts | where:"title","Halo" %}
+        {% for post in thepost %}
 
-
-        <div class="mos-featured-project mos-window mos-window--primary border--all">
-
-            <div class="mos-window-bar mos-window-title border--bt">
-                <p class="text-annotation-xs">{{ project.title }}</p>
+        <a href=" {{ post.url }}" alt="{{ post.description }}" class="mos-window--postit border--all outer aspect-1-1">
+            <div class="mos-window-main inner">
+                <p class="mos-postit-title text-mos-title--xl">{{ post.title }}</p>
+                <p class="text-mos-body--s">{{ post.description_short }}</p>
             </div>
-            <div class="mos-window-main">
-                <p>{{ project.description }}
-                </p>
-                <img src="/assets/img/{{ project.title }}-header.jpg" alt="">
-
-                <a class="mos-button--std border--all m-top--s m-bt--xl" href="{{ project.url }}">
-                    <p>View Project</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12.354" height="12.354" viewBox="0 0 12.354 12.354">
-                        <g data-name="Gruppe 175" transform="translate(0.354 0.5)">
-                            <line id="Linie_57" data-name="Linie 57" x1="11" y2="11" transform="translate(0 0.5)"
-                                fill="none" stroke="#fff" stroke-width="1" />
-                            <path id="Pfad_128" data-name="Pfad 128" d="M677,581h10v10"
-                                transform="translate(-675.5 -581)" fill="none" stroke="#fff" stroke-width="1" />
-                        </g>
-                    </svg>
-                </a>
-            </div>
-            <div class="mos-window-bar mos-window-footer border--top">
-                <p>{{ project.annotation}}</p>
-            </div>
-            <svg class="mos-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
-                viewBox="0 0 13.104 13.104">
-                <rect width="13" height="13" fill="none" />
-                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
-                    stroke-width="1" />
-                <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
-                </line>
-            </svg>
-        </div>
-
+        </a>
         {% endfor %}
 
-        <div class="mos-article-window mos-window mos-window--secondary border--all">
-            <div class="mos-window-bar mos-window-title border--bt">
-                <p class="text-annotation-xs">Articles</p>
+
+        {% assign thepost = site.posts | where:"title","Aral Sea" %}
+        {% for post in thepost %}
+
+        <a href=" {{ post.url }}" alt="{{ post.description_short }}"
+            class="mos-window--postit border--all outer aspect-1-1">
+            <div class="mos-window-main inner">
+                <p class="mos-postit-title text-mos-title--xl">{{ post.title }}</p>
+                <p class="text-mos-body--s">{{ post.description_short }}</p>
             </div>
+        </a>
+        {% endfor %}
+
+        {% assign thepost = site.posts | where:"title","Destinations" %}
+        {% for post in thepost %}
+
+        <a href=" {{ post.url }}" alt="{{ post.description_short }}"
+            class="mos-window--postit border--all outer aspect-1-1">
+            <div class="mos-window-main inner">
+                <p class="mos-postit-title text-mos-title--xl">{{ post.title }}</p>
+                <p class="text-mos-body--s">{{ post.description_short }}</p>
+            </div>
+        </a>
+        {% endfor %}
+
+        {% assign thepost = site.posts | where:"title","Aral Sea" %}
+        {% for post in thepost %}
+
+        <a href=" {{ post.url }}" alt="{{ post.description_short }}" class="mos-window--postit-img border--all">
             <div class="mos-window-main">
-                {% for article in site.categories.articles limit: 3 %}
-                <a class="mos-list-item" href="{{ article.url }}" alt="{{article.description_short}}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
-                        <g transform="translate(0 0.707)">
-                            <line x2="16" transform="translate(0 6)" fill="none" stroke="#f5ffff" stroke-width="1" />
-                            <line x2="6" y2="6" transform="translate(10)" fill="none" stroke="#f5ffff"
-                                stroke-linecap="round" stroke-width="1" />
-                            <line y1="6" x2="6" transform="translate(10 6)" fill="none" stroke="#f5ffff"
-                                stroke-linecap="round" stroke-width="1" />
-                        </g>
-                    </svg>
-                    <p>{{ article.title }}</p>
-                </a>
-                {% endfor %}
+                <p class="mos-postit-title text-mos-title--m border--bt">{{ post.title }}</p>
+                <video class="" playsinline muted loop src="" alt="{{ post.description_short }}"></video>
             </div>
-            <svg class="mos-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
-                viewBox="0 0 13.104 13.104">
-                <rect width="13" height="13" fill="none" />
-                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
-                    stroke-width="1" />
-                <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
-                </line>
-            </svg>
+            {%comment%}
+            "../assets/video/{{ post.header_video }}
+            {%endcomment%}
+        </a>
+        {% endfor %}
+
+        <div class="bg-pointgrid bg-grid--500"></div>
+
+    </div>
+</section>
+
+<section class="project-section m--global gr-baseline">
+    {% assign thepost = site.posts | where:"title","Winning the goAward 2021" %}
+    {% for post in thepost %}
+
+    <a href=" {{ post.url }}" alt="{{ post.description_short }}"
+        class="mos-window--postit border--all outer aspect-1-1">
+            <img class="inner" src="assets/img/articles/{{post.header_img}}">            
+    </a>
+    {% endfor %}
+    <div class="mos-project-window mos-window mos-window--primary border--all projects-list">
+        <div class="mos-window-title--l">
+            <p class="text-mos-title--m">Projects</p>
         </div>
-        <div class="mos-project-shortcuts">
+        <div class="mos-window-main">
             {% assign mos_shortcut_proj = site.tags.highlight %}
-
-            {% for project in mos_shortcut_proj %}
-            <a class="reset-decoration" href="{{ project.url }}" id="{{forloop.index}}"
-                alt="{{ project.description_short}}">
-                <div class="mos-project-shortcut">
-
-                    <div class="mos-project-shortcut-image outer aspect-1-1">
-                        {%- capture image_path -%}
-                        assets/img/{{ project.prefix }}-start.jpg
-                        {%- endcapture -%}
-
-                        {%- capture image_alt -%}
-                        {{ project.title }} header image
-                        {%- endcapture -%}
-
-                        {% responsive_image_block %}
-                        template: _includes/responsive_image.html
-                        path: {{ image_path }}
-                        picture_class: inner
-                        img_class:
-                        alt: {{image_alt}}
-                        {% endresponsive_image_block %}
-                    </div>
-                    <div class="overflow-wrap">
-
-                        <p>{{project.title}}</p>
-                    </div>
-                </div>
+            {% for project in mos_shortcut_proj %}            
+            <a class="mos-list-item" href="{{ project.url }}" alt="{{project.description_short}}">
+                <p class="text-mos-title--xl">{{ project.title }}</p>
             </a>
             {% endfor %}
-
-
         </div>
     </div>
 
+    {% assign thepost = site.posts | where:"title","Aral Sea" %}
+    {% for post in thepost %}
 
-
-    <div class="mos-hero-footer grid-span-all displ-flex flex-align--center flex-gap--m m-top--m m-bt--s">
-        <p class="text-annotation-xs">mueller_os 3.1 © {{ site.time | date: '%Y' }}</p>
-        <a class="button--inline text-annotation-xs" href="/#vita">Scroll for more</a>
-        <div class="horiz-line flex-expand border--bt"></div>
-        <p class="text-annotation-xs tabular-nums" id="unix-clock">1627248295498</p>
-    </div>
-</section>
-
-<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4">
-    {% for project in site.categories.projects limit: 8 %}
-    <div class="project-waterfall-item">
-        <div class="tilt-helper" data-tilt data-tilt-max="3">
-            {% if project.annotation%}
-            <span class="project-item-annotation">{{ project.annotation }}</span>
-            {% endif %}
-
-            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
-                <div class="project-item-main" style="background-color: {{ project.color_main }};">
-                    <div class="outer aspect-1-1">
-
-                        {%- capture image_path -%}
-                        assets/img/{{ project.prefix }}-start.jpg
-                        {%- endcapture -%}
-
-                        {%- capture image_alt -%}
-                        {{ project.title }} header image
-                        {%- endcapture -%}
-
-                        {% responsive_image_block %}
-                        template: _includes/responsive_image.html
-                        path: {{ image_path }}
-                        picture_class: inner
-                        img_class:
-                        alt: {{image_alt}}
-                        {% endresponsive_image_block %}
-
-                    </div>
-                    <div class="outer aspect-1-1">
-                        <div class="project-item-desc inner">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        {% if forloop.index == 2 %}
-
-        {%- capture projectSites -%}
-        {
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}": "{{- post.url -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        }
-        {%- endcapture -%}
-
-        {%- capture projectPrefixes -%}
-        [
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        ]
-        {%- endcapture -%}
-
-        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}'
-            data-sites='{{projectSites}}'>
-            <p>Random Project</p>
-        </button>
-        {% endif %}
-
-        {% if forloop.index == 8 %}
-        {% assign project_count = site.categories.projects | size | minus: 8 %}
-        <a href="/projects/" class="button-link all-project-button">
-            <p>Show {{ project_count }} more</p>
-        </a>
-        {% endif %}
-    </div>
+    <a href=" {{ post.url }}" alt="{{ post.description_short }}"
+        class="mos-window--postit border--all outer aspect-1-1">
+            <img class="inner" src="assets/img/{{ post.header_img }}">            
+    </a>
     {% endfor %}
 
-    <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
-        <!--        <div class="button-plus">-->
-        <!--            <span></span>-->
-        <!--            <span></span>-->
-        <!--        </div>-->
-        <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-            viewBox="0 0 114.829 21.657">
-            <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-        </svg>
-    </a>
+    <div class="bg-pointgrid bg-grid--500"></div>
 </section>
 
-<section id="featured-projects" class="">
+<section class="article-section m--global gr-baseline">
 
-    <div class="featured-project grid-4">
-        {% for project in site.categories.projects %}
-        {% if project.prefix == "destinations" %}
-        <div class="featured-left">
-            <div id="featured-sticky" class="featured-title tilt-helper"
-                style="background-color: {{ project.color_main }};" data-tilt data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
-                    <div class="outer aspect-1-1">
-                        <div class="inner project-item-desc">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!-- <p class="featured-desc">{{ project.description }}</p> -->
+    <div class="mos-article-window mos-window mos-window--primary border--all">
+        <div class="mos-window-title--l">
+            <p class="text-mos-title--m">Articles</p>
         </div>
-        <div class="featured-right">
-
-            {%- include video-player.html type="media" file="destinations-header-2.mp4" -%}
-
-            <div class="extended-text column column-3">
-                {% capture my_include %}{% include destinations-extended-text.md %}{% endcapture %}
-                {{ my_include | markdownify }}
-            </div>
-            <div class="gohfg-text column column-3">
-                {% capture my_include %}{% include gohfg-text.md %}{% endcapture %}
-                {{ my_include | markdownify }}
-                <a href="//www.build-destinations.com" class="button-link button-highlight">
-                    <p>Go to the gohfg<br> project page</p>
-                </a>
-            </div>
-        </div>
-
-        {% endif %}
-        {% endfor %}
-    </div>
-</section>
-
-<section id="vita" class="grid-4">
-    <!--    <div class="">-->
-    {% if site.articles == true %}
-    <div class="divider-header articles-divider">
-        <p class="left">Articles</p>
-        <a class="right" href="{% link articles.html %}" alt="Go to all articles">
-            <p>All</p>
-        </a>
-    </div>
-
-    <div class="main-section article-section">
-        {% for article in site.categories.articles limit: 3 %}
-
-        <div class="article-list-item">
-            <a href="{{ article.url }}" alt="{{article.description_short}}">
-                <h2 class="article-heading">{{ article.title }}</h2>
-                <p class="article-date">
-                    {%- assign day = article.date | date: "%-d" %}
-                    {%- case day %}
-                    {%- when '1' or '21' or '31' %}{{ day }}st
-                    {%- when '2' or '22' %}{{ day }}nd
-                    {%- when '3' or '23' %}{{ day }}rd
-                    {%- else %}{{ day }}th
-                    {%- endcase %}
-                    {{- article.date | date: " %B, %Y" }}</p>
+        <div class="mos-window-main">
+            {% for article in site.categories.articles limit: 3 %}
+            <a class="mos-list-item text-mos-body--l" href="{{ article.url }}" alt="{{article.description_short}}">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
+                    <g transform="translate(0 0.707)">
+                        <line x2="16" transform="translate(0 6)" fill="none" stroke="#f5ffff" stroke-width="1" />
+                        <line x2="6" y2="6" transform="translate(10)" fill="none" stroke="#f5ffff"
+                            stroke-linecap="round" stroke-width="1" />
+                        <line y1="6" x2="6" transform="translate(10 6)" fill="none" stroke="#f5ffff"
+                            stroke-linecap="round" stroke-width="1" />
+                    </g>
+                </svg> -->
+                <p>{{ article.title }}</p>
             </a>
+            {% endfor %}
         </div>
+        <svg class="mos-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
+            viewBox="0 0 13.104 13.104">
+            <rect width="13" height="13" fill="none" />
+            <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff" stroke-width="1" />
+            <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
+            </line>
+        </svg>
+    </div>
+    <div class="bg-pointgrid bg-grid--500"></div>
 
-        {% endfor %}
-
-        <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand" alt="Go to all articles">
-            <!--        <div class="button-plus">-->
-            <!--            <span></span>-->
-            <!--            <span></span>-->
-            <!--        </div>-->
-            <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-                viewBox="0 0 114.829 21.657">
-                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                    transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-            </svg>
-        </a>
-    </div>
-
-    {% endif %}
-
-    <div class="divider-header vita-divider">
-        <p class="left">Vita</p>
-    </div>
-
-    <div class="vita-picture-container">
-        <div class="outer aspect-1-1">
-            {% responsive_image_block %}
-            template: _includes/responsive_image.html
-            path: assets/img/kaimagnus-portrait.jpg
-            picture_class: inner
-            img_class: vita-picture
-            alt: "Portrait picture of Kai Magnus Müller"
-            {% endresponsive_image_block %}
-        </div>
-    </div>
-    <div class="vita-timeline">
-        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
-        {{ my_include | markdownify }}
-    </div>
-    <div class="divider-header motivation-divider">
-        <p class="left">Motivation</p>
-    </div>
-    <div class="vita-motivation">
-        {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
-        {{ my_include | markdownify }}
-    </div>
-    <!--    </div>-->
 </section>

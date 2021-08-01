@@ -1,7 +1,7 @@
 body {
   font-family: "SofiaPro", sans-serif;
   font-weight: 600;
-  color: $white-90;
+  color: var(--text-color);
   background-color: var(--bg-color);
   
 }
@@ -15,9 +15,9 @@ a:visited {
   color: inherit;
 }
 
-a:hover {
-  color: $white-90;
-}
+// a:hover {
+//   color: $white-90;
+// }
 
 @mixin text-h1 {
   font-size: 2.3rem;
@@ -177,15 +177,45 @@ h3 {
 }
 
 //Text in XD looks like 600 even though its regular/500
-@mixin text-mos-body--m {
+@mixin text-mos-body--l {
+  font-weight: 500;
+  font-size: 20px; 
+  line-height: 1.4em;
+}
+
+@mixin text-mos-body--s {
   font-weight: 500;
   font-size: 15px; 
   line-height: 1.4em;
 }
 
+@mixin text-mos-title--m {
+  font-weight: 700;
+  font-size: 14px; 
+  line-height: 1.4em;
+}
 
-.text-mos-window--m {
-  @include text-mos-body--m
+@mixin text-mos-title--xl {
+  font-weight: 700;
+  font-size: 34px; 
+  line-height: 1.4em;
+  text-transform: uppercase;
+}
+
+.text-mos-body--s {
+  @include text-mos-body--s
+}
+
+.text-mos-body--l {
+  @include text-mos-body--l
+}
+
+.text-mos-title--m {
+  @include text-mos-title--m
+}
+
+.text-mos-title--xl {
+  @include text-mos-title--xl
 }
 
 .font--semibold {

@@ -12,17 +12,17 @@ body {
 .gr-baseline {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(auto-fill, 5vw);
-  gap: 40px;
+  // grid-template-rows: repeat(auto-fill, 5vw);
+  gap: 20px;
 }
 
 .mos-window {
   max-height: 440px;
-  display: flex;
-  flex-direction: column;
   background-color: var(--bg-color);
   height: fit-content;
   position: relative;
+
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
 
   .mos-window-title {
   }
@@ -31,13 +31,10 @@ body {
   }
 
   .mos-window-main {
-    padding: 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    // padding: 20px;
+    // overflow-y: auto;
+    // overflow-x: hidden;
 
-    p {
-      @include text-mos-body--m;
-    }
 
     p + p {
       margin-top: 16px;
@@ -61,8 +58,40 @@ body {
 }
 
 .mos-window--primary {
-  grid-column: span 3;
-  //TODO: narrow screen css
+  padding: 25px;
+}
+
+.mos-window--postit {
+  grid-column: span 2;
+  height: fit-content;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
+  max-width: 213px;
+  .mos-postit-title {
+    line-break: anywhere;
+  }
+
+  .mos-window-main {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  img {
+    object-fit: cover;
+    display: block;
+   
+    height: 100%;
+  }
+}
+
+.mos-window--postit-img {
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
+  text-decoration: none;
+
+  .mos-postit-title {
+    padding: 14px;
+  }
 }
 
 .mos-window--secondary {
@@ -75,6 +104,9 @@ body {
   background-color: var(--bg-color);
 }
 
+.mos-window-title--l {
+  margin-bottom: 20px;
+}
 
 .mos-list-item {
   display: flex;
@@ -96,16 +128,12 @@ body {
   cursor: nwse-resize;
 }
 
-
-
-
 .mos-button--std {
   padding: 6px 20px;
   margin: auto;
   text-decoration: none;
   display: flex;
   width: fit-content;
-
 
   svg {
     align-self: center;
@@ -115,6 +143,60 @@ body {
 
 .button--inline {
   // text-decoration: none;
+}
+
+.bg-pointgrid {
+  background-image: url(/assets/src/point.svg);
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+.bg-pointgrid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* ff 3.6+ */
+  background: -moz-radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 80%
+  );
+}
+
+.bg-grid--500 {
+  width: 500px;
+  height: 500px;
 }
 
 .grid-4 {
