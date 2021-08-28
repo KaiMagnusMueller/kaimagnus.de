@@ -9,6 +9,7 @@ body {
 a {
   color: inherit;
   transition: color 0.3s;
+  text-decoration-thickness: 1px;
 }
 
 a:visited {
@@ -177,45 +178,56 @@ h3 {
 }
 
 //Text in XD looks like 600 even though its regular/500
-@mixin text-mos-body--l {
+@mixin text-sscr-body--l {
   font-weight: 500;
   font-size: 20px; 
   line-height: 1.4em;
 }
 
-@mixin text-mos-body--s {
+//TODO: buy medium sofia pro font and set to 600
+@mixin text-sscr-body--m {
+  font-weight: 500;
+  font-size: 16px; 
+  line-height: 1.4em;
+}
+
+@mixin text-sscr-body--s {
   font-weight: 500;
   font-size: 15px; 
   line-height: 1.4em;
 }
 
-@mixin text-mos-title--m {
+@mixin text-sscr-title--m {
   font-weight: 700;
   font-size: 14px; 
   line-height: 1.4em;
 }
 
-@mixin text-mos-title--xl {
+@mixin text-sscr-title--xl {
   font-weight: 700;
   font-size: 34px; 
   line-height: 1.4em;
   text-transform: uppercase;
 }
 
-.text-mos-body--s {
-  @include text-mos-body--s
+.text-sscr-body--s {
+  @include text-sscr-body--s
 }
 
-.text-mos-body--l {
-  @include text-mos-body--l
+.text-sscr-body--m {
+  @include text-sscr-body--m
 }
 
-.text-mos-title--m {
-  @include text-mos-title--m
+.text-sscr-body--l {
+  @include text-sscr-body--l
 }
 
-.text-mos-title--xl {
-  @include text-mos-title--xl
+.text-sscr-title--m {
+  @include text-sscr-title--m
+}
+
+.text-sscr-title--xl {
+  @include text-sscr-title--xl
 }
 
 .font--semibold {

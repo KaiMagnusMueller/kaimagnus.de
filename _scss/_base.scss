@@ -1,6 +1,6 @@
 body {
-  margin: 0;
-
+  margin: auto;
+  max-width: 1440px;
   // -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
@@ -16,21 +16,22 @@ body {
   gap: 20px;
 }
 
-.mos-window {
-  max-height: 440px;
-  background-color: var(--bg-color);
+.sscr-window {
+  margin-bottom: 60px;
+  // max-height: 440px;
+  background-color: var(--window--bg);
   height: fit-content;
   position: relative;
 
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
 
-  .mos-window-title {
+  .sscr-window-title {
   }
 
-  .mos-window-footer {
+  .sscr-window-footer {
   }
 
-  .mos-window-main {
+  .sscr-window-main {
     // padding: 20px;
     // overflow-y: auto;
     // overflow-x: hidden;
@@ -57,20 +58,20 @@ body {
   background-color: var(--text-color);
 }
 
-.mos-window--primary {
+.sscr-window--primary {
   padding: 25px;
 }
 
-.mos-window--postit {
+.sscr-window--postit {
   grid-column: span 2;
   height: fit-content;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
   max-width: 213px;
-  .mos-postit-title {
+  .sscr-postit-title {
     line-break: anywhere;
   }
 
-  .mos-window-main {
+  .sscr-window-main {
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -85,30 +86,30 @@ body {
   }
 }
 
-.mos-window--postit-img {
+.sscr-window--postit-img {
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
   text-decoration: none;
 
-  .mos-postit-title {
+  .sscr-postit-title {
     padding: 14px;
   }
 }
 
-.mos-window--secondary {
+.sscr-window--secondary {
   grid-column: span 3;
   //TODO: narrow screen css
 }
 
-.mos-window-bar {
+.sscr-window-bar {
   padding: 9px 20px;
   background-color: var(--bg-color);
 }
 
-.mos-window-title--l {
+.sscr-window-title--l {
   margin-bottom: 20px;
 }
 
-.mos-list-item {
+.sscr-list-item {
   display: flex;
   align-items: center;
   svg {
@@ -116,11 +117,11 @@ body {
   }
 }
 
-.mos-list-item + .mos-list-item {
+.sscr-list-item + .sscr-list-item {
   margin-top: 16px;
 }
 
-.mos-window-resize-handle {
+.sscr-window-resize-handle {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -128,7 +129,7 @@ body {
   cursor: nwse-resize;
 }
 
-.mos-button--std {
+.sscr-button--std {
   padding: 6px 20px;
   margin: auto;
   text-decoration: none;
@@ -198,6 +199,32 @@ body {
   width: 500px;
   height: 500px;
 }
+
+.sscr-grid--main {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 20px;
+
+}
+
+.sscr-badge {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.sscr-badge--right {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
 
 .grid-4 {
   display: grid;
