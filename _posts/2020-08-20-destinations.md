@@ -16,6 +16,7 @@ description: "Destinations is an application concept that simplifies the design 
 description_short: "Analyzing the design process of wayfinding systems"
 
 annotation: Most Recent
+header_img: destinations-start.jpg
 
 sitemap:
     priority: 1.0

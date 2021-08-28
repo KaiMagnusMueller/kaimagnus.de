@@ -60,8 +60,18 @@ flex-direction: column;
 //MARGIN
 
 .m--global {
-    margin-left: 180px;
-    margin-right: 180px;
+    margin-left: calc(50px + 6vw);
+    margin-right: calc(50px + 6vw);
+
+    @media (max-width: 1200px) {
+        margin-left: calc(3vw);
+        margin-right: calc(3vw);        
+    }
+
+    @media (max-width: 1000px) {
+        margin-left: calc(8vw);
+        margin-right: calc(8vw);        
+    }
 }
 
 .m-top--s {
@@ -87,4 +97,7 @@ flex-direction: column;
 
 .m-bt--xl {
     margin-bottom: 120px;
+}
+.m-bt--xxl {
+    margin-bottom: 220px;
 }
