@@ -242,3 +242,21 @@ h3 {
   blockquote {
   }
 }
+
+
+.small-typo {
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  p:last-of-type{
+    margin-bottom: 0;
+  }
+}

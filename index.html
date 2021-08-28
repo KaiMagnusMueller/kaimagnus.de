@@ -35,8 +35,10 @@ changefreq: weekly
         <div class="sscr-window sscr-window--primary border--all window-current">
             <div class="sscr-badge sscr-badge--right border--all">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.0819 7.48688L16.875 6.69375L11.25 1.125L10.5131 1.92375L11.1769 2.5875L4.71375 8.055L3.74625 7.09312L2.95312 7.875L6.13688 11.07L1.125 16.0763L1.91813 16.875L6.93 11.8631L10.125 15.0469L10.9069 14.2481L9.945 13.2863L15.4125 6.82312L16.0819 7.48688ZM9.14625 12.4875L5.5125 8.85375L11.9756 3.375L14.625 6.02437L9.14625 12.4875Z" fill="black"/>
-                    </svg>                    
+                    <path
+                        d="M16.0819 7.48688L16.875 6.69375L11.25 1.125L10.5131 1.92375L11.1769 2.5875L4.71375 8.055L3.74625 7.09312L2.95312 7.875L6.13688 11.07L1.125 16.0763L1.91813 16.875L6.93 11.8631L10.125 15.0469L10.9069 14.2481L9.945 13.2863L15.4125 6.82312L16.0819 7.48688ZM9.14625 12.4875L5.5125 8.85375L11.9756 3.375L14.625 6.02437L9.14625 12.4875Z"
+                        fill="black" />
+                </svg>
             </div>
             <div class="sscr-window-title--l">
                 <p class="text-sscr-title--m">Currently</p>
@@ -66,7 +68,8 @@ changefreq: weekly
             </div>
             <div class="sscr-window-main">
                 {% for article in site.categories.articles limit: 3 %}
-                <a class="sscr-list-item text-sscr-body--m" href="{{ article.url }}" alt="{{article.description_short}}">
+                <a class="sscr-list-item text-sscr-body--m" href="{{ article.url }}"
+                    alt="{{article.description_short}}">
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
                         <g transform="translate(0 0.707)">
                             <line x2="16" transform="translate(0 6)" fill="none" stroke="#f5ffff" stroke-width="1" />
@@ -83,12 +86,27 @@ changefreq: weekly
             <svg class="sscr-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
                 viewBox="0 0 13.104 13.104">
                 <rect width="13" height="13" fill="none" />
-                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff" stroke-width="1" />
+                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
+                    stroke-width="1" />
                 <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
                 </line>
             </svg>
         </div>
+        <div class="sscr-window sscr-window--primary border--all window-current">
+            <div class="sscr-window-title--l">
+                <p class="text-sscr-title--m">Vita</p>
+            </div>
+            <div class="sscr-window-main">
+                <div class="text-sscr-body--m">
+                    <div class="small-typo">
+                        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
+                        {{ my_include | markdownify }}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </section>
 
 <!-- <section class="project-section m--global gr-baseline">
