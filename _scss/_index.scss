@@ -138,12 +138,18 @@
     margin-top: 70%;
   }
 
-  // .bg-pointgrid {
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   transform: translate(10%, 20%);
-  // }
+  .sscr-window--postit-img {
+    grid-column: 5 / span 3;
+    margin-top: -20%;
+    background-color: var(--pi-blue);
+  }
+
+  .bg-pointgrid {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(10%, 20%);
+  }
 }
 
 .contact-window {

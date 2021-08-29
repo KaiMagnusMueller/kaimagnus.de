@@ -20,10 +20,30 @@ $text-secondary-color: $white-30;
     --text-secondary-color: #808080;
     --window--bg: #F1f1f1;
     --window--bg-hov: #e9e9e9;
+    --window-border-color: #121212;
 
+    --input-color: rgba(248, 248, 248, 0.5);
+    
     --pi-green: #33FF9B;
     --pi-pink: #FF6492;
     --pi-yellow: #FFF372;
     --pi-yellow-hov: #dcd268;
     --pi-blue: #33CEFF;
+
+    @media (prefers-color-scheme: dark) {
+        --text-color: #f7f7f7;
+        --bg-color: rgb(17, 17, 17);
+        --text-secondary-color: #808080;
+        --window--bg: #1b1b1b;
+        --window--bg-hov: #2c2c2c;
+        --window-border-color: #a8a8a8;
+    
+        --input-color: rgba(255, 255, 255, 0.589);
+
+        --pi-green: #33FF9B;
+        --pi-pink: #FF6492;
+        --pi-yellow: #746d0f;
+        --pi-yellow-hov: #666021;
+        --pi-blue: #2a839e;
+    }
 }

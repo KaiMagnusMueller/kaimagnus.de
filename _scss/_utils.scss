@@ -10,15 +10,15 @@
 
 //BORDER
 .border--all {
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--window-border-color);
 }
 
 .border--top {
-    border-top: 1px solid var(--text-color);
+    border-top: 1px solid var(--window-border-color);
 }
 
 .border--bt {
-    border-bottom: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--window-border-color);
 }
 
 //GRID
