@@ -78,6 +78,10 @@ button:hover:not(:disabled) {
   background-color: var(--pi-yellow-hov);
 }
 
+button:not(:disabled) , input[type=button]:not(:disabled) , input[type=submit]:not(:disabled)  {
+  cursor: pointer;
+}
+
 .sscr-input-group {
   display: flex;
   flex-direction: row;
