@@ -153,15 +153,16 @@ changefreq: weekly
     <div class="contact-window sscr-window sscr-window--primary sscr-window-highlight border--all window-current">
         <div class="sscr-window-main">
             <div class="text-sscr-body--s">
-                <form action="post">
+                <form action="post" id="message-form">
                     <div class="sscr-input-group">
-                        <textarea class="sscr-input" rows="3" placeholder="Please feel free to leave a message"></textarea>
+                        <textarea id="message-body" class="sscr-input" rows="3" placeholder="Please feel free to leave a message" required aria-label="Please feel free to leave a message. Enter message text here"></textarea>
                     </div>
                     <div class="sscr-input-group">
-                        <input class="sscr-input" type="email" placeholder="Your E-Mail (optional)">
-                        <input class="sscr-input" type="submit" value="Send" disabled>
+                        <input class="sscr-input" type="email" placeholder="Your E-Mail (optional)" aria-label="Enter your e-mail address">
+                        <input class="sscr-input" id="message-submit" type="submit" value="Send" disabled title="Enter text and send message">
                     </div>
-                    <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be shared or used otherwise. <a href="mail "></a></p>
+                    <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be shared or used otherwise. <a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)" aria-label="Open E-Mail application">Click here</a> to send an email.
+             </p>
                 </form>
             </div>
         </div>
