@@ -32,7 +32,7 @@ changefreq: weekly
         </div>
     </div>
     <div class="sscr-hero-scroll">
-        <div class="sscr-window sscr-window--primary border--all window-current">
+        <div class="sscr-window sscr-window--primary sscr-window-standard border--all window-current">
             <div class="sscr-badge sscr-badge--right border--all">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -49,7 +49,7 @@ changefreq: weekly
                 </div>
             </div>
         </div>
-        <div class="sscr-project-window sscr-window sscr-window--primary border--all projects-list">
+        <div class="sscr-project-window sscr-window sscr-window--primary sscr-window-standard border--all projects-list">
             <div class="sscr-window-title--l">
                 <p class="text-sscr-title--m">Projects</p>
             </div>
@@ -62,7 +62,7 @@ changefreq: weekly
                 {% endfor %}
             </div>
         </div>
-        <div class="sscr-article-window sscr-window sscr-window--primary border--all">
+        <div class="sscr-article-window sscr-window sscr-window--primary sscr-window-standard border--all">
             <div class="sscr-window-title--l">
                 <p class="text-sscr-title--m">Articles</p>
             </div>
@@ -92,7 +92,7 @@ changefreq: weekly
                 </line>
             </svg>
         </div>
-        <div class="sscr-window sscr-window--primary border--all window-current">
+        <div class="sscr-window sscr-window--primary sscr-window-standard border--all window-current">
             <div class="sscr-window-title--l">
                 <p class="text-sscr-title--m">Vita</p>
             </div>
@@ -109,7 +109,7 @@ changefreq: weekly
 
 </section>
 
-<section class="project-section m--global sscr-grid--main">
+<section class="project-section m-top--xl m-bt--xl m--global sscr-grid--main">
 
     {% assign thepost = site.posts | where:"title","Aral Sea" %}
     {% for post in thepost %}
@@ -148,3 +148,30 @@ changefreq: weekly
     <div class="bg-pointgrid bg-grid--500"></div>
 
 </section> -->
+
+<section class="project-section m-top--xxl m-bt--xl m--global sscr-grid--main">
+    <div class="contact-window sscr-window sscr-window--primary sscr-window-highlight border--all window-current">
+        <div class="sscr-window-main">
+            <div class="text-sscr-body--s">
+                <form action="post">
+                    <div class="sscr-input-group">
+                        <textarea class="sscr-input" rows="3" placeholder="Please feel free to leave a message"></textarea>
+                    </div>
+                    <div class="sscr-input-group">
+                        <input class="sscr-input" type="email" placeholder="Your E-Mail (optional)">
+                        <input class="sscr-input" type="submit" value="Send" disabled>
+                    </div>
+                    <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be shared or used otherwise. <a href="mail "></a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="link-list">
+        <h1 class="text-sscr-title--m">Links</h1>
+        <div class="link-grid text-sscr-body--s">
+            {% for link in site.links %}
+            <p class="">{{link.title}}</p><a href="{{link.url}}">{{ link.url_title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

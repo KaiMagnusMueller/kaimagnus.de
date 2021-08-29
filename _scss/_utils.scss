@@ -78,17 +78,21 @@ flex-direction: column;
     margin-top: 40px;
 }
 
+.m-top--m {
+    margin-top: 60px;
+}
+
 .m-top--xl {
     margin-top: 120px;
 }
 
-.m-bt--s {
-    margin-bottom: 40px;
+.m-top--xxl {
+    margin-top: 220px;
 }
 
 
-.m-top--m {
-    margin-top: 60px;
+.m-bt--s {
+    margin-bottom: 40px;
 }
 
 .m-bt--m {
@@ -98,6 +102,7 @@ flex-direction: column;
 .m-bt--xl {
     margin-bottom: 120px;
 }
+
 .m-bt--xxl {
     margin-bottom: 220px;
 }

@@ -25,6 +25,21 @@ url: "https://www.kaimagnus.de" # the base hostname & protocol for your site, e.
 twitter_username: "@_kaimagnus"
 github_username:
 
+links:
+  - title: Twitter
+    url: https://www.twitter.com/_kaimagnus
+    url_title: "@_kaimagnus"
+
+  - title: GitHub
+    url: https://www.github.com/kaimagnusmueller
+    url_title: "KaiMagnusMueller"
+
+  - title: LinkedIn
+    url: https://www.linkedin.com/kaimagnusmueller
+    url_title: "Kai Magnus Müller"
+
+
+
 # Open Portfolio Template Settings
 articles: true
 

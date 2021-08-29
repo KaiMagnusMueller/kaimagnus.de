@@ -16,14 +16,20 @@ body {
   gap: 20px;
 }
 
+.sscr-grid--main {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-column-gap: 50px;
+
+}
+
 .sscr-window {
-  margin-bottom: 60px;
   // max-height: 440px;
-  background-color: var(--window--bg);
   height: fit-content;
   position: relative;
 
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
+  transition: .3s all ease-in-out;
 
   .sscr-window-title {
   }
@@ -36,7 +42,6 @@ body {
     // overflow-y: auto;
     // overflow-x: hidden;
 
-
     p + p {
       margin-top: 16px;
     }
@@ -47,26 +52,81 @@ body {
   }
 }
 
-::-webkit-scrollbar {
-  width: 9px;
+.sscr-input {
+  border: 1px solid var(--text-color);
+  border-radius: 0;
+  background: rgba(248, 248, 248, 0.5);
+  color: var(--text-color);
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 6px 11px;
+  font: inherit
+  
 }
 
-::-webkit-scrollbar-thumb {
-  border: 4px solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-
-  background-color: var(--text-color);
+textarea {
+  padding: 11px !important;
+  resize: vertical;
 }
+
+input:disabled {
+  border-color: var(--text-secondary-color);
+  color: var(--text-secondary-color);
+}
+
+.sscr-input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+
+}
+
+.sscr-input-group + .sscr-input-group {
+  margin-top: 25px;
+
+}
+
+.sscr-form-footnote{
+  margin-top: 15px;
+  margin-bottom: -3px;
+}
+
+// ::-webkit-scrollbar {
+//   width: 9px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   border: 4px solid rgba(0, 0, 0, 0);
+//   background-clip: padding-box;
+
+//   background-color: var(--text-color);
+// }
 
 .sscr-window--primary {
   padding: 25px;
+}
+
+.sscr-window-standard {
+  background-color: var(--window--bg);
+
+  &:hover {
+    background-color: var(--window--bg-hov);
+  }
+}
+
+.sscr-window-highlight {
+  background-color: var(--pi-yellow);
+
+  // &:hover {
+  //   background-color: var(--pi-yellow-hov);
+  // }
 }
 
 .sscr-window--postit {
   grid-column: span 2;
   height: fit-content;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
-  max-width: 213px;
+  // max-width: 213px;
   .sscr-postit-title {
     line-break: anywhere;
   }
@@ -198,13 +258,6 @@ body {
 .bg-grid--500 {
   width: 500px;
   height: 500px;
-}
-
-.sscr-grid--main {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column-gap: 20px;
-
 }
 
 .sscr-badge {

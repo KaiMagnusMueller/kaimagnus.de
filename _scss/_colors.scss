@@ -17,11 +17,13 @@ $text-secondary-color: $white-30;
 :root {
     --text-color: #121212;
     --bg-color: white;
-    --text-secondary-color: $white-30;
+    --text-secondary-color: #808080;
     --window--bg: #F1f1f1;
+    --window--bg-hov: #e9e9e9;
 
     --pi-green: #33FF9B;
     --pi-pink: #FF6492;
     --pi-yellow: #FFF372;
+    --pi-yellow-hov: #ebdf64;
     --pi-blue: #33CEFF;
 }
