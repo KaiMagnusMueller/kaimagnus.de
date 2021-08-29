@@ -712,10 +712,28 @@ function updateProgressBar(bar) {
 //     unixClockElem.innerText = timeS
 // }
 
+
+let textarea = document.getElementById("message-body")
+let submit = document.getElementById("message-submit")
+textarea.addEventListener("input", activateSubmitOnNotEmpty)
+let switcher = false
+
+function activateSubmitOnNotEmpty() {
+  var text = this.value
+  if (text !== "" && !switcher) {
+    submit.disabled = false
+    submit.title = "Send message"
+    switcher = true
+  } else if (text == ""){
+      submit.disabled = true
+      submit.title = "Enter text and send message"
+      switcher = false
+  }
+}
+
 let message = null;
 
 function submitForm() {
-  handleLoadingSpinner();
 
   data = $("#message-form").serialize();
   console.log(data);
@@ -738,49 +756,30 @@ function submitForm() {
   });
 }
 
-
-let textarea = document.getElementById("message-body")
-let submit = document.getElementById("message-submit")
-textarea.addEventListener("input", activateSubmitOnNotEmpty)
-let switcher = false
-
-function activateSubmitOnNotEmpty() {
-  var text = this.value
-  if (text !== "" && !switcher) {
-    submit.disabled = false
-    submit.title = "Send message"
-    switcher = true
-  } else if (text == ""){
-      submit.disabled = true
-      submit.title = "Enter text and send message"
-      switcher = false
-  }
-}
-
 function sendSuccess(msg) {
   console.log("message sent");
   console.log(msg.statusText);
-  document.getElementById("submit").classList.toggle("spinner-fade-out");
-  document.getElementById("submit").classList.toggle("send-success");
+//   document.getElementById("submit").classList.toggle("spinner-fade-out");
+//   document.getElementById("submit").classList.toggle("send-success");
   // $('#response-field').html(msg)
-  closeChat();
-  window.setTimeout(() => {
-    showSuccessNotification();
-  }, 800);
+//   closeChat();
+//   window.setTimeout(() => {
+//     showSuccessNotification();
+//   }, 800);
 }
 
 function sendFail(msg) {
   console.log("message fail");
   console.log(msg.statusText);
-  document.getElementById("submit").classList.toggle("spinner-fade-out");
-  document.getElementById("submit").classList.toggle("send-fail");
-  // $('#response-field').html("Something went wrong");
-  document.getElementById("response-wrapper").classList.add("response");
+//   document.getElementById("submit").classList.toggle("spinner-fade-out");
+//   document.getElementById("submit").classList.toggle("send-fail");
+//   // $('#response-field').html("Something went wrong");
+//   document.getElementById("response-wrapper").classList.add("response");
 
-  let fail = true;
-  window.setTimeout(() => {
-    removeSpinner(fail);
-  }, 500);
+//   let fail = true;
+//   window.setTimeout(() => {
+//     removeSpinner(fail);
+//   }, 500);
 }
 
 function showSuccessNotification() {

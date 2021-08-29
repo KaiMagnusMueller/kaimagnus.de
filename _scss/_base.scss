@@ -69,9 +69,13 @@ textarea {
   resize: vertical;
 }
 
-input:disabled {
+input:disabled, button:disabled {
   border-color: var(--text-secondary-color);
   color: var(--text-secondary-color);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--pi-yellow-hov);
 }
 
 .sscr-input-group {
