@@ -22,6 +22,7 @@ body {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-column-gap: 50px;
+  grid-row-gap: 50px;
 
 }
 
@@ -55,7 +56,7 @@ body {
 }
 
 .sscr-input {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--window-border-color);
   border-radius: 0;
   background: var(--input-color);
   color: var(--text-color);
@@ -748,6 +749,14 @@ sup {
 }
 
 @media (max-width: 850px) {
+
+  .sscr-grid--main {
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+  }
+
   .blog-content {
     & > {
       p,
@@ -960,7 +969,7 @@ sup {
   }
   #contact,
   .footer {
-    width: 100%;
+    // width: 100%;
     box-sizing: border-box;
   }
 }
