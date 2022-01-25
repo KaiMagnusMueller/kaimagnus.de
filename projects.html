@@ -20,8 +20,8 @@ priority: 0.8
             {% for project in site.categories.projects %}
 
             {% if project.categories contains "featured" %}
-            <a class="featured-project-panel panel--std panel--std-hover grid-span--all margin-t--m transition--1" href="{{project.url}}"
-                alt="{{ project.description_short}}">
+            <a class="featured-project-panel panel--std panel--std-hover grid-span--all margin-t--m transition--1"
+                href="{{project.url}}" alt="{{ project.description_short}}">
                 <div class="image-section project-list-image">
                     {%- capture image_path -%}
                     assets/img/{{project.prefix}}-start.jpg
@@ -43,15 +43,19 @@ priority: 0.8
                     <p class="margin--none">{{ project.title}}</p>
                     <h1 class="margin--none">{{ project.title_long}}</h1>
 
-                    {% for tag in project.tags %}
-                    <div class="tag-pill margin-t--s">{{ tag }}</div>
-                    {% endfor%}
+                    {% if project.tags %}
+                    <div class="tag-container margin-t--xs">
+                        {% for tag in project.tags %}
+                        <div class="tag-pill ">{{ tag }}</div>
+                        {% endfor%}
+                    </div>
+                    {% endif %}
                 </div>
             </a>
             {% else %}
 
-
-            <a class="grid-span--half panel--transp panel--transp-hover margin-t--m transition--1" href="{{project.url}}" alt="{{ project.description_short}}">
+            <a class="grid-span--half panel--transp panel--transp-hover margin-t--m transition--1"
+                href="{{project.url}}" alt="{{ project.description_short}}">
                 <div class="featured-title-box padding-v--s padding-h--m">
                     {% if project.title_long == "" or project.title_long == nil %}
                     <h1 class="margin--none">{{ project.title}}</h1>

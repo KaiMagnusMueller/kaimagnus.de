@@ -89,6 +89,10 @@ body {
   margin-top: 16px;
 }
 
+.margin-t--xs {
+  margin-top: 12px;
+}
+
 .margin-l--l {
   margin-left: 46px;
 }
@@ -147,6 +151,13 @@ body {
   justify-content: space-between;
 }
 
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .input--text {
   background: $greyscale--10;
   border: 2px solid rgba(255, 255, 255, 0.39);
@@ -173,6 +184,9 @@ textarea:focus, input:focus {
   border: 2px solid $greyscale--30;
 }
 
+textarea:invalid, input:invalid {
+}
+
 textarea::placeholder, input::placeholder, button {
   color: $greyscale--80;
 }
@@ -192,9 +206,9 @@ textarea::placeholder, input::placeholder, button {
 }
 
 .submit-button:disabled {
-  background: $greyscale--20;
-  border: 2px solid $greyscale--30;
-
+  background: $greyscale--15;
+  border: 2px solid $greyscale--20;
+  cursor: not-allowed;
 }
 
 .grid-4 {
