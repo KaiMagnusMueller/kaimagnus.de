@@ -8,3 +8,35 @@ $link-color: #FEE544;
 $bg-color: $white-0;
 $text-color: $white-90;
 $text-secondary-color: $white-30;
+
+$greyscale--10: #181818;
+$greyscale--15: #1f1f1f;
+$greyscale--20: #2d2d2d;
+$greyscale--30: #353535;
+$greyscale--40: #474747;
+$greyscale--50: #5e5e5e;
+$greyscale--80: #e3e3e3;
+
+.greyscale--10 {
+    color: $greyscale--10;
+}
+
+.greyscale--20 {
+    color: $greyscale--20;
+}
+
+.greyscale--80 {
+    color: $greyscale--80;
+}
+
+.greyscale-bg--10 {
+    background-color: $greyscale--10;
+}
+
+.greyscale-bg--20 {
+    background-color: $greyscale--20;
+}
+
+.greyscale-bg--80 {
+    background-color: $greyscale--80;
+}

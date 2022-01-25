@@ -1,6 +1,6 @@
 body {
-  font-family: "SofiaPro", sans-serif;
-  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
   color: $white-90;
   background-color: $bg-color;
 }
@@ -68,8 +68,7 @@ a:hover {
   margin: 14px 0 14px 0;
   @media (max-width: 850px) {
     // line-height: 1.3rem;
-  // font-size: 1.2rem;
-
+    // font-size: 1.2rem;
   }
   @media (min-width: 1700px) {
     font-size: 19px;
@@ -150,16 +149,24 @@ a:hover {
   }
 }
 
-h1 {
-  @include text-h1;
+p, h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 
-h2 {
-  @include text-h2;
+h1, .text-serif--l {
+  font-family: "EB Garamond", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 117%;
 }
 
-p {
-  @include text-standard-m;
+h2, .text-serif--m {
+  font-family: "EB Garamond", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 117%;
 }
 
 //project page headlines
@@ -171,4 +178,28 @@ h3 {
 @media screen and (max-width: 550px) {
   blockquote {
   }
+}
+
+.text-serif--s {
+  font-family: "EB Garamond", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.text-sans--l {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+p, textarea, input, button, .text-sans--m {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 117%;
 }

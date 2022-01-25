@@ -1,17 +1,17 @@
 <nav class="navigation grid-4" >
     <div class="nav" id="nav">
         <div class="nav-title">
-            <a class="current" href="/">Kai Magnus Müller</a>
+            <a class="current text-serif--s greyscale--80" href="/">Kai Magnus<br>Müller</a>
 
             <div id="hamburger" class="">
                 <span></span>
             </div>
         </div>
 
-        <div class="nav-items">
+        <div class="nav-items text-sans--l greyscale--80 margin-r--m">
             {% for item in site.data.navigation %}
         
-            <a href="{{ item.link }}" {% if page.url== item.link %}class="current"{% endif %}>{{ item.name }}</a>
+            <a class="margin-l--l" href="{{ item.link }}" {% if page.url== item.link %}class="current"{% endif %}>{{ item.name }}</a>
             
             {% endfor %}
         </div>

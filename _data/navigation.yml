@@ -1,10 +1,6 @@
-- name: Interaction Design
-  link: /
 - name: Projects
   link: /projects/
-#- name: Articles
-#  link: /articles/
-- name: Vita
-  link: /#vita
-- name: Contact
-  link: /#contact
+- name: Articles
+  link: /articles/
+- name: About
+  link: /about

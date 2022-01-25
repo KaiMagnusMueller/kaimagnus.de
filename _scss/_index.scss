@@ -1,3 +1,105 @@
+.featured-post {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 32px;
+}
+
+.featured-title-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-title {
+  margin: 28px 0;
+}
+
+.tag-pill {
+  padding: 4px 12px 6px;
+  background-color: $greyscale--20;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: max-content;
+}
+
+.featured-image-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-image {
+  width: 75%;
+}
+
+.featured-image:last-of-type {
+  align-self: flex-end;
+  margin-top: -30%;
+}
+
+.featured-project-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  // position: absolute;
+  // bottom: 0;
+}
+
+.small-feature {
+  // height: -webkit-fill-available;
+}
+
+.featured-project-panel:hover .small-feature {
+  transform: scale(1.04);
+}
+
+.image-section {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  max-height: 300px;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // width: 100%;
+  // height: 100%;
+}
+
+.project-list-image {
+  max-height: 250px;
+}
+
+.important-project-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.all-project-button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+
+
+
 .personal-intro {
   grid-column: 2 / span 2;
   // margin-top: 150px;
@@ -305,7 +407,7 @@
 
   .button-link > * {
     font-size: unquote("min(1.8vmax, 13px);");
-}
+  }
 
   .column > p {
     break-inside: auto;

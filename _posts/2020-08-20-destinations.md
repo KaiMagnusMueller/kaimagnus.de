@@ -1,11 +1,11 @@
 ---
 layout: project
 title:  "Destinations"
-title_long:  "Wayfinding design software"
+title_long:  "Architectural Analysis and Wayfinding Design Tool"
 date:   2020-08-20 10:19:47 +0100
 semester_date: Summer 2020
-categories: [projects]
-tags: [featured]
+categories: [projects, featured]
+tags: [Bachelor Thesis]
 course: Bachelor Project
 prefix: destinations
 color_main: "#004144"

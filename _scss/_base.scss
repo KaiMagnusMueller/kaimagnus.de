@@ -9,6 +9,194 @@ body {
 .main-content {
 }
 
+.panel--std {
+  background: $greyscale--10;
+  border: 2px solid $greyscale--20;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.panel--transp {
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.panel--std-hover:hover {
+  background: $greyscale--15;
+  border: 2px solid $greyscale--30;
+  transition: all .2 ease;
+}
+
+.panel--transp-hover:hover {
+  background: $greyscale--15;
+  border: 2px solid $greyscale--20;
+  transition: all .2 ease;
+}
+
+.grid--main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 30px;
+}
+
+.grid--centered-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 30px;
+}
+
+.grid-span--all {
+  grid-column: 1 / -1;
+}
+
+.grid-span--half {
+  grid-column: span 6;
+}
+
+.grid-span--third {
+  grid-column: span 4;
+}
+
+.grid-span--2third {
+  grid-column: span 8;
+}
+
+.margin--none {
+  margin: 0;
+}
+
+.margin-h--m {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.margin-v--m {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.margin-v--xxl {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.margin-t--m {
+  margin-top: 32px;
+}
+
+.margin-t--s {
+  margin-top: 16px;
+}
+
+.margin-l--l {
+  margin-left: 46px;
+}
+
+.margin-l--xl {
+  margin-left: 64px;
+}
+
+.margin-r--m {
+  margin-right: 32px;
+}
+
+.margin-r--xl {
+  margin-right: 64px;
+}
+
+.padding-button--l {
+  padding: 12px 16px;
+}
+
+.padding-all--m {
+  padding: 32px;
+}
+
+.padding-all--s {
+  padding: 16px;
+}
+
+.padding-all--xs {
+  padding: 12px;
+}
+
+.padding-h--m {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.padding-v--s {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+
+.transition--1 {
+    transition: all .2s ease;
+}
+
+.width--half {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input--text {
+  background: $greyscale--10;
+  border: 2px solid rgba(255, 255, 255, 0.39);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+  max-height: 200px;
+}
+
+textarea, input {
+  color: $greyscale--80;
+  background: $greyscale--10;
+  border: 2px solid rgba(255, 255, 255, 0.39);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+textarea:focus, input:focus {
+  background: $greyscale--15;
+  border: 2px solid $greyscale--30;
+}
+
+textarea::placeholder, input::placeholder, button {
+  color: $greyscale--80;
+}
+
+.submit-button {
+  align-self: flex-end;
+  background: $greyscale--30;
+  border: 2px solid $greyscale--40;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 44px;
+}
+
+.submit-button:hover {
+  background: $greyscale--40;
+  border: 2px solid $greyscale--50;
+}
+
+.submit-button:disabled {
+  background: $greyscale--20;
+  border: 2px solid $greyscale--30;
+
+}
+
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -16,22 +204,22 @@ body {
   // padding: 0 clamp(26px, 5vw, 80px);
 
   grid-column-gap: 50px;
-  padding: 0 60px;
+  // padding: 0 60px;
   margin: 0 auto 0 auto;
-  max-width: 1440px - 160px;
+  // max-width: 1440px - 160px;
 
-  @media (min-width: 1440px) {
-    grid-column-gap: 60px;
-    padding: 0 80px;
-  }
+  // @media (min-width: 1440px) {
+  //   grid-column-gap: 60px;
+  //   padding: 0 80px;
+  // }
 
-  @media (max-width: 1200px) {
-    grid-column-gap: 20px;
-    padding: 0 26px;
-  }
-  @media (max-width: 550px) {
-    padding: 0 18px;
-  }
+  // @media (max-width: 1200px) {
+  //   grid-column-gap: 20px;
+  //   padding: 0 26px;
+  // }
+  // @media (max-width: 550px) {
+  //   padding: 0 18px;
+  // }
 }
 
 .blog-content {
@@ -126,8 +314,6 @@ video {
 }
 
 .page-title {
-  @include text-h1;
-  margin-bottom: 50px;
   grid-column: 1 /-1;
 }
 
@@ -563,7 +749,7 @@ sup {
     }
   }
 
-  .projects-waterfall{
+  .projects-waterfall {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 10px;
@@ -652,10 +838,6 @@ sup {
     width: 100%;
     box-sizing: border-box;
   }
-}
-
-button {
-  padding: 0;
 }
 
 @media (min-width: 1700px) {

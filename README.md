@@ -23,3 +23,7 @@ caption: ""
 ``
 
 remove variables like caption if not in use
+
+``JEKYLL_ENV=production bundle exec jekyll serve -l --force_polling -i``
+
+to enable the compress layout

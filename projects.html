@@ -3,40 +3,67 @@ layout: default
 title: All Projects
 permalink: /projects/
 sitemap:
-    priority: 0.8
+priority: 0.8
 
 ---
 
+<div class="grid--main margin-h--m margin-v--m">
 
-<section id="projects" class="page-content-margin-small projects-waterfall  grid-4">
-    <h1 class="page-title">{{ page.title}}</h1>
 
-{% for project in site.categories.projects %}
-<div class="project-waterfall-item projects-page-item">
-    <div class="tilt-helper" data-tilt data-tilt-max="3">
-        {% if project.annotation%}
-        <span class="project-item-annotation">{{ project.annotation }}</span>
-        {% endif %}
+    <!-- Main navigation and featured project panel -->
+    <section class="panel--std padding-all--m grid-span--all">
+        {% include navigation.html %}
 
-        <a href="{{ project.url }}" id="{{forloop.index}}">
-            <div class="project-item-main project-compact" style="background-color: {{ project.color_main }};">
-                <div class="outer aspect-1-1">
-                    <picture class="inner">
-                        <img class="image" src="/assets/img/{{ project.prefix }}-start.jpg" alt="{{ include.alt }}"/>
-                    </picture>
+        <section id="projects" class="width--half grid--centered-list margin-h--m margin-v--m ">
+            <h1 class="page-title margin--none margin-v--m">{{ page.title}}</h1>
+
+            {% for project in site.categories.projects %}
+
+            {% if project.categories contains "featured" %}
+            <a class="featured-project-panel panel--std panel--std-hover grid-span--all margin-t--m transition--1" href="{{project.url}}"
+                alt="{{ project.description_short}}">
+                <div class="image-section project-list-image">
+                    {%- capture image_path -%}
+                    assets/img/{{project.prefix}}-start.jpg
+                    {%- endcapture -%}
+
+                    {%- capture image_alt -%}
+                    {{ project.title }} header image
+                    {%- endcapture -%}
+
+                    {% responsive_image_block %}
+                    template: _includes/responsive_image.html
+                    path: {{ image_path }}
+                    picture_class: small-feature transition--1
+                    img_class:
+                    alt: {{image_alt}}
+                    {% endresponsive_image_block %}
                 </div>
-                <div class="outer aspect-1-1">
-                    <div class="project-item-desc inner">
-                        <h2 class="">{{ project.title }}</h2>
-                        <div class="project-item-metadata">
-                            <p class="project-course">{{ project.course }}</p>
-                            <p class="semester_date">{{ project.semester_date }}</p>
-                        </div>
-                    </div>
+                <div class="featured-title-box padding-all--m">
+                    <p class="margin--none">{{ project.title}}</p>
+                    <h1 class="margin--none">{{ project.title_long}}</h1>
+
+                    {% for tag in project.tags %}
+                    <div class="tag-pill margin-t--s">{{ tag }}</div>
+                    {% endfor%}
                 </div>
-            </div>
-        </a>
-    </div>
+            </a>
+            {% else %}
+
+
+            <a class="grid-span--half panel--transp panel--transp-hover margin-t--m transition--1" href="{{project.url}}" alt="{{ project.description_short}}">
+                <div class="featured-title-box padding-v--s padding-h--m">
+                    {% if project.title_long == "" or project.title_long == nil %}
+                    <h1 class="margin--none">{{ project.title}}</h1>
+                    {% else %}
+                    <p class="margin--none">{{ project.title}}</p>
+                    <h1 class="margin--none">{{ project.title_long}}</h1>
+                    {% endif %}
+                </div>
+            </a>
+
+            {% endif %}
+            {% endfor %}
+        </section>
+    </section>
 </div>
-{% endfor %}
-</section>

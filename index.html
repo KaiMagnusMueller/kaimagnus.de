@@ -5,106 +5,180 @@ description: Portfolio of Kai Magnus Müller, Interaction Designer at Syncier an
 sitemap:
 
 sitemap:
-    priority: 1.0
-    changefreq: weekly
+priority: 1.0
+changefreq: weekly
 ---
-<header id="hero" class="grid-4">
-    <div class="personal-intro">
-        <h1>Hi, I’m Kai Magnus.</h1>
-        <p>A Stuttgart, Germany based interaction designer working on human centered experiences and products, that help
-            us in daily life and productivity.</p>
-        <p>Let me show you what I've been working on.</p>
+
+<div class="grid--main margin-h--m margin-v--m">
+
+
+    <!-- Main navigation and featured project panel -->
+    <section class="panel--std padding-all--m grid-span--all">
+        {% include navigation.html %}
+
+        {% assign featured_post = site.categories.featured | first %}
+
+
+        <div class="featured-post margin-v--xxl">
+            <div class="featured-title-section">
+                <a class="" href="{{featured_post.url}}" alt="{{ featured_post.description_short}}">
+
+                    <h1 class="featured-title">
+                        {{ featured_post.title }} – {{ featured_post.title_long }}
+                    </h1>
+                </a>
+                {% for tag in featured_post.tags %}
+
+                <div class="tag-pill">{{ tag }}</div>
+
+                {% endfor%}
+            </div>
+            <div class="featured-image-section">
+                {%- capture image_path -%}
+                assets/img/destinations-flow-16.png
+                {%- endcapture -%}
+
+                {%- capture image_alt -%}
+                {{ project.title }} header image
+                {%- endcapture -%}
+
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                picture_class: featured-image
+                img_class:
+                alt: {{image_alt}}
+                {% endresponsive_image_block %}
+
+
+
+                {%- capture image_path -%}
+                assets/img/destinations-flow-06.png
+                {%- endcapture -%}
+
+                {%- capture image_alt -%}
+                {{ project.title }} header image
+                {%- endcapture -%}
+
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                picture_class: featured-image
+                img_class:
+                alt: {{image_alt}}
+                {% endresponsive_image_block %}
+            </div>
+        </div>
+
+
+        {%comment%}
+
+        {% for project in featured_post %}
+
+        {{ project.title }}
+
+        {% endfor %}
+
+        {% assign featured_post = site.tags.featured %}
+
+        {{ featured_post }}
+        {%endcomment%}
+
+    </section>
+
+
+    {% for featured_post in site.categories.featured | offset: 1 %}
+
+    <a class="featured-project-panel 
+        panel--std panel--std-hover 
+        grid-span--half 
+        margin-t--m 
+        transition--1" href="{{featured_post.url}}" alt="{{ featured_post.description_short}}">
+        <div class="image-section">
+            {%- capture image_path -%}
+            assets/img/{{featured_post.prefix}}-start.jpg
+            {%- endcapture -%}
+
+            {%- capture image_alt -%}
+            {{ project.title }} header image
+            {%- endcapture -%}
+
+            {% responsive_image_block %}
+            template: _includes/responsive_image.html
+            path: {{ image_path }}
+            picture_class: small-feature transition--1
+            img_class:
+            alt: {{image_alt}}
+            {% endresponsive_image_block %}
+        </div>
+        <div class="featured-title-box padding-all--m">
+            <p class="margin--none">{{ featured_post.title}}</p>
+            <h1 class="margin--none">{{ featured_post.title_long}}</h1>
+        </div>
+    </a>
+
+    {% endfor%}
+
+
+    {% for featured_post in site.categories.important-proj %}
+    <a class="important-project-panel panel--std panel--std-hover grid-span--third margin-t--m padding-all--m transition--1"
+        href="{{featured_post.url}}" alt="{{ featured_post.description_short}}">
+        <p class="margin--none">{{ featured_post.title}}</p>
+        <h2 class="margin--none">{{ featured_post.title_long}}</h2>
+    </a>
+    {% endfor%}
+
+    <div class="panel--transp grid-span--all margin-t--m">
+        <a class="panel--std panel--std-hover padding-button--l all-project-button transition--1"
+            href="{% link projects.html %}" alt="Go to all projects">
+            View all projects
+        </a>
     </div>
-</header>
 
-<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4">
-    {% for project in site.categories.projects limit: 8 %}
-    <div class="project-waterfall-item">
-        <div class="tilt-helper" data-tilt data-tilt-max="3">
-            {% if project.annotation%}
-            <span class="project-item-annotation">{{ project.annotation }}</span>
-            {% endif %}
 
-            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
-                <div class="project-item-main" style="background-color: {{ project.color_main }};">
-                    <div class="outer aspect-1-1">
 
-                        {%- capture image_path -%}
-                        assets/img/{{ project.prefix }}-start.jpg
-                        {%- endcapture -%}
+</div>
+<section class="grid--main margin-h--m margin-v--xxl">
+    <div class="panel--std padding-all--m grid-span--2third">
 
-                        {%- capture image_alt -%}
-                        {{ project.title }} header image
-                        {%- endcapture -%}
-
-                        {% responsive_image_block %}
-                        template: _includes/responsive_image.html
-                        path: {{ image_path }}
-                        picture_class: inner
-                        img_class:
-                        alt: {{image_alt}}
-                        {% endresponsive_image_block %}
-
-                    </div>
-                    <div class="outer aspect-1-1">
-                        <div class="project-item-desc inner">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="panel-heading-container">
+            <p>Articles</p>
+            <a href="{% link articles.html %}">
+                <p>View all articles</p>
             </a>
         </div>
-        {% if forloop.index == 2 %}
+        {% for article in site.categories.articles limit: 3 %}
 
-        {%- capture projectSites -%}
-        {
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}": "{{- post.url -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        }
-        {%- endcapture -%}
+        <div class="margin-v--m">
+            <a href="{{ article.url }}" alt="{{article.description_short}}">
+                <h2 class="margin--none">{{ article.title }}</h2>
+            </a>
+        </div>
 
-        {%- capture projectPrefixes -%}
-        [
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        ]
-        {%- endcapture -%}
-
-        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}'
-            data-sites='{{projectSites}}'>
-            <p>Random Project</p>
-        </button>
-        {% endif %}
-
-        {% if forloop.index == 8 %}
-        {% assign project_count = site.categories.projects | size | minus: 8 %}
-        <a href="/projects/" class="button-link all-project-button">
-            <p>Show {{ project_count }} more</p>
-        </a>
-        {% endif %}
+        {% endfor %}
     </div>
-    {% endfor %}
+    <div class="panel--std padding-all--m grid-span--third">
 
-    <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
-        <!--        <div class="button-plus">-->
-        <!--            <span></span>-->
-        <!--            <span></span>-->
-        <!--        </div>-->
-        <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-            viewBox="0 0 114.829 21.657">
-            <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-        </svg>
-    </a>
+        <div class="panel-heading-container">
+            <p>Contact</p>
+        </div>
+        <form class="contact-form margin-t--m">
+            <textarea class="" rows="5" required
+            placeholder="Please feel free to leave a message"></textarea>
+            <input class="" type="email" placeholder="Your E-Mail">
+            <p>Leave your email, if you wish to be contacted by me. It will not be shared or used otherwise.</p>
+            <button class="submit-button" disabled>Send</button>
+        </form>
+    </div>
 </section>
+
+
+
+
+
+
+
+
 
 <section id="featured-projects" class="">
 
@@ -187,7 +261,8 @@ sitemap:
             <!--        </div>-->
             <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
                 viewBox="0 0 114.829 21.657">
-                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16" transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
+                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
+                    transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
             </svg>
         </a>
     </div>

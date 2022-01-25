@@ -61,7 +61,6 @@ compress_html:
   clippings: all
   comments: all
   endings: all
-  blanklines: true
 
 sass:
   sass_dir: ./_scss
