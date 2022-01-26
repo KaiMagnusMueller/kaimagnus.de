@@ -1,13 +1,3 @@
-<section id="contact" class="grid-4">
-
-    <div class="divider-header">
-        <p class="left">Contact</p>
-    </div>
-
-    {% include contact.html %}
-
-</section>
-
-<footer class="footer grid-4">
-    <p>© {{ site.time | date: '%Y' }} Kai Magnus Müller - <a class="footer-link" href="{% link imprint.html %}">Imprint</a></p>
+<footer class="footer grid--main margin-h--m margin-v--m">
+    <p class="grid-span--all"><a class="footer-link" href="{% link imprint.html %}">Kai Magnus Müller {{ site.time | date: '%Y' }}</a> - Made with ❤️ and Jekyll</p>
 </footer>
