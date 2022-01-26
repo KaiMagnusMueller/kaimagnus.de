@@ -733,7 +733,6 @@ function activateSubmitOnNotEmpty() {
 let message = null;
 
 function submitForm() {
-
   data = $("#message-form").serialize();
   console.log(data);
   $.ajax({

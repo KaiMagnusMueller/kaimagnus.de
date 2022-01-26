@@ -162,12 +162,12 @@ changefreq: weekly
         <div class="panel-heading-container">
             <p>Contact</p>
         </div>
-        <form id="message-form" class="contact-form margin-t--m">
-            <textarea id="message-body" class="" rows="5" required
+        <form id="message-form" onsubmit="return false" class="contact-form margin-t--m">
+            <textarea id="message-body" name="bodytext" class="" rows="5" required
             placeholder="Please feel free to leave a message"></textarea>
-            <input class="" type="email" placeholder="Your E-Mail">
+            <input name="email" class="" type="email" placeholder="Your E-Mail">
             <p class="p--std">Leave your email, if you wish to be contacted by me. It will not be shared or used otherwise. <a class="link--neutral" data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)" aria-label="Open E-Mail application">Click here</a> to send an email.</p>
-            <button id="message-submit" class="submit-button transition--1" type="submit" disabled>Send</button>
+            <button id="message-submit" class="submit-button transition--1" type="submit" onclick="submitForm()" disabled>Send</button>
         </form>
     </div>
 </section>

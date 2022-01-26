@@ -81,6 +81,10 @@ body {
   margin-bottom: 100px;
 }
 
+.margin-t--xxl {
+  margin-top: 100px;
+}
+
 .margin-t--m {
   margin-top: 32px;
 }
@@ -91,6 +95,18 @@ body {
 
 .margin-t--xs {
   margin-top: 12px;
+}
+
+.margin-r--m {
+  margin-right: 32px;
+}
+
+.margin-r--xl {
+  margin-right: 64px;
+}
+
+.margin-b--m {
+  margin-bottom: 32px;
 }
 
 .margin-l--xl {
@@ -107,14 +123,6 @@ body {
 
 .margin-l--s {
   margin-left: 16px;
-}
-
-.margin-r--m {
-  margin-right: 32px;
-}
-
-.margin-r--xl {
-  margin-right: 64px;
 }
 
 .padding-button--l {
