@@ -711,3 +711,83 @@ function updateProgressBar(bar) {
     bar.style.background = 'linear-gradient(to right, #fff 0%, #fff ' + value + '%, #000 ' + value + '%, #000 100%)'
 
 }
+
+let textarea = document.getElementById("message-body")
+let submit = document.getElementById("message-submit")
+textarea.addEventListener("input", activateSubmitOnNotEmpty)
+let switcher = false
+
+function activateSubmitOnNotEmpty() {
+  var text = this.value
+  if (text !== "" && !switcher) {
+    submit.disabled = false
+    submit.title = "Send message"
+    switcher = true
+  } else if (text == ""){
+      submit.disabled = true
+      submit.title = "Enter text and send message"
+      switcher = false
+  }
+}
+
+let message = null;
+
+function submitForm() {
+
+  data = $("#message-form").serialize();
+  console.log(data);
+  $.ajax({
+    url: "php/message-send.php",
+    type: "POST",
+    data: data,
+    async: true,
+    dataType: "html",
+    success: (e) => {
+      window.setTimeout(() => {
+        sendSuccess(e);
+      }, 1500);
+    },
+    error: (e) => {
+      window.setTimeout(() => {
+        sendFail(e);
+      }, 1500);
+    },
+  });
+}
+
+function sendSuccess(msg) {
+  console.log("message sent");
+  console.log(msg.statusText);
+//   document.getElementById("submit").classList.toggle("spinner-fade-out");
+//   document.getElementById("submit").classList.toggle("send-success");
+  // $('#response-field').html(msg)
+//   closeChat();
+//   window.setTimeout(() => {
+//     showSuccessNotification();
+//   }, 800);
+}
+
+function sendFail(msg) {
+  console.log("message fail");
+  console.log(msg.statusText);
+//   document.getElementById("submit").classList.toggle("spinner-fade-out");
+//   document.getElementById("submit").classList.toggle("send-fail");
+//   // $('#response-field').html("Something went wrong");
+//   document.getElementById("response-wrapper").classList.add("response");
+
+//   let fail = true;
+//   window.setTimeout(() => {
+//     removeSpinner(fail);
+//   }, 500);
+}
+
+function showSuccessNotification() {
+  document
+    .getElementById("popup-success-notification")
+    .classList.toggle("popup-success-notification-show");
+  window.setTimeout(() => {
+    document
+      .getElementById("popup-success-notification")
+      .classList.toggle("popup-success-notification-show");
+  }, 2500);
+}
