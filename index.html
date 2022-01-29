@@ -10,7 +10,7 @@ changefreq: weekly
 ---
 
 <header id="hero" class="grid-4 section-thin margin-bt--xl margin-top--s">
-    <div class="personal-intro grid-sec-l text-title ">
+    <div class="personal-intro grid-span--all text-title ">
         <p><span class="inline-highlight">Hi, I’m Kai Magnus.</span><br> A product designer at <a
                 href="https://www.syncier.com">Syncier</a>, working on human centered experiences and products.
             Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
@@ -30,7 +30,7 @@ changefreq: weekly
 <section id="projects"
     class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4 section-thin margin-top--l margin-bt--l ">
 
-    <div class="project-section grid-sec-l">
+    <div class="project-section grid-span--all">
 
         <div class="list-header border-btm">
             <p class="left text-list-header">Projects</p>
@@ -131,13 +131,13 @@ changefreq: weekly
 <section id="article" class="grid-4 section-thin margin-top--l margin-bt--xl">
     <!--    <div class="">-->
 
-    <div class="article-section grid-sec-l">
+    <div class="article-section grid-span--all">
         {% if site.articles == true %}
         <div class="list-header border-btm">
             <p class="left text-list-header">Articles</p>
         </div>
 
-        <ul class="main-section projects-list grid-sec-l">
+        <ul class="main-section projects-list grid-span--all">
             {% for article in site.categories.articles limit: 3 %}
             <li class="list-item text-list-item border-btm">
                 <a class="ts-right-20" href="{{ article.url }}"
@@ -199,7 +199,7 @@ changefreq: weekly
 </section>
 
 <section id="vita" class="grid-4 section-thin margin-top--l margin-bt--l">
-    <div class="vita-section grid-sec-l">
+    <div class="vita-section grid-span--all">
         <div class="list-header vita-divider border-btm">
             <p class="left text-list-header">Vita</p>
         </div>

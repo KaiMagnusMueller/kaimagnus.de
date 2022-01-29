@@ -49,8 +49,8 @@ body { margin: 0; -moz-osx-font-smoothing: grayscale; text-rendering: geometricP
 
 .flex-space-between { display: flex; justify-content: space-between; }
 
-.grid-sec-l { grid-column: span 5; }
-.grid-sec-l {grid-column: span 5;/* width: 50%; *//* margin: auto; */}
+.grid-span--all { grid-column: span 5; }
+.grid-span--all {grid-column: span 5;/* width: 50%; *//* margin: auto; */}
 
 figcaption p, .use-case-figcaption p, figcaption-project p { font-size: 18px; font-weight: 500; line-height: 25px; margin: 14px 0 14px 0; margin-bottom: 0; }
 

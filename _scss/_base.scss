@@ -263,8 +263,8 @@ video {
   justify-content: space-between;
 }
 
-.grid-sec-l {
-  grid-column: span 5;
+.grid-span--all {
+  grid-column: 1 / -1;
 }
 
 figcaption,
