@@ -757,8 +757,8 @@ function submitForm() {
 function sendSuccess(msg) {
   console.log("message sent");
   console.log(msg.statusText);
-//   document.getElementById("submit").classList.toggle("spinner-fade-out");
-//   document.getElementById("submit").classList.toggle("send-success");
+//   document.getElementById("message-submit").classList.toggle("spinner-fade-out");
+//   document.getElementById("message-submit").classList.toggle("send-success");
   // $('#response-field').html(msg)
 //   closeChat();
 //   window.setTimeout(() => {
@@ -769,8 +769,8 @@ function sendSuccess(msg) {
 function sendFail(msg) {
   console.log("message fail");
   console.log(msg.statusText);
-//   document.getElementById("submit").classList.toggle("spinner-fade-out");
-//   document.getElementById("submit").classList.toggle("send-fail");
+//   document.getElementById("message-submit").classList.toggle("spinner-fade-out");
+//   document.getElementById("message-submit").classList.toggle("send-fail");
 //   // $('#response-field').html("Something went wrong");
 //   document.getElementById("response-wrapper").classList.add("response");
 
