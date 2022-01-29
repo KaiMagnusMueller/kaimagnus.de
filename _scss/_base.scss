@@ -4,6 +4,8 @@ body {
   // -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: geometricPrecision;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .main-content {
@@ -25,13 +27,13 @@ body {
 .panel--std-hover:hover {
   background: $greyscale--15;
   border: 2px solid $greyscale--30;
-  transition: all .2 ease;
+  transition: all 0.2 ease;
 }
 
 .panel--transp-hover:hover {
   background: $greyscale--15;
   border: 2px solid $greyscale--20;
-  transition: all .2 ease;
+  transition: all 0.2 ease;
 }
 
 .grid--main {
@@ -151,9 +153,8 @@ body {
   padding-bottom: 16px;
 }
 
-
 .transition--1 {
-    transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .width--half {
@@ -186,7 +187,8 @@ textarea {
   max-height: 200px;
 }
 
-textarea, input {
+textarea,
+input {
   color: $greyscale--80;
   background: $greyscale--10;
   border: 2px solid rgba(255, 255, 255, 0.39);
@@ -195,15 +197,19 @@ textarea, input {
   padding: 12px;
 }
 
-textarea:focus, input:focus {
+textarea:focus,
+input:focus {
   background: $greyscale--15;
   border: 2px solid $greyscale--30;
 }
 
-textarea:invalid, input:invalid {
+textarea:invalid,
+input:invalid {
 }
 
-textarea::placeholder, input::placeholder, button {
+textarea::placeholder,
+input::placeholder,
+button {
   color: $greyscale--80;
 }
 
