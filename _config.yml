@@ -25,6 +25,12 @@ url: "https://www.kaimagnus.de" # the base hostname & protocol for your site, e.
 twitter_username: "@_kaimagnus"
 github_username:
 
+job:
+  title: UX Designer
+  company_name: "Kaiser X"
+  company_url: "https://www.kaiser-x.com"
+
+
 links:
   - title: Twitter
     url: https://www.twitter.com/_kaimagnus

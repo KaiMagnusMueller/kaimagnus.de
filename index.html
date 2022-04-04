@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Kai Magnus Müller - Interaction Design
-description: Portfolio of Kai Magnus Müller, Interaction Designer at Syncier and co-founder of Destinations.
+description: Portfolio of Kai Magnus Müller, UX Designer at Kaiser X and creator of experiments.
 sitemap:
 
 sitemap:
@@ -15,8 +15,7 @@ changefreq: weekly
         <div class="personal-intro">
             <div class="text-sscr-body--l">
                 <p class="">Hi, I’m Kai Magnus.</p>
-                <p>A product designer at <a href="https://www.syncier.com">Syncier</a>, working on human centered
-                    experiences and products.
+                <p>A product designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a>, working on human centered experiences and data driven products.
                     Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
                     companies and at <a href="https://www.precious-forever.com">precious design</a> working on POS
                     software.
@@ -28,6 +27,7 @@ changefreq: weekly
                         href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a
                         href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
                 </p>
+                <p></p>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@ changefreq: weekly
             </div>
             <div class="sscr-window-main">
                 <div class="text-sscr-body--m">
-                    <p class="">UX designer at <a href="https://www.syncier.com">Syncier</a></p>
+                    <p class="">UX designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a></p>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@ changefreq: weekly
                 <p class="text-sscr-title--m">Articles</p>
             </div>
             <div class="sscr-window-main">
-                {% for article in site.categories.articles limit: 3 %}
+                {% for article in site.categories.articles %}
                 <a class="sscr-list-item text-sscr-body--m" href="{{ article.url }}"
                     alt="{{article.description_short}}">
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">

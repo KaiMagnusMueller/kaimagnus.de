@@ -27,9 +27,11 @@ Back in February, I wrote a post at our [Destinations website] about winning the
 
 This week, we finally got to attend the ceremony held at the in:it[^1] co-working space in Schwäbisch Gmünd. The ceremony was originally announced back in April but got delayed due to the rising Covid cases in Germany. The ceremony itself was kept simple with a low number of attendees. Aside from the six winning teams, there were some representatives from the university, the city, the local Chamber of Crafts and the local startup initiative. Every team got a certificate and said a few words, it took around half an hour until all teams were finished. 
 
-To my surprise, every team had some news to share about their next steps. Some were excited about their spot in a workshop to build prototypes while others are currently in talks with a hospital - and we were happy to announce our collaboration with the [Übersee-Museum Bremen][ÜS]. For this collaboration, we will extend our [Aral Sea][AS] prototype to show it in a real exhibition at the museum next year. 
-
 It was good to see some familiar faces and other likeminded people again to chat about our project and get some feedback. The atmosphere was great and we started brainstorming ideas before we even knew it and definitely got a couple new impulses and ideas that we want to explore. 
+
+
+Update October 2021:
+The Project was also nominated for the [UX Design Awards], also seen in the [Rems Zeitung].
 
 
 [^1]: The co-working space is also home to [Jules & Jones][JJ], the company founded by former fellow students and friends of us.
@@ -39,3 +41,5 @@ It was good to see some familiar faces and other likeminded people again to chat
 [Destinations website]: https://www.build-destinations.com
 [ÜS]: https://www.uebersee-museum.de/
 [AS]: {% post_url 2017-02-12-aralsea %}
+[UX Design Awards]: https://www.ux-design-awards.com/de/gewinner/destinations
+[Rems Zeitung]: https://remszeitung.de/2021/10/10/hochschule-fuer-gestaltung-gmuend-studierende-erhalten-ux-design-award-2021/
