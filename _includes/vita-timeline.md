@@ -1,6 +1,6 @@
-## 2022 – 
+## 2022 – ongoing
 
-UX Designer at [Kaiser X][KaiserX]. Lecturer for Interactive Communications Systems 1 at [HfG].
+UX Designer at [Kaiser X][KaiserX]. Lecturer for Interactive Communications Systems at [HfG].
 
 ## 2021
 

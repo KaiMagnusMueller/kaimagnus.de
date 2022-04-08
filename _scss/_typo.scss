@@ -203,6 +203,12 @@ h3 {
   line-height: 1.4em;
 }
 
+@mixin text-sscr-title--l {
+  font-weight: 700;
+  font-size: 26px; 
+  line-height: 1.4em;
+}
+
 @mixin text-sscr-title--xl {
   font-weight: 700;
   font-size: 34px; 
@@ -224,6 +230,10 @@ h3 {
 
 .text-sscr-title--m {
   @include text-sscr-title--m
+}
+
+.text-sscr-title--l {
+  @include text-sscr-title--l
 }
 
 .text-sscr-title--xl {

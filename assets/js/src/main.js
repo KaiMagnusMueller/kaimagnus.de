@@ -1,6 +1,8 @@
 $(function () {
   console.log("document ready");
 
+
+
   //Observer for starting and stopping use case ucvideos when they come into and goe out of view
   const observer = new IntersectionObserver(callback, { threshold: 0.8 });
 
@@ -715,7 +717,10 @@ function updateProgressBar(bar) {
 
 let textarea = document.getElementById("message-body")
 let submit = document.getElementById("message-submit")
-textarea.addEventListener("input", activateSubmitOnNotEmpty)
+
+if (textarea) {
+  textarea.addEventListener("input", activateSubmitOnNotEmpty)
+}
 let switcher = false
 
 function activateSubmitOnNotEmpty() {

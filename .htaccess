@@ -5,6 +5,6 @@
     Header set Cache-Control "max-age=15552000, public"
 </filesMatch>
 
-<filesMatch ".(html)$">
+<filesMatch ".(html|css)$">
     Header set Cache-Control "must-revalidate, public"
 </filesMatch>

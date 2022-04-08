@@ -45,10 +45,11 @@ changefreq: weekly
             <div class="sscr-window-main">
                 <div class="text-sscr-body--m">
                     <p class="">UX designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a></p>
+                    <p class="">Lecturer at <a href="https://www.hfg-gmuend.de">Hochschule für Gestaltung</a> Schwäbisch Gmünd</p>
                 </div>
             </div>
         </div>
-        <div class="sscr-project-window sscr-window sscr-window--primary sscr-window-standard border--all projects-list">
+        <div id="projects" class="sscr-project-window sscr-window sscr-window--primary sscr-window-standard border--all projects-list">
             <div class="sscr-window-title--l">
                 <p class="text-sscr-title--m">Projects</p>
             </div>
@@ -115,17 +116,43 @@ changefreq: weekly
 
     <a href="{{ post.url }}" alt="{{ post.description_short }}"
         class="sscr-window--postit border--all outer aspect-1-1">
-        <img class="inner" src="assets/img/{{ post.header_img }}">
-    </a>
+        {%- capture image_path -%}
+        assets/img/{{ post.header_img }}
+        {%- endcapture -%}
+    
+        {%- capture image_alt -%}
+        {{ post.title }} header image
+        {%- endcapture -%}
+    
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: {{ image_path }}
+        alt: {{image_alt}}
+        {% endresponsive_image_block %}
+        </a>
     {% endfor %}
 
 
     {% assign thepost = site.posts | where:"title","Destinations" %}
     {% for post in thepost %}
 
+
+
     <a href="{{ post.url }}" alt="{{ post.description_short }}"
         class="sscr-window--postit border--all outer aspect-1-1">
-        <img class="inner" src="assets/img/{{ post.header_img }}">
+        {%- capture image_path -%}
+        assets/img/{{ post.header_img }}
+        {%- endcapture -%}
+    
+        {%- capture image_alt -%}
+        {{ post.title }} header image
+        {%- endcapture -%}
+    
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: {{ image_path }}
+        alt: {{image_alt}}
+        {% endresponsive_image_block %}    
     </a>
     {% endfor %}
 
@@ -134,8 +161,20 @@ changefreq: weekly
 
     <a href="{{ post.url }}" alt="{{ post.description_short }}"
         class="sscr-window--postit border--all outer aspect-1-1">
-        <img class="inner" src="assets/img/{{ post.header_img }}">
-    </a>
+        {%- capture image_path -%}
+        assets/img/{{ post.header_img }}
+        {%- endcapture -%}
+    
+        {%- capture image_alt -%}
+        {{ post.title }} header image
+        {%- endcapture -%}
+    
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: {{ image_path }}
+        alt: {{image_alt}}
+        {% endresponsive_image_block %}
+        </a>
     {% endfor %}
 
 

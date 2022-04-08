@@ -23,3 +23,11 @@ caption: ""
 ``
 
 remove variables like caption if not in use
+
+## Show drafts and future posts 
+
+``
+bundle exec jekyll serve -l --force_polling -i --drafts --future
+``
+
+(Make changes to a file to trigger a reload)
