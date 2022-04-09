@@ -1,54 +1,56 @@
 <section class="project-header">
-    <div class="featured-left">
-        <div class="featured-title project-page-title-box tilt-helper" style="background-color: {{ page.color_main }};"
-            data-tilt data-tilt-max="3">
-            <div class="aspect-1-1">
-                <div class="project-item-desc">
-                    <h1 class="text-sscr-title--l">{{ page.title }}</h1>
-                    <div class="project-item-metadata">
-                        <p class="project-course">{{ page.course }}</p>
-                        <p class="semester_date">{{ page.semester_date }}</p>
-                    </div>
+    <div class="header-media-container">
+        <div class="media-left">
+
+
+            {% if include.media == "video" %}
+
+            {% assign figure-type = "media" %}
+
+            {% capture in_file -%}
+            {{- include.file -}}
+            {%- endcapture %}
+
+            {% capture in_alt -%}
+            {{- include.alt -}}
+            {%- endcapture %}
+
+            {% capture in_border -%}
+            {{- include.border -}}
+            {%- endcapture %}
+
+            {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
+
+            {% elsif include.media == "image" %}
+            <div class="featured-image">
+                <picture>
+                    <img src="../assets/img/{{include.file}}" alt="{{ include.alt }}">
+                </picture>
+            </div>
+            {% endif %}
+        </div>
+        <div class="media-right">
+
+            {% if page.external_page %}
+            <a href="//{{ page.external_page }}" class="button-link border--all sscr-window-standard">
+                <p>{{ page.external_page_title }}</p>
+            </a>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="header-title-container">
+        <div class="featured-title project-page-title-box sscr-window sscr-window--primary sscr-window-standard border--all">
+            <div class="project-item-desc">
+                <h1 class="text-sscr-title--l">{{ page.title }}</h1>
+                <div class="project-item-metadata">
+                    <p class="project-course">{{ page.course }}</p>
+                    <p class="semester_date">{{ page.semester_date }}</p>
                 </div>
             </div>
         </div>
-        {% if page.external_page %}
-        <a href="//{{ page.external_page }}" class="button-link border--all sscr-window-standard">
-            <p>{{ page.external_page_title }}</p>
-        </a>
-        {% endif %}
-
     </div>
-    <div class="featured-right">
-
-        {% if include.media == "video" %}
-
-        {% assign figure-type = "media" %}
-
-        {% capture in_file -%}
-        {{- include.file -}}
-        {%- endcapture %}
-    
-        {% capture in_alt -%}
-        {{- include.alt -}}
-        {%- endcapture %}
-    
-        {% capture in_border -%}
-        {{- include.border -}}
-        {%- endcapture %}
-    
-        {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
-
-        {% elsif include.media == "image" %}
-        <div class="featured-image">
-            <picture>
-                <img src="../assets/img/{{include.file}}" alt="{{ include.alt }}">
-            </picture>
-        </div>
-        {% endif %}
-    </div>
-    
-    
 </section>
 {% comment %}
 {% raw %}

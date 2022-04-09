@@ -7,6 +7,11 @@
 
 .sscr-hero-sticky {
   grid-column: 1 / 7;
+  top: 50%;
+  transform: translateY(-50%);
+  position: sticky;
+  display: flex;
+  align-self: flex-start;
 }
 
 .sscr-hero-scroll {
@@ -18,11 +23,6 @@
 }
 
 .personal-intro {
-  top: 50%;
-  transform: translateY(-50%);
-  position: sticky;
-
-
   p {
     margin-bottom: 10px;
   }
@@ -490,8 +490,6 @@
   }
 }
 
-
-
 .aspect-2-1 {
   aspect-ratio: 2 / 1;
 }
@@ -507,46 +505,36 @@
 }
 
 @media screen and (max-width: 1000px) {
-
-  #hero {
-    margin-top: 240px;
-  }
-
   .sscr-hero-sticky {
     grid-column: 1 / -1;
-    position: sticky;
-top: 240px;
+    margin-bottom: 50%;
+
   }
 
-  .personal-intro {
-    transform: translate(0);
-    top: 0;
-  }
+  .sscr-hero-scroll {
+    grid-column: 1 / -1;
+    background-color: var(--bg-color);
+    z-index: 1;
 
-.sscr-hero-scroll {
-  grid-column: 1 / -1;
-  background-color: white;
-z-index: 1;
-
-  .sscr-window {
-    margin-bottom: 60px;
+    .sscr-window {
+      margin-bottom: 60px;
+    }
   }
-}
 
   .project-section .sscr-window--postit:nth-of-type(3) {
-  grid-column: 7 / span 3;
+    grid-column: 7 / span 3;
   }
   .project-section .sscr-window--postit-img {
-  grid-column: 5 / span 4;
+    grid-column: 5 / span 4;
   }
 
-.contact-window {
-  grid-column: 1 / span 5;
-}
+  .contact-window {
+    grid-column: 1 / span 5;
+  }
 
-.link-list {
-  grid-column: 6 / -1;
-}
+  .link-list {
+    grid-column: 6 / -1;
+  }
 }
 
 @media (max-width: 850px) {
@@ -562,9 +550,10 @@ z-index: 1;
 
   .button-link > * {
     font-size: unquote("min(1.8vmax, 13px);");
-  }  
+  }
 
-  .contact-window, .link-list {
+  .contact-window,
+  .link-list {
     grid-column: 1/-1;
   }
 
@@ -588,6 +577,11 @@ z-index: 1;
 // }
 
 @media screen and (max-width: 550px) {
+
+  // .sscr-hero-sticky {
+  //   margin-bottom: 200px;
+  // }
+
   .personal-intro {
     grid-column: span 1;
     // margin-top: 80px;
@@ -601,31 +595,30 @@ z-index: 1;
 
   .project-section {
     position: relative;
-  
+
     .sscr-window--postit:nth-of-type(1) {
       grid-column: 1 / span 4;
       // grid-row: 1;
       margin-top: 0;
     }
     .sscr-window--postit:nth-of-type(2) {
-        grid-column: 5 / span 4;
+      grid-column: 5 / span 4;
       //   grid-row: 1;
       //   transform: translate(-20%, 90%);
       margin-top: 0;
     }
-  
+
     .sscr-window--postit:nth-of-type(3) {
       grid-column: 1 / span 4;
       margin-top: 0;
     }
-  
+
     .sscr-window--postit-img {
       grid-row: 2;
       grid-column: 1 / -1;
       margin-top: 0;
     }
   }
-
 
   #projects-expand {
     display: flex;
