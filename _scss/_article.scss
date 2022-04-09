@@ -54,16 +54,15 @@
       margin: 0;
     }
   }
-  
-  & > * {
-
-  }
 
   a {
-    color: $white-90;
+    color: var(--text-color);
+    text-decoration: none;
+
   }
   a:visited {
-    color: $white-90;
+    color: var(--text-color);
+    text-decoration: none;
   }
 }
 

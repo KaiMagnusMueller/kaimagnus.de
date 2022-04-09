@@ -1,4 +1,15 @@
-<section class="project-header">
+<section class="project-header m-bt--l">
+    <div class="header-title-container m-bt--s">
+        <div class="">
+            <div class="project-item-desc">
+                <h1 class="">{{ page.title }}</h1>
+                <div class="project-item-metadata">
+                    <p class="project-course">{{ page.course }}</p>
+                    <p class="semester_date">{{ page.semester_date }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="header-media-container">
         <div class="media-left">
 
@@ -38,18 +49,6 @@
             {% endif %}
         </div>
 
-    </div>
-
-    <div class="header-title-container">
-        <div class="featured-title project-page-title-box sscr-window sscr-window--primary sscr-window-standard border--all">
-            <div class="project-item-desc">
-                <h1 class="text-sscr-title--l">{{ page.title }}</h1>
-                <div class="project-item-metadata">
-                    <p class="project-course">{{ page.course }}</p>
-                    <p class="semester_date">{{ page.semester_date }}</p>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 {% comment %}
