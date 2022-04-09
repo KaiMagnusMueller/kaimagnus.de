@@ -82,7 +82,7 @@
     {%- endif -%}
     {% endcapture %}
 
-    <div class="media-wrapper">
+    <div class="media-wrapper sscr-window border--all">
         <img loading="lazy" class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
             srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
     </div>
@@ -94,7 +94,7 @@
     <div class="lightbox" style="visibility: hidden;">
         <div class="lightbox-bg"></div>
         <div class="lightbox-group">
-            <img loading="lazy" class="lightbox-img" data-src="/{{ path }}" alt="{{ alt }}">
+            <img loading="lazy" class="lightbox-img sscr-window border--all" data-src="/{{ path }}" alt="{{ alt }}">
             <p>{{ caption }}</p>
         </div>
     </div>
