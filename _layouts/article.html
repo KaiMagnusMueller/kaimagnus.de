@@ -1,27 +1,31 @@
 ---
 layout: default
 ---
-<article class="blog-content project m--global m-top--xl m-bt--xl">
-    <h1 class="article-title">{{ page.title }}</h1>
-    <p class="article-date">
-        {{- page.date | date: "%-d %B %Y" }}
+<article class="    m--global m-top--l m-bt--xl">
+    <div class="article-header center--50 m-bt--m">
 
-        {% comment %}
-        {% assign day = page.date | date: "%-d" %}
-        {%- case day %}
-        {%- when '1' or '21' or '31' %}{{ day }}st
-        {%- when '2' or '22' %}{{ day }}nd
-        {%- when '3' or '23' %}{{ day }}rd
-        {%- else %}{{ day }}th
-        {%- endcase %}
-        {{- page.date | date: " %Y" }}
-        {% endcomment %}
-    </p>
+        <h1 class="article-title">{{ page.title }}</h1>
+        <p class="article-date">
+            {{- page.date | date: "%-d %B %Y" }}
+            
+            {% comment %}
+            {% assign day = page.date | date: "%-d" %}
+            {%- case day %}
+            {%- when '1' or '21' or '31' %}{{ day }}st
+            {%- when '2' or '22' %}{{ day }}nd
+            {%- when '3' or '23' %}{{ day }}rd
+            {%- else %}{{ day }}th
+            {%- endcase %}
+            {{- page.date | date: " %Y" }}
+            {% endcomment %}
+        </p>
+    </div>
 
+<div class="blog-content m-bt--xl">
+    {{ content }}
+</div>
 
-{{ content }}
-
-<div class="recent-articles">
+<div class="recent-articles center--50">
     <h2 class="article-heading-other">Recent Posts</h2>
     <!-- <div class="divider-header ">
         <p class="left">Recent Posts</p>

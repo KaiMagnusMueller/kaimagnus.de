@@ -1,6 +1,10 @@
-{% if include.media == "video" %}
-<figure class="figure-project project-media-figure">
+{% if picture_class %}
+{% capture picture_class2 %}{{ picture_class }} {% endcapture %}
+{% endif %}
 
+<figure class="figure-project project-media-figure m-top--m m-bt--m">
+    {% if include.media == "video" %}
+    
     {%- assign figure-type = "media" -%}
 
     {% capture in_file -%}
@@ -17,47 +21,8 @@
 
     {%- include video-player.html type=figure-type file=in_file alt=in_alt border=in_border -%}
 
-
-
-    <!-- <div class="res-video-interface">
-        <div class="res-video-progress">
-            <div class="res-video-position" style="left: 37.1915%;"></div>
-            <div class="res-video-position-thumb"></div>
-        </div>
-        <div class="res-video-main">
-            <div class="res-video-controls">
-                <div title="Toggle pause" class="res-icon res-video-button res-video-toggle-pause"></div>
-                
-                
-                <div class="res-video-controls-group res-video-current-time">
-                    <div title="Select previous frame" class="res-icon res-video-button res-video-time-decrease"></div>
-                    <div class="res-video-time">3.​98s</div>
-                    <div title="Select next frame" class="res-icon res-video-button res-video-time-increase"></div>
-                </div>
-                <div class="res-video-controls-group res-video-playback-rate">
-                    <div title="Decrease speed by 10%" class="res-icon res-video-button res-video-speed-decrease"></div>
-                    <div class="res-video-speed">1.​00x</div>
-                    <div title="Increase speed by 10%" class="res-icon res-video-button res-video-speed-increase"></div>
-                </div>
-            </div>
-            <div class="res-video-info">
-                <a class="res-video-link res-video-source" href="https://v.redd.it/e72rxhhmr3071" rel="noopener noreferrer">source</a>
-                <div class="res-expando-siteAttribution"></div>
-            </div>
-        </div>
-    </div> -->
     <figcaption class="figcaption-project">{{ include.caption | markdownify }}</figcaption>
-</figure>
-{% elsif media == "image" %}
-
-
-{% if picture_class %}
-
-{% capture picture_class2 %}{{ picture_class }} {% endcapture %}
-
-{% endif %}
-
-<figure class="figure-project project-media-figure">
+    {% elsif media == "image" %}
 
 
     {% capture srcset %}
@@ -93,7 +58,8 @@
             <p>{{ caption }}</p>
         </div>
     </div>
+{% endif %}
+
 </figure>
 
 
-{% endif %}

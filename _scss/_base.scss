@@ -349,7 +349,6 @@ body .bg-pointgrid {
 
 .blog-content {
   margin: auto;
-  margin-bottom: 260px;
 
   & > p,
   ol {
@@ -484,12 +483,10 @@ figcaption-project {
 
   grid-auto-flow: dense;
 
-  margin: 60px 0 60px 0;
-
   img {
     cursor: pointer;
     max-height: 750px;
-    object-fit: contain;
+    object-fit: cover;
     object-position: right;
     margin-left: auto;
     // background-color: #1a1a1a;
@@ -683,7 +680,6 @@ sup {
   .project-media-figure {
     flex-direction: column;
 
-    margin: 60px 0 60px 0;
 
     figcaption {
       display: flex;
