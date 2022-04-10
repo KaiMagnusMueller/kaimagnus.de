@@ -1,7 +1,7 @@
-- name: Interaction Design
+- name: Home
   link: /
 - name: Projects
-  link: /projects/
+  link: /#projects
 #- name: Articles
 #  link: /articles/
 - name: Vita

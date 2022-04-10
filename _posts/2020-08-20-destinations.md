@@ -21,7 +21,6 @@ header_img: destinations-start.jpg
 sitemap:
     priority: 1.0
 
-
 --- 
 
 {% include header.html 

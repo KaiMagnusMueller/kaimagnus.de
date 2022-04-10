@@ -307,18 +307,18 @@ function openMailer(element) {
 //     }
 // })
 
-// // HAMBURGER
-// let hamburger = document.getElementById("hamburger");
-// let nav = document.getElementById("nav");
-// hamburger.addEventListener("click", function () {
-//   if (hamburger.classList.contains("open")) {
-//     hamburger.classList.remove("open");
-//     nav.classList.remove("open");
-//   } else {
-//     hamburger.classList.add("open");
-//     nav.classList.add("open");
-//   }
-// });
+// HAMBURGER
+let hamburger = document.getElementById("hamburger");
+let nav = document.getElementById("nav");
+hamburger.addEventListener("click", function () {
+  if (hamburger.classList.contains("open")) {
+    hamburger.classList.remove("open");
+    nav.classList.remove("open");
+  } else {
+    hamburger.classList.add("open");
+    nav.classList.add("open");
+  }
+});
 
 // let projectEexpand = document.getElementById("projects-expand")
 // let projects = document.getElementById("projects")

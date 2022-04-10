@@ -15,8 +15,6 @@ article {
 
   .header-title-container {
     width: 50%;
-
-
   }
 
   .media-right {
@@ -231,14 +229,16 @@ figure {
     width: 70%;
   }
 }
-
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .project-header {
-
     .header-title-container {
       width: 70%;
     }
+  }
+}
 
+@media (max-width: 850px) {
+  .project-header {
     .featured-left {
       width: 70%;
       margin: 0 auto 20px;
@@ -282,18 +282,12 @@ figure {
   }
 
   .project-header {
-    video {
-    width: 100vw;
-    height: 50vh;
-    object-fit: cover;
-    }
-
     .header-title-container {
-    width: unset;
+      width: 100%;
     }
 
     .header-media-container {
-      height: unset
+      height: unset;
     }
 
     h1 {

@@ -33,7 +33,7 @@
             {% include video-player.html type=figure-type file=in_file alt=in_alt border=in_border %}
 
             {% elsif include.media == "image" %}
-            <div class="featured-image">
+            <div class="featured-image sscr-window border--all">
                 <picture>
                     <img src="../assets/img/{{include.file}}" alt="{{ include.alt }}">
                 </picture>

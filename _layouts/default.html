@@ -83,6 +83,9 @@ layout: compress
 </head>
 
 <body class="">
+    {%- unless page.url=="/"%}
+    {% include navigation.html %}
+    {%- endunless %}
 
     {{ content }}
 

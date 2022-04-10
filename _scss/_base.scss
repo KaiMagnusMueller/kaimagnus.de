@@ -349,7 +349,6 @@ body .bg-pointgrid {
 
 .blog-content {
   margin: auto;
-  max-width: 1440px - 160px;
   margin-bottom: 260px;
 
   & > p,
@@ -588,18 +587,6 @@ figcaption-project {
   }
 }
 
-#contact {
-  margin-bottom: 260px;
-
-  .divider-header {
-    grid-column: 1 /-1;
-  }
-
-  address {
-    grid-column: 1 /-1;
-  }
-}
-
 footer p {
   grid-column: 1 /-1;
 }
@@ -645,10 +632,6 @@ sup {
       padding-left: 26px;
     }
   }
-
-  #contact {
-    margin-bottom: 120px;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -686,7 +669,7 @@ sup {
 
 
   .project-item-desc {
-    padding: 15px;
+    padding: 15px 0;
   }
 
   .project-media-figure,
@@ -704,7 +687,7 @@ sup {
 
     figcaption {
       display: flex;
-      margin-top: 20px;
+      margin-top: 10px;
       padding-left: 0;
       width: 100%;
     }
@@ -760,14 +743,6 @@ sup {
   .page-content-margin-small {
     margin-top: 0;
     margin-bottom: 0;
-  }
-
-  .page-main-section {
-    .project-waterfall-item {
-      &:nth-of-type(3) {
-        margin-bottom: 0;
-      }
-    }
   }
 
   .projects-waterfall {
@@ -837,8 +812,8 @@ sup {
   .figure-project,
   .use-case-container {
     padding: 16px 0;
-    border-top: solid 4px white;
-    border-bottom: solid 4px white;
+    // border-top: solid 4px white;
+    // border-bottom: solid 4px white;
   }
   //   .project-media-figure figcaption, .use-case-figcaption {
   // padding-bottom: 16px;
@@ -854,11 +829,6 @@ sup {
       object-fit: contain;
     }
   }
-  #contact,
-  .footer {
-    // width: 100%;
-    box-sizing: border-box;
-  }
 }
 
 button {
@@ -867,7 +837,6 @@ button {
 
 @media (min-width: 1700px) {
   .blog-content {
-    padding: 0 80px;
     margin-left: auto;
     margin-right: auto;
 

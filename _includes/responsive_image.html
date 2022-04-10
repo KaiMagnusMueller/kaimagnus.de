@@ -14,4 +14,8 @@
 {% endfor %}
 {% endcapture %}
 
-<img loading="lazy" class="{{ picture_class }}" src="/{{ path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+{% capture sizes %}
+{{-size-}}
+{% endcapture %} 
+
+<img loading="lazy" class="{{ picture_class }}" src="/{{ path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" sizes="{{sizes}}">

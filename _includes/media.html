@@ -68,25 +68,20 @@
 
     {% capture imgClass %}
     {%- if border == "true" -%}
-    project-media
+    sscr-window border--all
     {%- elsif border == "false" -%}
-    project-media-noborder
+    border--none
     {%- endif -%}
     {% endcapture %}
 
-    {% capture imgClass %}
-    {%- if border == "true" -%}
-    project-media
-    {%- elsif border == "false" -%}
-    project-media-noborder
-    {%- endif -%}
-    {% endcapture %}
+    {% capture sizes %}
+    {{-size-}}
+    {% endcapture %} 
 
-    <div class="media-wrapper sscr-window border--all">
-        <img loading="lazy" class="{{ picture_class2 }}{{ imgClass }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
-            srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+    <div class="media-wrapper {{imgClass}}">
+        <img loading="lazy" class="{{ picture_class2 }} lightbox-source" src="/{{ path }}" alt="{{ alt }}"
+            srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" sizes="{{sizes}}">
     </div>
-
 
     {% if caption %}
     <figcaption class="figcaption-project">{{ caption | markdownify }}</figcaption>

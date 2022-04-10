@@ -1,19 +1,20 @@
-<nav class="nav m-top--s m-bt--m" id="nav">
-    <div class="nav-title">
-        <a class="current text-annotation-xs" href="/">Kai Magnus Müller</a>
+<nav class="nav m--global m-top--s m-bt--m" id="nav">
+    <div class="nav-wrapper">
 
-        <div id="hamburger" class="">
-            <span></span>
+        <div class="nav-title">
+            <a class="current text-annotation-xs" href="/">Kai Magnus Müller</a>
+            
+            <div id="hamburger" class="">
+                <span></span>
+            </div>
         </div>
-    </div>
-
-    <div class="horiz-line flex-expand border--bt"></div>
-
-    <div class="nav-items text-annotation-xs">
-        {% for item in site.data.navigation %}
-
-        <a href="{{ item.link }}" {% if page.url==item.link %}class="current" {% endif %}>{{ item.name }}</a>
-
-        {% endfor %}
+        
+        <div class="nav-items text-annotation-xs">
+            {% for item in site.data.navigation %}
+            
+            <a href="{{ item.link }}" {% if page.url==item.link %}class="current" {% endif %}>{{ item.name }}</a>
+            
+            {% endfor %}
+        </div>
     </div>
 </nav>
