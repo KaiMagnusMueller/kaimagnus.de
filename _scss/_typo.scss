@@ -31,7 +31,7 @@ a:visited {
 }
 
 @mixin text-h2 {
-  font-size: 26px;
+  font-size: 24px;
   margin: 0;
   letter-spacing: 0.1px;
 
@@ -53,9 +53,9 @@ a:visited {
 }
 
 @mixin text-standard-proj {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 29px;
+  line-height: normal;
   letter-spacing: 0.3px;
   margin: 14px 0 20px 0;
 }
@@ -77,9 +77,9 @@ a:visited {
 }
 
 @mixin text-bold-xl {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 41px;
+  line-height: normal;
   margin: 16px 0;
 }
 
