@@ -9,10 +9,11 @@ custom_style:
 custom_js:
 description_short: "Designing the Destinations website"
 header_caption: ""
+header_img: articles/website-final2x.png
+
 sitemap:
     priority: 1.0
 ---
-
 
 {% responsive_image
 border: "true"
@@ -40,7 +41,7 @@ We first started exploring other existing product pages and identities to get an
 
 
 {% responsive_image
-border: "false"
+border: "true"
 media: "image"
 path: assets/img/articles/InspirationMoodboard.jpg
 alt: "Categorization of product pages along neutral - friendly and standard - avant-garde axis"

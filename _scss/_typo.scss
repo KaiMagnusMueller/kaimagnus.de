@@ -1,24 +1,24 @@
 body {
   font-family: "SofiaPro", sans-serif;
   font-weight: 600;
-  color: $white-90;
-  background-color: $bg-color;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  
 }
 
 a {
   color: inherit;
-  text-decoration: none;
   transition: color 0.3s;
+  text-decoration-thickness: 1px;
 }
 
 a:visited {
   color: inherit;
-  text-decoration: none;
 }
 
-a:hover {
-  color: $white-90;
-}
+// a:hover {
+//   color: $white-90;
+// }
 
 @mixin text-h1 {
   font-size: 2.3rem;
@@ -31,7 +31,7 @@ a:hover {
 }
 
 @mixin text-h2 {
-  font-size: 26px;
+  font-size: 24px;
   margin: 0;
   letter-spacing: 0.1px;
 
@@ -53,9 +53,9 @@ a:hover {
 }
 
 @mixin text-standard-proj {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
-  line-height: 29px;
+  line-height: normal;
   letter-spacing: 0.3px;
   margin: 14px 0 20px 0;
 }
@@ -77,9 +77,9 @@ a:hover {
 }
 
 @mixin text-bold-xl {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 41px;
+  line-height: normal;
   margin: 16px 0;
 }
 
@@ -159,7 +159,8 @@ h2 {
 }
 
 p {
-  @include text-standard-m;
+  margin: 0
+  // @include text-standard-m;
 }
 
 //project page headlines
@@ -168,7 +169,104 @@ h3 {
   margin: 38px 0 10px 0;
 }
 
+.text-standard--m {
+  @include text-standard-m
+}
+
+.text-annotation-xs {
+  @include text-annotation-xs
+}
+
+//Text in XD looks like 600 even though its regular/500
+@mixin text-sscr-body--l {
+  font-weight: 500;
+  font-size: 20px; 
+  line-height: 1.4em;
+}
+
+//TODO: buy medium sofia pro font and set to 600
+@mixin text-sscr-body--m {
+  font-weight: 500;
+  font-size: 16px; 
+  line-height: 1.4em;
+}
+
+@mixin text-sscr-body--s {
+  font-weight: 500;
+  font-size: 15px; 
+  line-height: 1.4em;
+}
+
+@mixin text-sscr-title--m {
+  font-weight: 700;
+  font-size: 14px; 
+  line-height: 1.4em;
+}
+
+@mixin text-sscr-title--l {
+  font-weight: 700;
+  font-size: 26px; 
+  line-height: 1.4em;
+}
+
+@mixin text-sscr-title--xl {
+  font-weight: 700;
+  font-size: 34px; 
+  line-height: 1.4em;
+  text-transform: uppercase;
+}
+
+.text-sscr-body--s {
+  @include text-sscr-body--s
+}
+
+.text-sscr-body--m {
+  @include text-sscr-body--m
+}
+
+.text-sscr-body--l {
+  @include text-sscr-body--l
+}
+
+.text-sscr-title--m {
+  @include text-sscr-title--m
+}
+
+.text-sscr-title--l {
+  @include text-sscr-title--l
+}
+
+.text-sscr-title--xl {
+  @include text-sscr-title--xl
+}
+
+.font--semibold {
+  font-weight: 600;
+}
+
+.font--bold {
+  font-weight: 700;
+}
+
 @media screen and (max-width: 550px) {
   blockquote {
+  }
+}
+
+
+.small-typo {
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  p:last-of-type{
+    margin-bottom: 0;
   }
 }

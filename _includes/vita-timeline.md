@@ -1,32 +1,20 @@
-## July 2021 
+## 2022 – ongoing
 
-Joined [Syncier Experience][Syncier] as an UX Designer to work on tools for insurances.
+UX Designer at [Kaiser X][KaiserX]. Lecturer for Interactive Communications Systems at [HfG].
 
-## Summer 2020
+## 2021
 
-Successfully graduated from HfG with [Destinations][Destinations] as bachelor project.
+UX Designer at [Syncier][Syncier].
 
-Destinations enters the goHfG startup initiative.
+## 2016 - 2020 
 
+Interaction Design studies at [HfG Schwäbisch Gmünd][HfG] with [Destinations][Destinations] as Bachelor Project
 ## Spring / Summer 2019
 
-Exchange Semester at [Tokyo Zokei University][TZU].
+Exchange studying Graphic Design at [Tokyo Zokei University][TZU].
+## 2018
 
-## Fall / Winter 2018
-
-Interaction Design internship at [Intuity Media Lab][intuity] in Stuttgart.
-
-## Spring / Summer 2018
-
-Internship at [precious][precious] in Hamburg.
-
-## 2017
-
-'Aral Sea' awarded with the Digital Talents Award from the Annual Multimedia Awards 2018.
-
-## 2016 - 2020
-
-Studies of Interaction Design at the [Hochschule für Gestaltung][HfG] in Schwäbisch Gmünd.
+Internships at [Intuity Media Lab][intuity] in Stuttgart and [precious][precious] in Hamburg.
 
 [TZU]: https://www.zokei.ac.jp
 [intuity]: https://www.intuity.de
@@ -34,3 +22,4 @@ Studies of Interaction Design at the [Hochschule für Gestaltung][HfG] in Schwä
 [HfG]: https://www.hfg-gmuend.de
 [Destinations]: https://www.build-destinations.com
 [Syncier]: https://www.syncier.com/de
+[KaiserX]: https://kaiser-x.com

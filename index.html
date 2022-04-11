@@ -1,224 +1,234 @@
 ---
 layout: default
 title: Kai Magnus Müller - Interaction Design
-description: Portfolio of Kai Magnus Müller, Interaction Designer at Syncier and co-founder of Destinations.
+description: Portfolio of Kai Magnus Müller, UX Designer at Kaiser X and creator of experiments.
 sitemap:
 
 sitemap:
-    priority: 1.0
-    changefreq: weekly
+priority: 1.0
+changefreq: weekly
 ---
-<header id="hero" class="grid-4">
-    <div class="personal-intro">
-        <h1>Hi, I’m Kai Magnus.</h1>
-        <p>A Stuttgart, Germany based interaction designer working on human centered experiences and products, that help
-            us in daily life and productivity.</p>
-        <p>Let me show you what I've been working on.</p>
+
+
+<section class="sscr-grid--main sscr-hero m--global m-top--xl m-bt--l" id="hero">
+    <div class="sscr-hero-sticky m-bt--xxl">
+        <div class="personal-intro">
+            <div class="text-sscr-body--l">
+                <p class="">Hi, I’m Kai Magnus.</p>
+                <p>A product designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a>, working on human centered experiences and data driven products.
+                    Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
+                    companies and at <a href="https://www.precious-forever.com">precious design</a> working on POS
+                    software.
+                </p>
+                <p>
+                    While studying, I wrote a bachelor thesis about <a
+                        href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a>, designed a
+                    <a href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a
+                        href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a
+                        href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
+                </p>
+                <p></p>
+            </div>
+        </div>
     </div>
-</header>
-
-<section id="projects" class="projects-waterfall mobile-projects-limit mobile-small-projects-grid grid-4">
-    {% for project in site.categories.projects limit: 8 %}
-    <div class="project-waterfall-item">
-        <div class="tilt-helper" data-tilt data-tilt-max="3">
-            {% if project.annotation%}
-            <span class="project-item-annotation">{{ project.annotation }}</span>
-            {% endif %}
-
-            <a href="{{ project.url }}" id="{{forloop.index}}" alt="{{ project.description_short}}">
-                <div class="project-item-main" style="background-color: {{ project.color_main }};">
-                    <div class="outer aspect-1-1">
-
-                        {%- capture image_path -%}
-                        assets/img/{{ project.prefix }}-start.jpg
-                        {%- endcapture -%}
-
-                        {%- capture image_alt -%}
-                        {{ project.title }} header image
-                        {%- endcapture -%}
-
-                        {% responsive_image_block %}
-                        template: _includes/responsive_image.html
-                        path: {{ image_path }}
-                        picture_class: inner
-                        img_class:
-                        alt: {{image_alt}}
-                        {% endresponsive_image_block %}
-
-                    </div>
-                    <div class="outer aspect-1-1">
-                        <div class="project-item-desc inner">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
+    <div class="sscr-hero-scroll">
+        <div class="sscr-window sscr-window--primary sscr-window-standard border--all window-current">
+            <div class="sscr-badge sscr-badge--right border--all">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.0819 7.48688L16.875 6.69375L11.25 1.125L10.5131 1.92375L11.1769 2.5875L4.71375 8.055L3.74625 7.09312L2.95312 7.875L6.13688 11.07L1.125 16.0763L1.91813 16.875L6.93 11.8631L10.125 15.0469L10.9069 14.2481L9.945 13.2863L15.4125 6.82312L16.0819 7.48688ZM9.14625 12.4875L5.5125 8.85375L11.9756 3.375L14.625 6.02437L9.14625 12.4875Z"/>
+                </svg>
+            </div>
+            <div class="sscr-window-title--l">
+                <p class="text-sscr-title--m">Currently</p>
+            </div>
+            <div class="sscr-window-main">
+                <div class="text-sscr-body--m">
+                    <p class="">UX designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a></p>
+                    <p class="">Lecturer at <a href="https://www.hfg-gmuend.de">Hochschule für Gestaltung</a> Schwäbisch Gmünd</p>
+                </div>
+            </div>
+        </div>
+        <div id="projects" class="sscr-project-window sscr-window sscr-window--primary sscr-window-standard border--all projects-list">
+            <div class="sscr-window-title--l">
+                <p class="text-sscr-title--m">Projects</p>
+            </div>
+            <div class="sscr-window-main">
+                {% assign sscr_shortcut_proj = site.tags.highlight %}
+                {% for project in sscr_shortcut_proj %}
+                <a class="sscr-list-item" href="{{ project.url }}" alt="{{project.description_short}}">
+                    <p class="text-sscr-title--xl">{{ project.title }}</p>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="sscr-article-window sscr-window sscr-window--primary sscr-window-standard border--all">
+            <div class="sscr-window-title--l">
+                <p class="text-sscr-title--m">Articles</p>
+            </div>
+            <div class="sscr-window-main">
+                {% for article in site.categories.articles %}
+                <a class="sscr-list-item text-sscr-body--m" href="{{ article.url }}"
+                    alt="{{article.description_short}}">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
+                        <g transform="translate(0 0.707)">
+                            <line x2="16" transform="translate(0 6)" fill="none" stroke="#f5ffff" stroke-width="1" />
+                            <line x2="6" y2="6" transform="translate(10)" fill="none" stroke="#f5ffff"
+                                stroke-linecap="round" stroke-width="1" />
+                            <line y1="6" x2="6" transform="translate(10 6)" fill="none" stroke="#f5ffff"
+                                stroke-linecap="round" stroke-width="1" />
+                        </g>
+                    </svg> -->
+                    <p>{{ article.title }}</p>
+                </a>
+                {% endfor %}
+            </div>
+            <!-- <svg class="sscr-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
+                viewBox="0 0 13.104 13.104">
+                <rect width="13" height="13" fill="none" />
+                <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
+                    stroke-width="1" />
+                <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
+                </line>
+            </svg> -->
+        </div>
+        <div id="vita" class="sscr-window sscr-window--primary sscr-window-standard border--all window-current">
+            <div class="sscr-window-title--l">
+                <p class="text-sscr-title--m">Vita</p>
+            </div>
+            <div class="sscr-window-main">
+                <div class="text-sscr-body--m">
+                    <div class="small-typo">
+                        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
+                        {{ my_include | markdownify }}
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
-        {% if forloop.index == 2 %}
-
-        {%- capture projectSites -%}
-        {
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}": "{{- post.url -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        }
-        {%- endcapture -%}
-
-        {%- capture projectPrefixes -%}
-        [
-        {%- for post in site.categories.projects -%}
-        "{{- post.prefix -}}"
-        {%- unless forloop.last == true%},{% endunless -%}
-        {%- endfor -%}
-        ]
-        {%- endcapture -%}
-
-        <button id="random-button" class="button-link random-project-button" data-prefixes='{{- projectPrefixes -}}'
-            data-sites='{{projectSites}}'>
-            <p>Random Project</p>
-        </button>
-        {% endif %}
-
-        {% if forloop.index == 8 %}
-        {% assign project_count = site.categories.projects | size | minus: 8 %}
-        <a href="/projects/" class="button-link all-project-button">
-            <p>Show {{ project_count }} more</p>
-        </a>
-        {% endif %}
     </div>
+
+</section>
+
+<section class="project-section m-top--l m-bt--xl m--global sscr-grid--main">
+
+    {% assign thepost = site.posts | where:"title","Aral Sea" %}
+    {% for post in thepost %}
+
+    <a href="{{ post.url }}" alt="{{ post.description_short }}"
+        class="sscr-window--postit border--all outer aspect-1-1">
+        {%- capture image_path -%}
+        assets/img/{{ post.header_img }}
+        {%- endcapture -%}
+    
+        {%- capture image_alt -%}
+        {{ post.title }} header image
+        {%- endcapture -%}
+    
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: {{ image_path }}
+        alt: {{image_alt}}
+        size: 500px
+        {% endresponsive_image_block %}
+        </a>
     {% endfor %}
 
-    <a href="projects/#3" id="projects-expand" class="button-mobile-expand">
-        <!--        <div class="button-plus">-->
-        <!--            <span></span>-->
-        <!--            <span></span>-->
-        <!--        </div>-->
-        <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-            viewBox="0 0 114.829 21.657">
-            <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16"
-                transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-        </svg>
+
+    {% assign thepost = site.posts | where:"title","Destinations" %}
+    {% for post in thepost %}
+
+
+
+    <a href="{{ post.url }}" alt="{{ post.description_short }}"
+        class="sscr-window--postit border--all outer aspect-1-1">
+        {%- capture image_path -%}
+        assets/img/{{ post.header_img }}
+        {%- endcapture -%}
+    
+        {%- capture image_alt -%}
+        {{ post.title }} header image
+        {%- endcapture -%}
+    
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: {{ image_path }}
+        alt: {{image_alt}}
+        size: 500px
+        {% endresponsive_image_block %}    
+
     </a>
+    {% endfor %}
+
+    {% assign thepost = site.posts | where:"title","Halo" %}
+    {% for post in thepost %}
+
+    <a href="{{ post.url }}" alt="{{ post.description_short }}"
+        class="sscr-window--postit border--all outer aspect-1-1">
+        {%- capture image_path -%}
+        assets/img/{{ post.header_img }}
+        {%- endcapture -%}
+    
+        {%- capture image_alt -%}
+        {{ post.title }} header image
+        {%- endcapture -%}
+    
+        {% responsive_image_block %}
+        template: _includes/responsive_image.html
+        path: {{ image_path }}
+        alt: {{image_alt}}
+        size: 500px
+        {% endresponsive_image_block %}
+        </a>
+    {% endfor %}
+
+
+    {% assign thepost = site.posts | where:"title","Aral Sea" %}
+    {% for post in thepost %}
+
+    <a href=" {{ post.url }}" alt="{{ post.description_short }}" class="sscr-window--postit-img border--all">
+        <div class="sscr-window-main">
+            <!-- <p class="sscr-postit-title text-sscr-title--m border--bt">{{ post.title }}</p> -->
+            <video class="" playsinline muted loop src="assets/video/{{ post.header_video }}" alt="{{ post.description_short }}"></video>
+        </div>
+    </a>
+    {% endfor %}
+    <!-- <div class="bg-pointgrid bg-grid--500 bg-grid--radial"></div> -->
+
 </section>
+<!-- 
+<section class="article-section m--global gr-baseline">
 
-<section id="featured-projects" class="">
+    <div class="bg-pointgrid bg-grid--500"></div>
 
-    <div class="featured-project grid-4">
-        {% for project in site.categories.projects %}
-        {% if project.prefix == "destinations" %}
-        <div class="featured-left">
-            <div id="featured-sticky" class="featured-title tilt-helper"
-                style="background-color: {{ project.color_main }};" data-tilt data-tilt-max="3">
-                <a id="featured-{{project.prefix}}" href="{{ project.url }}" alt="{{ project.description_short}}">
-                    <div class="outer aspect-1-1">
-                        <div class="inner project-item-desc">
-                            <h2 class="">{{ project.title }}</h2>
-                            <div class="project-item-metadata">
-                                <p class="project-course">{{ project.course }}</p>
-                                <p class="semester_date">{{ project.semester_date }}</p>
-                            </div>
-                        </div>
+    <div class="bg-pointgrid bg-grid--500"></div>
+
+</section> -->
+
+<section class="project-section m-top--xxl m-bt--xl m--global sscr-grid--main">
+    <div class="contact-window sscr-window sscr-window--primary sscr-window-highlight border--all window-current">
+        <div class="sscr-window-main">
+            <div class="text-sscr-body--s">
+                <form id="message-form" onsubmit="return false">
+                    <div class="sscr-input-group">
+                        <textarea id="message-body" name="bodytext" class="sscr-input" rows="3" placeholder="Please feel free to leave a message" required aria-label="Please feel free to leave a message. Enter message text here"></textarea>
                     </div>
-                </a>
-            </div>
-            <!-- <p class="featured-desc">{{ project.description }}</p> -->
-        </div>
-        <div class="featured-right">
+                    <div class="sscr-input-group">
+                        <input name="email" class="sscr-input" type="email" placeholder="Your E-Mail (optional)" aria-label="Enter your e-mail address">
 
-            {%- include video-player.html type="media" file="destinations-header-2.mp4" -%}
-
-            <div class="extended-text column column-3">
-                {% capture my_include %}{% include destinations-extended-text.md %}{% endcapture %}
-                {{ my_include | markdownify }}
-            </div>
-            <div class="gohfg-text column column-3">
-                {% capture my_include %}{% include gohfg-text.md %}{% endcapture %}
-                {{ my_include | markdownify }}
-                <a href="//www.build-destinations.com" class="button-link button-highlight">
-                    <p>Go to the gohfg<br> project page</p>
-                </a>
+                        <input class="sscr-input" id="message-submit" type="submit" value="Send" disabled title="Enter text and send message" onclick="submitForm();">
+                    </div>
+                    <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be shared or used otherwise. <a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)" aria-label="Open E-Mail application">Click here</a> to send an email.
+             </p>
+                </form>
             </div>
         </div>
-
-        {% endif %}
-        {% endfor %}
     </div>
-</section>
-
-<section id="vita" class="grid-4">
-    <!--    <div class="">-->
-    {% if site.articles == true %}
-    <div class="divider-header articles-divider">
-        <p class="left">Articles</p>
-        <a class="right" href="{% link articles.html %}" alt="Go to all articles">
-            <p>All</p>
-        </a>
-    </div>
-
-    <div class="main-section article-section">
-        {% for article in site.categories.articles limit: 3 %}
-
-        <div class="article-list-item">
-            <a href="{{ article.url }}" alt="{{article.description_short}}">
-                <h2 class="article-heading">{{ article.title }}</h2>
-                <p class="article-date">
-                    {%- assign day = article.date | date: "%-d" %}
-                    {%- case day %}
-                    {%- when '1' or '21' or '31' %}{{ day }}st
-                    {%- when '2' or '22' %}{{ day }}nd
-                    {%- when '3' or '23' %}{{ day }}rd
-                    {%- else %}{{ day }}th
-                    {%- endcase %}
-                    {{- article.date | date: " %B, %Y" }}</p>
-            </a>
-        </div>
-
-        {% endfor %}
-
-        <a href="{% link articles.html %}" id="articles-expand" class="button-mobile-expand" alt="Go to all articles">
-            <!--        <div class="button-plus">-->
-            <!--            <span></span>-->
-            <!--            <span></span>-->
-            <!--        </div>-->
-            <svg class="saw-shape" xmlns="http://www.w3.org/2000/svg" width="114.829" height="21.657"
-                viewBox="0 0 114.829 21.657">
-                <path id="Pfad_91" data-name="Pfad 91" d="M-0,20l16-16,16,16,16-16,16,16,16-16,16,16,16-16" transform="translate(1.414 -1.171)" fill="none" stroke="#fff" stroke-width="4"></path>
-            </svg>
-        </a>
-    </div>
-
-    {% endif %}
-
-    <div class="divider-header vita-divider">
-        <p class="left">Vita</p>
-    </div>
-
-    <div class="vita-picture-container">
-        <div class="outer aspect-1-1">
-            {% responsive_image_block %}
-            template: _includes/responsive_image.html
-            path: assets/img/kaimagnus-portrait.jpg
-            picture_class: inner
-            img_class: vita-picture
-            alt: "Portrait picture of Kai Magnus Müller"
-            {% endresponsive_image_block %}
+    <div id="contact" class="link-list">
+        <h1 class="text-sscr-title--m">Links</h1>
+        <div class="link-grid text-sscr-body--s">
+            {% for link in site.links %}
+            <p class="">{{link.title}}</p><a href="{{link.url}}">{{ link.url_title }}</a>
+            {% endfor %}
         </div>
     </div>
-    <div class="vita-timeline">
-        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
-        {{ my_include | markdownify }}
-    </div>
-    <div class="divider-header motivation-divider">
-        <p class="left">Motivation</p>
-    </div>
-    <div class="vita-motivation">
-        {% capture my_include %}{% include vita-motivation.md %}{% endcapture %}
-        {{ my_include | markdownify }}
-    </div>
-    <!--    </div>-->
 </section>

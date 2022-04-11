@@ -5,7 +5,7 @@ title_long:  "Wayfinding design software"
 date:   2020-08-20 10:19:47 +0100
 semester_date: Summer 2020
 categories: [projects]
-tags: [featured]
+tags: [featured, highlight, hero_section]
 course: Bachelor Project
 prefix: destinations
 color_main: "#004144"
@@ -13,13 +13,13 @@ colors: []
 external_page: www.build-destinations.com
 external_page_title: Visit the goHfG project site
 description: "Destinations is an application concept that simplifies the design process of wayfinding systems. Users can view a digital representation of a project site, visually plan visitor routes, sign placements and messages."
-description_short: "Destinations is an application concept that simplifies the design process of wayfinding systems."
+description_short: "Analyzing the design process of wayfinding systems"
 
 annotation: Most Recent
+header_img: destinations-start.jpg
 
 sitemap:
     priority: 1.0
-
 
 --- 
 

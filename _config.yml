@@ -25,6 +25,27 @@ url: "https://www.kaimagnus.de" # the base hostname & protocol for your site, e.
 twitter_username: "@_kaimagnus"
 github_username:
 
+job:
+  title: UX Designer
+  company_name: "Kaiser X"
+  company_url: "https://www.kaiser-x.com"
+
+
+links:
+  - title: Twitter
+    url: https://www.twitter.com/_kaimagnus
+    url_title: "@_kaimagnus"
+
+  - title: GitHub
+    url: https://www.github.com/kaimagnusmueller
+    url_title: "KaiMagnusMueller"
+
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/kai-magnus-m%C3%BCller-25a176207/
+    url_title: "Kai Magnus Müller"
+
+
+
 # Open Portfolio Template Settings
 articles: true
 
@@ -80,5 +101,5 @@ responsive_image:
     - width: 1890
 
 version: 
-  css: 2.4.2
+  css: 3.0.4
   js: 2.16

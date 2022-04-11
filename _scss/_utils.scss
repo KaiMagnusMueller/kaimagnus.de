@@ -1,0 +1,188 @@
+//GENERAL
+
+body * {
+    box-sizing: border-box;
+}
+
+.tabular-nums {
+    font-variant: tabular-nums;
+}
+
+.reset-decoration {
+    text-decoration: none;
+}
+
+.center--50 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 1000px) {
+    .center--50 {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+@media (max-width: 550px) {
+    .center--50 {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+//BORDER
+.border--all {
+    border: 1px solid var(--window-border-color);
+}
+
+.border--top {
+    border-top: 1px solid var(--window-border-color);
+}
+
+.border--bt {
+    border-bottom: 1px solid var(--window-border-color);
+}
+
+//GRID
+
+.grid-item-l {
+    grid-column: span 3;
+}
+
+.grid-span-all {
+    grid-column: 1 / -1;
+}
+
+//FLEX
+.displ-flex{
+    display: flex;
+}
+
+.displ-flex--vert{
+display: flex;
+flex-direction: column;
+}
+
+.flex-expand {
+    flex-grow: 1;
+}
+
+.flex--vert-sp-btw {
+    align-content: space-between;
+}
+
+.flex-align--center {
+    align-items: center;
+}
+
+.flex-gap--m {
+    gap: 40px;
+}
+
+//MARGIN
+
+.m--global {
+    margin-left: calc(50px + 6vw);
+    margin-right: calc(50px + 6vw);
+
+    @media (max-width: 1200px) {
+        margin-left: calc(3vw);
+        margin-right: calc(3vw);        
+    }
+
+    @media (max-width: 1000px) {
+        margin-left: calc(8vw);
+        margin-right: calc(8vw);        
+    }
+}
+
+.m-top--s {
+    margin-top: 40px;
+}
+
+.m-top--m {
+    margin-top: 60px;
+}
+
+.m-top--l {
+    margin-top: 80px;
+}
+
+.m-top--xl {
+    margin-top: 120px;
+}
+
+.m-top--xxl {
+    margin-top: 220px;
+}
+
+
+.m-bt--s {
+    margin-bottom: 40px;
+}
+
+.m-bt--m {
+    margin-bottom: 60px;
+}
+
+.m-bt--l {
+    margin-bottom: 80px;
+}
+
+.m-bt--xl {
+    margin-bottom: 120px;
+}
+
+.m-bt--xxl {
+    margin-bottom: 220px;
+}
+
+
+@media screen and (max-width: 850px){
+    .m-top--s {
+        margin-top: 20px;
+    }
+    
+    .m-top--m {
+        margin-top: 30px;
+    }
+
+    .m-top--l {
+        margin-top: 40px;
+    }
+    
+    .m-top--xl {
+        margin-top: 60px;
+    }
+    
+    .m-top--xxl {
+        margin-top: 110px;
+    }
+    
+    
+    .m-bt--s {
+        margin-bottom: 20px;
+    }
+    
+    .m-bt--m {
+        margin-bottom: 30px;
+    }
+
+.m-bt--l {
+    margin-bottom: 40px;
+}
+    
+    .m-bt--xl {
+        margin-bottom: 60px;
+    }
+    
+    .m-bt--xxl {
+        margin-bottom: 110px;
+    }
+}
