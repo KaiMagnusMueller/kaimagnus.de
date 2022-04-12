@@ -1,18 +1,6 @@
 .article {
-
   & > * {
       grid-column: 2 / -1;
-
-  }
-
-  .grid-4 {
-    padding: 0;
-  }
-
-  // margin-top: 150px;
-  // margin-bottom: 195px;
-
-  h1 {
   }
 
   h2 {
@@ -64,10 +52,6 @@
     text-decoration: none;
   }
 }
-
-// .article + #contact {
-//   width: 50%;
-// }
 
 @media (max-width: 850px) {
   .article {
@@ -123,5 +107,4 @@
         width: 100%;
     }
   }
-  
 }

@@ -185,10 +185,10 @@ changefreq: weekly
     {% assign thepost = site.posts | where:"title","Aral Sea" %}
     {% for post in thepost %}
 
-    <a href=" {{ post.url }}" alt="{{ post.description_short }}" class="sscr-window--postit-img border--all">
-        <div class="sscr-window-main">
+    <a href=" {{ post.url }}" alt="{{ post.description_short }}" class="sscr-window--postit postit-video border--all">
+        <div class="" tabindex="-1">
             <!-- <p class="sscr-postit-title text-sscr-title--m border--bt">{{ post.title }}</p> -->
-            <video class="" playsinline muted loop src="assets/video/{{ post.header_video }}" alt="{{ post.description_short }}"></video>
+            <video class=""tabindex="-1" playsinline muted loop src="assets/video/{{ post.header_video }}" alt="{{ post.description_short }}"></video>
         </div>
     </a>
     {% endfor %}
@@ -196,7 +196,7 @@ changefreq: weekly
 
 </section>
 <!-- 
-<section class="article-section m--global gr-baseline">
+<section class="article-section m--global sscr-grid--main">
 
     <div class="bg-pointgrid bg-grid--500"></div>
 
