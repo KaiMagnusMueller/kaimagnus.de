@@ -14,7 +14,7 @@
   grid-column: 7 / -1;
   background-color: var(--bg-color);
   // z-index: 1;
-  -webkit-transform: translate3d(0,0,0); 
+  -webkit-transform: translate3d(0, 0, 0);
 
   .sscr-window {
     margin-bottom: 60px;
@@ -88,6 +88,7 @@
 
 .contact-window {
   grid-column: 1 / span 4;
+  position: relative;
 }
 
 .link-grid {
@@ -100,11 +101,11 @@
 
 .contact-window.expanded {
   position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 800px;
-height: 410px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 410px;
 }
 
 .link-list {
@@ -156,7 +157,7 @@ $link-translate-right: translateX(12px);
 @media screen and (max-width: 1000px) {
   .sscr-hero-sticky {
     grid-column: 1 / -1;
-  height: 80vh;
+    height: 80vh;
   }
 
   .sscr-hero-scroll {
@@ -171,7 +172,7 @@ $link-translate-right: translateX(12px);
   .project-section .sscr-window--postit:nth-of-type(3) {
     grid-column: 7 / span 3;
   }
-  .project-section .sscr-window--postit-img {
+  .project-section .postit-video {
     grid-column: 5 / span 4;
   }
 
@@ -238,7 +239,7 @@ $link-translate-right: translateX(12px);
       margin-top: 0;
     }
 
-    .sscr-window--postit-img {
+    .postit-video {
       grid-row: 2;
       grid-column: 1 / -1;
       margin-top: 0;

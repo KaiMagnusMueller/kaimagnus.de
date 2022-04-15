@@ -209,37 +209,42 @@ changefreq: weekly
 </section> -->
 
 <section class="project-section m-top--xxl m-bt--xl m--global sscr-grid--main">
-    <div class="contact-window sscr-window sscr-window--primary sscr-window-highlight border--all window-current">
-        <div class="sscr-window-main">
+    <div class="contact-window sscr-window sscr-window-highlight border--all window-current">
+        <div id="error-popup" class=" sscr-window--primary border--bt">
+            <p>Oops, something went wrong while sending your message.</p>
+            <p class="text-sscr-body--s"><a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)"
+                    aria-label="Open E-Mail application">Click here</a> to send an email.</p>
+        </div>
+        <div class="sscr-window--primary sscr-window-main">
             <div class="text-sscr-body--s">
                 <form id="message-form" onsubmit="return false">
                     <div class="sscr-input-group">
-                        <textarea id="message-body" name="bodytext" class="sscr-input" rows="3"
+                        <textarea id="message-body" name="bodytext" class="sscr-input sscr-input-text" rows="3"
                             placeholder="Please feel free to leave a message" required
                             aria-label="Please feel free to leave a message. Enter message text here"></textarea>
                     </div>
                     <div class="sscr-input-group">
-                        <input name="email" class="sscr-input" type="email" placeholder="Your E-Mail (optional)"
-                            aria-label="Enter your e-mail address">
+                        <input id="email-input" name="email" class="sscr-input sscr-input-text" type="email"
+                            placeholder="Your E-Mail (optional)" aria-label="Enter your e-mail address">
 
-                        <button class="sscr-input" id="message-submit" type="submit" value="Send" disabled
-                            title="Enter text and send message" onclick="submitForm();">
+                        <button class="sscr-input sscr-input-button" id="message-submit" type="submit" value="Send"
+                            disabled title="Enter text and send message" onclick="submitForm();">
                             <span class="submit-text">Send</span>
                             <div id="loading-spinner" class="loading-spinner">
-                                <span>                              
-                            </span>
+                                <span>
+                                </span>
                             </div>
                             <div id="popup-success-notification" class="popup-success-notification">
                                 <div class="checkmark"> <span></span> <span></span></div>
                             </div>
                         </button>
-                        </div>
-                        <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be
-                            shared
-                            or used otherwise. <a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)"
-                                aria-label="Open E-Mail application">Click here</a> to
-                            send an email.
-                        </p>
+                    </div>
+                    <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be
+                        shared
+                        or used otherwise. <a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)"
+                            aria-label="Open E-Mail application">Click here</a> to
+                        send an email.
+                    </p>
                 </form>
             </div>
         </div>

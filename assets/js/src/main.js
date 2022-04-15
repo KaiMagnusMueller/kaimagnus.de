@@ -170,11 +170,24 @@ function decode(a) {
   });
 }
 
+let enteredMessage
+
 function openMailer(element) {
   console.log(element.getAttribute("data-address").toString());
   var y = decode(element.getAttribute("data-address"));
   element.setAttribute("href", "mailto:" + y);
   element.setAttribute("onclick", "");
+
+  console.log(enteredMessage);
+
+  if (enteredMessage.length != 0) {
+    enteredMessage.replaceAll('\n','%0D%0A')
+    console.log(enteredMessage);
+
+    let href = element.getAttribute("href")
+    href += "?body=" + enteredMessage
+    element.setAttribute("href", href)
+  }
 }
 
 // function hide(elem) {
@@ -718,7 +731,9 @@ function updateProgressBar(bar) {
 // }
 
 let textarea = document.getElementById("message-body");
+let email = document.getElementById("email-input");
 let submit = document.getElementById("message-submit");
+let errorPopup = document.getElementById("error-popup");
 
 if (textarea) {
   textarea.addEventListener("input", activateSubmitOnNotEmpty);
@@ -743,28 +758,27 @@ let message = null;
 function submitForm() {
   handleLoadingSpinner();
 
-  simulateEmail()
+  // simulateEmail()
 
-  // data = $("#message-form").serialize();
-  // console.log(data);
-  // $.ajax({
-  //   url: "php/message-send.php",
-  //   type: "POST",
-  //   data: data,
-  //   async: true,
-  //   dataType: "html",
-  //   success: (e) => {
-  //     window.setTimeout(() => {
-  //       sendSuccess(e);
-  //     }, 1500);
-  //   },
-  //   error: (e) => {
-  //     window.setTimeout(() => {
-  //       sendSuccess(e);
-  //       // sendFail(e);
-  //     }, 1500);
-  //   },
-  // });
+  data = $("#message-form").serialize();
+  console.log(data);
+  $.ajax({
+    url: "php/message-sen.php",
+    type: "POST",
+    data: data,
+    async: true,
+    dataType: "html",
+    success: (e) => {
+      window.setTimeout(() => {
+        sendSuccess(e);
+      }, 1500);
+    },
+    error: (e) => {
+      window.setTimeout(() => {
+        sendFail(e);
+      }, 1500);
+    },
+  });
 }
 
 function handleLoadingSpinner() {
@@ -789,15 +803,18 @@ function sendSuccess(msg) {
 function sendFail(msg) {
   console.log("message fail");
   console.log(msg.statusText);
-  submit.classList.toggle("spinner-fade-out");
+  submit.classList.toggle("show-spinner");
   submit.classList.toggle("send-fail");
+  errorPopup.classList.add("show")
   //   // $('#response-field').html("Something went wrong");
   //   document.getElementById("response-wrapper").classList.add("response");
+
+  enteredMessage = textarea.value
 
     let fail = true;
     window.setTimeout(() => {
       removeSpinner(fail);
-    }, 500);
+    }, 1500);
 }
 
 function showSuccessNotification() {
@@ -827,11 +844,29 @@ function removeSpinner(fail) {
   window.setTimeout(() => {
     submit.classList.remove("spinner-fade-out");
   }, 600);
+
+  if(!fail) {
+    window.setTimeout(() => {
+      cleanInput()
+    }, 900);
+
+  }
+
 }
 
 
 function simulateEmail(params) {
       window.setTimeout(() => {
-        sendSuccess("test");
+        sendFail("test");
       }, 1500);
+}
+
+
+function cleanInput() {
+  textarea.value = ""
+  email.value = ""
+
+  submit.disabled = true;
+  submit.title = "Enter text and send message";
+  switcher = false;
 }
