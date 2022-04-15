@@ -33,13 +33,6 @@ article {
   }
 }
 
-.project {
-  //Fix for nested grid-4
-  .grid-4 {
-    padding: 0;
-  }
-}
-
 .project-title {
   width: 50%;
   box-sizing: border-box;
@@ -76,16 +69,6 @@ article {
   //width: auto !important;
   grid-column: 2 / -1;
   position: relative;
-
-  // &:before {
-  //   content: "";
-  //   height: 60%;
-  //   background-color: white;
-  //   width: 4px;
-  //   position: absolute;
-  //   top: 5px;
-  //   left: -16px;
-  // }
 }
 
 .use-case-container {
@@ -125,39 +108,14 @@ article {
   position: relative;
   transition: all 0.3s;
 
-  // &:after {
-  //   content: "";
-  //   display: block;
-  //   position: absolute;
-  //   height: 4px;
-  //   width: 0;
-  //   background-color: white;
-  //   transition: all 0.3s;
-  //   transform: scaleX(1);
-  //   left: 0;
-  // }
-
   opacity: 0.5;
 
-  // &:after {
-  //   display: none;
-  // }
   &.active {
     opacity: 1;
   }
 
   &:hover {
-    // &:after {
-    //   width: 100%;
-    //   transform: scaleX(1);
-    // }
     opacity: 1;
-  }
-
-  &.active {
-    // &:after {
-    //   width: 100%;
-    // }
   }
 }
 
@@ -211,9 +169,6 @@ figure {
   .project-description {
     width: 70%;
   }
-  .project-page-title-box {
-    margin-right: 26px;
-  }
 
   .project-header {
     .button-link {
@@ -239,25 +194,8 @@ figure {
 
 @media (max-width: 850px) {
   .project-header {
-    .featured-left {
-      width: 70%;
-      margin: 0 auto 20px;
-    }
-
     .button-link {
       margin-right: 0;
-    }
-
-    .featured-right {
-      width: 100%;
-      margin: 0 auto;
-    }
-  }
-
-  .project-page-title-box {
-    margin-right: 0;
-    .aspect-1-1::before {
-      padding-top: 50%;
     }
   }
 
@@ -294,21 +232,10 @@ figure {
       @include text-h1;
     }
 
-    .featured-left {
-      width: 100%;
-      margin: 0 auto 20px;
-    }
-
     .button-link {
       width: unset;
       margin-right: 0;
     }
-  }
-
-  .use-case-selector-group {
-    // display: flex;
-    // overflow: scroll;
-    // width: max-content;
   }
 
   .use-case-selector {
@@ -318,12 +245,6 @@ figure {
     position: relative;
     width: fit-content;
   }
-
-  // .use-case-figcaption {
-  //   // width: 90%;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
 }
 
 @media (min-width: 1700px) {
