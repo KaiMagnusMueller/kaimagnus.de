@@ -1,8 +1,6 @@
 $(function () {
   console.log("document ready");
 
-
-
   //Observer for starting and stopping use case ucvideos when they come into and goe out of view
   const observer = new IntersectionObserver(callback, { threshold: 0.8 });
 
@@ -311,7 +309,6 @@ function openMailer(element) {
 let hamburger = document.getElementById("hamburger");
 let nav = document.getElementById("nav");
 
-
 try {
   hamburger.addEventListener("click", function () {
     if (hamburger.classList.contains("open")) {
@@ -322,7 +319,7 @@ try {
       nav.classList.add("open");
     }
   });
-  } catch (error) {
+} catch (error) {
   console.log(error);
 }
 
@@ -720,80 +717,91 @@ function updateProgressBar(bar) {
 //     unixClockElem.innerText = timeS
 // }
 
-
-let textarea = document.getElementById("message-body")
-let submit = document.getElementById("message-submit")
+let textarea = document.getElementById("message-body");
+let submit = document.getElementById("message-submit");
 
 if (textarea) {
-  textarea.addEventListener("input", activateSubmitOnNotEmpty)
+  textarea.addEventListener("input", activateSubmitOnNotEmpty);
 }
-let switcher = false
+let switcher = false;
 
 function activateSubmitOnNotEmpty() {
-  var text = this.value
+  var text = this.value;
   if (text !== "" && !switcher) {
-    submit.disabled = false
-    submit.title = "Send message"
-    switcher = true
-  } else if (text == ""){
-      submit.disabled = true
-      submit.title = "Enter text and send message"
-      switcher = false
+    submit.disabled = false;
+    submit.title = "Send message";
+    switcher = true;
+  } else if (text == "") {
+    submit.disabled = true;
+    submit.title = "Enter text and send message";
+    switcher = false;
   }
 }
 
 let message = null;
 
 function submitForm() {
+  handleLoadingSpinner();
 
-  data = $("#message-form").serialize();
-  console.log(data);
-  $.ajax({
-    url: "php/message-send.php",
-    type: "POST",
-    data: data,
-    async: true,
-    dataType: "html",
-    success: (e) => {
-      window.setTimeout(() => {
-        sendSuccess(e);
-      }, 1500);
-    },
-    error: (e) => {
-      window.setTimeout(() => {
-        sendFail(e);
-      }, 1500);
-    },
-  });
+  simulateEmail()
+
+  // data = $("#message-form").serialize();
+  // console.log(data);
+  // $.ajax({
+  //   url: "php/message-send.php",
+  //   type: "POST",
+  //   data: data,
+  //   async: true,
+  //   dataType: "html",
+  //   success: (e) => {
+  //     window.setTimeout(() => {
+  //       sendSuccess(e);
+  //     }, 1500);
+  //   },
+  //   error: (e) => {
+  //     window.setTimeout(() => {
+  //       sendSuccess(e);
+  //       // sendFail(e);
+  //     }, 1500);
+  //   },
+  // });
+}
+
+function handleLoadingSpinner() {
+  submit.classList.toggle("show-spinner");
 }
 
 function sendSuccess(msg) {
   console.log("message sent");
   console.log(msg.statusText);
-//   document.getElementById("submit").classList.toggle("spinner-fade-out");
-//   document.getElementById("submit").classList.toggle("send-success");
+  submit.classList.toggle("show-spinner");
+  
+  submit.classList.toggle("send-success");
   // $('#response-field').html(msg)
-//   closeChat();
-//   window.setTimeout(() => {
-//     showSuccessNotification();
-//   }, 800);
+  // closeChat();
+  window.setTimeout(() => {
+    // showSuccessNotification();
+    removeSpinner()
+  }, 1500);
+
 }
 
 function sendFail(msg) {
   console.log("message fail");
   console.log(msg.statusText);
-//   document.getElementById("submit").classList.toggle("spinner-fade-out");
-//   document.getElementById("submit").classList.toggle("send-fail");
-//   // $('#response-field').html("Something went wrong");
-//   document.getElementById("response-wrapper").classList.add("response");
+  submit.classList.toggle("spinner-fade-out");
+  submit.classList.toggle("send-fail");
+  //   // $('#response-field').html("Something went wrong");
+  //   document.getElementById("response-wrapper").classList.add("response");
 
-//   let fail = true;
-//   window.setTimeout(() => {
-//     removeSpinner(fail);
-//   }, 500);
+    let fail = true;
+    window.setTimeout(() => {
+      removeSpinner(fail);
+    }, 500);
 }
 
 function showSuccessNotification() {
+
   document
     .getElementById("popup-success-notification")
     .classList.toggle("popup-success-notification-show");
@@ -801,5 +809,29 @@ function showSuccessNotification() {
     document
       .getElementById("popup-success-notification")
       .classList.toggle("popup-success-notification-show");
-  }, 2500);
+      removeSpinner();
+  }, 1800);
+}
+
+function removeSpinner(fail) {
+  submit.classList.toggle("spinner-fade-out");
+
+  submit.classList.remove("show-spinner");
+  // document.getElementById("response-wrapper").classList.remove("response")
+  if (fail) {
+    submit.classList.remove("send-fail");
+  } else {
+    submit.classList.remove("send-success");
+  }
+
+  window.setTimeout(() => {
+    submit.classList.remove("spinner-fade-out");
+  }, 600);
+}
+
+
+function simulateEmail(params) {
+      window.setTimeout(() => {
+        sendSuccess("test");
+      }, 1500);
 }
