@@ -763,7 +763,7 @@ function submitForm() {
   data = $("#message-form").serialize();
   console.log(data);
   $.ajax({
-    url: "php/message-sen.php",
+    url: "php/message-send.php",
     type: "POST",
     data: data,
     async: true,
