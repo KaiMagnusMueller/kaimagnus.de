@@ -1,10 +1,12 @@
 .sscr-hero-sticky {
   grid-column: 1 / 7;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  // transform: translateY(-50%);
   position: sticky;
   display: flex;
-  align-self: flex-start;
+  // align-self: flex-start;
+  align-items: center;
+  height: 100vh;
   // z-index: 0;
 }
 
@@ -154,11 +156,12 @@ $link-translate-right: translateX(12px);
 @media screen and (max-width: 1000px) {
   .sscr-hero-sticky {
     grid-column: 1 / -1;
-    margin-bottom: 70%;
+  height: 80vh;
   }
 
   .sscr-hero-scroll {
     grid-column: 1 / -1;
+    margin-top: 0;
 
     .sscr-window {
       margin-bottom: 60px;
