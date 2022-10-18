@@ -81,7 +81,7 @@ compress_html:
   clippings: all
   comments: all
   endings: all
-  blanklines: true
+
 
 sass:
   sass_dir: ./_scss
@@ -100,5 +100,5 @@ responsive_image:
     - width: 1890
 
 version: 
-  css: 3.0.5
+  css: 3.0.6
   js: 2.17
