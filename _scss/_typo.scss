@@ -3,7 +3,7 @@ body {
   font-weight: 600;
   color: var(--text-color);
   background-color: var(--bg-color);
-  
+
 }
 
 a {
@@ -25,6 +25,7 @@ a:visited {
   line-height: 1.3em;
   letter-spacing: 0.3px;
   margin: 0;
+
   @media (max-width: 850px) {
     font-size: 1.5rem;
   }
@@ -39,6 +40,7 @@ a:visited {
     font-size: 24px;
     line-height: 1.3em;
   }
+
   @media (min-width: 1700px) {
     font-size: 28px;
   }
@@ -55,7 +57,7 @@ a:visited {
 @mixin text-standard-proj {
   font-size: 18px;
   font-weight: 500;
-  line-height: normal;
+  line-height: 1.5em;
   letter-spacing: 0.3px;
   margin: 14px 0 20px 0;
 }
@@ -66,11 +68,13 @@ a:visited {
   line-height: 25px;
   letter-spacing: 0.3px;
   margin: 14px 0 14px 0;
+
   @media (max-width: 850px) {
     // line-height: 1.3rem;
-  // font-size: 1.2rem;
+    // font-size: 1.2rem;
 
   }
+
   @media (min-width: 1700px) {
     font-size: 19px;
   }
@@ -79,7 +83,7 @@ a:visited {
 @mixin text-bold-xl {
   font-size: 24px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.5em;
   margin: 16px 0;
 }
 
@@ -89,6 +93,7 @@ a:visited {
   font-weight: 600;
   line-height: 30px;
   margin: 16px 0;
+
   @media (max-width: 850px) {
     font-size: 1.3rem;
   }
@@ -106,6 +111,7 @@ a:visited {
   line-height: 21px;
   letter-spacing: 0.3px;
   margin: 3px 0;
+
   @media (min-width: 1700px) {
     font-size: 16px;
   }
@@ -115,12 +121,15 @@ a:visited {
   font-size: 15px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+
   @media screen and (max-width: 1200px) {
     font-size: 13px;
   }
+
   @media screen and (max-width: 550px) {
     font-size: unquote("min(1.6vmax, 13px)");
   }
+
   @media (min-width: 1700px) {
     font-size: 17px;
   }
@@ -132,9 +141,11 @@ a:visited {
   line-height: 1.4em;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+
   @media screen and (max-width: 1200px) {
     font-size: 16px;
   }
+
   @media (min-width: 1700px) {
     font-size: 18px;
   }
@@ -145,6 +156,7 @@ a:visited {
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+
   @media (min-width: 1700px) {
     font-size: 15px;
   }
@@ -159,8 +171,7 @@ h2 {
 }
 
 p {
-  margin: 0
-  // @include text-standard-m;
+  margin: 0 // @include text-standard-m;
 }
 
 //project page headlines
@@ -180,38 +191,38 @@ h3 {
 //Text in XD looks like 600 even though its regular/500
 @mixin text-sscr-body--l {
   font-weight: 500;
-  font-size: 20px; 
+  font-size: 20px;
   line-height: 1.4em;
 }
 
 //TODO: buy medium sofia pro font and set to 600
 @mixin text-sscr-body--m {
   font-weight: 500;
-  font-size: 16px; 
+  font-size: 16px;
   line-height: 1.4em;
 }
 
 @mixin text-sscr-body--s {
   font-weight: 500;
-  font-size: 15px; 
+  font-size: 15px;
   line-height: 1.4em;
 }
 
 @mixin text-sscr-title--m {
   font-weight: 700;
-  font-size: 14px; 
+  font-size: 14px;
   line-height: 1.4em;
 }
 
 @mixin text-sscr-title--l {
   font-weight: 700;
-  font-size: 26px; 
+  font-size: 26px;
   line-height: 1.4em;
 }
 
 @mixin text-sscr-title--xl {
   font-weight: 700;
-  font-size: 34px; 
+  font-size: 34px;
   line-height: 1.4em;
   text-transform: uppercase;
 }
@@ -249,8 +260,7 @@ h3 {
 }
 
 @media screen and (max-width: 550px) {
-  blockquote {
-  }
+  blockquote {}
 }
 
 
@@ -266,7 +276,7 @@ h3 {
     margin-bottom: 15px;
   }
 
-  p:last-of-type{
+  p:last-of-type {
     margin-bottom: 0;
   }
 }
