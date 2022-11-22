@@ -11,15 +11,12 @@ body {
 .sscr-grid--main {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-column-gap: 50px;
-  grid-row-gap: 50px;
 }
 
 .sscr-window {
   height: fit-content;
   position: relative;
 
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
   transition: 0.3s all cubic-bezier(0.215, 0.610, 0.355, 1);
 
   .sscr-window-title {}
@@ -125,11 +122,7 @@ textarea {
 }
 
 .sscr-window-standard {
-  background-color: var(--window--bg);
 
-  &:hover {
-    background-color: var(--window--bg-hov);
-  }
 }
 
 .sscr-window-highlight {
@@ -179,16 +172,6 @@ textarea {
 //   }
 // }
 
-.sscr-window--secondary {
-  grid-column: span 3;
-  //TODO: narrow screen css
-}
-
-.sscr-window-bar {
-  padding: 9px 20px;
-  background-color: var(--bg-color);
-}
-
 .sscr-window-title--l {
   margin-bottom: 15px;
 }
@@ -206,13 +189,13 @@ textarea {
   margin-top: 16px;
 }
 
-.sscr-window-resize-handle {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 5px;
-  cursor: nwse-resize;
-}
+// .sscr-window-resize-handle {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+//   padding: 5px;
+//   cursor: nwse-resize;
+// }
 
 .sscr-button--std {
   padding: 6px 20px;

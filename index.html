@@ -3,77 +3,82 @@ layout: default
 title: Kai Magnus Müller - Interaction Design
 description: Portfolio of Kai Magnus Müller, UX Designer at Kaiser X and creator of experiments.
 sitemap:
-
-sitemap:
 priority: 1.0
 changefreq: weekly
 ---
 
-
-<section class="sscr-grid--main sscr-hero m--global m-bt--l" id="hero">
-    <div class="sscr-hero-sticky">
-        <div class="personal-intro">
-            <div class="text-sscr-body--l">
-                <p class="">Hi, I’m Kai Magnus.</p>
-                <p>A UX/UI designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a>, working on
-                    human centered experiences and data driven products.
-                    Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for automotive
-                    companies and at <a href="https://www.precious-forever.com">precious design</a> working on POS
-                    software.
-                </p>
-                <p>
-                    While studying, I wrote a bachelor thesis about <a
-                        href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a>, designed a
-                    <a href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a
-                        href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a
-                        href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
-                </p>
-                <p></p>
-            </div>
-        </div>
-    </div>
-    <div class="sscr-hero-scroll m-top--xl">
-        <div class="sscr-window sscr-window--primary sscr-window-standard border--all window-current">
-            <div class="sscr-badge sscr-badge--right border--all">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M16.0819 7.48688L16.875 6.69375L11.25 1.125L10.5131 1.92375L11.1769 2.5875L4.71375 8.055L3.74625 7.09312L2.95312 7.875L6.13688 11.07L1.125 16.0763L1.91813 16.875L6.93 11.8631L10.125 15.0469L10.9069 14.2481L9.945 13.2863L15.4125 6.82312L16.0819 7.48688ZM9.14625 12.4875L5.5125 8.85375L11.9756 3.375L14.625 6.02437L9.14625 12.4875Z" />
-                </svg>
-            </div>
-            <div class="sscr-window-title--l">
-                <p class="text-sscr-title--m">Currently</p>
-            </div>
-            <div class="sscr-window-main">
-                <div class="text-sscr-body--m">
-                    <p class="">UX designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a></p>
-                    <p class="">Lecturer at <a href="https://www.hfg-gmuend.de">Hochschule für Gestaltung</a> Schwäbisch
-                        Gmünd</p>
+<div class="h--screen p-all--xs">
+    <div class="h--100 border--all overflow--scroll">
+        <section class="sscr-grid--main border--bt sscr-hero" id="hero">
+            <div class="sscr-hero-sticky">
+                <div class="personal-intro">
+                    <div class="text-sscr-body--l">
+                        <p class="">Hi, I’m Kai Magnus.</p>
+                        <p>A UX/UI designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a>, working
+                            on
+                            human centered experiences and data driven products.
+                            Previously, I spent some time at <a href="https://www.intuity.de">Intuity</a> working for
+                            automotive
+                            companies and at <a href="https://www.precious-forever.com">precious design</a> working on
+                            POS
+                            software.
+                        </p>
+                        <p>
+                            While studying, I wrote a bachelor thesis about <a
+                                href="{% link _posts/2020-08-20-destinations.md %}">building wayfinding systems</a>,
+                            designed a
+                            <a href="{% link _posts/2020-02-15-Halo.md %}">browser built for research</a>, went to <a
+                                href="https://www.zokei.ac.jp">Japan</a> and developed an award winning <a
+                                href="{% link _posts/2017-02-12-aralsea.md %}">interactive exhibit</a>.
+                        </p>
+                        <p></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="projects"
-            class="sscr-project-window sscr-window sscr-window--primary sscr-window-standard border--all projects-list">
-            <div class="sscr-window-title--l">
-                <p class="text-sscr-title--m">University Projects</p>
-            </div>
-            <div class="sscr-window-main">
-                {% assign sscr_shortcut_proj = site.tags.highlight %}
-                {% for project in sscr_shortcut_proj %}
-                <a class="sscr-list-item" href="{{ project.url }}" alt="{{project.description_short}}">
-                    <p class="text-sscr-title--xl">{{ project.title }}</p>
-                </a>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="sscr-article-window sscr-window sscr-window--primary sscr-window-standard border--all">
-            <div class="sscr-window-title--l">
-                <p class="text-sscr-title--m">Articles</p>
-            </div>
-            <div class="sscr-window-main">
-                {% for article in site.categories.articles %}
-                <a class="sscr-list-item text-sscr-body--m" href="{{ article.url }}"
-                    alt="{{article.description_short}}">
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
+            <div class="sscr-hero-scroll border--left">
+                <div class="sscr-window sscr-window--primary sscr-window-standard window-current">
+                    <!-- <div class="sscr-badge sscr-badge--right border--all">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.0819 7.48688L16.875 6.69375L11.25 1.125L10.5131 1.92375L11.1769 2.5875L4.71375 8.055L3.74625 7.09312L2.95312 7.875L6.13688 11.07L1.125 16.0763L1.91813 16.875L6.93 11.8631L10.125 15.0469L10.9069 14.2481L9.945 13.2863L15.4125 6.82312L16.0819 7.48688ZM9.14625 12.4875L5.5125 8.85375L11.9756 3.375L14.625 6.02437L9.14625 12.4875Z" />
+                        </svg>
+                    </div> -->
+                    <div class="sscr-window-title--l">
+                        <p class="text-sscr-title--m">Currently</p>
+                    </div>
+                    <div class="sscr-window-main">
+                        <div class="text-sscr-body--m">
+                            <p class="">UX designer at <a href="{{site.job.company_url}}">{{site.job.company_name}}</a>
+                            </p>
+                            <p class="">Lecturer at <a href="https://www.hfg-gmuend.de">Hochschule für Gestaltung</a>
+                                Schwäbisch
+                                Gmünd</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="projects"
+                    class="sscr-project-window sscr-window sscr-window--primary sscr-window-standard projects-list">
+                    <div class="sscr-window-title--l">
+                        <p class="text-sscr-title--m">University Projects</p>
+                    </div>
+                    <div class="sscr-window-main">
+                        {% assign sscr_shortcut_proj = site.tags.highlight %}
+                        {% for project in sscr_shortcut_proj %}
+                        <a class="sscr-list-item" href="{{ project.url }}" alt="{{project.description_short}}">
+                            <p class="text-sscr-title--xl">{{ project.title }}</p>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="sscr-article-window sscr-window sscr-window--primary sscr-window-standard">
+                    <div class="sscr-window-title--l">
+                        <p class="text-sscr-title--m">Articles</p>
+                    </div>
+                    <div class="sscr-window-main">
+                        {% for article in site.categories.articles %}
+                        <a class="sscr-list-item text-sscr-body--m" href="{{ article.url }}"
+                            alt="{{article.description_short}}">
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16.707" height="13.414" viewBox="0 0 16.707 13.414">
                         <g transform="translate(0 0.707)">
                             <line x2="16" transform="translate(0 6)" fill="none" stroke="#f5ffff" stroke-width="1" />
                             <line x2="6" y2="6" transform="translate(10)" fill="none" stroke="#f5ffff"
@@ -82,11 +87,11 @@ changefreq: weekly
                                 stroke-linecap="round" stroke-width="1" />
                         </g>
                     </svg> -->
-                    <p>{{ article.title }}</p>
-                </a>
-                {% endfor %}
-            </div>
-            <!-- <svg class="sscr-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
+                            <p>{{ article.title }}</p>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <!-- <svg class="sscr-window-resize-handle" xmlns="http://www.w3.org/2000/svg" width="13.104" height="13.104"
                 viewBox="0 0 13.104 13.104">
                 <rect width="13" height="13" fill="none" />
                 <line x1="5.119" y2="5.119" transform="translate(7.5 7.5)" fill="none" stroke="#f5ffff"
@@ -94,112 +99,113 @@ changefreq: weekly
                 <line x1="10.75" y2="10.75" transform="translate(2 2)" fill="none" stroke="#f5ffff" stroke-width="1">
                 </line>
             </svg> -->
-        </div>
-        <div id="vita" class="sscr-window sscr-window--primary sscr-window-standard border--all window-current">
-            <div class="sscr-window-title--l">
-                <p class="text-sscr-title--m">Vita</p>
-            </div>
-            <div class="sscr-window-main">
-                <div class="text-sscr-body--m">
-                    <div class="small-typo">
-                        {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
-                        {{ my_include | markdownify }}
+                </div>
+                <div id="vita" class="sscr-window sscr-window--primary sscr-window-standard  window-current">
+                    <div class="sscr-window-title--l">
+                        <p class="text-sscr-title--m">Vita</p>
+                    </div>
+                    <div class="sscr-window-main">
+                        <div class="text-sscr-body--m">
+                            <div class="small-typo">
+                                {% capture my_include %}{% include vita-timeline.md %}{% endcapture %}
+                                {{ my_include | markdownify }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-</section>
+        </section>
 
-<section class="project-section m-top--l m-bt--xl m--global sscr-grid--main">
+        <section class="project-section m-top--l m-bt--xl m--global sscr-grid--main">
 
-    {% assign thepost = site.posts | where:"title","Aral Sea" %}
-    {% for post in thepost %}
+            {% assign thepost = site.posts | where:"title","Aral Sea" %}
+            {% for post in thepost %}
 
-    <a href="{{ post.url }}" alt="{{ post.description_short }}"
-        class="sscr-window--postit border--all outer aspect-1-1">
-        {%- capture image_path -%}
-        assets/img/{{ post.header_img }}
-        {%- endcapture -%}
+            <a href="{{ post.url }}" alt="{{ post.description_short }}"
+                class="sscr-window--postit border--all outer aspect-1-1">
+                {%- capture image_path -%}
+                assets/img/{{ post.header_img }}
+                {%- endcapture -%}
 
-        {%- capture image_alt -%}
-        {{ post.title }} header image
-        {%- endcapture -%}
+                {%- capture image_alt -%}
+                {{ post.title }} header image
+                {%- endcapture -%}
 
-        {% responsive_image_block %}
-        template: _includes/responsive_image.html
-        path: {{ image_path }}
-        alt: {{image_alt}}
-        size: 500px
-        {% endresponsive_image_block %}
-    </a>
-    {% endfor %}
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                alt: {{image_alt}}
+                size: 500px
+                {% endresponsive_image_block %}
+            </a>
+            {% endfor %}
 
 
-    {% assign thepost = site.posts | where:"title","Destinations" %}
-    {% for post in thepost %}
+            {% assign thepost = site.posts | where:"title","Destinations" %}
+            {% for post in thepost %}
 
 
 
-    <a href="{{ post.url }}" alt="{{ post.description_short }}"
-        class="sscr-window--postit border--all outer aspect-1-1">
-        {%- capture image_path -%}
-        assets/img/{{ post.header_img }}
-        {%- endcapture -%}
+            <a href="{{ post.url }}" alt="{{ post.description_short }}"
+                class="sscr-window--postit border--all outer aspect-1-1">
+                {%- capture image_path -%}
+                assets/img/{{ post.header_img }}
+                {%- endcapture -%}
 
-        {%- capture image_alt -%}
-        {{ post.title }} header image
-        {%- endcapture -%}
+                {%- capture image_alt -%}
+                {{ post.title }} header image
+                {%- endcapture -%}
 
-        {% responsive_image_block %}
-        template: _includes/responsive_image.html
-        path: {{ image_path }}
-        alt: {{image_alt}}
-        size: 500px
-        {% endresponsive_image_block %}
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                alt: {{image_alt}}
+                size: 500px
+                {% endresponsive_image_block %}
 
-    </a>
-    {% endfor %}
+            </a>
+            {% endfor %}
 
-    {% assign thepost = site.posts | where:"title","Halo" %}
-    {% for post in thepost %}
+            {% assign thepost = site.posts | where:"title","Halo" %}
+            {% for post in thepost %}
 
-    <a href="{{ post.url }}" alt="{{ post.description_short }}"
-        class="sscr-window--postit border--all outer aspect-1-1">
-        {%- capture image_path -%}
-        assets/img/{{ post.header_img }}
-        {%- endcapture -%}
+            <a href="{{ post.url }}" alt="{{ post.description_short }}"
+                class="sscr-window--postit border--all outer aspect-1-1">
+                {%- capture image_path -%}
+                assets/img/{{ post.header_img }}
+                {%- endcapture -%}
 
-        {%- capture image_alt -%}
-        {{ post.title }} header image
-        {%- endcapture -%}
+                {%- capture image_alt -%}
+                {{ post.title }} header image
+                {%- endcapture -%}
 
-        {% responsive_image_block %}
-        template: _includes/responsive_image.html
-        path: {{ image_path }}
-        alt: {{image_alt}}
-        size: 500px
-        {% endresponsive_image_block %}
-    </a>
-    {% endfor %}
+                {% responsive_image_block %}
+                template: _includes/responsive_image.html
+                path: {{ image_path }}
+                alt: {{image_alt}}
+                size: 500px
+                {% endresponsive_image_block %}
+            </a>
+            {% endfor %}
 
 
-    {% assign thepost = site.posts | where:"title","Aral Sea" %}
-    {% for post in thepost %}
+            {% assign thepost = site.posts | where:"title","Aral Sea" %}
+            {% for post in thepost %}
 
-    <a href=" {{ post.url }}" alt="{{ post.description_short }}" class="sscr-window--postit postit-video border--all">
-        <div class="" tabindex="-1">
-            <!-- <p class="sscr-postit-title text-sscr-title--m border--bt">{{ post.title }}</p> -->
-            <video class="" tabindex="-1" playsinline muted loop src="assets/video/{{ post.header_video }}"
-                alt="{{ post.description_short }}"></video>
-        </div>
-    </a>
-    {% endfor %}
-    <!-- <div class="bg-pointgrid bg-grid--500 bg-grid--radial"></div> -->
+            <a href=" {{ post.url }}" alt="{{ post.description_short }}"
+                class="sscr-window--postit postit-video border--all">
+                <div class="" tabindex="-1">
+                    <!-- <p class="sscr-postit-title text-sscr-title--m border--bt">{{ post.title }}</p> -->
+                    <video class="" tabindex="-1" playsinline muted loop src="assets/video/{{ post.header_video }}"
+                        alt="{{ post.description_short }}"></video>
+                </div>
+            </a>
+            {% endfor %}
+            <!-- <div class="bg-pointgrid bg-grid--500 bg-grid--radial"></div> -->
 
-</section>
-<!-- 
+        </section>
+        <!-- 
 <section class="article-section m--global sscr-grid--main">
 
     <div class="bg-pointgrid bg-grid--500"></div>
@@ -208,53 +214,55 @@ changefreq: weekly
 
 </section> -->
 
-<section class="project-section m-top--xxl m-bt--xl m--global sscr-grid--main">
-    <div class="contact-window sscr-window sscr-window-highlight border--all window-current">
-        <div id="error-popup" class=" sscr-window--primary border--bt">
-            <p>Oops, something went wrong while sending your message.</p>
-            <p class="text-sscr-body--s"><a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)"
-                    aria-label="Open E-Mail application">Click here</a> to send an email.</p>
-        </div>
-        <div class="sscr-window--primary sscr-window-main">
-            <div class="text-sscr-body--s">
-                <form id="message-form" onsubmit="return false">
-                    <div class="sscr-input-group">
-                        <textarea id="message-body" name="bodytext" class="sscr-input sscr-input-text" rows="3"
-                            placeholder="Please feel free to leave a message" required
-                            aria-label="Please feel free to leave a message. Enter message text here"></textarea>
-                    </div>
-                    <div class="sscr-input-group">
-                        <input id="email-input" name="email" class="sscr-input sscr-input-text" type="email"
-                            placeholder="Your E-Mail (optional)" aria-label="Enter your e-mail address">
+        <section class="project-section m-top--xxl m-bt--xl m--global sscr-grid--main">
+            <div class="contact-window sscr-window sscr-window-highlight border--all window-current">
+                <div id="error-popup" class=" sscr-window--primary border--bt">
+                    <p>Oops, something went wrong while sending your message.</p>
+                    <p class="text-sscr-body--s"><a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)"
+                            aria-label="Open E-Mail application">Click here</a> to send an email.</p>
+                </div>
+                <div class="sscr-window--primary sscr-window-main">
+                    <div class="text-sscr-body--s">
+                        <form id="message-form" onsubmit="return false">
+                            <div class="sscr-input-group">
+                                <textarea id="message-body" name="bodytext" class="sscr-input sscr-input-text" rows="3"
+                                    placeholder="Please feel free to leave a message" required
+                                    aria-label="Please feel free to leave a message. Enter message text here"></textarea>
+                            </div>
+                            <div class="sscr-input-group">
+                                <input id="email-input" name="email" class="sscr-input sscr-input-text" type="email"
+                                    placeholder="Your E-Mail (optional)" aria-label="Enter your e-mail address">
 
-                        <button class="sscr-input sscr-input-button" id="message-submit" type="submit" value="Send"
-                            disabled title="Enter text and send message" onclick="submitForm();">
-                            <span class="submit-text">Send</span>
-                            <div id="loading-spinner" class="loading-spinner">
-                                <span>
-                                </span>
+                                <button class="sscr-input sscr-input-button" id="message-submit" type="submit"
+                                    value="Send" disabled title="Enter text and send message" onclick="submitForm();">
+                                    <span class="submit-text">Send</span>
+                                    <div id="loading-spinner" class="loading-spinner">
+                                        <span>
+                                        </span>
+                                    </div>
+                                    <div id="popup-success-notification" class="popup-success-notification">
+                                        <div class="checkmark"> <span></span> <span></span></div>
+                                    </div>
+                                </button>
                             </div>
-                            <div id="popup-success-notification" class="popup-success-notification">
-                                <div class="checkmark"> <span></span> <span></span></div>
-                            </div>
-                        </button>
+                            <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be
+                                shared
+                                or used otherwise. <a data-address="uryyb@xnvzntahf.qr" href=""
+                                    onclick="openMailer(this)" aria-label="Open E-Mail application">Click here</a> to
+                                send an email.
+                            </p>
+                        </form>
                     </div>
-                    <p class="sscr-form-footnote">Leave your email, if you wish to hear from me. It will not be
-                        shared
-                        or used otherwise. <a data-address="uryyb@xnvzntahf.qr" href="" onclick="openMailer(this)"
-                            aria-label="Open E-Mail application">Click here</a> to
-                        send an email.
-                    </p>
-                </form>
+                </div>
             </div>
-        </div>
+            <div id="contact" class="link-list">
+                <h1 class="text-sscr-title--m">Links</h1>
+                <div class="link-grid text-sscr-body--s">
+                    {% for link in site.links %}
+                    <p class="">{{link.title}}</p><a href="{{link.url}}">{{ link.url_title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     </div>
-    <div id="contact" class="link-list">
-        <h1 class="text-sscr-title--m">Links</h1>
-        <div class="link-grid text-sscr-body--s">
-            {% for link in site.links %}
-            <p class="">{{link.title}}</p><a href="{{link.url}}">{{ link.url_title }}</a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
+</div>

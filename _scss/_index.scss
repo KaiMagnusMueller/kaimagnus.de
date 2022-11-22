@@ -8,16 +8,16 @@
   align-items: center;
   height: 100vh;
   // z-index: 0;
+  width: 80%;
+justify-self: center;
 }
 
 .sscr-hero-scroll {
   grid-column: 7 / -1;
-  background-color: var(--bg-color);
-  // z-index: 1;
   -webkit-transform: translate3d(0, 0, 0);
 
-  .sscr-window {
-    margin-bottom: 60px;
+  & > *:not(:last-child){
+    border-bottom: 1px solid var(--window-border-color);
   }
 }
 

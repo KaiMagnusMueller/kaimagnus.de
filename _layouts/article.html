@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-<article class="    m--global m-top--l m-bt--xl">
+<article class="m--global m-top--l m-bt--xl">
     <div class="article-header center--50 m-bt--m">
 
         <h1 class="article-title">{{ page.title }}</h1>
         <p class="article-date">
             {{- page.date | date: "%-d %B %Y" }}
-            
+
             {% comment %}
             {% assign day = page.date | date: "%-d" %}
             {%- case day %}
@@ -21,26 +21,26 @@ layout: default
         </p>
     </div>
 
-<div class="blog-content m-bt--xl">
-    {{ content }}
-</div>
+    <div class="blog-content m-bt--xl">
+        {{ content }}
+    </div>
 
-<div class="recent-articles center--50">
-    <h2 class="article-heading-other">Recent Posts</h2>
-    <!-- <div class="divider-header ">
+    <div class="recent-articles center--50">
+        <h2 class="article-heading-other">Recent Posts</h2>
+        <!-- <div class="divider-header ">
         <p class="left">Recent Posts</p>
     </div> -->
-    {% for article in site.categories.articles %}
+        {% for article in site.categories.articles %}
 
-    {% unless page.url == article.url %}
-    <div class="article-list-item">
-        <a href="{{ article.url }}">
-            <h2 class="article-heading">{{ article.title }}</h2>
-            <p class="article-date">{{ article.date | date: "%-d %B %Y"}}</p>
-        </a>
+        {% unless page.url == article.url %}
+        <div class="article-list-item">
+            <a href="{{ article.url }}">
+                <h2 class="article-heading">{{ article.title }}</h2>
+                <p class="article-date">{{ article.date | date: "%-d %B %Y"}}</p>
+            </a>
+        </div>
+        {% endunless %}
+
+        {% endfor %}
     </div>
-    {% endunless %}
-
-    {% endfor %}
-</div>
 </article>

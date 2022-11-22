@@ -74,9 +74,14 @@ layout: compress
                 visibility: hidden;
             }
         }
-        
-        {%- if page.name=="index.html"%}
-        {%- endif %}
+
+            {
+            %- if page.name=="index.html" %
+        }
+
+            {
+            %- endif %
+        }
     </style>
 
     <link rel="stylesheet" href="/assets/css/main.css?v={{ site.version.css }}">

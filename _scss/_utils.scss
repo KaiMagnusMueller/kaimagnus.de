@@ -36,6 +36,20 @@ body * {
     
 }
 
+.overflow--scroll {
+    overflow: scroll;
+}
+
+//SIZING
+
+.h--screen {
+    height: 100vh;
+}
+
+.h--100 {
+    height: 100%;
+}
+
 //BORDER
 .border--all {
     border: 1px solid var(--window-border-color);
@@ -48,6 +62,11 @@ body * {
 .border--bt {
     border-bottom: 1px solid var(--window-border-color);
 }
+
+.border--left {
+    border-left: 1px solid var(--window-border-color);
+}
+
 
 //GRID
 
@@ -88,18 +107,16 @@ flex-direction: column;
 //MARGIN
 
 .m--global {
-    margin-left: calc(50px + 6vw);
-    margin-right: calc(50px + 6vw);
+    margin-left: 24px;
+    margin-right: 24px;
+}
 
-    @media (max-width: 1200px) {
-        margin-left: calc(3vw);
-        margin-right: calc(3vw);        
-    }
+.m-all--xs {
+    margin: 24px;
+}
 
-    @media (max-width: 1000px) {
-        margin-left: calc(8vw);
-        margin-right: calc(8vw);        
-    }
+.m-top--xs {
+    margin-top: 24px;
 }
 
 .m-top--s {
@@ -125,7 +142,7 @@ flex-direction: column;
 
 
 .m-bt--xs {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .m-bt--s {
@@ -190,4 +207,11 @@ flex-direction: column;
     .m-bt--xxl {
         margin-bottom: 110px;
     }
+}
+
+
+//PADDING
+
+.p-all--xs {
+    padding: 24px;
 }
