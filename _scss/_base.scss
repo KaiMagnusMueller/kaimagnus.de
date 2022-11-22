@@ -20,20 +20,18 @@ body {
   position: relative;
 
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
-  transition: 0.3s all ease-in-out;
+  transition: 0.3s all cubic-bezier(0.215, 0.610, 0.355, 1);
 
-  .sscr-window-title {
-  }
+  .sscr-window-title {}
 
-  .sscr-window-footer {
-  }
+  .sscr-window-footer {}
 
   .sscr-window-main {
     // padding: 20px;
     // overflow-y: auto;
     // overflow-x: hidden;
 
-    p + p {
+    p+p {
       margin-top: 16px;
     }
 
@@ -58,7 +56,7 @@ body {
     border-color: var(--text-secondary-color);
     color: var(--text-secondary-color);
     background: var(--input-disabled-color);
-  
+
   }
 
   &:hover:not(:focus, :disabled) {
@@ -74,7 +72,7 @@ body {
   &:focus-visible {
     box-shadow: 3px 3px 6px #21212138 inset;
 
-    @media screen and (prefers-color-scheme:dark){
+    @media screen and (prefers-color-scheme:dark) {
       box-shadow: 3px 3px 6px #00000078 inset;
       background: var(--input-active-color);
     }
@@ -87,10 +85,11 @@ body {
 
   }
 
-  &:focus-visible, &:hover:not(:disabled) {
+  &:focus-visible,
+  &:hover:not(:disabled) {
     box-shadow: 3px 3px 6px #21212138;
 
-    @media screen and (prefers-color-scheme:dark){
+    @media screen and (prefers-color-scheme:dark) {
       box-shadow: 3px 3px 6px #00000078;
       background: var(--input-active-color);
     }
@@ -112,7 +111,7 @@ textarea {
   gap: 25px;
 }
 
-.sscr-input-group + .sscr-input-group {
+.sscr-input-group+.sscr-input-group {
   margin-top: 25px;
 }
 
@@ -145,6 +144,7 @@ textarea {
   grid-column: span 2;
   height: fit-content;
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.17);
+
   // max-width: 213px;
   .sscr-postit-title {
     line-break: anywhere;
@@ -196,12 +196,13 @@ textarea {
 .sscr-list-item {
   display: flex;
   align-items: center;
+
   svg {
     margin-right: 11px;
   }
 }
 
-.sscr-list-item + .sscr-list-item {
+.sscr-list-item+.sscr-list-item {
   margin-top: 16px;
 }
 
@@ -244,39 +245,29 @@ textarea {
   width: 100%;
   height: 100%;
   /* ff 3.6+ */
-  background: -moz-radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 80%
-  );
+  background: -moz-radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 80%);
 
   /* safari 5.1+,chrome 10+ */
-  background: -webkit-radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 80%
-  );
+  background: -webkit-radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 80%);
 
   /* opera 11.10+ */
-  background: -o-radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 80%
-  );
+  background: -o-radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 80%);
 
   /* ie 10+ */
-  background: -ms-radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 80%
-  );
+  background: -ms-radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 80%);
 
   /* global 92%+ browsers support */
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 80%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 80%);
 }
 
 .bg-grid--500 {
@@ -297,10 +288,8 @@ textarea {
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 80%
-  );
+  background: linear-gradient(rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 80%);
 }
 
 .footer {
@@ -338,16 +327,17 @@ body .bg-pointgrid {
 .blog-content {
   margin: auto;
 
-  & > p,
+  &>p,
   ol {
     @include text-standard-proj;
   }
 
-  & > p:last-of-type {
+  &>p:last-of-type {
     margin-bottom: 50px;
   }
 
-  & > {
+  &> {
+
     p,
     h1,
     h2,
@@ -434,11 +424,13 @@ figcaption-project {
 
 .project-media-figure,
 .use-case-figure {
+
   .media-wrapper,
   .player-wrapper {
     width: 75%;
   }
 }
+
 .project-media-figure {
   grid-column: 1 / -1;
   display: flex;
@@ -500,8 +492,7 @@ figcaption-project {
     width: 75%;
     max-height: 90vh;
 
-    @media (orientation) {
-    }
+    @media (orientation) {}
 
     object-fit: contain;
   }
@@ -582,6 +573,7 @@ sup {
   position: relative;
   overflow: hidden;
 }
+
 .submit-text {
   transition: 0.3s ease-in-out;
 }
@@ -600,9 +592,8 @@ sup {
   .loading-spinner {
     opacity: 1;
 
-    & > span {
-      animation: submit-load-animation 1s alternate infinite
-        cubic-bezier(0.73, 0, 0.23, 1);
+    &>span {
+      animation: submit-load-animation 1s alternate infinite cubic-bezier(0.73, 0, 0.23, 1);
     }
   }
 }
@@ -629,7 +620,7 @@ sup {
   height: 100%;
   width: 100%;
 
-  & > span {
+  &>span {
     margin: auto;
     background: var(--text-color);
     height: 10px;
@@ -681,13 +672,13 @@ sup {
     position: absolute;
   }
 
-  & > span:nth-child(1) {
+  &>span:nth-child(1) {
     width: 12px;
     top: 18px;
     right: 7px;
   }
 
-  & > span:nth-child(2) {
+  &>span:nth-child(2) {
     width: 2px;
     height: 20px;
     right: 7px;
@@ -715,6 +706,7 @@ sup {
   0% {
     transform: translateX(-20px);
   }
+
   100% {
     transform: translateX(20px);
   }
@@ -738,7 +730,8 @@ sup {
   }
 
   .blog-content {
-    & > {
+    &> {
+
       p,
       h1,
       h2,
@@ -768,6 +761,7 @@ sup {
 
   .project-media-figure,
   .use-case-figure {
+
     .media-wrapper,
     .player-wrapper {
       width: 100%;
@@ -809,7 +803,8 @@ sup {
   }
 
   .blog-content {
-    & > {
+    &> {
+
       p,
       h1,
       h2,
@@ -825,7 +820,8 @@ sup {
         margin-right: auto;
       }
     }
-    & > p,
+
+    &>p,
     ol {
       @include text-standard-m;
     }
@@ -841,6 +837,7 @@ sup {
     // border-top: solid 4px white;
     // border-bottom: solid 4px white;
   }
+
   //   .project-media-figure figcaption, .use-case-figcaption {
   // padding-bottom: 16px;
   //     border-bottom: solid 4px white;
@@ -870,7 +867,8 @@ button {
     margin-left: auto;
     margin-right: auto;
 
-    & > {
+    &> {
+
       p,
       h1,
       h2,
@@ -893,6 +891,7 @@ button {
 
   .project-media-figure,
   .use-case-figure {
+
     .media-wrapper,
     .player-wrapper {
       width: 82%;
@@ -903,6 +902,7 @@ button {
     img {
       max-height: 900px;
     }
+
     figcaption {
       width: 18%;
     }
