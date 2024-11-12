@@ -91,9 +91,9 @@ flex-direction: column;
     margin-left: calc(50px + 6vw);
     margin-right: calc(50px + 6vw);
 
-    @media (max-width: 1200px) {
-        margin-left: calc(3vw);
-        margin-right: calc(3vw);        
+    @media (max-width: 1280px) {
+        margin-left: calc(32px + 3vw);
+        margin-right: calc(32px + 3vw);        
     }
 
     @media (max-width: 1000px) {

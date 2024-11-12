@@ -13,37 +13,34 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Design by Kai Magnus Müller"
+title: 'Design by Kai Magnus Müller'
 email: your-email@example.com
 author: Kai Magnus
 description: >- # this means to ignore newlines until "baseurl:"
-  
-baseurl: "" # the subpath of your site, e.g. /blog
+
+baseurl: '' # the subpath of your site, e.g. /blog
 permalink: /:categories/:title
-url: "https://www.kaimagnus.de" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: "@_kaimagnus"
+url: 'https://www.kaimagnus.de' # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: '@_kaimagnus'
 github_username:
 
 job:
   title: UX Designer
-  company_name: "Kaiser X"
-  company_url: "https://www.kaiser-x.com"
-
+  company_name: 'Kaiser X'
+  company_url: 'https://www.kaiser-x.com'
 
 links:
   - title: Twitter
     url: https://www.twitter.com/_kaimagnus
-    url_title: "@_kaimagnus"
+    url_title: '@_kaimagnus'
 
   - title: GitHub
     url: https://www.github.com/kaimagnusmueller
-    url_title: "KaiMagnusMueller"
+    url_title: 'KaiMagnusMueller'
 
   - title: LinkedIn
     url: https://www.linkedin.com/in/kai-magnus-m%C3%BCller-25a176207/
-    url_title: "Kai Magnus Müller"
-
-
+    url_title: 'Kai Magnus Müller'
 
 # Open Portfolio Template Settings
 articles: true
@@ -63,7 +60,7 @@ exclude:
   - node_modules/
   - package-lock.json
   - package.json
-#  - assets/js/src/
+  #  - assets/js/src/
   - assets/js/dist/
   - rollup.config.js
   - README.md
@@ -76,12 +73,10 @@ exclude:
 include:
   - .htaccess
 
-
 compress_html:
   clippings: all
   comments: all
   endings: all
-
 
 sass:
   sass_dir: ./_scss
@@ -99,6 +94,6 @@ responsive_image:
     - width: 1440
     - width: 1890
 
-version: 
-  css: 3.0.6
+version:
+  css: 3.0.7
   js: 2.17
